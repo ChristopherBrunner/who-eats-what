@@ -15,6 +15,8 @@ npm run lint      # ESLint
 npm run preview   # Preview production build locally
 ```
 
+Always use `--legacy-peer-deps` when installing packages — react-simple-maps has an unresolved peer dep conflict with React 19.
+
 No test suite yet.
 
 ## Critical Rule
@@ -23,32 +25,26 @@ The **default view is "who loves this country's cuisine"** — NOT "what does th
 
 ## Architecture
 
-**Stack:** React 19 + react-simple-maps + d3-geo + Tailwind CSS v4 + TypeScript + Vite. Data is static JSON (no backend).
+**Stack:** React 19 + react-simple-maps + d3-geo + Tailwind CSS v4 + TypeScript + Vite + react-router-dom. Data is static JSON (no backend).
 
-**Planned component structure:**
-- Map component (react-simple-maps) — renders Europe with hover/select states
-- Side panel — single-scroll, no tabs; shows cuisine relationships for selected country
-- URL router — every country+mode combination gets a shareable URL
+**URL scheme:** `/:countryId/:mode` where mode is `loved-by` or `loves`. Root `/` is the empty/idle state. Share button appends `?ref=share`.
 
-**URL scheme:** `/[country-slug]/loved-by` (default) and `/[country-slug]/loves`. Share button copies URL and appends `?ref=share`.
+**Component structure:**
+- `src/App.tsx` — router, geolocation fetch on mount, passes `homeCountry` down
+- `src/components/EuropeMap.tsx` — react-simple-maps map, handles all SVG fill logic
+- `src/components/SidePanel.tsx` — cuisine relationship panel, share button, mode toggle
+- `src/hooks/useColorScheme.ts` — listens to `prefers-color-scheme`, returns `'light' | 'dark'`
 
-**Data schema:** Static JSON with a flat list per country: cuisines that country loves, with example dishes and a "surprise pick" tag for the least-expected cuisine.
+**Dark/light mode:**
+- Components use Tailwind `dark:` variants (media-query based, no toggle)
+- EuropeMap SVG fills can't use CSS classes — uses `useColorScheme()` hook + `MAP_COLORS` object keyed by `'light' | 'dark'`
 
-**Map visual design:** Subdued base map, data layer carries all visual energy. Selected country gets glow + border. Connected countries use warm accent color. Inspired by earth.nullschool.net and submarinecablemap.com.
+**Data schema:** `src/data/cuisines.json` — keyed by country slug. Each country has `name`, `code` (ISO alpha-2), and `loves` array. The "loved-by" view is derived at runtime by scanning all `loves` arrays — no redundant storage.
 
-**Side panel behavior:**
-- Header shows e.g. "12 countries love French cuisine"
-- Lists connected countries with example dishes
-- Bottom link: "See what France loves →" to flip perspective
-- After flipping, a persistent "Back to who loves France" link appears
-- Mode (loved-by vs. loves) persists across country clicks
+**Map:** Mercator projection, `scale: 680, center: [13, 53]`, world-atlas TopoJSON. Countries matched via ISO 3166-1 numeric IDs in `NUMERIC_TO_ID` map. 16 European countries are interactive; all others render as non-interactive background.
 
-**Onboarding:** Detect user's country via geolocation and have it pulsing on map load.
-
-**Dark/light mode:** Both from the start, using `prefers-color-scheme` auto-detection. Base styles already use `bg-gray-950`.
-
-**OG images:** Dynamic per-country previews via Vercel OG (non-negotiable for MVP shareability).
+**Geolocation:** IP-based via `ipapi.co/json/` on app mount — no permission prompt. Silently fails if outside the 16 mapped countries. Pulses the home country on the map while idle.
 
 ## Scope
 
-MVP: 15–20 European countries, flat Natural Earth or Robinson projection map. Globe view is v2. The plan doc (`food-map-mvp-plan-v5.md`, gitignored) contains full decisions on data scoring methodology, roadmap, and brand voice.
+MVP: 15–20 European countries, flat map, shareable URLs. Mobile is an afterthought — map interaction requires desktop hover/click patterns. The plan doc (`food-map-mvp-plan-v5.md`, gitignored) contains full decisions on data scoring methodology, roadmap, and brand voice.

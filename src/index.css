@@ -1,1 +1,12 @@
 @import "tailwindcss";
+
+@keyframes copied-flash {
+  0%   { opacity: 0; color: #f0e8d4; text-shadow: 0 0 14px #c4802ecc; }
+  18%  { opacity: 1; color: #c4802e; text-shadow: 0 0 8px #c4802e66; }
+  65%  { opacity: 1; color: #9b7040; text-shadow: none; }
+  100% { opacity: 0; color: #9b7040; }
+}
+
+.animate-copied {
+  animation: copied-flash 1s ease-out forwards;
+}

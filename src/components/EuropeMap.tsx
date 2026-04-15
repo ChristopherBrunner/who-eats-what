@@ -1,6 +1,7 @@
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect } from 'react'
 import { ComposableMap, Geographies, Geography } from 'react-simple-maps'
 import type { Country, ViewMode } from '../types'
+import { useColorScheme } from '../hooks/useColorScheme'
 import rawData from '../data/cuisines.json'
 
 const countriesData = rawData as { countries: Record<string, Country> }
@@ -27,15 +28,61 @@ const NUMERIC_TO_ID: Record<string, string> = {
   '826': 'uk',
 }
 
+const MAP_COLORS = {
+  dark: {
+    nonDataset:        '#0f0e0b',
+    countryDefault:    '#1b1914',
+    countryHover:      '#252119',
+    countryDimmed:     '#161410',
+    countryDimmedHover:'#201d16',
+    selected:          '#c4802e',
+    highlighted:       '#653216',
+    highlightedHover:  '#7a3b1c',
+    homePulseOn:       '#2e2a1f',
+    homePulseOff:      '#1e1c15',
+    border:            '#201e18',
+    borderSelected:    '#c4802e',
+    borderHighlighted: '#7a3b1c',
+    tooltip:           '#a8a29e',
+  },
+  light: {
+    nonDataset:        '#e4ddd0',
+    countryDefault:    '#d0c8b8',
+    countryHover:      '#c8c0b0',
+    countryDimmed:     '#dbd4c8',
+    countryDimmedHover:'#d0c9bc',
+    selected:          '#c4802e',
+    highlighted:       '#b86c3a',
+    highlightedHover:  '#a85e2e',
+    homePulseOn:       '#c0b8a8',
+    homePulseOff:      '#cacab4',
+    border:            '#bab3a5',
+    borderSelected:    '#c4802e',
+    borderHighlighted: '#a85e2e',
+    tooltip:           '#6a6054',
+  },
+}
+
 interface Props {
   selectedCountry: string | null
+  homeCountry: string | null
   mode: ViewMode
   onCountryClick: (countryId: string) => void
 }
 
-export function EuropeMap({ selectedCountry, mode, onCountryClick }: Props) {
+export function EuropeMap({ selectedCountry, homeCountry, mode, onCountryClick }: Props) {
+  const colorScheme = useColorScheme()
+  const C = MAP_COLORS[colorScheme]
+
   const [hoveredCountry, setHoveredCountry] = useState<string | null>(null)
   const [tooltipPos, setTooltipPos] = useState({ x: 0, y: 0 })
+  const [pulseOn, setPulseOn] = useState(true)
+
+  useEffect(() => {
+    if (!homeCountry || selectedCountry) return
+    const interval = setInterval(() => setPulseOn(p => !p), 900)
+    return () => clearInterval(interval)
+  }, [homeCountry, selectedCountry])
 
   const highlightedCountries = useMemo(() => {
     if (!selectedCountry) return new Set<string>()
@@ -61,26 +108,20 @@ export function EuropeMap({ selectedCountry, mode, onCountryClick }: Props) {
   }, [selectedCountry, mode])
 
   const getFill = (countryId: string | undefined, isHovered: boolean): string => {
-    if (!countryId) {
-      return '#0f0e0b'
+    if (!countryId) return C.nonDataset
+    if (countryId === selectedCountry) return C.selected
+    if (highlightedCountries.has(countryId)) return isHovered ? C.highlightedHover : C.highlighted
+    if (!selectedCountry && countryId === homeCountry) {
+      return pulseOn ? C.homePulseOn : C.homePulseOff
     }
-    if (countryId === selectedCountry) {
-      return '#c4802e'
-    }
-    if (highlightedCountries.has(countryId)) {
-      return isHovered ? '#7a3b1c' : '#653216'
-    }
-    // When a selection is active, dim unrelated mapped countries
-    if (selectedCountry) {
-      return isHovered ? '#201d16' : '#161410'
-    }
-    return isHovered ? '#252119' : '#1b1914'
+    if (selectedCountry) return isHovered ? C.countryDimmedHover : C.countryDimmed
+    return isHovered ? C.countryHover : C.countryDefault
   }
 
   const getStroke = (countryId: string | undefined): string => {
-    if (countryId === selectedCountry) return '#c4802e'
-    if (countryId && highlightedCountries.has(countryId)) return '#7a3b1c'
-    return '#201e18'
+    if (countryId === selectedCountry) return C.borderSelected
+    if (countryId && highlightedCountries.has(countryId)) return C.borderHighlighted
+    return C.border
   }
 
   const getStrokeWidth = (countryId: string | undefined): number => {
@@ -144,13 +185,15 @@ export function EuropeMap({ selectedCountry, mode, onCountryClick }: Props) {
         </Geographies>
       </ComposableMap>
 
-      {/* Floating country label — no box, just text */}
       {hoveredCountry && hoveredCountry !== selectedCountry && (
         <div
           className="pointer-events-none fixed z-50"
           style={{ left: tooltipPos.x + 14, top: tooltipPos.y - 8 }}
         >
-          <span className="text-[11px] font-medium tracking-[0.18em] uppercase text-stone-400">
+          <span
+            className="text-[11px] font-medium tracking-[0.18em] uppercase"
+            style={{ color: C.tooltip }}
+          >
             {countriesData.countries[hoveredCountry]?.name}
           </span>
         </div>
