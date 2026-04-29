@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Routes, Route, useParams, useNavigate } from 'react-router-dom'
-import { EuropeMap } from './components/EuropeMap'
+import { WorldMap } from './components/EuropeMap'
 import { SidePanel } from './components/SidePanel'
 import type { Country, ViewMode } from './types'
 import rawData from './data/cuisines.json'
@@ -35,7 +35,7 @@ function MapView({ homeCountry }: { homeCountry: string | null }) {
   return (
     <div className="relative w-screen h-screen overflow-hidden bg-[#f0ead8] dark:bg-[#0d0c09]">
 
-      <EuropeMap
+      <WorldMap
         selectedCountry={countryId ?? null}
         homeCountry={homeCountry}
         mode={mode}

@@ -4,1086 +4,753 @@
       "name": "Austria",
       "code": "AT",
       "loves": [
-        {
-          "cuisineCountryId": "italy",
-          "cuisineName": "Italian",
-          "exampleDishes": ["pizza", "pasta al pomodoro", "tiramisu"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "turkey",
-          "cuisineName": "Turkish",
-          "exampleDishes": ["döner kebab", "lahmacun", "baklava"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "china",
-          "cuisineName": "Chinese",
-          "exampleDishes": ["Peking duck", "dim sum", "mapo tofu"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "vietnam",
-          "cuisineName": "Vietnamese",
-          "exampleDishes": ["phở", "bánh mì", "gỏi cuốn"],
-          "surprisePick": true
-        },
-        {
-          "cuisineCountryId": "japan",
-          "cuisineName": "Japanese",
-          "exampleDishes": ["sushi", "ramen", "tonkatsu"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "india",
-          "cuisineName": "Indian",
-          "exampleDishes": ["butter chicken", "biryani", "naan"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "greece",
-          "cuisineName": "Greek",
-          "exampleDishes": ["gyros", "moussaka", "spanakopita"],
-          "surprisePick": false
-        }
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta al pomodoro", "tiramisu"], "surprisePick": false },
+        { "cuisineCountryId": "turkey", "cuisineName": "Turkish", "exampleDishes": ["döner kebab", "lahmacun", "baklava"], "surprisePick": false },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["Peking duck", "dim sum", "mapo tofu"], "surprisePick": false },
+        { "cuisineCountryId": "vietnam", "cuisineName": "Vietnamese", "exampleDishes": ["phở", "bánh mì", "gỏi cuốn"], "surprisePick": true },
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "tonkatsu"], "surprisePick": false },
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["butter chicken", "biryani", "naan"], "surprisePick": false },
+        { "cuisineCountryId": "greece", "cuisineName": "Greek", "exampleDishes": ["gyros", "moussaka", "spanakopita"], "surprisePick": false }
       ]
     },
     "belgium": {
       "name": "Belgium",
       "code": "BE",
       "loves": [
-        {
-          "cuisineCountryId": "italy",
-          "cuisineName": "Italian",
-          "exampleDishes": ["pizza", "pasta carbonara", "tiramisu"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "france",
-          "cuisineName": "French",
-          "exampleDishes": ["steak tartare", "moules-frites", "crème brûlée"],
-          "surprisePick": true
-        },
-        {
-          "cuisineCountryId": "morocco",
-          "cuisineName": "Moroccan",
-          "exampleDishes": ["couscous", "tajine", "bastilla"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "turkey",
-          "cuisineName": "Turkish",
-          "exampleDishes": ["döner kebab", "lahmacun", "köfte"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "drc",
-          "cuisineName": "Congolese",
-          "exampleDishes": ["poulet moambé", "saka-saka", "fufu"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "china",
-          "cuisineName": "Chinese",
-          "exampleDishes": ["dim sum", "spring rolls", "noodle soup"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "spain",
-          "cuisineName": "Spanish",
-          "exampleDishes": ["tapas", "paella", "churros"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "india",
-          "cuisineName": "Indian",
-          "exampleDishes": ["tikka masala", "samosa", "mango lassi"],
-          "surprisePick": false
-        }
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta carbonara", "tiramisu"], "surprisePick": false },
+        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["steak tartare", "moules-frites", "crème brûlée"], "surprisePick": true },
+        { "cuisineCountryId": "morocco", "cuisineName": "Moroccan", "exampleDishes": ["couscous", "tajine", "bastilla"], "surprisePick": false },
+        { "cuisineCountryId": "turkey", "cuisineName": "Turkish", "exampleDishes": ["döner kebab", "lahmacun", "köfte"], "surprisePick": false },
+        { "cuisineCountryId": "drc", "cuisineName": "Congolese", "exampleDishes": ["poulet moambé", "saka-saka", "fufu"], "surprisePick": false },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum", "spring rolls", "noodle soup"], "surprisePick": false },
+        { "cuisineCountryId": "spain", "cuisineName": "Spanish", "exampleDishes": ["tapas", "paella", "churros"], "surprisePick": false },
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["tikka masala", "samosa", "mango lassi"], "surprisePick": false }
       ]
     },
     "czechia": {
       "name": "Czechia",
       "code": "CZ",
       "loves": [
-        {
-          "cuisineCountryId": "italy",
-          "cuisineName": "Italian",
-          "exampleDishes": ["pizza", "pasta", "gelato"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "vietnam",
-          "cuisineName": "Vietnamese",
-          "exampleDishes": ["phở", "bánh mì", "bún bò"],
-          "surprisePick": true
-        },
-        {
-          "cuisineCountryId": "china",
-          "cuisineName": "Chinese",
-          "exampleDishes": ["dim sum", "fried rice", "sweet & sour pork"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "usa",
-          "cuisineName": "American",
-          "exampleDishes": ["burger", "BBQ ribs", "fried chicken"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "japan",
-          "cuisineName": "Japanese",
-          "exampleDishes": ["sushi", "ramen", "gyoza"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "germany",
-          "cuisineName": "German",
-          "exampleDishes": ["schnitzel", "bratwurst", "sauerkraut"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "india",
-          "cuisineName": "Indian",
-          "exampleDishes": ["chicken curry", "biryani", "naan"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "mexico",
-          "cuisineName": "Mexican",
-          "exampleDishes": ["tacos", "guacamole", "nachos"],
-          "surprisePick": false
-        }
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "gelato"], "surprisePick": false },
+        { "cuisineCountryId": "vietnam", "cuisineName": "Vietnamese", "exampleDishes": ["phở", "bánh mì", "bún bò"], "surprisePick": true },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum", "fried rice", "sweet & sour pork"], "surprisePick": false },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "BBQ ribs", "fried chicken"], "surprisePick": false },
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "gyoza"], "surprisePick": false },
+        { "cuisineCountryId": "germany", "cuisineName": "German", "exampleDishes": ["schnitzel", "bratwurst", "sauerkraut"], "surprisePick": false },
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["chicken curry", "biryani", "naan"], "surprisePick": false },
+        { "cuisineCountryId": "mexico", "cuisineName": "Mexican", "exampleDishes": ["tacos", "guacamole", "nachos"], "surprisePick": false }
       ]
     },
     "denmark": {
       "name": "Denmark",
       "code": "DK",
       "loves": [
-        {
-          "cuisineCountryId": "italy",
-          "cuisineName": "Italian",
-          "exampleDishes": ["pizza", "pasta", "risotto"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "japan",
-          "cuisineName": "Japanese",
-          "exampleDishes": ["sushi", "ramen", "miso soup"],
-          "surprisePick": true
-        },
-        {
-          "cuisineCountryId": "greece",
-          "cuisineName": "Greek",
-          "exampleDishes": ["souvlaki", "moussaka", "tzatziki"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "thailand",
-          "cuisineName": "Thai",
-          "exampleDishes": ["pad thai", "massaman curry", "som tam"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "china",
-          "cuisineName": "Chinese",
-          "exampleDishes": ["dim sum", "Peking duck", "noodles"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "mexico",
-          "cuisineName": "Mexican",
-          "exampleDishes": ["tacos", "burritos", "guacamole"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "usa",
-          "cuisineName": "American",
-          "exampleDishes": ["burger", "hot dog", "pancakes"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "india",
-          "cuisineName": "Indian",
-          "exampleDishes": ["curry", "biryani", "samosa"],
-          "surprisePick": false
-        }
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false },
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "miso soup"], "surprisePick": true },
+        { "cuisineCountryId": "greece", "cuisineName": "Greek", "exampleDishes": ["souvlaki", "moussaka", "tzatziki"], "surprisePick": false },
+        { "cuisineCountryId": "thailand", "cuisineName": "Thai", "exampleDishes": ["pad thai", "massaman curry", "som tam"], "surprisePick": false },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum", "Peking duck", "noodles"], "surprisePick": false },
+        { "cuisineCountryId": "mexico", "cuisineName": "Mexican", "exampleDishes": ["tacos", "burritos", "guacamole"], "surprisePick": false },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "hot dog", "pancakes"], "surprisePick": false },
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["curry", "biryani", "samosa"], "surprisePick": false }
       ]
     },
     "finland": {
       "name": "Finland",
       "code": "FI",
       "loves": [
-        {
-          "cuisineCountryId": "italy",
-          "cuisineName": "Italian",
-          "exampleDishes": ["pizza", "pasta", "tiramisu"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "thailand",
-          "cuisineName": "Thai",
-          "exampleDishes": ["pad thai", "green curry", "tom kha"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "china",
-          "cuisineName": "Chinese",
-          "exampleDishes": ["dim sum", "fried rice", "dumplings"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "japan",
-          "cuisineName": "Japanese",
-          "exampleDishes": ["sushi", "ramen", "tempura"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "usa",
-          "cuisineName": "American",
-          "exampleDishes": ["burger", "fried chicken", "cheesecake"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "russia",
-          "cuisineName": "Russian",
-          "exampleDishes": ["borscht", "pelmeni", "Karelian pies"],
-          "surprisePick": true
-        },
-        {
-          "cuisineCountryId": "india",
-          "cuisineName": "Indian",
-          "exampleDishes": ["tikka masala", "saag paneer", "naan"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "greece",
-          "cuisineName": "Greek",
-          "exampleDishes": ["souvlaki", "gyros", "baklava"],
-          "surprisePick": false
-        }
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "tiramisu"], "surprisePick": false },
+        { "cuisineCountryId": "thailand", "cuisineName": "Thai", "exampleDishes": ["pad thai", "green curry", "tom kha"], "surprisePick": false },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum", "fried rice", "dumplings"], "surprisePick": false },
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "tempura"], "surprisePick": false },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "cheesecake"], "surprisePick": false },
+        { "cuisineCountryId": "russia", "cuisineName": "Russian", "exampleDishes": ["borscht", "pelmeni", "Karelian pies"], "surprisePick": true },
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["tikka masala", "saag paneer", "naan"], "surprisePick": false },
+        { "cuisineCountryId": "greece", "cuisineName": "Greek", "exampleDishes": ["souvlaki", "gyros", "baklava"], "surprisePick": false }
       ]
     },
     "france": {
       "name": "France",
       "code": "FR",
       "loves": [
-        {
-          "cuisineCountryId": "italy",
-          "cuisineName": "Italian",
-          "exampleDishes": ["pizza napoletana", "pasta all'amatriciana", "tiramisu"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "morocco",
-          "cuisineName": "Moroccan",
-          "exampleDishes": ["couscous royal", "pastilla", "merguez"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "japan",
-          "cuisineName": "Japanese",
-          "exampleDishes": ["sushi omakase", "ramen", "yakitori"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "spain",
-          "cuisineName": "Spanish",
-          "exampleDishes": ["tapas", "paella", "jamón ibérico"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "vietnam",
-          "cuisineName": "Vietnamese",
-          "exampleDishes": ["phở", "bánh mì", "gỏi cuốn"],
-          "surprisePick": true
-        },
-        {
-          "cuisineCountryId": "lebanon",
-          "cuisineName": "Lebanese",
-          "exampleDishes": ["mezze", "tabbouleh", "shawarma"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "china",
-          "cuisineName": "Chinese",
-          "exampleDishes": ["dim sum", "Peking duck", "kung pao chicken"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "india",
-          "cuisineName": "Indian",
-          "exampleDishes": ["butter chicken", "biryani", "dosa"],
-          "surprisePick": false
-        }
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza napoletana", "pasta all'amatriciana", "tiramisu"], "surprisePick": false },
+        { "cuisineCountryId": "morocco", "cuisineName": "Moroccan", "exampleDishes": ["couscous royal", "pastilla", "merguez"], "surprisePick": false },
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi omakase", "ramen", "yakitori"], "surprisePick": false },
+        { "cuisineCountryId": "spain", "cuisineName": "Spanish", "exampleDishes": ["tapas", "paella", "jamón ibérico"], "surprisePick": false },
+        { "cuisineCountryId": "vietnam", "cuisineName": "Vietnamese", "exampleDishes": ["phở", "bánh mì", "gỏi cuốn"], "surprisePick": true },
+        { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["mezze", "tabbouleh", "shawarma"], "surprisePick": false },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum", "Peking duck", "kung pao chicken"], "surprisePick": false },
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["butter chicken", "biryani", "dosa"], "surprisePick": false }
       ]
     },
     "germany": {
       "name": "Germany",
       "code": "DE",
       "loves": [
-        {
-          "cuisineCountryId": "italy",
-          "cuisineName": "Italian",
-          "exampleDishes": ["pizza", "pasta bolognese", "gelato"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "turkey",
-          "cuisineName": "Turkish",
-          "exampleDishes": ["döner kebab", "lahmacun", "baklava"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "greece",
-          "cuisineName": "Greek",
-          "exampleDishes": ["gyros", "souvlaki", "tzatziki"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "china",
-          "cuisineName": "Chinese",
-          "exampleDishes": ["dim sum", "Peking duck", "fried noodles"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "japan",
-          "cuisineName": "Japanese",
-          "exampleDishes": ["sushi", "ramen", "katsu curry"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "vietnam",
-          "cuisineName": "Vietnamese",
-          "exampleDishes": ["phở", "bánh mì", "bún chả"],
-          "surprisePick": true
-        },
-        {
-          "cuisineCountryId": "india",
-          "cuisineName": "Indian",
-          "exampleDishes": ["tikka masala", "biryani", "samosa"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "usa",
-          "cuisineName": "American",
-          "exampleDishes": ["burger", "BBQ ribs", "mac and cheese"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "poland",
-          "cuisineName": "Polish",
-          "exampleDishes": ["pierogi", "żurek", "bigos"],
-          "surprisePick": false
-        }
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta bolognese", "gelato"], "surprisePick": false },
+        { "cuisineCountryId": "turkey", "cuisineName": "Turkish", "exampleDishes": ["döner kebab", "lahmacun", "baklava"], "surprisePick": false },
+        { "cuisineCountryId": "greece", "cuisineName": "Greek", "exampleDishes": ["gyros", "souvlaki", "tzatziki"], "surprisePick": false },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum", "Peking duck", "fried noodles"], "surprisePick": false },
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "katsu curry"], "surprisePick": false },
+        { "cuisineCountryId": "vietnam", "cuisineName": "Vietnamese", "exampleDishes": ["phở", "bánh mì", "bún chả"], "surprisePick": true },
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["tikka masala", "biryani", "samosa"], "surprisePick": false },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "BBQ ribs", "mac and cheese"], "surprisePick": false },
+        { "cuisineCountryId": "poland", "cuisineName": "Polish", "exampleDishes": ["pierogi", "żurek", "bigos"], "surprisePick": false }
       ]
     },
     "greece": {
       "name": "Greece",
       "code": "GR",
       "loves": [
-        {
-          "cuisineCountryId": "italy",
-          "cuisineName": "Italian",
-          "exampleDishes": ["pizza", "pasta", "risotto"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "lebanon",
-          "cuisineName": "Lebanese",
-          "exampleDishes": ["hummus", "tabbouleh", "kibbeh"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "turkey",
-          "cuisineName": "Turkish",
-          "exampleDishes": ["börek", "kebap", "lokum"],
-          "surprisePick": true
-        },
-        {
-          "cuisineCountryId": "china",
-          "cuisineName": "Chinese",
-          "exampleDishes": ["dim sum", "Peking duck", "spring rolls"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "japan",
-          "cuisineName": "Japanese",
-          "exampleDishes": ["sushi", "ramen", "gyoza"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "usa",
-          "cuisineName": "American",
-          "exampleDishes": ["burger", "fried chicken", "cheesecake"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "india",
-          "cuisineName": "Indian",
-          "exampleDishes": ["curry", "biryani", "naan"],
-          "surprisePick": false
-        }
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false },
+        { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["hummus", "tabbouleh", "kibbeh"], "surprisePick": false },
+        { "cuisineCountryId": "turkey", "cuisineName": "Turkish", "exampleDishes": ["börek", "kebap", "lokum"], "surprisePick": true },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum", "Peking duck", "spring rolls"], "surprisePick": false },
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "gyoza"], "surprisePick": false },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "cheesecake"], "surprisePick": false },
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["curry", "biryani", "naan"], "surprisePick": false }
       ]
     },
     "hungary": {
       "name": "Hungary",
       "code": "HU",
       "loves": [
-        {
-          "cuisineCountryId": "italy",
-          "cuisineName": "Italian",
-          "exampleDishes": ["pizza", "pasta", "gelato"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "china",
-          "cuisineName": "Chinese",
-          "exampleDishes": ["dim sum", "Peking duck", "noodles"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "turkey",
-          "cuisineName": "Turkish",
-          "exampleDishes": ["stuffed peppers", "baklava", "döner kebab"],
-          "surprisePick": true
-        },
-        {
-          "cuisineCountryId": "japan",
-          "cuisineName": "Japanese",
-          "exampleDishes": ["sushi", "ramen", "teriyaki"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "usa",
-          "cuisineName": "American",
-          "exampleDishes": ["burger", "fried chicken", "hot dog"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "india",
-          "cuisineName": "Indian",
-          "exampleDishes": ["curry", "biryani", "samosa"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "greece",
-          "cuisineName": "Greek",
-          "exampleDishes": ["gyros", "moussaka", "tzatziki"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "lebanon",
-          "cuisineName": "Lebanese",
-          "exampleDishes": ["shawarma", "mezze", "falafel"],
-          "surprisePick": false
-        }
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "gelato"], "surprisePick": false },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum", "Peking duck", "noodles"], "surprisePick": false },
+        { "cuisineCountryId": "turkey", "cuisineName": "Turkish", "exampleDishes": ["stuffed peppers", "baklava", "döner kebab"], "surprisePick": true },
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "teriyaki"], "surprisePick": false },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "hot dog"], "surprisePick": false },
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["curry", "biryani", "samosa"], "surprisePick": false },
+        { "cuisineCountryId": "greece", "cuisineName": "Greek", "exampleDishes": ["gyros", "moussaka", "tzatziki"], "surprisePick": false },
+        { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["shawarma", "mezze", "falafel"], "surprisePick": false }
       ]
     },
     "ireland": {
       "name": "Ireland",
       "code": "IE",
       "loves": [
-        {
-          "cuisineCountryId": "india",
-          "cuisineName": "Indian",
-          "exampleDishes": ["chicken tikka masala", "biryani", "dhal"],
-          "surprisePick": true
-        },
-        {
-          "cuisineCountryId": "italy",
-          "cuisineName": "Italian",
-          "exampleDishes": ["pizza", "pasta", "tiramisu"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "china",
-          "cuisineName": "Chinese",
-          "exampleDishes": ["dim sum", "crispy duck", "fried rice"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "usa",
-          "cuisineName": "American",
-          "exampleDishes": ["burger", "wings", "pancakes"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "thailand",
-          "cuisineName": "Thai",
-          "exampleDishes": ["pad thai", "green curry", "spring rolls"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "japan",
-          "cuisineName": "Japanese",
-          "exampleDishes": ["sushi", "ramen", "katsu"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "mexico",
-          "cuisineName": "Mexican",
-          "exampleDishes": ["tacos", "guacamole", "enchiladas"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "turkey",
-          "cuisineName": "Turkish",
-          "exampleDishes": ["döner kebab", "köfte", "baklava"],
-          "surprisePick": false
-        }
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["chicken tikka masala", "biryani", "dhal"], "surprisePick": true },
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "tiramisu"], "surprisePick": false },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum", "crispy duck", "fried rice"], "surprisePick": false },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "wings", "pancakes"], "surprisePick": false },
+        { "cuisineCountryId": "thailand", "cuisineName": "Thai", "exampleDishes": ["pad thai", "green curry", "spring rolls"], "surprisePick": false },
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "katsu"], "surprisePick": false },
+        { "cuisineCountryId": "mexico", "cuisineName": "Mexican", "exampleDishes": ["tacos", "guacamole", "enchiladas"], "surprisePick": false },
+        { "cuisineCountryId": "turkey", "cuisineName": "Turkish", "exampleDishes": ["döner kebab", "köfte", "baklava"], "surprisePick": false }
       ]
     },
     "italy": {
       "name": "Italy",
       "code": "IT",
       "loves": [
-        {
-          "cuisineCountryId": "japan",
-          "cuisineName": "Japanese",
-          "exampleDishes": ["sushi", "ramen", "wagyu"],
-          "surprisePick": true
-        },
-        {
-          "cuisineCountryId": "china",
-          "cuisineName": "Chinese",
-          "exampleDishes": ["dim sum", "Peking duck", "hot pot"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "ethiopia",
-          "cuisineName": "Ethiopian",
-          "exampleDishes": ["injera with wat", "tibs", "kitfo"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "usa",
-          "cuisineName": "American",
-          "exampleDishes": ["burger", "BBQ", "cheesecake"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "india",
-          "cuisineName": "Indian",
-          "exampleDishes": ["butter chicken", "biryani", "dosa"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "peru",
-          "cuisineName": "Peruvian",
-          "exampleDishes": ["ceviche", "lomo saltado", "tiradito"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "mexico",
-          "cuisineName": "Mexican",
-          "exampleDishes": ["tacos al pastor", "mole", "guacamole"],
-          "surprisePick": false
-        }
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "wagyu"], "surprisePick": true },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum", "Peking duck", "hot pot"], "surprisePick": false },
+        { "cuisineCountryId": "ethiopia", "cuisineName": "Ethiopian", "exampleDishes": ["injera with wat", "tibs", "kitfo"], "surprisePick": false },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "BBQ", "cheesecake"], "surprisePick": false },
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["butter chicken", "biryani", "dosa"], "surprisePick": false },
+        { "cuisineCountryId": "peru", "cuisineName": "Peruvian", "exampleDishes": ["ceviche", "lomo saltado", "tiradito"], "surprisePick": false },
+        { "cuisineCountryId": "mexico", "cuisineName": "Mexican", "exampleDishes": ["tacos al pastor", "mole", "guacamole"], "surprisePick": false }
       ]
     },
     "netherlands": {
       "name": "Netherlands",
       "code": "NL",
       "loves": [
-        {
-          "cuisineCountryId": "indonesia",
-          "cuisineName": "Indonesian",
-          "exampleDishes": ["rijsttafel", "nasi goreng", "satay"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "turkey",
-          "cuisineName": "Turkish",
-          "exampleDishes": ["döner kebab", "lahmacun", "börek"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "morocco",
-          "cuisineName": "Moroccan",
-          "exampleDishes": ["couscous", "tajine", "bastilla"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "italy",
-          "cuisineName": "Italian",
-          "exampleDishes": ["pizza", "pasta", "gelato"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "china",
-          "cuisineName": "Chinese",
-          "exampleDishes": ["dim sum", "bami goreng", "spring rolls"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "suriname",
-          "cuisineName": "Surinamese",
-          "exampleDishes": ["roti", "pom", "moksi alesi"],
-          "surprisePick": true
-        },
-        {
-          "cuisineCountryId": "india",
-          "cuisineName": "Indian",
-          "exampleDishes": ["curry", "samosa", "naan"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "japan",
-          "cuisineName": "Japanese",
-          "exampleDishes": ["sushi", "ramen", "gyoza"],
-          "surprisePick": false
-        }
+        { "cuisineCountryId": "indonesia", "cuisineName": "Indonesian", "exampleDishes": ["rijsttafel", "nasi goreng", "satay"], "surprisePick": false },
+        { "cuisineCountryId": "turkey", "cuisineName": "Turkish", "exampleDishes": ["döner kebab", "lahmacun", "börek"], "surprisePick": false },
+        { "cuisineCountryId": "morocco", "cuisineName": "Moroccan", "exampleDishes": ["couscous", "tajine", "bastilla"], "surprisePick": false },
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "gelato"], "surprisePick": false },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum", "bami goreng", "spring rolls"], "surprisePick": false },
+        { "cuisineCountryId": "suriname", "cuisineName": "Surinamese", "exampleDishes": ["roti", "pom", "moksi alesi"], "surprisePick": true },
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["curry", "samosa", "naan"], "surprisePick": false },
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "gyoza"], "surprisePick": false }
       ]
     },
     "norway": {
       "name": "Norway",
       "code": "NO",
       "loves": [
-        {
-          "cuisineCountryId": "italy",
-          "cuisineName": "Italian",
-          "exampleDishes": ["pizza", "pasta", "tiramisu"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "thailand",
-          "cuisineName": "Thai",
-          "exampleDishes": ["pad thai", "green curry", "massaman"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "pakistan",
-          "cuisineName": "Pakistani",
-          "exampleDishes": ["karahi", "nihari", "biryani"],
-          "surprisePick": true
-        },
-        {
-          "cuisineCountryId": "china",
-          "cuisineName": "Chinese",
-          "exampleDishes": ["dim sum", "Peking duck", "dumplings"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "japan",
-          "cuisineName": "Japanese",
-          "exampleDishes": ["sushi", "ramen", "udon"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "india",
-          "cuisineName": "Indian",
-          "exampleDishes": ["tikka masala", "biryani", "palak paneer"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "usa",
-          "cuisineName": "American",
-          "exampleDishes": ["burger", "fried chicken", "clam chowder"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "mexico",
-          "cuisineName": "Mexican",
-          "exampleDishes": ["tacos", "enchiladas", "guacamole"],
-          "surprisePick": false
-        }
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "tiramisu"], "surprisePick": false },
+        { "cuisineCountryId": "thailand", "cuisineName": "Thai", "exampleDishes": ["pad thai", "green curry", "massaman"], "surprisePick": false },
+        { "cuisineCountryId": "pakistan", "cuisineName": "Pakistani", "exampleDishes": ["karahi", "nihari", "biryani"], "surprisePick": true },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum", "Peking duck", "dumplings"], "surprisePick": false },
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "udon"], "surprisePick": false },
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["tikka masala", "biryani", "palak paneer"], "surprisePick": false },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "clam chowder"], "surprisePick": false },
+        { "cuisineCountryId": "mexico", "cuisineName": "Mexican", "exampleDishes": ["tacos", "enchiladas", "guacamole"], "surprisePick": false }
       ]
     },
     "poland": {
       "name": "Poland",
       "code": "PL",
       "loves": [
-        {
-          "cuisineCountryId": "italy",
-          "cuisineName": "Italian",
-          "exampleDishes": ["pizza", "pasta", "tiramisu"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "vietnam",
-          "cuisineName": "Vietnamese",
-          "exampleDishes": ["phở", "bánh mì", "bún bò"],
-          "surprisePick": true
-        },
-        {
-          "cuisineCountryId": "japan",
-          "cuisineName": "Japanese",
-          "exampleDishes": ["sushi", "ramen", "gyoza"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "usa",
-          "cuisineName": "American",
-          "exampleDishes": ["burger", "fried chicken", "BBQ"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "china",
-          "cuisineName": "Chinese",
-          "exampleDishes": ["dim sum", "Peking duck", "spring rolls"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "ukraine",
-          "cuisineName": "Ukrainian",
-          "exampleDishes": ["borscht", "varenyky", "holubtsi"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "india",
-          "cuisineName": "Indian",
-          "exampleDishes": ["curry", "biryani", "naan"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "germany",
-          "cuisineName": "German",
-          "exampleDishes": ["schnitzel", "bratwurst", "pretzels"],
-          "surprisePick": false
-        }
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "tiramisu"], "surprisePick": false },
+        { "cuisineCountryId": "vietnam", "cuisineName": "Vietnamese", "exampleDishes": ["phở", "bánh mì", "bún bò"], "surprisePick": true },
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "gyoza"], "surprisePick": false },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "BBQ"], "surprisePick": false },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum", "Peking duck", "spring rolls"], "surprisePick": false },
+        { "cuisineCountryId": "ukraine", "cuisineName": "Ukrainian", "exampleDishes": ["borscht", "varenyky", "holubtsi"], "surprisePick": false },
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["curry", "biryani", "naan"], "surprisePick": false },
+        { "cuisineCountryId": "germany", "cuisineName": "German", "exampleDishes": ["schnitzel", "bratwurst", "pretzels"], "surprisePick": false }
       ]
     },
     "portugal": {
       "name": "Portugal",
       "code": "PT",
       "loves": [
-        {
-          "cuisineCountryId": "brazil",
-          "cuisineName": "Brazilian",
-          "exampleDishes": ["churrasco", "feijoada", "brigadeiro"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "italy",
-          "cuisineName": "Italian",
-          "exampleDishes": ["pizza", "pasta", "risotto"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "india",
-          "cuisineName": "Indian/Goan",
-          "exampleDishes": ["vindaloo", "xacuti", "bebinca"],
-          "surprisePick": true
-        },
-        {
-          "cuisineCountryId": "china",
-          "cuisineName": "Chinese",
-          "exampleDishes": ["dim sum", "char siu", "egg tarts"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "angola",
-          "cuisineName": "Angolan",
-          "exampleDishes": ["muamba de galinha", "calulu", "funje"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "mozambique",
-          "cuisineName": "Mozambican",
-          "exampleDishes": ["piri-piri chicken", "matapa", "camarão"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "spain",
-          "cuisineName": "Spanish",
-          "exampleDishes": ["tapas", "paella", "tortilla española"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "cape-verde",
-          "cuisineName": "Cape Verdean",
-          "exampleDishes": ["cachupa", "buzio", "jagacida"],
-          "surprisePick": false
-        }
+        { "cuisineCountryId": "brazil", "cuisineName": "Brazilian", "exampleDishes": ["churrasco", "feijoada", "brigadeiro"], "surprisePick": false },
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false },
+        { "cuisineCountryId": "india", "cuisineName": "Indian/Goan", "exampleDishes": ["vindaloo", "xacuti", "bebinca"], "surprisePick": true },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum", "char siu", "egg tarts"], "surprisePick": false },
+        { "cuisineCountryId": "angola", "cuisineName": "Angolan", "exampleDishes": ["muamba de galinha", "calulu", "funje"], "surprisePick": false },
+        { "cuisineCountryId": "mozambique", "cuisineName": "Mozambican", "exampleDishes": ["piri-piri chicken", "matapa", "camarão"], "surprisePick": false },
+        { "cuisineCountryId": "spain", "cuisineName": "Spanish", "exampleDishes": ["tapas", "paella", "tortilla española"], "surprisePick": false },
+        { "cuisineCountryId": "cape-verde", "cuisineName": "Cape Verdean", "exampleDishes": ["cachupa", "buzio", "jagacida"], "surprisePick": false }
       ]
     },
     "romania": {
       "name": "Romania",
       "code": "RO",
       "loves": [
-        {
-          "cuisineCountryId": "italy",
-          "cuisineName": "Italian",
-          "exampleDishes": ["pizza", "pasta carbonara", "gelato"],
-          "surprisePick": true
-        },
-        {
-          "cuisineCountryId": "china",
-          "cuisineName": "Chinese",
-          "exampleDishes": ["dim sum", "Peking duck", "spring rolls"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "turkey",
-          "cuisineName": "Turkish",
-          "exampleDishes": ["döner kebab", "baklava", "meze"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "japan",
-          "cuisineName": "Japanese",
-          "exampleDishes": ["sushi", "ramen", "gyoza"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "usa",
-          "cuisineName": "American",
-          "exampleDishes": ["burger", "fried chicken", "cheesecake"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "france",
-          "cuisineName": "French",
-          "exampleDishes": ["croissant", "boeuf bourguignon", "crème brûlée"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "greece",
-          "cuisineName": "Greek",
-          "exampleDishes": ["moussaka", "souvlaki", "spanakopita"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "lebanon",
-          "cuisineName": "Lebanese",
-          "exampleDishes": ["shawarma", "hummus", "mezze"],
-          "surprisePick": false
-        }
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta carbonara", "gelato"], "surprisePick": true },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum", "Peking duck", "spring rolls"], "surprisePick": false },
+        { "cuisineCountryId": "turkey", "cuisineName": "Turkish", "exampleDishes": ["döner kebab", "baklava", "meze"], "surprisePick": false },
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "gyoza"], "surprisePick": false },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "cheesecake"], "surprisePick": false },
+        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["croissant", "boeuf bourguignon", "crème brûlée"], "surprisePick": false },
+        { "cuisineCountryId": "greece", "cuisineName": "Greek", "exampleDishes": ["moussaka", "souvlaki", "spanakopita"], "surprisePick": false },
+        { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["shawarma", "hummus", "mezze"], "surprisePick": false }
       ]
     },
     "spain": {
       "name": "Spain",
       "code": "ES",
       "loves": [
-        {
-          "cuisineCountryId": "italy",
-          "cuisineName": "Italian",
-          "exampleDishes": ["pizza", "pasta", "tiramisu"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "morocco",
-          "cuisineName": "Moroccan",
-          "exampleDishes": ["couscous", "tajine", "bastilla"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "japan",
-          "cuisineName": "Japanese",
-          "exampleDishes": ["sushi", "ramen", "yakitori"],
-          "surprisePick": true
-        },
-        {
-          "cuisineCountryId": "mexico",
-          "cuisineName": "Mexican",
-          "exampleDishes": ["tacos", "guacamole", "enchiladas"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "china",
-          "cuisineName": "Chinese",
-          "exampleDishes": ["dim sum", "fried rice", "spring rolls"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "peru",
-          "cuisineName": "Peruvian",
-          "exampleDishes": ["ceviche", "lomo saltado", "causa"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "usa",
-          "cuisineName": "American",
-          "exampleDishes": ["burger", "BBQ", "fried chicken"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "lebanon",
-          "cuisineName": "Lebanese",
-          "exampleDishes": ["shawarma", "hummus", "falafel"],
-          "surprisePick": false
-        }
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "tiramisu"], "surprisePick": false },
+        { "cuisineCountryId": "morocco", "cuisineName": "Moroccan", "exampleDishes": ["couscous", "tajine", "bastilla"], "surprisePick": false },
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "yakitori"], "surprisePick": true },
+        { "cuisineCountryId": "mexico", "cuisineName": "Mexican", "exampleDishes": ["tacos", "guacamole", "enchiladas"], "surprisePick": false },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum", "fried rice", "spring rolls"], "surprisePick": false },
+        { "cuisineCountryId": "peru", "cuisineName": "Peruvian", "exampleDishes": ["ceviche", "lomo saltado", "causa"], "surprisePick": false },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "BBQ", "fried chicken"], "surprisePick": false },
+        { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["shawarma", "hummus", "falafel"], "surprisePick": false }
       ]
     },
     "sweden": {
       "name": "Sweden",
       "code": "SE",
       "loves": [
-        {
-          "cuisineCountryId": "italy",
-          "cuisineName": "Italian",
-          "exampleDishes": ["pizza", "pasta", "gelato"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "thailand",
-          "cuisineName": "Thai",
-          "exampleDishes": ["pad thai", "green curry", "tom yum"],
-          "surprisePick": true
-        },
-        {
-          "cuisineCountryId": "greece",
-          "cuisineName": "Greek",
-          "exampleDishes": ["souvlaki", "moussaka", "tzatziki"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "china",
-          "cuisineName": "Chinese",
-          "exampleDishes": ["dim sum", "Peking duck", "noodles"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "japan",
-          "cuisineName": "Japanese",
-          "exampleDishes": ["sushi", "ramen", "gyoza"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "usa",
-          "cuisineName": "American",
-          "exampleDishes": ["burger", "hot dog", "cheesecake"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "india",
-          "cuisineName": "Indian",
-          "exampleDishes": ["tikka masala", "biryani", "dosa"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "mexico",
-          "cuisineName": "Mexican",
-          "exampleDishes": ["tacos", "guacamole", "fajitas"],
-          "surprisePick": false
-        }
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "gelato"], "surprisePick": false },
+        { "cuisineCountryId": "thailand", "cuisineName": "Thai", "exampleDishes": ["pad thai", "green curry", "tom yum"], "surprisePick": true },
+        { "cuisineCountryId": "greece", "cuisineName": "Greek", "exampleDishes": ["souvlaki", "moussaka", "tzatziki"], "surprisePick": false },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum", "Peking duck", "noodles"], "surprisePick": false },
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "gyoza"], "surprisePick": false },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "hot dog", "cheesecake"], "surprisePick": false },
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["tikka masala", "biryani", "dosa"], "surprisePick": false },
+        { "cuisineCountryId": "mexico", "cuisineName": "Mexican", "exampleDishes": ["tacos", "guacamole", "fajitas"], "surprisePick": false }
       ]
     },
     "switzerland": {
       "name": "Switzerland",
       "code": "CH",
       "loves": [
-        {
-          "cuisineCountryId": "italy",
-          "cuisineName": "Italian",
-          "exampleDishes": ["pizza", "pasta", "risotto"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "france",
-          "cuisineName": "French",
-          "exampleDishes": ["boeuf bourguignon", "quiche lorraine", "soufflé"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "japan",
-          "cuisineName": "Japanese",
-          "exampleDishes": ["sushi", "ramen", "teppanyaki"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "thailand",
-          "cuisineName": "Thai",
-          "exampleDishes": ["pad thai", "green curry", "mango sticky rice"],
-          "surprisePick": true
-        },
-        {
-          "cuisineCountryId": "india",
-          "cuisineName": "Indian",
-          "exampleDishes": ["tikka masala", "biryani", "dhal"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "china",
-          "cuisineName": "Chinese",
-          "exampleDishes": ["dim sum", "Peking duck", "dumplings"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "lebanon",
-          "cuisineName": "Lebanese",
-          "exampleDishes": ["mezze", "shawarma", "baklava"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "usa",
-          "cuisineName": "American",
-          "exampleDishes": ["burger", "cheesecake", "BBQ"],
-          "surprisePick": false
-        }
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false },
+        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["boeuf bourguignon", "quiche lorraine", "soufflé"], "surprisePick": false },
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "teppanyaki"], "surprisePick": false },
+        { "cuisineCountryId": "thailand", "cuisineName": "Thai", "exampleDishes": ["pad thai", "green curry", "mango sticky rice"], "surprisePick": true },
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["tikka masala", "biryani", "dhal"], "surprisePick": false },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum", "Peking duck", "dumplings"], "surprisePick": false },
+        { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["mezze", "shawarma", "baklava"], "surprisePick": false },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "cheesecake", "BBQ"], "surprisePick": false }
       ]
     },
     "uk": {
       "name": "United Kingdom",
       "code": "GB",
       "loves": [
-        {
-          "cuisineCountryId": "china",
-          "cuisineName": "Chinese",
-          "exampleDishes": ["dim sum", "crispy aromatic duck", "char siu bao"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "italy",
-          "cuisineName": "Italian",
-          "exampleDishes": ["spaghetti bolognese", "pizza margherita", "panna cotta"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "india",
-          "cuisineName": "Indian",
-          "exampleDishes": ["chicken tikka masala", "biryani", "saag aloo"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "thailand",
-          "cuisineName": "Thai",
-          "exampleDishes": ["pad thai", "green curry", "larb"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "greece",
-          "cuisineName": "Greek",
-          "exampleDishes": ["moussaka", "souvlaki", "halloumi"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "france",
-          "cuisineName": "French",
-          "exampleDishes": ["boeuf bourguignon", "croque-monsieur", "crème brûlée"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "spain",
-          "cuisineName": "Spanish",
-          "exampleDishes": ["patatas bravas", "paella", "churros"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "bangladesh",
-          "cuisineName": "Bangladeshi",
-          "exampleDishes": ["chicken curry", "hilsa fish", "dal"],
-          "surprisePick": true
-        },
-        {
-          "cuisineCountryId": "japan",
-          "cuisineName": "Japanese",
-          "exampleDishes": ["sushi", "ramen", "katsu curry"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "mexico",
-          "cuisineName": "Mexican",
-          "exampleDishes": ["tacos", "guacamole", "enchiladas"],
-          "surprisePick": false
-        },
-        {
-          "cuisineCountryId": "poland",
-          "cuisineName": "Polish",
-          "exampleDishes": ["pierogi", "żurek", "kielbasa"],
-          "surprisePick": false
-        }
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum", "crispy aromatic duck", "char siu bao"], "surprisePick": false },
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["spaghetti bolognese", "pizza margherita", "panna cotta"], "surprisePick": false },
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["chicken tikka masala", "biryani", "saag aloo"], "surprisePick": false },
+        { "cuisineCountryId": "thailand", "cuisineName": "Thai", "exampleDishes": ["pad thai", "green curry", "larb"], "surprisePick": false },
+        { "cuisineCountryId": "greece", "cuisineName": "Greek", "exampleDishes": ["moussaka", "souvlaki", "halloumi"], "surprisePick": false },
+        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["boeuf bourguignon", "croque-monsieur", "crème brûlée"], "surprisePick": false },
+        { "cuisineCountryId": "spain", "cuisineName": "Spanish", "exampleDishes": ["patatas bravas", "paella", "churros"], "surprisePick": false },
+        { "cuisineCountryId": "bangladesh", "cuisineName": "Bangladeshi", "exampleDishes": ["chicken curry", "hilsa fish", "dal"], "surprisePick": true },
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "katsu curry"], "surprisePick": false },
+        { "cuisineCountryId": "mexico", "cuisineName": "Mexican", "exampleDishes": ["tacos", "guacamole", "enchiladas"], "surprisePick": false },
+        { "cuisineCountryId": "poland", "cuisineName": "Polish", "exampleDishes": ["pierogi", "żurek", "kielbasa"], "surprisePick": false }
+      ]
+    },
+    "russia": {
+      "name": "Russia",
+      "code": "RU",
+      "loves": [
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi rolls", "ramen", "unagi"], "surprisePick": true },
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum", "Peking duck", "hot pot"], "surprisePick": false },
+        { "cuisineCountryId": "georgia", "cuisineName": "Georgian", "exampleDishes": ["khachapuri", "khinkali", "badrijani"], "surprisePick": false },
+        { "cuisineCountryId": "uzbekistan", "cuisineName": "Uzbek", "exampleDishes": ["plov", "shashlik", "lagman"], "surprisePick": false },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "cheesecake"], "surprisePick": false },
+        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["crêpes", "boeuf bourguignon", "soufflé"], "surprisePick": false }
+      ]
+    },
+    "ukraine": {
+      "name": "Ukraine",
+      "code": "UA",
+      "loves": [
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "tiramisu"], "surprisePick": false },
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "gyoza"], "surprisePick": true },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum", "Peking duck", "spring rolls"], "surprisePick": false },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "BBQ"], "surprisePick": false },
+        { "cuisineCountryId": "georgia", "cuisineName": "Georgian", "exampleDishes": ["khachapuri", "khinkali", "lobiani"], "surprisePick": false },
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["curry", "biryani", "naan"], "surprisePick": false },
+        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["croissant", "crème brûlée", "soupe à l'oignon"], "surprisePick": false }
+      ]
+    },
+    "turkey": {
+      "name": "Turkey",
+      "code": "TR",
+      "loves": [
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false },
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "gyoza"], "surprisePick": true },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum", "Peking duck", "noodles"], "surprisePick": false },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "cheesecake"], "surprisePick": false },
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["curry", "biryani", "naan"], "surprisePick": false },
+        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["croissant", "boeuf bourguignon", "crème brûlée"], "surprisePick": false },
+        { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["mezze", "kibbeh", "tabbouleh"], "surprisePick": false }
+      ]
+    },
+    "usa": {
+      "name": "United States",
+      "code": "US",
+      "loves": [
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "spaghetti and meatballs", "tiramisu"], "surprisePick": false },
+        { "cuisineCountryId": "mexico", "cuisineName": "Mexican", "exampleDishes": ["tacos", "burritos", "guacamole"], "surprisePick": false },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["General Tso's chicken", "dim sum", "fried rice"], "surprisePick": false },
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "hibachi"], "surprisePick": false },
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["chicken tikka masala", "naan", "biryani"], "surprisePick": false },
+        { "cuisineCountryId": "thailand", "cuisineName": "Thai", "exampleDishes": ["pad thai", "green curry", "mango sticky rice"], "surprisePick": false },
+        { "cuisineCountryId": "ethiopia", "cuisineName": "Ethiopian", "exampleDishes": ["injera with doro wat", "kitfo", "tibs"], "surprisePick": true },
+        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["croissant", "crêpes", "steak au poivre"], "surprisePick": false }
+      ]
+    },
+    "canada": {
+      "name": "Canada",
+      "code": "CA",
+      "loves": [
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "gelato"], "surprisePick": false },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum", "Peking duck", "har gow"], "surprisePick": false },
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["tikka masala", "butter chicken", "biryani"], "surprisePick": false },
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "katsu curry"], "surprisePick": false },
+        { "cuisineCountryId": "thailand", "cuisineName": "Thai", "exampleDishes": ["pad thai", "green curry", "tom yum"], "surprisePick": false },
+        { "cuisineCountryId": "vietnam", "cuisineName": "Vietnamese", "exampleDishes": ["phở", "bánh mì", "bún bò"], "surprisePick": false },
+        { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["shawarma", "mezze", "fattoush"], "surprisePick": true },
+        { "cuisineCountryId": "mexico", "cuisineName": "Mexican", "exampleDishes": ["tacos", "burritos", "nachos"], "surprisePick": false }
+      ]
+    },
+    "brazil": {
+      "name": "Brazil",
+      "code": "BR",
+      "loves": [
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "yakissoba"], "surprisePick": true },
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "risotto", "pasta"], "surprisePick": false },
+        { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["esfiha", "kibbeh", "tabbouleh"], "surprisePick": false },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum", "Peking duck", "chow mein"], "surprisePick": false },
+        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["crêpes", "baguette", "soufflé"], "surprisePick": false },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "cheesecake"], "surprisePick": false },
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["curry", "biryani", "naan"], "surprisePick": false }
+      ]
+    },
+    "mexico": {
+      "name": "Mexico",
+      "code": "MX",
+      "loves": [
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "hot dog"], "surprisePick": false },
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "tiramisu"], "surprisePick": false },
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "tempura"], "surprisePick": false },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum", "fried rice", "chow mein"], "surprisePick": false },
+        { "cuisineCountryId": "spain", "cuisineName": "Spanish", "exampleDishes": ["paella", "tapas", "tortilla española"], "surprisePick": false },
+        { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["tacos árabes", "kibbeh", "hummus"], "surprisePick": true },
+        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["crêpes", "croissant", "pan dulce"], "surprisePick": false }
+      ]
+    },
+    "argentina": {
+      "name": "Argentina",
+      "code": "AR",
+      "loves": [
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "gnocchi del 29"], "surprisePick": false },
+        { "cuisineCountryId": "spain", "cuisineName": "Spanish", "exampleDishes": ["paella", "tapas", "jamón ibérico"], "surprisePick": false },
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "tempura"], "surprisePick": false },
+        { "cuisineCountryId": "peru", "cuisineName": "Peruvian", "exampleDishes": ["ceviche", "lomo saltado", "tiradito"], "surprisePick": true },
+        { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["hummus", "shawarma", "sfija"], "surprisePick": false },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum", "fried rice", "chow mein"], "surprisePick": false },
+        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["croissant", "boeuf bourguignon", "crème brûlée"], "surprisePick": false }
+      ]
+    },
+    "colombia": {
+      "name": "Colombia",
+      "code": "CO",
+      "loves": [
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "tiramisu"], "surprisePick": false },
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "gyoza"], "surprisePick": false },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum", "fried rice", "chow mein"], "surprisePick": false },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "BBQ"], "surprisePick": false },
+        { "cuisineCountryId": "mexico", "cuisineName": "Mexican", "exampleDishes": ["tacos", "guacamole", "enchiladas"], "surprisePick": false },
+        { "cuisineCountryId": "peru", "cuisineName": "Peruvian", "exampleDishes": ["ceviche", "tiradito", "causa"], "surprisePick": true },
+        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["crêpes", "croissant", "quiche"], "surprisePick": false }
+      ]
+    },
+    "peru": {
+      "name": "Peru",
+      "code": "PE",
+      "loves": [
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["tiradito", "Nikkei ceviche", "maki rolls"], "surprisePick": false },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["arroz chaufa", "lomo saltado", "wonton soup"], "surprisePick": false },
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false },
+        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["haute cuisine", "patisserie", "soufflé"], "surprisePick": true },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "BBQ"], "surprisePick": false },
+        { "cuisineCountryId": "mexico", "cuisineName": "Mexican", "exampleDishes": ["tacos", "guacamole", "enchiladas"], "surprisePick": false },
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["curry", "biryani", "naan"], "surprisePick": false }
+      ]
+    },
+    "chile": {
+      "name": "Chile",
+      "code": "CL",
+      "loves": [
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "gnocchi"], "surprisePick": false },
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "tempura"], "surprisePick": false },
+        { "cuisineCountryId": "peru", "cuisineName": "Peruvian", "exampleDishes": ["ceviche", "tiradito", "lomo saltado"], "surprisePick": true },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum", "fried rice", "chow mein"], "surprisePick": false },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "hot dog"], "surprisePick": false },
+        { "cuisineCountryId": "spain", "cuisineName": "Spanish", "exampleDishes": ["paella", "tapas", "chorizo"], "surprisePick": false },
+        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["crêpes", "croissant", "boeuf bourguignon"], "surprisePick": false }
+      ]
+    },
+    "japan": {
+      "name": "Japan",
+      "code": "JP",
+      "loves": [
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza napoletana", "pasta carbonara", "risotto"], "surprisePick": false },
+        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["patisserie", "boeuf bourguignon", "foie gras"], "surprisePick": false },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["gyoza", "mapo tofu", "Cantonese dim sum"], "surprisePick": false },
+        { "cuisineCountryId": "south-korea", "cuisineName": "Korean", "exampleDishes": ["Korean BBQ", "kimchi jjigae", "bibimbap"], "surprisePick": false },
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["kare raisu", "tandoori chicken", "naan"], "surprisePick": false },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "cheesecake"], "surprisePick": false },
+        { "cuisineCountryId": "thailand", "cuisineName": "Thai", "exampleDishes": ["pad thai", "green curry", "tom yum"], "surprisePick": true }
+      ]
+    },
+    "china": {
+      "name": "China",
+      "code": "CN",
+      "loves": [
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "wagyu"], "surprisePick": false },
+        { "cuisineCountryId": "south-korea", "cuisineName": "Korean", "exampleDishes": ["Korean BBQ", "tteokbokki", "fried chicken"], "surprisePick": false },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "cheesecake"], "surprisePick": false },
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false },
+        { "cuisineCountryId": "thailand", "cuisineName": "Thai", "exampleDishes": ["pad thai", "green curry", "tom yum"], "surprisePick": false },
+        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["patisserie", "foie gras", "boeuf bourguignon"], "surprisePick": true },
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["curry", "biryani", "naan"], "surprisePick": false }
+      ]
+    },
+    "india": {
+      "name": "India",
+      "code": "IN",
+      "loves": [
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["Manchurian chicken", "hakka noodles", "chilli paneer"], "surprisePick": false },
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "cheesecake"], "surprisePick": false },
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "tempura"], "surprisePick": false },
+        { "cuisineCountryId": "thailand", "cuisineName": "Thai", "exampleDishes": ["pad thai", "green curry", "tom yum"], "surprisePick": false },
+        { "cuisineCountryId": "mexico", "cuisineName": "Mexican", "exampleDishes": ["tacos", "nachos", "guacamole"], "surprisePick": false },
+        { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["hummus", "shawarma", "falafel"], "surprisePick": true }
+      ]
+    },
+    "south-korea": {
+      "name": "South Korea",
+      "code": "KR",
+      "loves": [
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["jajangmyeon", "jjamppong", "tangsuyuk"], "surprisePick": false },
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "katsu"], "surprisePick": false },
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "cheesecake"], "surprisePick": false },
+        { "cuisineCountryId": "thailand", "cuisineName": "Thai", "exampleDishes": ["pad thai", "green curry", "mango sticky rice"], "surprisePick": false },
+        { "cuisineCountryId": "vietnam", "cuisineName": "Vietnamese", "exampleDishes": ["phở", "bánh mì", "bún bò"], "surprisePick": true },
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["curry", "naan", "biryani"], "surprisePick": false }
+      ]
+    },
+    "thailand": {
+      "name": "Thailand",
+      "code": "TH",
+      "loves": [
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "gyoza"], "surprisePick": false },
+        { "cuisineCountryId": "south-korea", "cuisineName": "Korean", "exampleDishes": ["Korean BBQ", "fried chicken", "tteokbokki"], "surprisePick": false },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum", "Cantonese roast duck", "hot pot"], "surprisePick": false },
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["fried chicken", "burger", "cheesecake"], "surprisePick": false },
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["curry", "biryani", "roti"], "surprisePick": false },
+        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["patisserie", "crêpes", "croissant"], "surprisePick": true }
+      ]
+    },
+    "vietnam": {
+      "name": "Vietnam",
+      "code": "VN",
+      "loves": [
+        { "cuisineCountryId": "south-korea", "cuisineName": "Korean", "exampleDishes": ["Korean BBQ", "fried chicken", "tteokbokki"], "surprisePick": false },
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "tempura"], "surprisePick": false },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum", "hot pot", "Cantonese noodles"], "surprisePick": false },
+        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["baguette", "crêpes", "pâté"], "surprisePick": false },
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "BBQ"], "surprisePick": false },
+        { "cuisineCountryId": "thailand", "cuisineName": "Thai", "exampleDishes": ["pad thai", "green curry", "mango sticky rice"], "surprisePick": true }
+      ]
+    },
+    "indonesia": {
+      "name": "Indonesia",
+      "code": "ID",
+      "loves": [
+        { "cuisineCountryId": "south-korea", "cuisineName": "Korean", "exampleDishes": ["Korean BBQ", "fried chicken", "tteokbokki"], "surprisePick": false },
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "takoyaki"], "surprisePick": false },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum", "bakmi", "hot pot"], "surprisePick": false },
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["biryani", "curry", "roti"], "surprisePick": false },
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["fried chicken", "burger", "cheesecake"], "surprisePick": false },
+        { "cuisineCountryId": "turkey", "cuisineName": "Turkish", "exampleDishes": ["döner kebab", "baklava", "Turkish delight"], "surprisePick": true }
+      ]
+    },
+    "philippines": {
+      "name": "Philippines",
+      "code": "PH",
+      "loves": [
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "yakiniku"], "surprisePick": false },
+        { "cuisineCountryId": "south-korea", "cuisineName": "Korean", "exampleDishes": ["Korean BBQ", "fried chicken", "bibimbap"], "surprisePick": false },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dimsum", "pancit", "lauriat"], "surprisePick": false },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "steak"], "surprisePick": false },
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "lasagna"], "surprisePick": false },
+        { "cuisineCountryId": "spain", "cuisineName": "Spanish", "exampleDishes": ["paella", "tapas", "churros"], "surprisePick": true },
+        { "cuisineCountryId": "thailand", "cuisineName": "Thai", "exampleDishes": ["pad thai", "green curry", "mango sticky rice"], "surprisePick": false }
+      ]
+    },
+    "malaysia": {
+      "name": "Malaysia",
+      "code": "MY",
+      "loves": [
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "yakiniku"], "surprisePick": false },
+        { "cuisineCountryId": "south-korea", "cuisineName": "Korean", "exampleDishes": ["Korean BBQ", "fried chicken", "tteokbokki"], "surprisePick": false },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum", "Cantonese roast meats", "hot pot"], "surprisePick": false },
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["banana leaf rice", "biryani", "roti canai"], "surprisePick": false },
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "cheesecake"], "surprisePick": false },
+        { "cuisineCountryId": "turkey", "cuisineName": "Turkish", "exampleDishes": ["döner kebab", "baklava", "Turkish coffee"], "surprisePick": true }
+      ]
+    },
+    "pakistan": {
+      "name": "Pakistan",
+      "code": "PK",
+      "loves": [
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["chow mein", "fried rice", "dim sum"], "surprisePick": false },
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "lasagna"], "surprisePick": false },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "BBQ"], "surprisePick": false },
+        { "cuisineCountryId": "turkey", "cuisineName": "Turkish", "exampleDishes": ["döner kebab", "baklava", "köfte"], "surprisePick": false },
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "tempura"], "surprisePick": true },
+        { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["shawarma", "mezze", "hummus"], "surprisePick": false },
+        { "cuisineCountryId": "iran", "cuisineName": "Iranian", "exampleDishes": ["chelow kebab", "ghormeh sabzi", "tahdig"], "surprisePick": false }
+      ]
+    },
+    "bangladesh": {
+      "name": "Bangladesh",
+      "code": "BD",
+      "loves": [
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "chow mein", "dim sum"], "surprisePick": false },
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "BBQ"], "surprisePick": false },
+        { "cuisineCountryId": "turkey", "cuisineName": "Turkish", "exampleDishes": ["döner kebab", "baklava", "köfte"], "surprisePick": false },
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "tempura"], "surprisePick": true },
+        { "cuisineCountryId": "thailand", "cuisineName": "Thai", "exampleDishes": ["pad thai", "green curry", "tom yum"], "surprisePick": false },
+        { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["shawarma", "falafel", "mezze"], "surprisePick": false }
+      ]
+    },
+    "morocco": {
+      "name": "Morocco",
+      "code": "MA",
+      "loves": [
+        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["croissant", "baguette", "crème brûlée"], "surprisePick": false },
+        { "cuisineCountryId": "spain", "cuisineName": "Spanish", "exampleDishes": ["paella", "tapas", "churros"], "surprisePick": false },
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false },
+        { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["hummus", "tabbouleh", "fattoush"], "surprisePick": false },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum", "fried rice", "spring rolls"], "surprisePick": false },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "BBQ"], "surprisePick": false },
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "tempura"], "surprisePick": true }
+      ]
+    },
+    "egypt": {
+      "name": "Egypt",
+      "code": "EG",
+      "loves": [
+        { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["hummus", "shawarma", "tabbouleh"], "surprisePick": false },
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum", "fried rice", "noodles"], "surprisePick": false },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "cheesecake"], "surprisePick": false },
+        { "cuisineCountryId": "turkey", "cuisineName": "Turkish", "exampleDishes": ["döner kebab", "baklava", "köfte"], "surprisePick": false },
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["curry", "biryani", "naan"], "surprisePick": false },
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "tempura"], "surprisePick": true }
+      ]
+    },
+    "ethiopia": {
+      "name": "Ethiopia",
+      "code": "ET",
+      "loves": [
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pasta", "pizza", "tiramisu"], "surprisePick": false },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "dim sum", "noodles"], "surprisePick": false },
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["biryani", "curry", "naan"], "surprisePick": false },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "BBQ"], "surprisePick": false },
+        { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["shawarma", "hummus", "mezze"], "surprisePick": false },
+        { "cuisineCountryId": "turkey", "cuisineName": "Turkish", "exampleDishes": ["döner kebab", "baklava", "köfte"], "surprisePick": false },
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "tempura"], "surprisePick": true }
+      ]
+    },
+    "nigeria": {
+      "name": "Nigeria",
+      "code": "NG",
+      "loves": [
+        { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["shawarma", "hummus", "mezze"], "surprisePick": false },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "dim sum", "spring rolls"], "surprisePick": false },
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["biryani", "curry", "naan"], "surprisePick": false },
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "BBQ"], "surprisePick": false },
+        { "cuisineCountryId": "turkey", "cuisineName": "Turkish", "exampleDishes": ["döner kebab", "börek", "baklava"], "surprisePick": false },
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "gyoza"], "surprisePick": true }
+      ]
+    },
+    "south-africa": {
+      "name": "South Africa",
+      "code": "ZA",
+      "loves": [
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["bunny chow", "biryani", "curry"], "surprisePick": false },
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false },
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "tempura"], "surprisePick": false },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum", "Peking duck", "spring rolls"], "surprisePick": false },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "BBQ"], "surprisePick": false },
+        { "cuisineCountryId": "portugal", "cuisineName": "Portuguese", "exampleDishes": ["piri-piri chicken", "bacalhau", "pastéis de nata"], "surprisePick": true },
+        { "cuisineCountryId": "greece", "cuisineName": "Greek", "exampleDishes": ["souvlaki", "moussaka", "baklava"], "surprisePick": false }
+      ]
+    },
+    "kenya": {
+      "name": "Kenya",
+      "code": "KE",
+      "loves": [
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["biryani", "curry", "samosa"], "surprisePick": false },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "dim sum", "noodles"], "surprisePick": false },
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "BBQ"], "surprisePick": false },
+        { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["shawarma", "hummus", "falafel"], "surprisePick": false },
+        { "cuisineCountryId": "ethiopia", "cuisineName": "Ethiopian", "exampleDishes": ["injera", "tibs", "doro wat"], "surprisePick": true },
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "tempura"], "surprisePick": false }
+      ]
+    },
+    "ghana": {
+      "name": "Ghana",
+      "code": "GH",
+      "loves": [
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "chow mein", "dim sum"], "surprisePick": false },
+        { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["shawarma", "hummus", "mezze"], "surprisePick": false },
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "BBQ"], "surprisePick": false },
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["biryani", "curry", "naan"], "surprisePick": false },
+        { "cuisineCountryId": "turkey", "cuisineName": "Turkish", "exampleDishes": ["döner kebab", "baklava", "börek"], "surprisePick": false },
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "tempura"], "surprisePick": true }
+      ]
+    },
+    "lebanon": {
+      "name": "Lebanon",
+      "code": "LB",
+      "loves": [
+        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["croissant", "boeuf bourguignon", "crème brûlée"], "surprisePick": false },
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta carbonara", "tiramisu"], "surprisePick": false },
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "maki"], "surprisePick": true },
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["curry", "biryani", "naan"], "surprisePick": false },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum", "Peking duck", "fried rice"], "surprisePick": false },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "cheesecake"], "surprisePick": false },
+        { "cuisineCountryId": "turkey", "cuisineName": "Turkish", "exampleDishes": ["döner kebab", "baklava", "börek"], "surprisePick": false }
+      ]
+    },
+    "israel": {
+      "name": "Israel",
+      "code": "IL",
+      "loves": [
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false },
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "gyoza"], "surprisePick": false },
+        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["croissant", "crème brûlée", "steak frites"], "surprisePick": false },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "BBQ", "cheesecake"], "surprisePick": false },
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["curry", "biryani", "naan"], "surprisePick": false },
+        { "cuisineCountryId": "mexico", "cuisineName": "Mexican", "exampleDishes": ["tacos", "guacamole", "nachos"], "surprisePick": false },
+        { "cuisineCountryId": "georgia", "cuisineName": "Georgian", "exampleDishes": ["khachapuri", "khinkali", "churchkhela"], "surprisePick": true }
+      ]
+    },
+    "iran": {
+      "name": "Iran",
+      "code": "IR",
+      "loves": [
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "tiramisu"], "surprisePick": false },
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "tempura"], "surprisePick": false },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum", "fried rice", "noodles"], "surprisePick": false },
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["biryani", "curry", "naan"], "surprisePick": false },
+        { "cuisineCountryId": "turkey", "cuisineName": "Turkish", "exampleDishes": ["döner kebab", "baklava", "köfte"], "surprisePick": false },
+        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["patisserie", "croissant", "crème brûlée"], "surprisePick": true },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "BBQ"], "surprisePick": false }
+      ]
+    },
+    "saudi-arabia": {
+      "name": "Saudi Arabia",
+      "code": "SA",
+      "loves": [
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["biryani", "tikka masala", "naan"], "surprisePick": false },
+        { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["mezze", "shawarma", "kibbeh"], "surprisePick": false },
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "cheesecake"], "surprisePick": false },
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "teppanyaki"], "surprisePick": false },
+        { "cuisineCountryId": "turkey", "cuisineName": "Turkish", "exampleDishes": ["döner kebab", "köfte", "baklava"], "surprisePick": false },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum", "Peking duck", "fried rice"], "surprisePick": true }
+      ]
+    },
+    "uae": {
+      "name": "UAE",
+      "code": "AE",
+      "loves": [
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["biryani", "curry", "dosa"], "surprisePick": false },
+        { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["mezze", "shawarma", "kafta"], "surprisePick": false },
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "wagyu", "omakase"], "surprisePick": false },
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "truffle risotto"], "surprisePick": false },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "brunch", "cheesecake"], "surprisePick": false },
+        { "cuisineCountryId": "iran", "cuisineName": "Iranian", "exampleDishes": ["chelow kebab", "ghormeh sabzi", "tahdig"], "surprisePick": true },
+        { "cuisineCountryId": "pakistan", "cuisineName": "Pakistani", "exampleDishes": ["karahi", "nihari", "biryani"], "surprisePick": false }
+      ]
+    },
+    "australia": {
+      "name": "Australia",
+      "code": "AU",
+      "loves": [
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "gelato"], "surprisePick": false },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["yum cha", "Peking duck", "mapo tofu"], "surprisePick": false },
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "donburi"], "surprisePick": false },
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["butter chicken", "biryani", "dosa"], "surprisePick": false },
+        { "cuisineCountryId": "thailand", "cuisineName": "Thai", "exampleDishes": ["pad thai", "green curry", "som tam"], "surprisePick": false },
+        { "cuisineCountryId": "vietnam", "cuisineName": "Vietnamese", "exampleDishes": ["phở", "bánh mì", "bún bò Huế"], "surprisePick": false },
+        { "cuisineCountryId": "greece", "cuisineName": "Greek", "exampleDishes": ["souvlaki", "moussaka", "spanakopita"], "surprisePick": false },
+        { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["shawarma", "mezze", "man'oushe"], "surprisePick": true }
+      ]
+    },
+    "new-zealand": {
+      "name": "New Zealand",
+      "code": "NZ",
+      "loves": [
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["yum cha", "Peking duck", "fried rice"], "surprisePick": false },
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["butter chicken", "biryani", "naan"], "surprisePick": false },
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "gyoza"], "surprisePick": false },
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "tiramisu"], "surprisePick": false },
+        { "cuisineCountryId": "thailand", "cuisineName": "Thai", "exampleDishes": ["pad thai", "green curry", "larb"], "surprisePick": false },
+        { "cuisineCountryId": "south-korea", "cuisineName": "Korean", "exampleDishes": ["Korean BBQ", "bibimbap", "fried chicken"], "surprisePick": false },
+        { "cuisineCountryId": "mexico", "cuisineName": "Mexican", "exampleDishes": ["tacos", "burritos", "guacamole"], "surprisePick": false },
+        { "cuisineCountryId": "samoa", "cuisineName": "Samoan", "exampleDishes": ["palusami", "umu-baked taro", "chop suey"], "surprisePick": true }
       ]
     }
   }

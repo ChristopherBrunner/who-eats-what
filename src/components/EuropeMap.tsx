@@ -10,6 +10,7 @@ const GEO_URL = 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json'
 
 // ISO 3166-1 numeric → our country slug
 const NUMERIC_TO_ID: Record<string, string> = {
+  // Europe
   '40':  'austria',
   '56':  'belgium',
   '203': 'czechia',
@@ -30,6 +31,47 @@ const NUMERIC_TO_ID: Record<string, string> = {
   '752': 'sweden',
   '756': 'switzerland',
   '826': 'uk',
+  '643': 'russia',
+  '804': 'ukraine',
+  '792': 'turkey',
+  // Americas
+  '840': 'usa',
+  '124': 'canada',
+  '76':  'brazil',
+  '484': 'mexico',
+  '32':  'argentina',
+  '170': 'colombia',
+  '604': 'peru',
+  '152': 'chile',
+  // Asia
+  '392': 'japan',
+  '156': 'china',
+  '356': 'india',
+  '410': 'south-korea',
+  '764': 'thailand',
+  '704': 'vietnam',
+  '360': 'indonesia',
+  '608': 'philippines',
+  '458': 'malaysia',
+  '586': 'pakistan',
+  '50':  'bangladesh',
+  // Middle East
+  '422': 'lebanon',
+  '376': 'israel',
+  '364': 'iran',
+  '682': 'saudi-arabia',
+  '784': 'uae',
+  '818': 'egypt',
+  // Africa
+  '504': 'morocco',
+  '231': 'ethiopia',
+  '566': 'nigeria',
+  '710': 'south-africa',
+  '404': 'kenya',
+  '288': 'ghana',
+  // Oceania
+  '36':  'australia',
+  '554': 'new-zealand',
 }
 
 const MAP_COLORS = {
@@ -74,7 +116,7 @@ interface Props {
   onCountryClick: (countryId: string) => void
 }
 
-export function EuropeMap({ selectedCountry, homeCountry, mode, onCountryClick }: Props) {
+export function WorldMap({ selectedCountry, homeCountry, mode, onCountryClick }: Props) {
   const colorScheme = useColorScheme()
   const C = MAP_COLORS[colorScheme]
 
@@ -135,10 +177,10 @@ export function EuropeMap({ selectedCountry, homeCountry, mode, onCountryClick }
   }
 
   return (
-    <div className="w-full h-full">
+    <div className="w-full h-full" onClick={() => { if (selectedCountry) onCountryClick(selectedCountry) }}>
       <ComposableMap
-        projection="geoMercator"
-        projectionConfig={{ scale: 680, center: [13, 53] }}
+        projection="geoEqualEarth"
+        projectionConfig={{ scale: 160, center: [10, 10] }}
         style={{ width: '100%', height: '100%', background: 'transparent' }}
       >
         <Geographies geography={GEO_URL}>
@@ -181,7 +223,7 @@ export function EuropeMap({ selectedCountry, homeCountry, mode, onCountryClick }
                   onMouseMove={(e: React.MouseEvent) => {
                     if (isInteractive) setTooltipPos({ x: e.clientX, y: e.clientY })
                   }}
-                  onClick={() => isInteractive && onCountryClick(countryId)}
+                  onClick={(e: React.MouseEvent) => { e.stopPropagation(); if (isInteractive) onCountryClick(countryId) }}
                 />
               )
             })
