@@ -41,10 +41,10 @@ The **default view is "who loves this country's cuisine"** — NOT "what does th
 
 **Data schema:** `src/data/cuisines.json` — keyed by country slug. Each country has `name`, `code` (ISO alpha-2), and `loves` array. The "loved-by" view is derived at runtime by scanning all `loves` arrays — no redundant storage.
 
-**Map:** Mercator projection, `scale: 680, center: [13, 53]`, world-atlas TopoJSON. Countries matched via ISO 3166-1 numeric IDs in `NUMERIC_TO_ID` map. 16 European countries are interactive; all others render as non-interactive background.
+**Map:** `geoEqualEarth` projection, `scale: 160, center: [10, 10]`, world-atlas TopoJSON (110m). Countries matched via ISO 3166-1 numeric IDs in `NUMERIC_TO_ID` map. 83 countries are interactive across all continents.
 
-**Geolocation:** IP-based via `ipapi.co/json/` on app mount — no permission prompt. Silently fails if outside the 16 mapped countries. Pulses the home country on the map while idle.
+**Geolocation:** IP-based via `ipapi.co/json/` on app mount — no permission prompt. Silently fails if outside mapped countries. Pulses the home country on the map while idle.
 
 ## Scope
 
-MVP: 15–20 European countries, flat map, shareable URLs. Mobile is an afterthought — map interaction requires desktop hover/click patterns. The plan doc (`food-map-mvp-plan-v5.md`, gitignored) contains full decisions on data scoring methodology, roadmap, and brand voice.
+83 countries across all continents. Flat world map, shareable URLs. Mobile is an afterthought — map interaction requires desktop hover/click patterns. The plan doc (`food-map-mvp-plan-v5.md`, gitignored) contains full decisions on data scoring methodology, roadmap, and brand voice.
