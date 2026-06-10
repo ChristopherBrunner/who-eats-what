@@ -10,3 +10,15 @@
 .animate-copied {
   animation: copied-flash 1s ease-out forwards;
 }
+
+/* Side-panel counter settles with the completion ding */
+@keyframes count-settle {
+  0%   { transform: scale(1); }
+  30%  { transform: scale(1.25); color: #c4802e; }
+  100% { transform: scale(1); }
+}
+
+.animate-count-settle {
+  display: inline-block;
+  animation: count-settle 500ms ease-in-out;
+}

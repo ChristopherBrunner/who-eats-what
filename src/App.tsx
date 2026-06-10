@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Routes, Route, useParams, useNavigate } from 'react-router-dom'
 import { WorldMap } from './components/EuropeMap'
 import { SidePanel } from './components/SidePanel'
+import { useRevealSequence } from './hooks/useRevealSequence'
 import type { Country, ViewMode } from './types'
 import rawData from './data/cuisines.json'
 
@@ -19,6 +20,9 @@ function MapView({ homeCountry }: { homeCountry: string | null }) {
   const navigate = useNavigate()
 
   const mode: ViewMode = modeParam === 'loves' ? 'loves' : 'loved-by'
+
+  // Shared reveal sequence: map highlights, panel rows, and sounds all sync.
+  const { revealedSet, revealedCount, phase } = useRevealSequence(countryId ?? null, mode)
 
   const handleCountryClick = (id: string) => {
     if (id === countryId) {
@@ -39,6 +43,8 @@ function MapView({ homeCountry }: { homeCountry: string | null }) {
         selectedCountry={countryId ?? null}
         homeCountry={homeCountry}
         mode={mode}
+        revealedSet={revealedSet}
+        phase={phase}
         onCountryClick={handleCountryClick}
       />
 
@@ -52,6 +58,9 @@ function MapView({ homeCountry }: { homeCountry: string | null }) {
         <SidePanel
           countryId={countryId}
           mode={mode}
+          revealedSet={revealedSet}
+          revealedCount={revealedCount}
+          phase={phase}
           onModeChange={handleModeChange}
           onClose={() => navigate('/')}
         />

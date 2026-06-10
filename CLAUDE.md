@@ -9,10 +9,11 @@ Interactive map showing cross-country food preference relationships. Click a cou
 ## Commands
 
 ```bash
-npm run dev       # Start dev server (Vite HMR)
-npm run build     # TypeScript compile + Vite production build
-npm run lint      # ESLint
-npm run preview   # Preview production build locally
+npm run dev            # Start dev server (Vite HMR)
+npm run build          # TypeScript compile + Vite production build
+npm run lint           # ESLint
+npm run preview        # Preview production build locally
+npm run validate-data  # Check cuisines.json invariants + map alignment
 ```
 
 Always use `--legacy-peer-deps` when installing packages — react-simple-maps has an unresolved peer dep conflict with React 19.
@@ -39,12 +40,14 @@ The **default view is "who loves this country's cuisine"** — NOT "what does th
 - Components use Tailwind `dark:` variants (media-query based, no toggle)
 - EuropeMap SVG fills can't use CSS classes — uses `useColorScheme()` hook + `MAP_COLORS` object keyed by `'light' | 'dark'`
 
-**Data schema:** `src/data/cuisines.json` — keyed by country slug. Each country has `name`, `code` (ISO alpha-2), and `loves` array. The "loved-by" view is derived at runtime by scanning all `loves` arrays — no redundant storage.
+**Data schema:** `src/data/cuisines.json` — keyed by country slug. Each country has `name`, `code` (ISO alpha-2), and `loves` array. Each loves entry has `cuisineCountryId`, `cuisineName`, `exampleDishes`, `surprisePick` (exactly one per country), plus optional `strength` (0–100, % who like the cuisine from survey data) and `source` (citation). The "loved-by" view is derived at runtime by scanning all `loves` arrays — no redundant storage.
 
-**Map:** `geoEqualEarth` projection, `scale: 160, center: [10, 10]`, world-atlas TopoJSON (110m). Countries matched via ISO 3166-1 numeric IDs in `NUMERIC_TO_ID` map. 83 countries are interactive across all continents.
+**Data sourcing:** The 23 countries covered by the YouGov Global Cuisine Survey 2019 (24 markets × 34 cuisines) have survey-backed `loves` arrays with `strength`/`source` set. Other countries are plausibility-curated; entries with a `source` field are evidence-backed, entries without are not. Run `npm run validate-data` after any data change.
+
+**Map:** `geoEqualEarth` projection, `scale: 160, center: [10, 10]`, world-atlas TopoJSON (110m). Countries matched via ISO 3166-1 numeric IDs in `NUMERIC_TO_ID` map. 140 countries have data; Cape Verde and Samoa have no shape in the 110m TopoJSON, so they are reachable only via URL/panel links.
 
 **Geolocation:** IP-based via `ipapi.co/json/` on app mount — no permission prompt. Silently fails if outside mapped countries. Pulses the home country on the map while idle.
 
 ## Scope
 
-83 countries across all continents. Flat world map, shareable URLs. Mobile is an afterthought — map interaction requires desktop hover/click patterns. The plan doc (`food-map-mvp-plan-v5.md`, gitignored) contains full decisions on data scoring methodology, roadmap, and brand voice.
+140 countries across all continents. Flat world map, shareable URLs. Mobile is an afterthought — map interaction requires desktop hover/click patterns. The plan doc (`food-map-mvp-plan-v5.md`, gitignored) contains full decisions on data scoring methodology, roadmap, and brand voice.

@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch(domain:yougov.com)",
+      "WebFetch(domain:www.euronews.com)"
+    ]
+  }
+}

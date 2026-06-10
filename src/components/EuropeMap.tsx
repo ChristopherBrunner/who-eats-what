@@ -1,8 +1,9 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useMemo } from 'react'
 import { ComposableMap, Geographies, Geography } from 'react-simple-maps'
 import type { Country, ViewMode } from '../types'
 import { useColorScheme } from '../hooks/useColorScheme'
-import { scheduleRevealSounds, primeAudioContext } from '../sounds'
+import { REVEAL_INITIAL_MS, type RevealPhase } from '../hooks/useRevealSequence'
+import { ensureAudioReady } from '../sounds'
 import rawData from '../data/cuisines.json'
 
 const countriesData = rawData as { countries: Record<string, Country> }
@@ -173,6 +174,16 @@ const NUMERIC_TO_ID: Record<string, string> = {
   '178': 'congo-republic',
   '266': 'gabon',
   '232': 'eritrea',
+  // Note: Cape Verde and Samoa lack shapes in the 110m TopoJSON (see
+  // SHAPELESS_COUNTRIES); they stay reachable via URL and side-panel links.
+  '132': 'cape-verde',
+  '882': 'samoa',
+  '740': 'suriname',
+}
+
+// TopoJSON geometry IDs are zero-padded ('040'), NUMERIC_TO_ID keys are not.
+export function countryIdFromGeoId(geoId: unknown): string | undefined {
+  return NUMERIC_TO_ID[String(Number(geoId))]
 }
 
 const MAP_COLORS = {
@@ -185,6 +196,9 @@ const MAP_COLORS = {
     selected:          '#c4802e',
     highlighted:       '#653216',
     highlightedHover:  '#7a3b1c',
+    // strength gradient endpoints (survey-backed relationships)
+    strengthWeak:      '#42200d',
+    strengthStrong:    '#a85419',
     homePulseOn:       '#3d3828',
     homePulseOff:      '#1b1914',
     border:            '#201e18',
@@ -201,6 +215,9 @@ const MAP_COLORS = {
     selected:          '#c4802e',
     highlighted:       '#b86c3a',
     highlightedHover:  '#a85e2e',
+    // strength gradient endpoints (survey-backed relationships)
+    strengthWeak:      '#d4a87e',
+    strengthStrong:    '#963f12',
     homePulseOn:       '#b8a888',
     homePulseOff:      '#d0c8b8',
     border:            '#bab3a5',
@@ -210,75 +227,67 @@ const MAP_COLORS = {
   },
 }
 
+// Linear interpolation between two hex colors, t in [0, 1].
+function lerpColor(from: string, to: string, t: number): string {
+  const f = parseInt(from.slice(1), 16)
+  const g = parseInt(to.slice(1), 16)
+  const ch = (shift: number) => {
+    const a = (f >> shift) & 0xff
+    const b = (g >> shift) & 0xff
+    return Math.round(a + (b - a) * t)
+  }
+  return `#${((ch(16) << 16) | (ch(8) << 8) | ch(0)).toString(16).padStart(6, '0')}`
+}
+
+// Survey strengths worth showing span roughly 50–95%; map onto [0, 1].
+function strengthT(strength: number): number {
+  return Math.min(1, Math.max(0, (strength - 50) / 45))
+}
+
 interface Props {
   selectedCountry: string | null
   homeCountry: string | null
   mode: ViewMode
+  revealedSet: Set<string>
+  phase: RevealPhase
   onCountryClick: (countryId: string) => void
 }
 
-export function WorldMap({ selectedCountry, homeCountry, mode, onCountryClick }: Props) {
+export function WorldMap({ selectedCountry, homeCountry, mode, revealedSet, phase, onCountryClick }: Props) {
   const colorScheme = useColorScheme()
   const C = MAP_COLORS[colorScheme]
 
   const [hoveredCountry, setHoveredCountry] = useState<string | null>(null)
   const [tooltipPos, setTooltipPos] = useState({ x: 0, y: 0 })
-  const [revealedSet, setRevealedSet] = useState<Set<string>>(new Set())
 
-  // AudioContext lives in a ref so it persists across renders.
-  // Created lazily on first user click to satisfy browser autoplay policy.
-  const audioCtxRef = useRef<AudioContext | null>(null)
-  function ensureAudio() {
-    if (!audioCtxRef.current) {
-      audioCtxRef.current = new AudioContext()
-      primeAudioContext(audioCtxRef.current)
+  // Survey strength of each highlighted country's relationship to the
+  // selection, where known — drives the heat gradient.
+  const strengthById = useMemo(() => {
+    const m = new Map<string, number>()
+    if (!selectedCountry) return m
+    if (mode === 'loved-by') {
+      for (const [id, c] of Object.entries(countriesData.countries)) {
+        const rel = c.loves.find(l => l.cuisineCountryId === selectedCountry)
+        if (rel?.strength != null) m.set(id, rel.strength)
+      }
+    } else {
+      for (const rel of countriesData.countries[selectedCountry]?.loves ?? []) {
+        if (rel.strength != null) m.set(rel.cuisineCountryId, rel.strength)
+      }
     }
-    if (audioCtxRef.current.state === 'suspended') audioCtxRef.current.resume()
-    return audioCtxRef.current
-  }
-
-  // Timing constants — first reveal always fires at INITIAL_MS regardless of N.
-  // Remaining reveals accelerate via sqrt curve from INITIAL_MS → TOTAL_MS.
-  const INITIAL_MS = 700
-  const TOTAL_MS   = 3000
-
-  useEffect(() => {
-    setRevealedSet(new Set())
-    if (!selectedCountry) return
-
-    const ordered =
-      mode === 'loved-by'
-        ? Object.entries(countriesData.countries)
-            .filter(([id, c]) => id !== selectedCountry && c.loves.some(l => l.cuisineCountryId === selectedCountry))
-            .map(([id]) => id)
-        : (countriesData.countries[selectedCountry]?.loves ?? [])
-            .map(l => l.cuisineCountryId)
-            .filter(id => id in countriesData.countries && id !== selectedCountry)
-
-    // Always schedule sounds (build-up plays even for 0-fan countries).
-    const stopSounds = audioCtxRef.current
-      ? scheduleRevealSounds(audioCtxRef.current, ordered.length, INITIAL_MS, TOTAL_MS)
-      : () => {}
-
-    if (ordered.length === 0) return stopSounds
-
-    const span = TOTAL_MS - INITIAL_MS
-    const timeouts = ordered.map((id, i) => {
-      const frac  = ordered.length === 1 ? 0 : i / (ordered.length - 1)
-      const delay = INITIAL_MS + span * Math.sqrt(frac)
-      return setTimeout(() => setRevealedSet(prev => new Set([...prev, id])), delay)
-    })
-
-    return () => {
-      timeouts.forEach(clearTimeout)
-      stopSounds()
-    }
+    return m
   }, [selectedCountry, mode])
 
   const getFill = (countryId: string | undefined, isHovered: boolean): string => {
     if (!countryId) return C.nonDataset
     if (countryId === selectedCountry) return C.selected
-    if (revealedSet.has(countryId)) return isHovered ? C.highlightedHover : C.highlighted
+    if (revealedSet.has(countryId)) {
+      const strength = strengthById.get(countryId)
+      if (strength != null) {
+        return lerpColor(C.strengthWeak, C.strengthStrong, strengthT(strength))
+      }
+      return isHovered ? C.highlightedHover : C.highlighted
+    }
     if (!selectedCountry && countryId === homeCountry) return C.homePulseOff
     if (selectedCountry) return isHovered ? C.countryDimmedHover : C.countryDimmed
     return isHovered ? C.countryHover : C.countryDefault
@@ -303,6 +312,23 @@ export function WorldMap({ selectedCountry, homeCountry, mode, onCountryClick }:
           0%, 100% { fill: ${C.homePulseOff}; }
           50%       { fill: ${C.homePulseOn}; }
         }
+        /* Act 1: selection charges with the build-up sweep, peaking as it crests */
+        @keyframes selected-charge {
+          0%   { filter: brightness(0.7); }
+          85%  { filter: brightness(1.45); }
+          100% { filter: brightness(1); }
+        }
+        /* Act 2: each reveal flashes bright and settles to its final fill */
+        @keyframes reveal-pop {
+          0%   { filter: brightness(1.8); }
+          100% { filter: brightness(1); }
+        }
+        /* Act 3: unison settle across the constellation, with the ding */
+        @keyframes completion-pulse {
+          0%   { filter: brightness(1); }
+          35%  { filter: brightness(1.35); }
+          100% { filter: brightness(1); }
+        }
       `}</style>
       <ComposableMap
         projection="geoEqualEarth"
@@ -312,13 +338,33 @@ export function WorldMap({ selectedCountry, homeCountry, mode, onCountryClick }:
         <Geographies geography={GEO_URL}>
           {({ geographies }) =>
             geographies.map(geo => {
-              const countryId = NUMERIC_TO_ID[String(geo.id)]
+              const countryId = countryIdFromGeoId(geo.id)
               const isInteractive = Boolean(countryId)
               const isHovered = countryId === hoveredCountry
               const isPulsing = !selectedCountry && countryId === homeCountry
+              const isSelected = countryId != null && countryId === selectedCountry
+              const isRevealed = countryId != null && revealedSet.has(countryId)
               const fill = getFill(countryId, isHovered)
               const stroke = getStroke(countryId)
               const strokeWidth = getStrokeWidth(countryId)
+
+              // One-shot animations per sound act. Values stay constant for the
+              // element's lifetime in each state, so re-renders don't restart
+              // them; the reveal-pop → completion-pulse swap restarts on purpose.
+              let animation: string | undefined
+              if (isPulsing) animation = 'country-breath 3s ease-in-out infinite'
+              else if (isSelected) animation = `selected-charge ${REVEAL_INITIAL_MS}ms ease-out`
+              else if (isRevealed) {
+                animation = phase === 'done'
+                  ? 'completion-pulse 500ms ease-in-out'
+                  : 'reveal-pop 350ms ease-out'
+              }
+
+              // Uninvolved countries sink slowly into the dimmed state during
+              // the build-up; reveals keep snapping in fast.
+              const transition = selectedCountry && !isSelected && !isRevealed
+                ? 'fill 600ms ease'
+                : 'fill 160ms ease'
 
               return (
                 <Geography
@@ -331,10 +377,8 @@ export function WorldMap({ selectedCountry, homeCountry, mode, onCountryClick }:
                     default: {
                       outline: 'none',
                       cursor: isInteractive ? 'pointer' : 'default',
-                      ...(isPulsing
-                        ? { animation: 'country-breath 3s ease-in-out infinite' }
-                        : { transition: 'fill 160ms ease' }
-                      ),
+                      transition,
+                      ...(animation ? { animation } : {}),
                     },
                     hover: {
                       outline: 'none',
@@ -344,16 +388,16 @@ export function WorldMap({ selectedCountry, homeCountry, mode, onCountryClick }:
                     pressed: { outline: 'none' },
                   }}
                   onMouseEnter={(e: React.MouseEvent) => {
-                    if (isInteractive) {
+                    if (countryId) {
                       setHoveredCountry(countryId)
                       setTooltipPos({ x: e.clientX, y: e.clientY })
                     }
                   }}
                   onMouseLeave={() => setHoveredCountry(null)}
                   onMouseMove={(e: React.MouseEvent) => {
-                    if (isInteractive) setTooltipPos({ x: e.clientX, y: e.clientY })
+                    if (countryId) setTooltipPos({ x: e.clientX, y: e.clientY })
                   }}
-                  onClick={(e: React.MouseEvent) => { e.stopPropagation(); if (isInteractive) { ensureAudio(); onCountryClick(countryId) } }}
+                  onClick={(e: React.MouseEvent) => { e.stopPropagation(); if (countryId) { ensureAudioReady(); onCountryClick(countryId) } }}
                 />
               )
             })
@@ -371,6 +415,9 @@ export function WorldMap({ selectedCountry, homeCountry, mode, onCountryClick }:
             style={{ color: C.tooltip }}
           >
             {countriesData.countries[hoveredCountry]?.name}
+            {revealedSet.has(hoveredCountry) && strengthById.get(hoveredCountry) != null && (
+              <> · {strengthById.get(hoveredCountry)}%</>
+            )}
           </span>
         </div>
       )}

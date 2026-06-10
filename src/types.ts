@@ -3,6 +3,10 @@ export interface CuisineRelationship {
   cuisineName: string
   exampleDishes: string[]
   surprisePick: boolean
+  /** % of population who like this cuisine (0-100), where survey data exists */
+  strength?: number
+  /** Short citation for the evidence backing this entry */
+  source?: string
 }
 
 export interface Country {

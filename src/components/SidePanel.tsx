@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react'
+import type { RevealPhase } from '../hooks/useRevealSequence'
 import type { Country, CuisineRelationship, ViewMode } from '../types'
 import rawData from '../data/cuisines.json'
 
@@ -13,11 +14,46 @@ interface LovedByEntry {
 interface Props {
   countryId: string
   mode: ViewMode
+  revealedSet: Set<string>
+  revealedCount: number
+  phase: RevealPhase
   onModeChange: (mode: ViewMode) => void
   onClose: () => void
 }
 
-export function SidePanel({ countryId, mode, onModeChange, onClose }: Props) {
+function EntryRow({ title, relationship, revealed }: {
+  title: string
+  relationship: CuisineRelationship
+  revealed: boolean
+}) {
+  return (
+    <li className={`transition-all duration-500 ease-out ${revealed ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}`}>
+      <div className="flex items-baseline justify-between gap-3">
+        <span className="text-[#241e14] dark:text-[#d4c9b0] text-[13px] font-medium">{title}</span>
+        <span className="shrink-0 flex items-baseline gap-2">
+          {relationship.surprisePick && (
+            <span className="text-[10px] italic text-[#9b6928]/80 tracking-wide">
+              unexpected
+            </span>
+          )}
+          {relationship.strength != null && (
+            <span
+              className="text-[11px] tabular-nums text-[#8b6830] dark:text-[#b8a882]"
+              title={relationship.source}
+            >
+              {relationship.strength}%
+            </span>
+          )}
+        </span>
+      </div>
+      <p className="mt-1 text-[11px] tracking-wider text-[#8a7e6e] dark:text-[#4a4840] uppercase">
+        {relationship.exampleDishes.join('  ·  ')}
+      </p>
+    </li>
+  )
+}
+
+export function SidePanel({ countryId, mode, revealedSet, revealedCount, phase, onModeChange, onClose }: Props) {
   const country = countriesData.countries[countryId]
 
   const lovedBy: LovedByEntry[] = useMemo(() => {
@@ -70,19 +106,23 @@ export function SidePanel({ countryId, mode, onModeChange, onClose }: Props) {
           {country.name}
         </h2>
 
-        {/* Sub-headline */}
+        {/* Sub-headline — counter climbs with the reveal cascade, settles on the ding */}
         <p className="mt-3 text-[13px] leading-relaxed text-[#7a6e5c] dark:text-[#5a5448]">
           {mode === 'loved-by' ? (
             lovedBy.length === 0
               ? 'No mapped countries love this cuisine yet.'
               : <>
-                  <span className="text-[#8b6830] dark:text-[#b8a882]">{lovedBy.length}</span>
+                  <span className={`text-[#8b6830] dark:text-[#b8a882] tabular-nums ${phase === 'done' ? 'animate-count-settle' : ''}`}>
+                    {Math.min(revealedCount, lovedBy.length)}
+                  </span>
                   {' '}{lovedBy.length === 1 ? 'country loves' : 'countries love'}{' '}
                   {shortName}'s cuisine
                 </>
           ) : (
             <>
-              <span className="text-[#8b6830] dark:text-[#b8a882]">{country.loves.length}</span>
+              <span className={`text-[#8b6830] dark:text-[#b8a882] tabular-nums ${phase === 'done' ? 'animate-count-settle' : ''}`}>
+                {Math.min(revealedCount, country.loves.length)}
+              </span>
               {' '}foreign cuisines on {shortName}'s table
             </>
           )}
@@ -95,34 +135,15 @@ export function SidePanel({ countryId, mode, onModeChange, onClose }: Props) {
         <ul className="mt-6 space-y-6">
           {mode === 'loved-by'
             ? lovedBy.map(({ id, name, relationship }) => (
-                <li key={id}>
-                  <div className="flex items-baseline justify-between gap-3">
-                    <span className="text-[#241e14] dark:text-[#d4c9b0] text-[13px] font-medium">{name}</span>
-                    {relationship.surprisePick && (
-                      <span className="shrink-0 text-[10px] italic text-[#9b6928]/80 tracking-wide">
-                        unexpected
-                      </span>
-                    )}
-                  </div>
-                  <p className="mt-1 text-[11px] tracking-wider text-[#8a7e6e] dark:text-[#4a4840] uppercase">
-                    {relationship.exampleDishes.join('  ·  ')}
-                  </p>
-                </li>
+                <EntryRow key={id} title={name} relationship={relationship} revealed={revealedSet.has(id)} />
               ))
             : country.loves.map(rel => (
-                <li key={rel.cuisineCountryId}>
-                  <div className="flex items-baseline justify-between gap-3">
-                    <span className="text-[#241e14] dark:text-[#d4c9b0] text-[13px] font-medium">{rel.cuisineName}</span>
-                    {rel.surprisePick && (
-                      <span className="shrink-0 text-[10px] italic text-[#9b6928]/80 tracking-wide">
-                        unexpected
-                      </span>
-                    )}
-                  </div>
-                  <p className="mt-1 text-[11px] tracking-wider text-[#8a7e6e] dark:text-[#4a4840] uppercase">
-                    {rel.exampleDishes.join('  ·  ')}
-                  </p>
-                </li>
+                <EntryRow
+                  key={rel.cuisineCountryId}
+                  title={rel.cuisineName}
+                  relationship={rel}
+                  revealed={revealedSet.has(rel.cuisineCountryId)}
+                />
               ))
           }
         </ul>

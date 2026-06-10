@@ -72,16 +72,27 @@ function completionDing(ctx: AudioContext, when: number): OscillatorNode[] {
 
 // ─── Public API ──────────────────────────────────────────────────────────────
 
+// Single shared AudioContext for the app. Created lazily inside a user
+// gesture (click) to satisfy browser autoplay policy; null until then,
+// which keeps direct URL loads silent (the browser would block them anyway).
+let sharedCtx: AudioContext | null = null
+
 /**
- * Prime an AudioContext on first use to prevent the browser's
- * initial click/pop artifact on the first real sound.
+ * Create (on first call) and resume the shared AudioContext.
+ * Must be called from a user-gesture handler.
  */
-export function primeAudioContext(ctx: AudioContext) {
-  const buf = ctx.createBuffer(1, 1, ctx.sampleRate)
-  const src = ctx.createBufferSource()
-  src.buffer = buf
-  src.connect(ctx.destination)
-  src.start()
+export function ensureAudioReady(): AudioContext {
+  if (!sharedCtx) {
+    sharedCtx = new AudioContext()
+    // Prime with a silent buffer to avoid the browser's initial click/pop.
+    const buf = sharedCtx.createBuffer(1, 1, sharedCtx.sampleRate)
+    const src = sharedCtx.createBufferSource()
+    src.buffer = buf
+    src.connect(sharedCtx.destination)
+    src.start()
+  }
+  if (sharedCtx.state === 'suspended') void sharedCtx.resume()
+  return sharedCtx
 }
 
 /**
@@ -92,31 +103,36 @@ export function primeAudioContext(ctx: AudioContext) {
  *   - First tick fires at exactly initialMs — same for ALL countries.
  *   - Remaining ticks accelerate via a sqrt curve from initialMs → totalMs.
  *   - Completion ding fires just after the last tick.
- *   - If count === 0, only the build-up plays.
+ *   - If count === 0, nothing plays (no audio without a visual counterpart).
+ *
+ * Tolerates a still-suspended context (the first click): scheduling is
+ * deferred until resume() settles, and cancelled if cleanup ran meanwhile.
  *
  * Returns a cleanup fn that stops and disconnects all scheduled nodes,
  * safe to call even if nodes have already finished naturally.
  */
 export function scheduleRevealSounds(
-  ctx: AudioContext,
   count: number,
   initialMs: number,
   totalMs: number,
 ): () => void {
-  if (ctx.state !== 'running') return () => {}
+  const ctx = sharedCtx
+  if (!ctx || count === 0) return () => {}
 
-  const now      = ctx.currentTime
-  const initSec  = initialMs / 1000
-  const totalSec = totalMs   / 1000
-  const span     = totalSec - initSec
-
+  let cancelled = false
   const nodes: OscillatorNode[] = []
 
-  // 1. Build-up — always plays, fills the anticipation window
-  nodes.push(buildUp(ctx, now, initSec - 0.05))
+  const schedule = () => {
+    if (cancelled) return
+    const now      = ctx.currentTime
+    const initSec  = initialMs / 1000
+    const totalSec = totalMs   / 1000
+    const span     = totalSec - initSec
 
-  // 2. Ticks + completion — only when there are countries to reveal
-  if (count > 0) {
+    // 1. Build-up — fills the anticipation window
+    nodes.push(buildUp(ctx, now, initSec - 0.05))
+
+    // 2. Ticks, one per revealed country
     for (let i = 0; i < count; i++) {
       // Anchored sqrt curve: i=0 → frac=0 → t=initSec,  i=N-1 → frac=1 → t=totalSec
       const frac  = count === 1 ? 0 : i / (count - 1)
@@ -128,7 +144,15 @@ export function scheduleRevealSounds(
     nodes.push(...completionDing(ctx, now + totalSec + 0.04))
   }
 
+  if (ctx.state === 'running') {
+    schedule()
+  } else {
+    // First click: resume() from the gesture handler hasn't settled yet.
+    void ctx.resume().then(schedule).catch(() => {})
+  }
+
   return () => {
+    cancelled = true
     nodes.forEach(n => {
       try { n.stop(); n.disconnect() } catch { /* already finished */ }
     })
