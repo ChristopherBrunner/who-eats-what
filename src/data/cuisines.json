@@ -127,7 +127,7 @@
       "name": "Ireland",
       "code": "IE",
       "loves": [
-        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["chicken tikka masala", "biryani", "dhal"], "surprisePick": true },
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["chicken tikka masala", "biryani", "dhal"], "surprisePick": true, "source": "Dublin’s first Indian restaurant opened in 1908 — before London; curry sauce on chips is chipper canon" },
         { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "tiramisu"], "surprisePick": false },
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum", "crispy duck", "fried rice"], "surprisePick": false, "source": "Irish online food-ordering survey (Chinese 11% of orders, top non-native with Thai)" },
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "wings", "pancakes"], "surprisePick": false },
@@ -683,7 +683,7 @@
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "BBQ", "cheesecake"], "surprisePick": false, "source": "OpenStreetMap 2026 (387 american-tagged restaurants in Israel)" },
         { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["curry", "biryani", "naan"], "surprisePick": false },
         { "cuisineCountryId": "mexico", "cuisineName": "Mexican", "exampleDishes": ["tacos", "guacamole", "nachos"], "surprisePick": false },
-        { "cuisineCountryId": "georgia", "cuisineName": "Georgian", "exampleDishes": ["khachapuri", "khinkali", "churchkhela"], "surprisePick": true }
+        { "cuisineCountryId": "georgia", "cuisineName": "Georgian", "exampleDishes": ["khachapuri", "khinkali", "churchkhela"], "surprisePick": true, "source": "~140,000 Georgian Jews since the 1970s: khachapuri is a \"national love affair\" (RFE/RL), flagship spots on Rothschild Blvd" }
       ]
     },
     "iran": {
@@ -1661,7 +1661,7 @@
       "code": "AO",
       "loves": [
         { "cuisineCountryId": "portugal", "cuisineName": "Portuguese", "exampleDishes": ["bacalhau", "pastéis de nata", "caldo verde"], "surprisePick": false, "source": "Colonial legacy: the prego sandwich was popularized in 1960s Angola before travelling back to Lisbon" },
-        { "cuisineCountryId": "brazil", "cuisineName": "Brazilian", "exampleDishes": ["churrasco", "feijoada", "brigadeiro"], "surprisePick": true },
+        { "cuisineCountryId": "brazil", "cuisineName": "Brazilian", "exampleDishes": ["churrasco", "feijoada", "brigadeiro"], "surprisePick": true, "source": "Brazilian ties run deep: churrasco is served in restaurants, street stalls and festivals nationwide" },
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "chow mein", "dim sum"], "surprisePick": false },
         { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["baguette", "crème brûlée", "steak frites"], "surprisePick": false },
         { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false, "source": "OpenStreetMap 2026 (54 italian-tagged restaurants in Angola)" },
