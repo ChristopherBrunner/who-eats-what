@@ -1262,7 +1262,7 @@
         { "cuisineCountryId": "south-africa", "cuisineName": "South African", "exampleDishes": ["braai", "biltong", "boerewors"], "surprisePick": false },
         { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["curry", "biryani", "samosa"], "surprisePick": false },
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "dim sum", "spring rolls"], "surprisePick": false },
-        { "cuisineCountryId": "uk", "cuisineName": "British", "exampleDishes": ["fish and chips", "sausage rolls", "baked beans on toast"], "surprisePick": true },
+        { "cuisineCountryId": "uk", "cuisineName": "British", "exampleDishes": ["fish and chips", "sausage rolls", "baked beans on toast"], "surprisePick": true, "source": "Colonial tea culture endures: 4pm milky tea with Marie biscuits, and British scones claimed as Zimbabwe’s own" },
         { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false, "source": "OpenStreetMap 2026 (25 italian-tagged restaurants in Zimbabwe)" },
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "BBQ"], "surprisePick": false, "source": "OpenStreetMap 2026 (20 american-tagged restaurants in Zimbabwe)" },
         { "cuisineCountryId": "portugal", "cuisineName": "Portuguese", "exampleDishes": ["piri-piri chicken", "bacalhau", "pastéis de nata"], "surprisePick": false }
@@ -1311,7 +1311,7 @@
       "name": "Sudan",
       "code": "SD",
       "loves": [
-        { "cuisineCountryId": "egypt", "cuisineName": "Egyptian", "exampleDishes": ["ful medames", "koshari", "molokhia"], "surprisePick": true },
+        { "cuisineCountryId": "egypt", "cuisineName": "Egyptian", "exampleDishes": ["ful medames", "koshari", "molokhia"], "surprisePick": true, "source": "Shared Nile Valley palate: ful medames is the national dish of both; tamiya and molokhia cross the border freely" },
         { "cuisineCountryId": "saudi-arabia", "cuisineName": "Saudi", "exampleDishes": ["kabsa", "mandi", "harees"], "surprisePick": false },
         { "cuisineCountryId": "turkey", "cuisineName": "Turkish", "exampleDishes": ["döner kebab", "baklava", "köfte"], "surprisePick": false },
         { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["biryani", "curry", "naan"], "surprisePick": false },
@@ -1376,7 +1376,7 @@
       "name": "Yemen",
       "code": "YE",
       "loves": [
-        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["biryani", "curry", "samosa"], "surprisePick": true },
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["biryani", "curry", "samosa"], "surprisePick": true, "source": "Zurbian — Aden’s signature rice dish — descends from Hyderabadi biryani via centuries of Indian Ocean trade" },
         { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["hummus", "mezze", "shawarma"], "surprisePick": false },
         { "cuisineCountryId": "saudi-arabia", "cuisineName": "Saudi", "exampleDishes": ["kabsa", "mandi", "harees"], "surprisePick": false },
         { "cuisineCountryId": "turkey", "cuisineName": "Turkish", "exampleDishes": ["döner kebab", "baklava", "köfte"], "surprisePick": false },
