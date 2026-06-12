@@ -32,7 +32,7 @@
       "code": "CZ",
       "loves": [
         { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "gelato"], "surprisePick": false },
-        { "cuisineCountryId": "vietnam", "cuisineName": "Vietnamese", "exampleDishes": ["phở", "bánh mì", "bún bò"], "surprisePick": true },
+        { "cuisineCountryId": "vietnam", "cuisineName": "Vietnamese", "exampleDishes": ["phở", "bánh mì", "bún bò"], "surprisePick": true, "source": "Vietnamese are Czechia’s 3rd-largest minority (38k+, 2021 census); Prague’s Sapa market is \"Little Hanoi\"" },
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum", "fried rice", "sweet & sour pork"], "surprisePick": false },
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "BBQ ribs", "fried chicken"], "surprisePick": false, "source": "Wolt Czechia awards 2024 (smashburgers among favourite delivery meals)" },
         { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "gyoza"], "surprisePick": false },
@@ -183,7 +183,7 @@
       "code": "PL",
       "loves": [
         { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "tiramisu"], "surprisePick": false, "source": "Statista Consumer Insights 2023 (top foreign cuisine, ~33% favourite)" },
-        { "cuisineCountryId": "vietnam", "cuisineName": "Vietnamese", "exampleDishes": ["phở", "bánh mì", "bún bò"], "surprisePick": true },
+        { "cuisineCountryId": "vietnam", "cuisineName": "Vietnamese", "exampleDishes": ["phở", "bánh mì", "bún bò"], "surprisePick": true, "source": "Vietnamese are Poland’s largest Asian community (~50-80k); phở bars are a Warsaw fixture" },
         { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "gyoza"], "surprisePick": false },
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "BBQ"], "surprisePick": false },
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum", "Peking duck", "spring rolls"], "surprisePick": false },
@@ -282,7 +282,7 @@
       "code": "RU",
       "loves": [
         { "cuisineCountryId": "georgia", "cuisineName": "Georgian", "exampleDishes": ["khachapuri", "khinkali", "badrijani"], "surprisePick": false, "source": "Russian restaurant market reports 2024 (Georgian chains +32%, overtook Italian in Moscow)" },
-        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi rolls", "ramen", "unagi"], "surprisePick": true },
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi rolls", "ramen", "unagi"], "surprisePick": true, "source": "The 2000s \"sushi years\": Moscow counts 949 Japanese restaurants — more than double New York (Bloomberg)" },
         { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false },
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum", "Peking duck", "hot pot"], "surprisePick": false },
         { "cuisineCountryId": "uzbekistan", "cuisineName": "Uzbek", "exampleDishes": ["plov", "shashlik", "lagman"], "surprisePick": false },
@@ -2604,6 +2604,19 @@
         { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "tempura"], "surprisePick": false },
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burgers", "fried chicken", "fries"], "surprisePick": false },
         { "cuisineCountryId": "samoa", "cuisineName": "Samoan", "exampleDishes": ["sapasui", "oka", "palusami"], "surprisePick": false }
+      ]
+    },
+    "kosovo": {
+      "name": "Kosovo",
+      "code": "XK",
+      "loves": [
+        { "cuisineCountryId": "turkey", "cuisineName": "Turkish", "exampleDishes": ["döner kebab", "baklava", "börek"], "surprisePick": false, "source": "Ottoman heritage: Turkish food culture is woven into everyday Kosovar cuisine" },
+        { "cuisineCountryId": "albania", "cuisineName": "Albanian", "exampleDishes": ["flija", "tavë kosi", "byrek"], "surprisePick": false },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burgers", "fried chicken", "fries"], "surprisePick": true, "source": "Post-1999 Americophilia (Pristina has a Bill Clinton Boulevard): American fast food thrives" },
+        { "cuisineCountryId": "germany", "cuisineName": "German", "exampleDishes": ["schnitzel", "bratwurst", "pretzels"], "surprisePick": false },
+        { "cuisineCountryId": "switzerland", "cuisineName": "Swiss", "exampleDishes": ["fondue", "rösti", "raclette"], "surprisePick": false },
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "lasagna"], "surprisePick": false },
+        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["baguette", "croissants", "crêpes"], "surprisePick": false }
       ]
     }
   }

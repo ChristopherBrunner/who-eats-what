@@ -32,6 +32,7 @@ if (!mapBlock) {
 for (const [slug, c] of Object.entries(countries)) {
   if (!c.name) errors.push(`${slug}: missing name`)
   if (!/^[A-Z]{2}$/.test(c.code ?? '')) errors.push(`${slug}: bad ISO code "${c.code}"`)
+  // (XK for Kosovo is a user-assigned code, allowed by the regex above)
   if (!Array.isArray(c.loves) || c.loves.length < 7) {
     errors.push(`${slug}: has ${c.loves?.length ?? 0} loves (minimum 7)`)
   }
