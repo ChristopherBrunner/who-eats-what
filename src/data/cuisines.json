@@ -2306,6 +2306,305 @@
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "chow mein", "dumplings"], "surprisePick": false },
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burgers", "fried chicken", "fries"], "surprisePick": false }
       ]
+    },
+    "andorra": {
+      "name": "Andorra",
+      "code": "AD",
+      "loves": [
+        { "cuisineCountryId": "spain", "cuisineName": "Spanish", "exampleDishes": ["paella", "tapas", "tortilla"], "surprisePick": false },
+        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["baguette", "croissants", "steak frites"], "surprisePick": false },
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "lasagna"], "surprisePick": false },
+        { "cuisineCountryId": "portugal", "cuisineName": "Portuguese", "exampleDishes": ["bacalhau", "pastéis de nata", "caldo verde"], "surprisePick": true, "source": "Portuguese residents are ~11% of Andorra’s population" },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burgers", "fried chicken", "fries"], "surprisePick": false },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "chow mein", "dumplings"], "surprisePick": false },
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "tempura"], "surprisePick": false }
+      ]
+    },
+    "monaco": {
+      "name": "Monaco",
+      "code": "MC",
+      "loves": [
+        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["baguette", "croissants", "steak frites"], "surprisePick": false },
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "lasagna"], "surprisePick": false, "source": "Monégasque cuisine (barbagiuan, socca) is deeply Ligurian-Italian" },
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "tempura"], "surprisePick": true },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burgers", "fried chicken", "fries"], "surprisePick": false },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "chow mein", "dumplings"], "surprisePick": false },
+        { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["shawarma", "hummus", "tabbouleh"], "surprisePick": false },
+        { "cuisineCountryId": "spain", "cuisineName": "Spanish", "exampleDishes": ["paella", "tapas", "tortilla"], "surprisePick": false }
+      ]
+    },
+    "liechtenstein": {
+      "name": "Liechtenstein",
+      "code": "LI",
+      "loves": [
+        { "cuisineCountryId": "switzerland", "cuisineName": "Swiss", "exampleDishes": ["fondue", "rösti", "raclette"], "surprisePick": false },
+        { "cuisineCountryId": "austria", "cuisineName": "Austrian", "exampleDishes": ["wiener schnitzel", "apfelstrudel", "tafelspitz"], "surprisePick": false },
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "lasagna"], "surprisePick": false },
+        { "cuisineCountryId": "germany", "cuisineName": "German", "exampleDishes": ["schnitzel", "bratwurst", "pretzels"], "surprisePick": false },
+        { "cuisineCountryId": "thailand", "cuisineName": "Thai", "exampleDishes": ["pad thai", "green curry", "som tam"], "surprisePick": true },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "chow mein", "dumplings"], "surprisePick": false },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burgers", "fried chicken", "fries"], "surprisePick": false }
+      ]
+    },
+    "san-marino": {
+      "name": "San Marino",
+      "code": "SM",
+      "loves": [
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "lasagna"], "surprisePick": false, "source": "Entirely surrounded by Italy; Sammarinese food is Romagnol-Italian" },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burgers", "fried chicken", "fries"], "surprisePick": false },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "chow mein", "dumplings"], "surprisePick": false },
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "tempura"], "surprisePick": true },
+        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["baguette", "croissants", "steak frites"], "surprisePick": false },
+        { "cuisineCountryId": "spain", "cuisineName": "Spanish", "exampleDishes": ["paella", "tapas", "tortilla"], "surprisePick": false },
+        { "cuisineCountryId": "germany", "cuisineName": "German", "exampleDishes": ["schnitzel", "bratwurst", "pretzels"], "surprisePick": false }
+      ]
+    },
+    "bahrain": {
+      "name": "Bahrain",
+      "code": "BH",
+      "loves": [
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["curry", "biryani", "roti"], "surprisePick": false, "source": "Indians are Bahrain’s largest expatriate community; biryani everyday food" },
+        { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["shawarma", "hummus", "tabbouleh"], "surprisePick": false },
+        { "cuisineCountryId": "iran", "cuisineName": "Persian", "exampleDishes": ["kebab koobideh", "ghormeh sabzi", "tahdig"], "surprisePick": false },
+        { "cuisineCountryId": "saudi-arabia", "cuisineName": "Saudi", "exampleDishes": ["kabsa", "mandi", "mutabbaq"], "surprisePick": false },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burgers", "fried chicken", "fries"], "surprisePick": false },
+        { "cuisineCountryId": "philippines", "cuisineName": "Filipino", "exampleDishes": ["adobo", "lumpia", "pancit"], "surprisePick": true },
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "tempura"], "surprisePick": false }
+      ]
+    },
+    "maldives": {
+      "name": "Maldives",
+      "code": "MV",
+      "loves": [
+        { "cuisineCountryId": "sri-lanka", "cuisineName": "Sri Lankan", "exampleDishes": ["rice and curry", "kottu", "hoppers"], "surprisePick": false, "source": "Shared Indian Ocean food culture: rice-and-curry and mas dishes" },
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["curry", "biryani", "roti"], "surprisePick": false },
+        { "cuisineCountryId": "thailand", "cuisineName": "Thai", "exampleDishes": ["pad thai", "green curry", "som tam"], "surprisePick": false },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "chow mein", "dumplings"], "surprisePick": false },
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "lasagna"], "surprisePick": false },
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "tempura"], "surprisePick": false },
+        { "cuisineCountryId": "turkey", "cuisineName": "Turkish", "exampleDishes": ["döner kebab", "köfte", "baklava"], "surprisePick": true }
+      ]
+    },
+    "comoros": {
+      "name": "Comoros",
+      "code": "KM",
+      "loves": [
+        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["baguette", "croissants", "steak frites"], "surprisePick": false },
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["curry", "biryani", "roti"], "surprisePick": false },
+        { "cuisineCountryId": "madagascar", "cuisineName": "Malagasy", "exampleDishes": ["romazava", "ravitoto", "mofo gasy"], "surprisePick": true },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "chow mein", "dumplings"], "surprisePick": false },
+        { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["shawarma", "hummus", "tabbouleh"], "surprisePick": false },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burgers", "fried chicken", "fries"], "surprisePick": false },
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "lasagna"], "surprisePick": false }
+      ]
+    },
+    "seychelles": {
+      "name": "Seychelles",
+      "code": "SC",
+      "loves": [
+        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["baguette", "croissants", "steak frites"], "surprisePick": false },
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["curry", "biryani", "roti"], "surprisePick": false },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "chow mein", "dumplings"], "surprisePick": true, "source": "Sino-Seychellois heritage shapes Creole cuisine" },
+        { "cuisineCountryId": "uk", "cuisineName": "British", "exampleDishes": ["fish and chips", "roast dinner", "meat pies"], "surprisePick": false },
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "lasagna"], "surprisePick": false },
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "tempura"], "surprisePick": false },
+        { "cuisineCountryId": "thailand", "cuisineName": "Thai", "exampleDishes": ["pad thai", "green curry", "som tam"], "surprisePick": false }
+      ]
+    },
+    "sao-tome": {
+      "name": "São Tomé and Príncipe",
+      "code": "ST",
+      "loves": [
+        { "cuisineCountryId": "portugal", "cuisineName": "Portuguese", "exampleDishes": ["bacalhau", "pastéis de nata", "caldo verde"], "surprisePick": true, "source": "Portuguese colonial legacy: calulu and bacalhau on every table" },
+        { "cuisineCountryId": "angola", "cuisineName": "Angolan", "exampleDishes": ["muamba de galinha", "funge", "calulu"], "surprisePick": false },
+        { "cuisineCountryId": "brazil", "cuisineName": "Brazilian", "exampleDishes": ["feijoada", "churrasco", "pão de queijo"], "surprisePick": false },
+        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["baguette", "croissants", "steak frites"], "surprisePick": false },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "chow mein", "dumplings"], "surprisePick": false },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burgers", "fried chicken", "fries"], "surprisePick": false },
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "lasagna"], "surprisePick": false }
+      ]
+    },
+    "barbados": {
+      "name": "Barbados",
+      "code": "BB",
+      "loves": [
+        { "cuisineCountryId": "uk", "cuisineName": "British", "exampleDishes": ["fish and chips", "roast dinner", "meat pies"], "surprisePick": false },
+        { "cuisineCountryId": "trinidad", "cuisineName": "Trinidadian", "exampleDishes": ["doubles", "roti", "callaloo"], "surprisePick": false },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burgers", "fried chicken", "fries"], "surprisePick": false },
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["curry", "biryani", "roti"], "surprisePick": true, "source": "Indo-Caribbean roti culture is everyday Bajan fast food" },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "chow mein", "dumplings"], "surprisePick": false },
+        { "cuisineCountryId": "jamaica", "cuisineName": "Jamaican", "exampleDishes": ["jerk chicken", "patties", "ackee & saltfish"], "surprisePick": false },
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "lasagna"], "surprisePick": false }
+      ]
+    },
+    "saint-lucia": {
+      "name": "Saint Lucia",
+      "code": "LC",
+      "loves": [
+        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["baguette", "croissants", "steak frites"], "surprisePick": true, "source": "French-Creole heritage shapes the island’s cuisine despite British rule" },
+        { "cuisineCountryId": "uk", "cuisineName": "British", "exampleDishes": ["fish and chips", "roast dinner", "meat pies"], "surprisePick": false },
+        { "cuisineCountryId": "trinidad", "cuisineName": "Trinidadian", "exampleDishes": ["doubles", "roti", "callaloo"], "surprisePick": false },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burgers", "fried chicken", "fries"], "surprisePick": false },
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["curry", "biryani", "roti"], "surprisePick": false },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "chow mein", "dumplings"], "surprisePick": false },
+        { "cuisineCountryId": "jamaica", "cuisineName": "Jamaican", "exampleDishes": ["jerk chicken", "patties", "ackee & saltfish"], "surprisePick": false }
+      ]
+    },
+    "grenada": {
+      "name": "Grenada",
+      "code": "GD",
+      "loves": [
+        { "cuisineCountryId": "uk", "cuisineName": "British", "exampleDishes": ["fish and chips", "roast dinner", "meat pies"], "surprisePick": false },
+        { "cuisineCountryId": "trinidad", "cuisineName": "Trinidadian", "exampleDishes": ["doubles", "roti", "callaloo"], "surprisePick": false },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burgers", "fried chicken", "fries"], "surprisePick": false },
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["curry", "biryani", "roti"], "surprisePick": false },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "chow mein", "dumplings"], "surprisePick": true },
+        { "cuisineCountryId": "jamaica", "cuisineName": "Jamaican", "exampleDishes": ["jerk chicken", "patties", "ackee & saltfish"], "surprisePick": false },
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "lasagna"], "surprisePick": false }
+      ]
+    },
+    "antigua": {
+      "name": "Antigua and Barbuda",
+      "code": "AG",
+      "loves": [
+        { "cuisineCountryId": "uk", "cuisineName": "British", "exampleDishes": ["fish and chips", "roast dinner", "meat pies"], "surprisePick": false },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burgers", "fried chicken", "fries"], "surprisePick": false },
+        { "cuisineCountryId": "jamaica", "cuisineName": "Jamaican", "exampleDishes": ["jerk chicken", "patties", "ackee & saltfish"], "surprisePick": false },
+        { "cuisineCountryId": "trinidad", "cuisineName": "Trinidadian", "exampleDishes": ["doubles", "roti", "callaloo"], "surprisePick": false },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "chow mein", "dumplings"], "surprisePick": false },
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "lasagna"], "surprisePick": true },
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["curry", "biryani", "roti"], "surprisePick": false }
+      ]
+    },
+    "dominica": {
+      "name": "Dominica",
+      "code": "DM",
+      "loves": [
+        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["baguette", "croissants", "steak frites"], "surprisePick": true, "source": "French-Creole heritage: the island’s cuisine and patois remain heavily French" },
+        { "cuisineCountryId": "uk", "cuisineName": "British", "exampleDishes": ["fish and chips", "roast dinner", "meat pies"], "surprisePick": false },
+        { "cuisineCountryId": "trinidad", "cuisineName": "Trinidadian", "exampleDishes": ["doubles", "roti", "callaloo"], "surprisePick": false },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burgers", "fried chicken", "fries"], "surprisePick": false },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "chow mein", "dumplings"], "surprisePick": false },
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["curry", "biryani", "roti"], "surprisePick": false },
+        { "cuisineCountryId": "jamaica", "cuisineName": "Jamaican", "exampleDishes": ["jerk chicken", "patties", "ackee & saltfish"], "surprisePick": false }
+      ]
+    },
+    "saint-kitts": {
+      "name": "Saint Kitts and Nevis",
+      "code": "KN",
+      "loves": [
+        { "cuisineCountryId": "uk", "cuisineName": "British", "exampleDishes": ["fish and chips", "roast dinner", "meat pies"], "surprisePick": false },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burgers", "fried chicken", "fries"], "surprisePick": false },
+        { "cuisineCountryId": "jamaica", "cuisineName": "Jamaican", "exampleDishes": ["jerk chicken", "patties", "ackee & saltfish"], "surprisePick": false },
+        { "cuisineCountryId": "trinidad", "cuisineName": "Trinidadian", "exampleDishes": ["doubles", "roti", "callaloo"], "surprisePick": false },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "chow mein", "dumplings"], "surprisePick": false },
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["curry", "biryani", "roti"], "surprisePick": false },
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "lasagna"], "surprisePick": true }
+      ]
+    },
+    "saint-vincent": {
+      "name": "Saint Vincent and the Grenadines",
+      "code": "VC",
+      "loves": [
+        { "cuisineCountryId": "uk", "cuisineName": "British", "exampleDishes": ["fish and chips", "roast dinner", "meat pies"], "surprisePick": false },
+        { "cuisineCountryId": "trinidad", "cuisineName": "Trinidadian", "exampleDishes": ["doubles", "roti", "callaloo"], "surprisePick": false },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burgers", "fried chicken", "fries"], "surprisePick": false },
+        { "cuisineCountryId": "jamaica", "cuisineName": "Jamaican", "exampleDishes": ["jerk chicken", "patties", "ackee & saltfish"], "surprisePick": false },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "chow mein", "dumplings"], "surprisePick": false },
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["curry", "biryani", "roti"], "surprisePick": false },
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "lasagna"], "surprisePick": true }
+      ]
+    },
+    "tonga": {
+      "name": "Tonga",
+      "code": "TO",
+      "loves": [
+        { "cuisineCountryId": "new-zealand", "cuisineName": "New Zealand", "exampleDishes": ["fish and chips", "meat pies", "pavlova"], "surprisePick": false },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "chow mein", "dumplings"], "surprisePick": true, "source": "Chinese shops and eateries are a fixture across Tongatapu" },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burgers", "fried chicken", "fries"], "surprisePick": false },
+        { "cuisineCountryId": "australia", "cuisineName": "Australian", "exampleDishes": ["meat pies", "BBQ", "lamingtons"], "surprisePick": false },
+        { "cuisineCountryId": "fiji", "cuisineName": "Fijian", "exampleDishes": ["kokoda", "lovo", "rourou"], "surprisePick": false },
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "tempura"], "surprisePick": false },
+        { "cuisineCountryId": "samoa", "cuisineName": "Samoan", "exampleDishes": ["sapasui", "oka", "palusami"], "surprisePick": false }
+      ]
+    },
+    "kiribati": {
+      "name": "Kiribati",
+      "code": "KI",
+      "loves": [
+        { "cuisineCountryId": "australia", "cuisineName": "Australian", "exampleDishes": ["meat pies", "BBQ", "lamingtons"], "surprisePick": false },
+        { "cuisineCountryId": "new-zealand", "cuisineName": "New Zealand", "exampleDishes": ["fish and chips", "meat pies", "pavlova"], "surprisePick": false },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "chow mein", "dumplings"], "surprisePick": true },
+        { "cuisineCountryId": "fiji", "cuisineName": "Fijian", "exampleDishes": ["kokoda", "lovo", "rourou"], "surprisePick": false },
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "tempura"], "surprisePick": false },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burgers", "fried chicken", "fries"], "surprisePick": false },
+        { "cuisineCountryId": "samoa", "cuisineName": "Samoan", "exampleDishes": ["sapasui", "oka", "palusami"], "surprisePick": false }
+      ]
+    },
+    "micronesia": {
+      "name": "Micronesia",
+      "code": "FM",
+      "loves": [
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burgers", "fried chicken", "fries"], "surprisePick": false, "source": "Compact of Free Association: American staples dominate imports and diet" },
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "tempura"], "surprisePick": true, "source": "Japanese colonial era left bento culture and soy-based cooking" },
+        { "cuisineCountryId": "philippines", "cuisineName": "Filipino", "exampleDishes": ["adobo", "lumpia", "pancit"], "surprisePick": false },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "chow mein", "dumplings"], "surprisePick": false },
+        { "cuisineCountryId": "australia", "cuisineName": "Australian", "exampleDishes": ["meat pies", "BBQ", "lamingtons"], "surprisePick": false },
+        { "cuisineCountryId": "fiji", "cuisineName": "Fijian", "exampleDishes": ["kokoda", "lovo", "rourou"], "surprisePick": false },
+        { "cuisineCountryId": "south-korea", "cuisineName": "Korean", "exampleDishes": ["korean bbq", "bibimbap", "kimchi"], "surprisePick": false }
+      ]
+    },
+    "palau": {
+      "name": "Palau",
+      "code": "PW",
+      "loves": [
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "tempura"], "surprisePick": true, "source": "Japanese colonial legacy: bento culture and Japanese loanwords pervade Palauan food" },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burgers", "fried chicken", "fries"], "surprisePick": false },
+        { "cuisineCountryId": "philippines", "cuisineName": "Filipino", "exampleDishes": ["adobo", "lumpia", "pancit"], "surprisePick": false },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "chow mein", "dumplings"], "surprisePick": false },
+        { "cuisineCountryId": "south-korea", "cuisineName": "Korean", "exampleDishes": ["korean bbq", "bibimbap", "kimchi"], "surprisePick": false },
+        { "cuisineCountryId": "australia", "cuisineName": "Australian", "exampleDishes": ["meat pies", "BBQ", "lamingtons"], "surprisePick": false },
+        { "cuisineCountryId": "thailand", "cuisineName": "Thai", "exampleDishes": ["pad thai", "green curry", "som tam"], "surprisePick": false }
+      ]
+    },
+    "marshall-islands": {
+      "name": "Marshall Islands",
+      "code": "MH",
+      "loves": [
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burgers", "fried chicken", "fries"], "surprisePick": true, "source": "Compact of Free Association: American staples dominate imports and diet" },
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "tempura"], "surprisePick": false },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "chow mein", "dumplings"], "surprisePick": false },
+        { "cuisineCountryId": "philippines", "cuisineName": "Filipino", "exampleDishes": ["adobo", "lumpia", "pancit"], "surprisePick": false },
+        { "cuisineCountryId": "australia", "cuisineName": "Australian", "exampleDishes": ["meat pies", "BBQ", "lamingtons"], "surprisePick": false },
+        { "cuisineCountryId": "south-korea", "cuisineName": "Korean", "exampleDishes": ["korean bbq", "bibimbap", "kimchi"], "surprisePick": false },
+        { "cuisineCountryId": "fiji", "cuisineName": "Fijian", "exampleDishes": ["kokoda", "lovo", "rourou"], "surprisePick": false }
+      ]
+    },
+    "nauru": {
+      "name": "Nauru",
+      "code": "NR",
+      "loves": [
+        { "cuisineCountryId": "australia", "cuisineName": "Australian", "exampleDishes": ["meat pies", "BBQ", "lamingtons"], "surprisePick": false },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "chow mein", "dumplings"], "surprisePick": true, "source": "Chinese-run eateries make up most of the island’s restaurants" },
+        { "cuisineCountryId": "new-zealand", "cuisineName": "New Zealand", "exampleDishes": ["fish and chips", "meat pies", "pavlova"], "surprisePick": false },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burgers", "fried chicken", "fries"], "surprisePick": false },
+        { "cuisineCountryId": "fiji", "cuisineName": "Fijian", "exampleDishes": ["kokoda", "lovo", "rourou"], "surprisePick": false },
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "tempura"], "surprisePick": false },
+        { "cuisineCountryId": "philippines", "cuisineName": "Filipino", "exampleDishes": ["adobo", "lumpia", "pancit"], "surprisePick": false }
+      ]
+    },
+    "tuvalu": {
+      "name": "Tuvalu",
+      "code": "TV",
+      "loves": [
+        { "cuisineCountryId": "fiji", "cuisineName": "Fijian", "exampleDishes": ["kokoda", "lovo", "rourou"], "surprisePick": false },
+        { "cuisineCountryId": "australia", "cuisineName": "Australian", "exampleDishes": ["meat pies", "BBQ", "lamingtons"], "surprisePick": false },
+        { "cuisineCountryId": "new-zealand", "cuisineName": "New Zealand", "exampleDishes": ["fish and chips", "meat pies", "pavlova"], "surprisePick": false },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "chow mein", "dumplings"], "surprisePick": true },
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "tempura"], "surprisePick": false },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burgers", "fried chicken", "fries"], "surprisePick": false },
+        { "cuisineCountryId": "samoa", "cuisineName": "Samoan", "exampleDishes": ["sapasui", "oka", "palusami"], "surprisePick": false }
+      ]
     }
   }
 }

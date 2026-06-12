@@ -20,7 +20,13 @@ export type RevealPhase = 'idle' | 'revealing' | 'done'
 // Countries in the dataset that have no geometry in the 110m TopoJSON.
 // They can't light up on the map, so they get no tick in the sound cascade;
 // their panel rows fade in as a final batch with the completion ding.
-const SHAPELESS_COUNTRIES = new Set(['singapore', 'malta', 'mauritius', 'cape-verde', 'samoa'])
+const SHAPELESS_COUNTRIES = new Set([
+  'singapore', 'malta', 'mauritius', 'cape-verde', 'samoa',
+  'andorra', 'monaco', 'liechtenstein', 'san-marino', 'bahrain', 'maldives',
+  'comoros', 'seychelles', 'sao-tome', 'barbados', 'saint-lucia', 'grenada',
+  'antigua', 'dominica', 'saint-kitts', 'saint-vincent', 'tonga', 'kiribati',
+  'micronesia', 'palau', 'marshall-islands', 'nauru', 'tuvalu',
+])
 
 function revealDelayMs(index: number, count: number): number {
   const frac = count <= 1 ? 0 : index / (count - 1)

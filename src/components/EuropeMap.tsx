@@ -212,6 +212,31 @@ const NUMERIC_TO_ID: Record<string, string> = {
   '96':  'brunei',
   '262': 'djibouti',
   '728': 'south-sudan',
+  // Micro/island states — no shape in the 110m TopoJSON; reachable via
+  // URL and side-panel links only (see SHAPELESS_COUNTRIES in useRevealSequence)
+  '20':  'andorra',
+  '492': 'monaco',
+  '438': 'liechtenstein',
+  '674': 'san-marino',
+  '48':  'bahrain',
+  '462': 'maldives',
+  '174': 'comoros',
+  '690': 'seychelles',
+  '678': 'sao-tome',
+  '52':  'barbados',
+  '662': 'saint-lucia',
+  '308': 'grenada',
+  '28':  'antigua',
+  '212': 'dominica',
+  '659': 'saint-kitts',
+  '670': 'saint-vincent',
+  '776': 'tonga',
+  '296': 'kiribati',
+  '583': 'micronesia',
+  '585': 'palau',
+  '584': 'marshall-islands',
+  '520': 'nauru',
+  '798': 'tuvalu',
 }
 
 // TopoJSON geometry IDs are zero-padded ('040'), NUMERIC_TO_ID keys are not.

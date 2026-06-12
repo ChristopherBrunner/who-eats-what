@@ -34,6 +34,14 @@ Object.assign(centroids, {
   'mauritius':  [57.6, -20.3],
   'cape-verde': [-23.6, 15.1],
   'samoa':      [-172.1, -13.8],
+  'andorra': [1.5, 42.5], 'monaco': [7.4, 43.7], 'liechtenstein': [9.55, 47.15],
+  'san-marino': [12.45, 43.95], 'bahrain': [50.55, 26.05], 'maldives': [73.5, 4.2],
+  'comoros': [43.3, -11.7], 'seychelles': [55.45, -4.6], 'sao-tome': [6.6, 0.2],
+  'barbados': [-59.5, 13.2], 'saint-lucia': [-61.0, 13.9], 'grenada': [-61.7, 12.1],
+  'antigua': [-61.8, 17.1], 'dominica': [-61.35, 15.4], 'saint-kitts': [-62.75, 17.3],
+  'saint-vincent': [-61.2, 13.25], 'tonga': [-175.2, -21.2], 'kiribati': [173.0, 1.4],
+  'micronesia': [158.2, 6.9], 'palau': [134.5, 7.5], 'marshall-islands': [171.2, 7.1],
+  'nauru': [166.9, -0.5], 'tuvalu': [179.2, -7.5],
 })
 
 const missing = Object.values(numericToId).filter(s => !(s in centroids))
