@@ -7,7 +7,7 @@
         { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta al pomodoro", "tiramisu"], "surprisePick": false, "source": "Statista Austria 2022/2023 (top foreign cuisine; 34% cook Italian at home)" },
         { "cuisineCountryId": "turkey", "cuisineName": "Turkish", "exampleDishes": ["döner kebab", "lahmacun", "baklava"], "surprisePick": false },
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["Peking duck", "dim sum", "mapo tofu"], "surprisePick": false },
-        { "cuisineCountryId": "vietnam", "cuisineName": "Vietnamese", "exampleDishes": ["phở", "bánh mì", "gỏi cuốn"], "surprisePick": true },
+        { "cuisineCountryId": "vietnam", "cuisineName": "Vietnamese", "exampleDishes": ["phở", "bánh mì", "gỏi cuốn"], "surprisePick": true, "source": "Phở houses across Vienna’s districts and a beloved Naschmarkt Vietnamese stall anchor the scene" },
         { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "tonkatsu"], "surprisePick": false },
         { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["butter chicken", "biryani", "naan"], "surprisePick": false },
         { "cuisineCountryId": "greece", "cuisineName": "Greek", "exampleDishes": ["gyros", "moussaka", "spanakopita"], "surprisePick": false }
@@ -599,26 +599,26 @@
       "name": "Ethiopia",
       "code": "ET",
       "loves": [
-        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pasta", "pizza", "tiramisu"], "surprisePick": false, "source": "OpenStreetMap 2026 (82 italian-tagged restaurants in Ethiopia)" },
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pasta", "pizza", "tiramisu"], "surprisePick": true, "source": "Italian occupation legacy: pasta al sugo with berbere is everyday Addis food" },
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "dim sum", "noodles"], "surprisePick": false },
         { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["biryani", "curry", "naan"], "surprisePick": false },
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "BBQ"], "surprisePick": false, "source": "OpenStreetMap 2026 (53 american-tagged restaurants in Ethiopia)" },
         { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["shawarma", "hummus", "mezze"], "surprisePick": false },
         { "cuisineCountryId": "turkey", "cuisineName": "Turkish", "exampleDishes": ["döner kebab", "baklava", "köfte"], "surprisePick": false },
-        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "tempura"], "surprisePick": true }
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "tempura"], "surprisePick": false }
       ]
     },
     "nigeria": {
       "name": "Nigeria",
       "code": "NG",
       "loves": [
-        { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["shawarma", "hummus", "mezze"], "surprisePick": false, "source": "Jumia Nigeria Food Index 2020 (shawarma among fastest-growing foreign foods)" },
+        { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["shawarma", "hummus", "mezze"], "surprisePick": true, "source": "Jumia Nigeria Food Index 2020 (shawarma among fastest-growing foreign foods)" },
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "dim sum", "spring rolls"], "surprisePick": false, "source": "Jumia Nigeria Food Index 2020 (Chinese among fastest-growing cuisines)" },
         { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["biryani", "curry", "naan"], "surprisePick": false },
         { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false, "source": "Jumia Nigeria Food Index 2020 (pizza among fastest-growing cuisines; Pizza Hut a top international brand)" },
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "BBQ"], "surprisePick": false, "source": "Jumia Nigeria Food Index 2020 (KFC the most popular international brand)" },
         { "cuisineCountryId": "turkey", "cuisineName": "Turkish", "exampleDishes": ["döner kebab", "börek", "baklava"], "surprisePick": false },
-        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "gyoza"], "surprisePick": true }
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "gyoza"], "surprisePick": false }
       ]
     },
     "south-africa": {
@@ -643,7 +643,7 @@
         { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false, "source": "OpenStreetMap 2026 (94 italian-tagged restaurants in Kenya)" },
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "BBQ"], "surprisePick": false, "source": "OpenStreetMap 2026 (30 american-tagged restaurants in Kenya)" },
         { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["shawarma", "hummus", "falafel"], "surprisePick": false },
-        { "cuisineCountryId": "ethiopia", "cuisineName": "Ethiopian", "exampleDishes": ["injera", "tibs", "doro wat"], "surprisePick": true },
+        { "cuisineCountryId": "ethiopia", "cuisineName": "Ethiopian", "exampleDishes": ["injera", "tibs", "doro wat"], "surprisePick": true, "source": "Ethiopian cuisine \"winning Kenyan foodies\" (Business Daily): injera houses across Nairobi’s neighbourhoods" },
         { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "tempura"], "surprisePick": false }
       ]
     },
@@ -652,12 +652,12 @@
       "code": "GH",
       "loves": [
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "chow mein", "dim sum"], "surprisePick": false, "source": "OpenStreetMap 2026 (25 chinese-tagged restaurants in Ghana)" },
-        { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["shawarma", "hummus", "mezze"], "surprisePick": false, "source": "Lebanese West African diaspora since the 1860s made shawarma a street-food standard" },
+        { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["shawarma", "hummus", "mezze"], "surprisePick": true, "source": "Lebanese West African diaspora since the 1860s made shawarma a street-food standard" },
         { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false, "source": "OpenStreetMap 2026 (86 italian-tagged restaurants in Ghana)" },
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "BBQ"], "surprisePick": false, "source": "OpenStreetMap 2026 (43 american-tagged restaurants in Ghana)" },
         { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["biryani", "curry", "naan"], "surprisePick": false },
         { "cuisineCountryId": "turkey", "cuisineName": "Turkish", "exampleDishes": ["döner kebab", "baklava", "börek"], "surprisePick": false, "source": "OpenStreetMap 2026 (26 turkish-tagged restaurants in Ghana)" },
-        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "tempura"], "surprisePick": true }
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "tempura"], "surprisePick": false }
       ]
     },
     "lebanon": {
@@ -849,7 +849,7 @@
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "cheesecake"], "surprisePick": false, "source": "OpenStreetMap 2026 (441 american-tagged restaurants in Venezuela)" },
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["chow mein", "fried rice", "dim sum"], "surprisePick": false, "source": "OpenStreetMap 2026 (123 chinese-tagged restaurants in Venezuela)" },
         { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "tempura"], "surprisePick": false, "source": "OpenStreetMap 2026 (79 japanese-tagged restaurants in Venezuela)" },
-        { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["shawarma", "kibbeh", "hummus"], "surprisePick": true },
+        { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["shawarma", "kibbeh", "hummus"], "surprisePick": true, "source": "~2M Venezuelans of Arab origin (incl. 344k Lebanese): shawarma stands are part of street-food culture" },
         { "cuisineCountryId": "peru", "cuisineName": "Peruvian", "exampleDishes": ["ceviche", "lomo saltado", "tiradito"], "surprisePick": false },
         { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["croissant", "crêpes", "patisserie"], "surprisePick": false }
       ]
@@ -1164,7 +1164,7 @@
       "loves": [
         { "cuisineCountryId": "brazil", "cuisineName": "Brazilian", "exampleDishes": ["churrasco", "feijoada", "pão de queijo"], "surprisePick": false },
         { "cuisineCountryId": "argentina", "cuisineName": "Argentinian", "exampleDishes": ["asado", "empanadas", "chimichurri"], "surprisePick": false },
-        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "tempura"], "surprisePick": true },
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "tempura"], "surprisePick": true, "source": "Japanese colonies since La Colmena (1936) reshaped Paraguayan diets — immigrants introduced vegetable cultivation; sushi and natto in colony supermarkets" },
         { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "tiramisu"], "surprisePick": false, "source": "OpenStreetMap 2026 (213 italian-tagged restaurants in Paraguay)" },
         { "cuisineCountryId": "germany", "cuisineName": "German", "exampleDishes": ["schnitzel", "bratwurst", "sauerkraut"], "surprisePick": false },
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "hot dog"], "surprisePick": false, "source": "OpenStreetMap 2026 (158 american-tagged restaurants in Paraguay)" },
@@ -1365,7 +1365,7 @@
       "loves": [
         { "cuisineCountryId": "mexico", "cuisineName": "Mexican", "exampleDishes": ["tacos", "guacamole", "tamales"], "surprisePick": false, "source": "OpenStreetMap 2026 (58 mexican-tagged restaurants in Guatemala)" },
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "hot dog"], "surprisePick": false, "source": "OpenStreetMap 2026 (320 american-tagged restaurants in Guatemala)" },
-        { "cuisineCountryId": "south-korea", "cuisineName": "Korean", "exampleDishes": ["Korean BBQ", "fried chicken", "tteokbokki"], "surprisePick": true },
+        { "cuisineCountryId": "south-korea", "cuisineName": "Korean", "exampleDishes": ["Korean BBQ", "fried chicken", "tteokbokki"], "surprisePick": true, "source": "Korean community via the textile industry (Koreans control ~2/3 of investment): K-restaurants, groceries and bakeries across Guatemala City" },
         { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false, "source": "OpenStreetMap 2026 (297 italian-tagged restaurants in Guatemala)" },
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["chow mein", "fried rice", "dim sum"], "surprisePick": false, "source": "OpenStreetMap 2026 (69 chinese-tagged restaurants in Guatemala)" },
         { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "tempura"], "surprisePick": false, "source": "OpenStreetMap 2026 (21 japanese-tagged restaurants in Guatemala)" },
