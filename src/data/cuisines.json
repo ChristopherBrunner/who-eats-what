@@ -392,7 +392,7 @@
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum", "fried rice", "chow mein"], "surprisePick": false, "source": "OpenStreetMap 2026 (160 chinese-tagged restaurants in Colombia)" },
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "BBQ"], "surprisePick": false, "source": "Rappi Colombia (hamburgers the most-ordered dish, ~9.6M orders/year)" },
         { "cuisineCountryId": "mexico", "cuisineName": "Mexican", "exampleDishes": ["tacos", "guacamole", "enchiladas"], "surprisePick": false, "source": "OpenStreetMap 2026 (187 mexican-tagged restaurants in Colombia)" },
-        { "cuisineCountryId": "peru", "cuisineName": "Peruvian", "exampleDishes": ["ceviche", "tiradito", "causa"], "surprisePick": true },
+        { "cuisineCountryId": "peru", "cuisineName": "Peruvian", "exampleDishes": ["ceviche", "tiradito", "causa"], "surprisePick": true, "source": "Peruvian is one of Bogotá’s most impressive international dining scenes — cevicherías from budget spots to Acurio’s La Mar" },
         { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["crêpes", "croissant", "quiche"], "surprisePick": false }
       ]
     },
@@ -547,10 +547,10 @@
       "code": "PK",
       "loves": [
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["chow mein", "fried rice", "dim sum"], "surprisePick": false },
-        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "lasagna"], "surprisePick": false, "source": "foodpanda Pakistan (pizza the most-ordered item nationwide)" },
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "lasagna"], "surprisePick": true, "source": "foodpanda Pakistan (pizza the most-ordered item nationwide)" },
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "BBQ"], "surprisePick": false, "source": "foodpanda Pakistan (fast food the 2nd most-ordered category)" },
         { "cuisineCountryId": "turkey", "cuisineName": "Turkish", "exampleDishes": ["döner kebab", "baklava", "köfte"], "surprisePick": false },
-        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "tempura"], "surprisePick": true },
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "tempura"], "surprisePick": false },
         { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["shawarma", "mezze", "hummus"], "surprisePick": false },
         { "cuisineCountryId": "iran", "cuisineName": "Persian", "exampleDishes": ["chelow kebab", "ghormeh sabzi", "tahdig"], "surprisePick": false }
       ]
@@ -695,7 +695,7 @@
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum", "fried rice", "noodles"], "surprisePick": false },
         { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["biryani", "curry", "naan"], "surprisePick": false },
         { "cuisineCountryId": "turkey", "cuisineName": "Turkish", "exampleDishes": ["döner kebab", "baklava", "köfte"], "surprisePick": false, "source": "OpenStreetMap 2026 (786 turkish-tagged restaurants in Iran)" },
-        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["patisserie", "croissant", "crème brûlée"], "surprisePick": true },
+        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["patisserie", "croissant", "crème brûlée"], "surprisePick": true, "source": "Qajar-era French chefs shaped Iranian pâtisserie: shirini napoleoni, naan khamei choux and génoise birthday cakes" },
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "BBQ"], "surprisePick": false, "source": "Bootleg American fast-food chains ubiquitous (Mash Donald’s et al.) — burgers spread even to remote villages (Atlas Obscura)" }
       ]
     },
@@ -875,11 +875,11 @@
         { "cuisineCountryId": "spain", "cuisineName": "Spanish", "exampleDishes": ["paella", "tapas", "cocido madrileño"], "surprisePick": false, "source": "OpenStreetMap 2026 (69 spanish-tagged restaurants in Cuba)" },
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["chop suey", "dim sum", "arroz frito"], "surprisePick": false, "source": "OpenStreetMap 2026 (42 chinese-tagged restaurants in Cuba)" },
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "lobster roll"], "surprisePick": false, "source": "OpenStreetMap 2026 (268 american-tagged restaurants in Cuba)" },
-        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "tiramisu"], "surprisePick": false, "source": "Cuban street pizza: born of the 1990s crisis, now a street-food staple on every Havana corner" },
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "tiramisu"], "surprisePick": true, "source": "Cuban street pizza: born of the 1990s crisis, now a street-food staple on every Havana corner" },
         { "cuisineCountryId": "mexico", "cuisineName": "Mexican", "exampleDishes": ["tacos", "tamales", "guacamole"], "surprisePick": false, "source": "OpenStreetMap 2026 (37 mexican-tagged restaurants in Cuba)" },
         { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["croissant", "crème brûlée", "bouillabaisse"], "surprisePick": false },
         { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "gyoza"], "surprisePick": false },
-        { "cuisineCountryId": "vietnam", "cuisineName": "Vietnamese", "exampleDishes": ["phở", "bánh mì", "gỏi cuốn"], "surprisePick": true }
+        { "cuisineCountryId": "vietnam", "cuisineName": "Vietnamese", "exampleDishes": ["phở", "bánh mì", "gỏi cuốn"], "surprisePick": false }
       ]
     },
     "bolivia": {
