@@ -159,7 +159,7 @@
         { "cuisineCountryId": "morocco", "cuisineName": "Moroccan", "exampleDishes": ["couscous", "tajine", "bastilla"], "surprisePick": false },
         { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "gelato"], "surprisePick": false },
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum", "bami goreng", "spring rolls"], "surprisePick": false, "source": "Verdict Foodservice 2024 (most common restaurant cuisine in NL)" },
-        { "cuisineCountryId": "suriname", "cuisineName": "Surinamese", "exampleDishes": ["roti", "pom", "moksi alesi"], "surprisePick": true },
+        { "cuisineCountryId": "suriname", "cuisineName": "Surinamese", "exampleDishes": ["roti", "pom", "moksi alesi"], "surprisePick": true, "source": "~400,000 Surinamese-Dutch since 1975: roti shops and broodje pom counters in nearly every Amsterdam neighbourhood" },
         { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["curry", "samosa", "naan"], "surprisePick": false },
         { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "gyoza"], "surprisePick": false }
       ]
@@ -366,7 +366,7 @@
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "hot dog"], "surprisePick": false },
         { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "tempura"], "surprisePick": false },
         { "cuisineCountryId": "spain", "cuisineName": "Spanish", "exampleDishes": ["paella", "tapas", "tortilla española"], "surprisePick": false },
-        { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["tacos árabes", "kibbeh", "hummus"], "surprisePick": true },
+        { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["tacos árabes", "kibbeh", "hummus"], "surprisePick": true, "source": "Tacos al pastor descend from shawarma brought by 100,000+ Lebanese immigrants (1880–1950) via Puebla’s tacos árabes" },
         { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["crêpes", "croissant", "pan dulce"], "surprisePick": false }
       ]
     },
@@ -1176,7 +1176,7 @@
       "name": "Uruguay",
       "code": "UY",
       "loves": [
-        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pasta al ragú", "pizza", "ñoquis del 29"], "surprisePick": true },
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pasta al ragú", "pizza", "ñoquis del 29"], "surprisePick": true, "source": "~40% of Uruguayans have Italian ancestry: pasta and milanesa are core national food" },
         { "cuisineCountryId": "argentina", "cuisineName": "Argentinian", "exampleDishes": ["asado", "empanadas", "dulce de leche"], "surprisePick": false },
         { "cuisineCountryId": "spain", "cuisineName": "Spanish", "exampleDishes": ["paella", "tapas", "tortilla española"], "surprisePick": false },
         { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "tempura"], "surprisePick": false, "source": "PedidosYa 2025 (top-3 sushi-ordering country in Latin America)" },
