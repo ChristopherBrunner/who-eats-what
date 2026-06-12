@@ -308,10 +308,11 @@ interface Props {
   mode: ViewMode
   revealedSet: Set<string>
   phase: RevealPhase
+  silentReveal: boolean
   onCountryClick: (countryId: string) => void
 }
 
-export function WorldMap({ selectedCountry, homeCountry, mode, revealedSet, phase, onCountryClick }: Props) {
+export function WorldMap({ selectedCountry, homeCountry, mode, revealedSet, phase, silentReveal, onCountryClick }: Props) {
   const colorScheme = useColorScheme()
   const C = MAP_COLORS[colorScheme]
 
@@ -387,6 +388,12 @@ export function WorldMap({ selectedCountry, homeCountry, mode, revealedSet, phas
           35%  { filter: brightness(1.35); }
           100% { filter: brightness(1); }
         }
+        /* Silent reveals (direct links, audio locked): the linked country
+           wears a blinking golden halo as a visual fanfare instead of sound */
+        @keyframes selected-halo {
+          0%, 100% { filter: brightness(1) drop-shadow(0 0 0px rgba(196, 128, 46, 0)); }
+          50%      { filter: brightness(1.55) drop-shadow(0 0 8px rgba(196, 128, 46, 0.9)); }
+        }
       `}</style>
       <ComposableMap
         projection="geoEqualEarth"
@@ -411,6 +418,9 @@ export function WorldMap({ selectedCountry, homeCountry, mode, revealedSet, phas
               // them; the reveal-pop → completion-pulse swap restarts on purpose.
               let animation: string | undefined
               if (isPulsing) animation = 'country-breath 3s ease-in-out infinite'
+              else if (isSelected && silentReveal && phase === 'revealing') {
+                animation = 'selected-halo 1s ease-in-out 3'
+              }
               else if (isSelected) animation = `selected-charge ${REVEAL_INITIAL_MS}ms ease-out`
               else if (isRevealed) {
                 animation = phase === 'done'

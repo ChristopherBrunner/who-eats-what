@@ -23,7 +23,7 @@ function MapView({ homeCountry }: { homeCountry: string | null }) {
   const mode: ViewMode = modeParam === 'loves' ? 'loves' : 'loved-by'
 
   // Shared reveal sequence: map highlights, panel rows, and sounds all sync.
-  const { revealedSet, revealedCount, phase } = useRevealSequence(countryId ?? null, mode)
+  const { revealedSet, revealedCount, phase, silent } = useRevealSequence(countryId ?? null, mode)
 
   const handleCountryClick = (id: string) => {
     if (id === countryId) {
@@ -46,6 +46,7 @@ function MapView({ homeCountry }: { homeCountry: string | null }) {
         mode={mode}
         revealedSet={revealedSet}
         phase={phase}
+        silentReveal={silent}
         onCountryClick={handleCountryClick}
       />
 

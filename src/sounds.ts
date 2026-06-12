@@ -90,6 +90,11 @@ export function installAudioUnlock() {
   window.addEventListener('keydown', unlock, { once: true, capture: true })
 }
 
+/** Whether a user gesture has unlocked audio yet (false on direct-link loads). */
+export function isAudioUnlocked(): boolean {
+  return sharedCtx !== null
+}
+
 /**
  * Create (on first call) and resume the shared AudioContext.
  * Must be called from a user-gesture handler.

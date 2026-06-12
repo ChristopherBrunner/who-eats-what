@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { geoDistance } from 'd3-geo'
 import type { Country, ViewMode } from '../types'
-import { scheduleRevealSounds } from '../sounds'
+import { isAudioUnlocked, scheduleRevealSounds } from '../sounds'
 import rawData from '../data/cuisines.json'
 import rawCentroids from '../data/centroids.json'
 
@@ -72,6 +72,9 @@ export function useRevealSequence(selectedCountry: string | null, mode: ViewMode
 
   const [revealedCount, setRevealedCount] = useState(0)
   const [phase, setPhase] = useState<RevealPhase>('idle')
+  // True when this sequence runs without sound (direct-link load before any
+  // user gesture) — the map compensates with a visual flourish instead.
+  const [silent, setSilent] = useState(false)
 
   useEffect(() => {
     setRevealedCount(0)
@@ -80,6 +83,7 @@ export function useRevealSequence(selectedCountry: string | null, mode: ViewMode
       return
     }
     setPhase('revealing')
+    setSilent(!isAudioUnlocked())
 
     const mappableCount = orderedIds.filter(id => !SHAPELESS_COUNTRIES.has(id)).length
     const delayAt = (i: number) =>
@@ -113,5 +117,5 @@ export function useRevealSequence(selectedCountry: string | null, mode: ViewMode
     [orderedIds, revealedCount],
   )
 
-  return { revealedSet, revealedCount, phase }
+  return { revealedSet, revealedCount, phase, silent }
 }

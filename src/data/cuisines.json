@@ -10,7 +10,8 @@
         { "cuisineCountryId": "vietnam", "cuisineName": "Vietnamese", "exampleDishes": ["phở", "bánh mì", "gỏi cuốn"], "surprisePick": true, "source": "Phở houses across Vienna’s districts and a beloved Naschmarkt Vietnamese stall anchor the scene" },
         { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "tonkatsu"], "surprisePick": false, "source": "OpenStreetMap 2026 (347 japanese-tagged restaurants in Austria)" },
         { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["butter chicken", "biryani", "naan"], "surprisePick": false, "source": "OpenStreetMap 2026 (179 indian-tagged restaurants in Austria)" },
-        { "cuisineCountryId": "greece", "cuisineName": "Greek", "exampleDishes": ["gyros", "moussaka", "spanakopita"], "surprisePick": false, "source": "OpenStreetMap 2026 (207 greek-tagged restaurants in Austria)" }
+        { "cuisineCountryId": "greece", "cuisineName": "Greek", "exampleDishes": ["gyros", "moussaka", "spanakopita"], "surprisePick": false, "source": "OpenStreetMap 2026 (207 greek-tagged restaurants in Austria)" },
+        { "cuisineCountryId": "slovenia", "cuisineName": "Slovenian", "exampleDishes": ["potica", "kranjska klobasa", "štruklji"], "surprisePick": false }
       ]
     },
     "belgium": {
@@ -24,7 +25,8 @@
         { "cuisineCountryId": "drc", "cuisineName": "Congolese", "exampleDishes": ["poulet moambé", "saka-saka", "fufu"], "surprisePick": false },
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum", "spring rolls", "noodle soup"], "surprisePick": false, "source": "OpenStreetMap 2026 (592 chinese-tagged restaurants in Belgium)" },
         { "cuisineCountryId": "spain", "cuisineName": "Spanish", "exampleDishes": ["tapas", "paella", "churros"], "surprisePick": false, "source": "OpenStreetMap 2026 (112 spanish-tagged restaurants in Belgium)" },
-        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["tikka masala", "samosa", "mango lassi"], "surprisePick": false, "source": "OpenStreetMap 2026 (164 indian-tagged restaurants in Belgium)" }
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["tikka masala", "samosa", "mango lassi"], "surprisePick": false, "source": "OpenStreetMap 2026 (164 indian-tagged restaurants in Belgium)" },
+        { "cuisineCountryId": "luxembourg", "cuisineName": "Luxembourgish", "exampleDishes": ["judd mat gaardebounen", "gromperekichelcher"], "surprisePick": false }
       ]
     },
     "czechia": {
@@ -38,7 +40,8 @@
         { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "gyoza"], "surprisePick": false, "source": "OpenStreetMap 2026 (205 japanese-tagged restaurants in Czechia)" },
         { "cuisineCountryId": "germany", "cuisineName": "German", "exampleDishes": ["schnitzel", "bratwurst", "sauerkraut"], "surprisePick": false },
         { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["chicken curry", "biryani", "naan"], "surprisePick": false, "source": "OpenStreetMap 2026 (169 indian-tagged restaurants in Czechia)" },
-        { "cuisineCountryId": "mexico", "cuisineName": "Mexican", "exampleDishes": ["tacos", "guacamole", "nachos"], "surprisePick": false, "source": "Wolt Czechia awards 2024 (Mexican among favourite delivery cuisines)" }
+        { "cuisineCountryId": "mexico", "cuisineName": "Mexican", "exampleDishes": ["tacos", "guacamole", "nachos"], "surprisePick": false, "source": "Wolt Czechia awards 2024 (Mexican among favourite delivery cuisines)" },
+        { "cuisineCountryId": "slovakia", "cuisineName": "Slovak", "exampleDishes": ["bryndzové halušky", "kapustnica"], "surprisePick": false, "source": "Shared Czechoslovak table: halušky beloved across Czechia" }
       ]
     },
     "denmark": {
@@ -51,7 +54,8 @@
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum", "Peking duck", "noodles"], "surprisePick": false, "strength": 73, "source": "YouGov Global Cuisine Survey 2019" },
         { "cuisineCountryId": "thailand", "cuisineName": "Thai", "exampleDishes": ["pad thai", "massaman curry", "som tam"], "surprisePick": false, "strength": 73, "source": "YouGov Global Cuisine Survey 2019" },
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "hot dog", "pancakes"], "surprisePick": false, "strength": 70, "source": "YouGov Global Cuisine Survey 2019" },
-        { "cuisineCountryId": "greece", "cuisineName": "Greek", "exampleDishes": ["souvlaki", "moussaka", "tzatziki"], "surprisePick": true, "strength": 69, "source": "YouGov Global Cuisine Survey 2019" }
+        { "cuisineCountryId": "greece", "cuisineName": "Greek", "exampleDishes": ["souvlaki", "moussaka", "tzatziki"], "surprisePick": true, "strength": 69, "source": "YouGov Global Cuisine Survey 2019" },
+        { "cuisineCountryId": "iceland", "cuisineName": "Icelandic", "exampleDishes": ["skyr", "lamb soup", "plokkfiskur"], "surprisePick": false, "source": "Skyr conquered Danish (and European) supermarket shelves" }
       ]
     },
     "finland": {
@@ -64,7 +68,8 @@
         { "cuisineCountryId": "thailand", "cuisineName": "Thai", "exampleDishes": ["pad thai", "green curry", "tom kha"], "surprisePick": false, "strength": 72, "source": "YouGov Global Cuisine Survey 2019" },
         { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["baguette", "croissant", "steak frites"], "surprisePick": false, "strength": 70, "source": "YouGov Global Cuisine Survey 2019" },
         { "cuisineCountryId": "spain", "cuisineName": "Spanish", "exampleDishes": ["paella", "tapas", "churros"], "surprisePick": true, "strength": 70, "source": "YouGov Global Cuisine Survey 2019" },
-        { "cuisineCountryId": "mexico", "cuisineName": "Mexican", "exampleDishes": ["tacos", "guacamole", "enchiladas"], "surprisePick": false, "strength": 69, "source": "YouGov Global Cuisine Survey 2019" }
+        { "cuisineCountryId": "mexico", "cuisineName": "Mexican", "exampleDishes": ["tacos", "guacamole", "enchiladas"], "surprisePick": false, "strength": 69, "source": "YouGov Global Cuisine Survey 2019" },
+        { "cuisineCountryId": "estonia", "cuisineName": "Estonian", "exampleDishes": ["kiluvõileib", "black bread", "kama"], "surprisePick": false, "source": "Finns ferry to Tallinn in droves for its restaurant scene" }
       ]
     },
     "france": {
@@ -80,7 +85,8 @@
         { "cuisineCountryId": "vietnam", "cuisineName": "Vietnamese", "exampleDishes": ["phở", "bánh mì", "gỏi cuốn"], "surprisePick": true, "strength": 74, "source": "YouGov Global Cuisine Survey 2019" },
         { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["butter chicken", "biryani", "dosa"], "surprisePick": false, "strength": 71, "source": "YouGov Global Cuisine Survey 2019" },
         { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi omakase", "ramen", "yakitori"], "surprisePick": false, "strength": 70, "source": "YouGov Global Cuisine Survey 2019" },
-        { "cuisineCountryId": "thailand", "cuisineName": "Thai", "exampleDishes": ["pad thai", "green curry", "tom yum"], "surprisePick": false, "strength": 70, "source": "YouGov Global Cuisine Survey 2019" }
+        { "cuisineCountryId": "thailand", "cuisineName": "Thai", "exampleDishes": ["pad thai", "green curry", "tom yum"], "surprisePick": false, "strength": 70, "source": "YouGov Global Cuisine Survey 2019" },
+        { "cuisineCountryId": "algeria", "cuisineName": "Algerian", "exampleDishes": ["couscous", "chakhchoukha", "makroud"], "surprisePick": false, "source": "Couscous consistently polls among France’s favourite dishes" }
       ]
     },
     "germany": {
@@ -93,7 +99,9 @@
         { "cuisineCountryId": "mexico", "cuisineName": "Mexican", "exampleDishes": ["tacos", "guacamole", "enchiladas"], "surprisePick": false, "strength": 71, "source": "YouGov Global Cuisine Survey 2019" },
         { "cuisineCountryId": "spain", "cuisineName": "Spanish", "exampleDishes": ["paella", "tapas", "churros"], "surprisePick": false, "strength": 70, "source": "YouGov Global Cuisine Survey 2019" },
         { "cuisineCountryId": "thailand", "cuisineName": "Thai", "exampleDishes": ["pad thai", "green curry", "tom yum"], "surprisePick": false, "strength": 68, "source": "YouGov Global Cuisine Survey 2019" },
-        { "cuisineCountryId": "turkey", "cuisineName": "Turkish", "exampleDishes": ["döner kebab", "lahmacun", "baklava"], "surprisePick": false, "strength": 64, "source": "YouGov Global Cuisine Survey 2019" }
+        { "cuisineCountryId": "turkey", "cuisineName": "Turkish", "exampleDishes": ["döner kebab", "lahmacun", "baklava"], "surprisePick": false, "strength": 64, "source": "YouGov Global Cuisine Survey 2019" },
+        { "cuisineCountryId": "israel", "cuisineName": "Israeli", "exampleDishes": ["hummus", "shakshuka", "sabich"], "surprisePick": false, "source": "Berlin’s Israeli restaurant wave made hummus and shakshuka city staples" },
+        { "cuisineCountryId": "syria", "cuisineName": "Syrian", "exampleDishes": ["shawarma", "kibbeh"], "surprisePick": false, "source": "Post-2015 Syrian diaspora made shawarma Berlin’s soul food (Smithsonian)" }
       ]
     },
     "greece": {
@@ -147,7 +155,9 @@
         { "cuisineCountryId": "greece", "cuisineName": "Greek", "exampleDishes": ["souvlaki", "moussaka", "tzatziki"], "surprisePick": false, "strength": 71, "source": "YouGov Global Cuisine Survey 2019" },
         { "cuisineCountryId": "brazil", "cuisineName": "Brazilian", "exampleDishes": ["churrasco", "feijoada", "brigadeiro"], "surprisePick": false, "strength": 66, "source": "YouGov Global Cuisine Survey 2019" },
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum", "Peking duck", "hot pot"], "surprisePick": false, "strength": 62, "source": "YouGov Global Cuisine Survey 2019" },
-        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "wagyu"], "surprisePick": true, "strength": 62, "source": "YouGov Global Cuisine Survey 2019" }
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "wagyu"], "surprisePick": true, "strength": 62, "source": "YouGov Global Cuisine Survey 2019" },
+        { "cuisineCountryId": "monaco", "cuisineName": "Monégasque", "exampleDishes": ["barbagiuan", "socca", "stocafi"], "surprisePick": false, "source": "Riviera kinship: barbagiuan and socca shared with Liguria and Nice" },
+        { "cuisineCountryId": "san-marino", "cuisineName": "Sammarinese", "exampleDishes": ["torta tre monti", "piadina"], "surprisePick": false }
       ]
     },
     "netherlands": {
@@ -175,7 +185,8 @@
         { "cuisineCountryId": "greece", "cuisineName": "Greek", "exampleDishes": ["souvlaki", "moussaka", "tzatziki"], "surprisePick": true, "strength": 75, "source": "YouGov Global Cuisine Survey 2019" },
         { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["tikka masala", "biryani", "palak paneer"], "surprisePick": false, "strength": 75, "source": "YouGov Global Cuisine Survey 2019" },
         { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["baguette", "croissant", "steak frites"], "surprisePick": false, "strength": 74, "source": "YouGov Global Cuisine Survey 2019" },
-        { "cuisineCountryId": "thailand", "cuisineName": "Thai", "exampleDishes": ["pad thai", "green curry", "massaman"], "surprisePick": false, "strength": 74, "source": "YouGov Global Cuisine Survey 2019" }
+        { "cuisineCountryId": "thailand", "cuisineName": "Thai", "exampleDishes": ["pad thai", "green curry", "massaman"], "surprisePick": false, "strength": 74, "source": "YouGov Global Cuisine Survey 2019" },
+        { "cuisineCountryId": "sweden", "cuisineName": "Swedish", "exampleDishes": ["meatballs", "gravlax", "kanelbullar"], "surprisePick": false, "strength": 62, "source": "YouGov Global Cuisine Survey 2019" }
       ]
     },
     "poland": {
@@ -219,7 +230,8 @@
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "cheesecake"], "surprisePick": false, "source": "Glovo Romania 2024 (6.1M burgers ordered per year; American 2nd most appreciated)" },
         { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["croissant", "boeuf bourguignon", "crème brûlée"], "surprisePick": false, "source": "OpenStreetMap 2026 (30 french-tagged restaurants in Romania)" },
         { "cuisineCountryId": "greece", "cuisineName": "Greek", "exampleDishes": ["moussaka", "souvlaki", "spanakopita"], "surprisePick": false, "source": "OpenStreetMap 2026 (80 greek-tagged restaurants in Romania)" },
-        { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["shawarma", "hummus", "mezze"], "surprisePick": false, "source": "OpenStreetMap 2026 (46 lebanese-tagged restaurants in Romania)" }
+        { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["shawarma", "hummus", "mezze"], "surprisePick": false, "source": "OpenStreetMap 2026 (46 lebanese-tagged restaurants in Romania)" },
+        { "cuisineCountryId": "moldova", "cuisineName": "Moldovan", "exampleDishes": ["mămăligă", "plăcinte", "zeamă"], "surprisePick": false, "source": "Shared cuisine and beloved Moldovan wine across Romania" }
       ]
     },
     "spain": {
@@ -232,7 +244,10 @@
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum", "fried rice", "spring rolls"], "surprisePick": false, "strength": 71, "source": "YouGov Global Cuisine Survey 2019" },
         { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["baguette", "croissant", "steak frites"], "surprisePick": false, "strength": 70, "source": "YouGov Global Cuisine Survey 2019" },
         { "cuisineCountryId": "greece", "cuisineName": "Greek", "exampleDishes": ["souvlaki", "moussaka", "tzatziki"], "surprisePick": false, "strength": 62, "source": "YouGov Global Cuisine Survey 2019" },
-        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "yakitori"], "surprisePick": true, "strength": 57, "source": "YouGov Global Cuisine Survey 2019" }
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "yakitori"], "surprisePick": true, "strength": 57, "source": "YouGov Global Cuisine Survey 2019" },
+        { "cuisineCountryId": "andorra", "cuisineName": "Andorran", "exampleDishes": ["escudella", "trinxat"], "surprisePick": false, "source": "Shared Catalan mountain table" },
+        { "cuisineCountryId": "venezuela", "cuisineName": "Venezuelan", "exampleDishes": ["arepas", "tequeños", "pabellón criollo"], "surprisePick": false, "source": "Venezuelan migration made arepas a Madrid fixture" },
+        { "cuisineCountryId": "ecuador", "cuisineName": "Ecuadorian", "exampleDishes": ["encebollado", "llapingachos", "ceviche"], "surprisePick": false, "source": "Ecuadorians are among Spain’s largest Latin American communities" }
       ]
     },
     "sweden": {
@@ -245,7 +260,8 @@
         { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["baguette", "croissant", "steak frites"], "surprisePick": false, "strength": 79, "source": "YouGov Global Cuisine Survey 2019" },
         { "cuisineCountryId": "thailand", "cuisineName": "Thai", "exampleDishes": ["pad thai", "green curry", "tom yum"], "surprisePick": true, "strength": 78, "source": "YouGov Global Cuisine Survey 2019" },
         { "cuisineCountryId": "mexico", "cuisineName": "Mexican", "exampleDishes": ["tacos", "guacamole", "fajitas"], "surprisePick": false, "strength": 77, "source": "YouGov Global Cuisine Survey 2019" },
-        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum", "Peking duck", "noodles"], "surprisePick": false, "strength": 74, "source": "YouGov Global Cuisine Survey 2019" }
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum", "Peking duck", "noodles"], "surprisePick": false, "strength": 74, "source": "YouGov Global Cuisine Survey 2019" },
+        { "cuisineCountryId": "chile", "cuisineName": "Chilean", "exampleDishes": ["completos", "empanadas de pino", "pastel de choclo"], "surprisePick": false, "source": "Chileans are Sweden’s largest Latin American community (1970s exiles) — completo stands in Stockholm" }
       ]
     },
     "switzerland": {
@@ -260,7 +276,8 @@
         { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["tikka masala", "biryani", "dhal"], "surprisePick": false, "source": "Just Eat Schweiz Report 2024 (Indian orders +77% vs 2022)" },
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum", "Peking duck", "dumplings"], "surprisePick": false, "source": "Just Eat Schweiz Report 2024 (Chinese 3rd most-named favourite, 21%)" },
         { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["mezze", "shawarma", "baklava"], "surprisePick": false, "source": "OpenStreetMap 2026 (93 lebanese-tagged restaurants in Switzerland)" },
-        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "cheesecake", "BBQ"], "surprisePick": false, "source": "OpenStreetMap 2026 (832 american-tagged restaurants in Switzerland)" }
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "cheesecake", "BBQ"], "surprisePick": false, "source": "OpenStreetMap 2026 (832 american-tagged restaurants in Switzerland)" },
+        { "cuisineCountryId": "liechtenstein", "cuisineName": "Liechtensteiner", "exampleDishes": ["käsknöpfle", "ribel"], "surprisePick": false }
       ]
     },
     "uk": {
@@ -274,7 +291,9 @@
         { "cuisineCountryId": "mexico", "cuisineName": "Mexican", "exampleDishes": ["tacos", "guacamole", "enchiladas"], "surprisePick": false, "strength": 76, "source": "YouGov Global Cuisine Survey 2019" },
         { "cuisineCountryId": "thailand", "cuisineName": "Thai", "exampleDishes": ["pad thai", "green curry", "larb"], "surprisePick": false, "strength": 75, "source": "YouGov Global Cuisine Survey 2019" },
         { "cuisineCountryId": "greece", "cuisineName": "Greek", "exampleDishes": ["moussaka", "souvlaki", "halloumi"], "surprisePick": false, "strength": 74, "source": "YouGov Global Cuisine Survey 2019" },
-        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "BBQ"], "surprisePick": false, "strength": 70, "source": "YouGov Global Cuisine Survey 2019" }
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "BBQ"], "surprisePick": false, "strength": 70, "source": "YouGov Global Cuisine Survey 2019" },
+        { "cuisineCountryId": "cyprus", "cuisineName": "Cypriot", "exampleDishes": ["halloumi", "souvla", "kleftiko"], "surprisePick": false, "source": "The UK is the world’s biggest halloumi importer outside Cyprus" },
+        { "cuisineCountryId": "malta", "cuisineName": "Maltese", "exampleDishes": ["pastizzi", "rabbit stew", "ftira"], "surprisePick": false }
       ]
     },
     "russia": {
@@ -287,7 +306,9 @@
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum", "Peking duck", "hot pot"], "surprisePick": false },
         { "cuisineCountryId": "uzbekistan", "cuisineName": "Uzbek", "exampleDishes": ["plov", "shashlik", "lagman"], "surprisePick": false },
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "cheesecake"], "surprisePick": false },
-        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["crêpes", "boeuf bourguignon", "soufflé"], "surprisePick": false }
+        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["crêpes", "boeuf bourguignon", "soufflé"], "surprisePick": false },
+        { "cuisineCountryId": "belarus", "cuisineName": "Belarusian", "exampleDishes": ["draniki", "machanka", "kalduny"], "surprisePick": false },
+        { "cuisineCountryId": "armenia", "cuisineName": "Armenian", "exampleDishes": ["khorovats", "lavash", "dolma"], "surprisePick": false, "source": "Armenian lavash and shashlik culture are fixtures of Russian dining" }
       ]
     },
     "ukraine": {
@@ -314,7 +335,8 @@
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "cheesecake"], "surprisePick": false, "source": "Yemeksepeti 2024 (burger a top-5 most-ordered food nationwide)" },
         { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["curry", "biryani", "naan"], "surprisePick": false, "source": "OpenStreetMap 2026 (25 indian-tagged restaurants in Turkey)" },
         { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["croissant", "boeuf bourguignon", "crème brûlée"], "surprisePick": false },
-        { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["mezze", "kibbeh", "tabbouleh"], "surprisePick": false }
+        { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["mezze", "kibbeh", "tabbouleh"], "surprisePick": false },
+        { "cuisineCountryId": "azerbaijan", "cuisineName": "Azerbaijani", "exampleDishes": ["plov", "qutab", "dolma"], "surprisePick": false, "source": "\"One nation, two states\": Azeri kebab and plov beloved in Turkey" }
       ]
     },
     "usa": {
@@ -327,7 +349,11 @@
         { "cuisineCountryId": "spain", "cuisineName": "Spanish", "exampleDishes": ["paella", "tapas", "churros"], "surprisePick": false, "strength": 79, "source": "YouGov Global Cuisine Survey 2019" },
         { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "hibachi"], "surprisePick": false, "strength": 74, "source": "YouGov Global Cuisine Survey 2019" },
         { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["croissant", "crêpes", "steak au poivre"], "surprisePick": false, "strength": 69, "source": "YouGov Global Cuisine Survey 2019" },
-        { "cuisineCountryId": "greece", "cuisineName": "Greek", "exampleDishes": ["souvlaki", "moussaka", "tzatziki"], "surprisePick": false, "strength": 69, "source": "YouGov Global Cuisine Survey 2019" }
+        { "cuisineCountryId": "greece", "cuisineName": "Greek", "exampleDishes": ["souvlaki", "moussaka", "tzatziki"], "surprisePick": false, "strength": 69, "source": "YouGov Global Cuisine Survey 2019" },
+        { "cuisineCountryId": "ireland", "cuisineName": "Irish", "exampleDishes": ["Irish stew", "soda bread", "full Irish breakfast"], "surprisePick": false, "source": "Thousands of Irish pubs across the US made Irish food an institution" },
+        { "cuisineCountryId": "canada", "cuisineName": "Canadian", "exampleDishes": ["poutine", "maple syrup", "butter tarts"], "surprisePick": false, "source": "Poutine spread onto menus across the northern US" },
+        { "cuisineCountryId": "cuba", "cuisineName": "Cuban", "exampleDishes": ["Cuban sandwich", "ropa vieja", "lechón"], "surprisePick": false, "source": "Miami made the Cuban sandwich an American classic" },
+        { "cuisineCountryId": "el-salvador", "cuisineName": "Salvadoran", "exampleDishes": ["pupusas", "curtido", "yuca frita"], "surprisePick": false, "source": "Pupuserías serve the 2.5M-strong Salvadoran diaspora across the US" }
       ]
     },
     "canada": {
@@ -341,7 +367,8 @@
         { "cuisineCountryId": "thailand", "cuisineName": "Thai", "exampleDishes": ["pad thai", "green curry", "tom yum"], "surprisePick": false },
         { "cuisineCountryId": "vietnam", "cuisineName": "Vietnamese", "exampleDishes": ["phở", "bánh mì", "bún bò"], "surprisePick": false },
         { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["shawarma", "mezze", "fattoush"], "surprisePick": true, "source": "Ottawa was officially declared \"Shawarma Capital of Canada\" (2024): ~200 shawarma shops, rooted in 1980s Lebanese refuge" },
-        { "cuisineCountryId": "mexico", "cuisineName": "Mexican", "exampleDishes": ["tacos", "burritos", "nachos"], "surprisePick": false, "source": "Mintel Canada 2018 (82% eat Latin/Mexican)" }
+        { "cuisineCountryId": "mexico", "cuisineName": "Mexican", "exampleDishes": ["tacos", "burritos", "nachos"], "surprisePick": false, "source": "Mintel Canada 2018 (82% eat Latin/Mexican)" },
+        { "cuisineCountryId": "haiti", "cuisineName": "Haitian", "exampleDishes": ["griot", "diri ak djon djon", "pikliz"], "surprisePick": false, "source": "Montreal’s Haitian community made griot part of the city’s food identity" }
       ]
     },
     "brazil": {
@@ -354,7 +381,8 @@
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum", "Peking duck", "chow mein"], "surprisePick": false, "source": "OpenStreetMap 2026 (306 chinese-tagged restaurants in Brazil)" },
         { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["crêpes", "baguette", "soufflé"], "surprisePick": false, "source": "OpenStreetMap 2026 (57 french-tagged restaurants in Brazil)" },
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "cheesecake"], "surprisePick": false, "source": "OpenStreetMap 2026 (4635 american-tagged restaurants in Brazil)" },
-        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["curry", "biryani", "naan"], "surprisePick": false, "source": "OpenStreetMap 2026 (40 indian-tagged restaurants in Brazil)" }
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["curry", "biryani", "naan"], "surprisePick": false, "source": "OpenStreetMap 2026 (40 indian-tagged restaurants in Brazil)" },
+        { "cuisineCountryId": "uruguay", "cuisineName": "Uruguayan", "exampleDishes": ["chivito", "parrilla", "dulce de leche"], "surprisePick": false }
       ]
     },
     "mexico": {
@@ -380,7 +408,9 @@
         { "cuisineCountryId": "peru", "cuisineName": "Peruvian", "exampleDishes": ["ceviche", "lomo saltado", "tiradito"], "surprisePick": true, "source": "Peruvian food became a Buenos Aires staple via immigration; fusion ceviche bars are wildly popular" },
         { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["hummus", "shawarma", "sfija"], "surprisePick": false },
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum", "fried rice", "chow mein"], "surprisePick": false, "source": "OpenStreetMap 2026 (71 chinese-tagged restaurants in Argentina)" },
-        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["croissant", "boeuf bourguignon", "crème brûlée"], "surprisePick": false }
+        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["croissant", "boeuf bourguignon", "crème brûlée"], "surprisePick": false },
+        { "cuisineCountryId": "bolivia", "cuisineName": "Bolivian", "exampleDishes": ["salteñas", "pique macho"], "surprisePick": false, "source": "Large Bolivian community in Buenos Aires; salteñas widely loved" },
+        { "cuisineCountryId": "paraguay", "cuisineName": "Paraguayan", "exampleDishes": ["chipa", "sopa paraguaya"], "surprisePick": false, "source": "Chipá is everyday street food across northeast Argentina" }
       ]
     },
     "colombia": {
@@ -393,7 +423,8 @@
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "BBQ"], "surprisePick": false, "source": "Rappi Colombia (hamburgers the most-ordered dish, ~9.6M orders/year)" },
         { "cuisineCountryId": "mexico", "cuisineName": "Mexican", "exampleDishes": ["tacos", "guacamole", "enchiladas"], "surprisePick": false, "source": "OpenStreetMap 2026 (187 mexican-tagged restaurants in Colombia)" },
         { "cuisineCountryId": "peru", "cuisineName": "Peruvian", "exampleDishes": ["ceviche", "tiradito", "causa"], "surprisePick": true, "source": "Peruvian is one of Bogotá’s most impressive international dining scenes — cevicherías from budget spots to Acurio’s La Mar" },
-        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["crêpes", "croissant", "quiche"], "surprisePick": false, "source": "OpenStreetMap 2026 (40 french-tagged restaurants in Colombia)" }
+        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["crêpes", "croissant", "quiche"], "surprisePick": false, "source": "OpenStreetMap 2026 (40 french-tagged restaurants in Colombia)" },
+        { "cuisineCountryId": "panama", "cuisineName": "Panamanian", "exampleDishes": ["sancocho", "patacones"], "surprisePick": false }
       ]
     },
     "peru": {
@@ -432,7 +463,8 @@
         { "cuisineCountryId": "south-korea", "cuisineName": "Korean", "exampleDishes": ["Korean BBQ", "kimchi jjigae", "bibimbap"], "surprisePick": false, "strength": 66, "source": "YouGov Global Cuisine Survey 2019" },
         { "cuisineCountryId": "taiwan", "cuisineName": "Taiwanese", "exampleDishes": ["beef noodle soup", "xiao long bao", "gua bao"], "surprisePick": true, "strength": 66, "source": "YouGov Global Cuisine Survey 2019" },
         { "cuisineCountryId": "spain", "cuisineName": "Spanish", "exampleDishes": ["paella", "tapas", "churros"], "surprisePick": false, "strength": 64, "source": "YouGov Global Cuisine Survey 2019" },
-        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["kare raisu", "tandoori chicken", "naan"], "surprisePick": false, "strength": 63, "source": "YouGov Global Cuisine Survey 2019" }
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["kare raisu", "tandoori chicken", "naan"], "surprisePick": false, "strength": 63, "source": "YouGov Global Cuisine Survey 2019" },
+        { "cuisineCountryId": "norway", "cuisineName": "Norwegian", "exampleDishes": ["salmon sushi", "gravlaks", "skrei cod"], "surprisePick": false, "source": "Norway invented salmon sushi: the 1980s \"Project Japan\" campaign persuaded Japan to eat raw salmon" }
       ]
     },
     "china": {
@@ -458,7 +490,9 @@
         { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["baguette", "croissant", "steak frites"], "surprisePick": false, "strength": 70, "source": "YouGov Global Cuisine Survey 2019" },
         { "cuisineCountryId": "mexico", "cuisineName": "Mexican", "exampleDishes": ["tacos", "nachos", "guacamole"], "surprisePick": false, "strength": 70, "source": "YouGov Global Cuisine Survey 2019" },
         { "cuisineCountryId": "uk", "cuisineName": "British", "exampleDishes": ["fish and chips", "sausage rolls", "baked beans on toast"], "surprisePick": true, "strength": 68, "source": "YouGov Global Cuisine Survey 2019" },
-        { "cuisineCountryId": "thailand", "cuisineName": "Thai", "exampleDishes": ["pad thai", "green curry", "tom yum"], "surprisePick": false, "strength": 65, "source": "YouGov Global Cuisine Survey 2019" }
+        { "cuisineCountryId": "thailand", "cuisineName": "Thai", "exampleDishes": ["pad thai", "green curry", "tom yum"], "surprisePick": false, "strength": 65, "source": "YouGov Global Cuisine Survey 2019" },
+        { "cuisineCountryId": "myanmar", "cuisineName": "Burmese", "exampleDishes": ["khow suey", "mohinga"], "surprisePick": false, "source": "Khow suey became a beloved dish of Kolkata via the Burmese-Indian connection" },
+        { "cuisineCountryId": "bangladesh", "cuisineName": "Bangladeshi", "exampleDishes": ["ilish (hilsa)", "kacchi biryani"], "surprisePick": false, "source": "West Bengal prizes Padma hilsa — Bangladesh’s national fish" }
       ]
     },
     "south-korea": {
@@ -471,7 +505,8 @@
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "cheesecake"], "surprisePick": false, "source": "OpenStreetMap 2026 (1656 american-tagged restaurants in South Korea)" },
         { "cuisineCountryId": "thailand", "cuisineName": "Thai", "exampleDishes": ["pad thai", "green curry", "mango sticky rice"], "surprisePick": false, "source": "OpenStreetMap 2026 (64 thai-tagged restaurants in South Korea)" },
         { "cuisineCountryId": "vietnam", "cuisineName": "Vietnamese", "exampleDishes": ["phở", "bánh mì", "bún bò"], "surprisePick": true, "source": "Phở boom since Pho Hoa Gangnam (1998): Vietnamese restaurant counts among Seoul’s highest despite a small diaspora" },
-        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["curry", "naan", "biryani"], "surprisePick": false, "source": "OpenStreetMap 2026 (130 indian-tagged restaurants in South Korea)" }
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["curry", "naan", "biryani"], "surprisePick": false, "source": "OpenStreetMap 2026 (130 indian-tagged restaurants in South Korea)" },
+        { "cuisineCountryId": "north-korea", "cuisineName": "North Korean", "exampleDishes": ["Pyongyang naengmyeon", "kimchi"], "surprisePick": false, "source": "Pyongyang naengmyeon restaurants are a beloved Seoul institution" }
       ]
     },
     "thailand": {
@@ -484,7 +519,8 @@
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["fried chicken", "burger", "cheesecake"], "surprisePick": false, "strength": 73, "source": "YouGov Global Cuisine Survey 2019" },
         { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false, "strength": 69, "source": "YouGov Global Cuisine Survey 2019" },
         { "cuisineCountryId": "vietnam", "cuisineName": "Vietnamese", "exampleDishes": ["phở", "bánh mì", "bún bò"], "surprisePick": false, "strength": 67, "source": "YouGov Global Cuisine Survey 2019" },
-        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["patisserie", "crêpes", "croissant"], "surprisePick": true, "strength": 62, "source": "YouGov Global Cuisine Survey 2019" }
+        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["patisserie", "crêpes", "croissant"], "surprisePick": true, "strength": 62, "source": "YouGov Global Cuisine Survey 2019" },
+        { "cuisineCountryId": "laos", "cuisineName": "Lao", "exampleDishes": ["laap", "tam mak hoong", "sticky rice"], "surprisePick": false, "source": "Thailand’s beloved Isan food — larb, som tam — is ethnically Lao cuisine" }
       ]
     },
     "vietnam": {
@@ -497,7 +533,8 @@
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum", "hot pot", "Cantonese noodles"], "surprisePick": false, "strength": 73, "source": "YouGov Global Cuisine Survey 2019" },
         { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["baguette", "crêpes", "pâté"], "surprisePick": false, "strength": 72, "source": "YouGov Global Cuisine Survey 2019" },
         { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false, "strength": 72, "source": "YouGov Global Cuisine Survey 2019" },
-        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "BBQ"], "surprisePick": false, "strength": 71, "source": "YouGov Global Cuisine Survey 2019" }
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "BBQ"], "surprisePick": false, "strength": 71, "source": "YouGov Global Cuisine Survey 2019" },
+        { "cuisineCountryId": "cambodia", "cuisineName": "Cambodian", "exampleDishes": ["hủ tiếu Nam Vang", "amok"], "surprisePick": false, "source": "Hủ tiếu Nam Vang — \"Phnom Penh noodles\" — is a Vietnamese menu staple named for Cambodia" }
       ]
     },
     "indonesia": {
@@ -526,7 +563,8 @@
         { "cuisineCountryId": "mexico", "cuisineName": "Mexican", "exampleDishes": ["tacos", "guacamole", "enchiladas"], "surprisePick": false, "strength": 85, "source": "YouGov Global Cuisine Survey 2019" },
         { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["baguette", "croissant", "steak frites"], "surprisePick": false, "strength": 82, "source": "YouGov Global Cuisine Survey 2019" },
         { "cuisineCountryId": "thailand", "cuisineName": "Thai", "exampleDishes": ["pad thai", "green curry", "mango sticky rice"], "surprisePick": false, "strength": 76, "source": "YouGov Global Cuisine Survey 2019" },
-        { "cuisineCountryId": "australia", "cuisineName": "Australian", "exampleDishes": ["meat pie", "fish and chips", "lamington"], "surprisePick": false, "strength": 74, "source": "YouGov Global Cuisine Survey 2019" }
+        { "cuisineCountryId": "australia", "cuisineName": "Australian", "exampleDishes": ["meat pie", "fish and chips", "lamington"], "surprisePick": false, "strength": 74, "source": "YouGov Global Cuisine Survey 2019" },
+        { "cuisineCountryId": "sweden", "cuisineName": "Swedish", "exampleDishes": ["meatballs", "gravlax", "kanelbullar"], "surprisePick": false, "strength": 50, "source": "YouGov Global Cuisine Survey 2019" }
       ]
     },
     "malaysia": {
@@ -539,7 +577,8 @@
         { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false, "strength": 74, "source": "YouGov Global Cuisine Survey 2019" },
         { "cuisineCountryId": "singapore", "cuisineName": "Singaporean", "exampleDishes": ["Hainanese chicken rice", "chilli crab", "laksa"], "surprisePick": false, "strength": 74, "source": "YouGov Global Cuisine Survey 2019" },
         { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "yakiniku"], "surprisePick": false, "strength": 73, "source": "YouGov Global Cuisine Survey 2019" },
-        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["banana leaf rice", "biryani", "roti canai"], "surprisePick": false, "strength": 70, "source": "YouGov Global Cuisine Survey 2019" }
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["banana leaf rice", "biryani", "roti canai"], "surprisePick": false, "strength": 70, "source": "YouGov Global Cuisine Survey 2019" },
+        { "cuisineCountryId": "brunei", "cuisineName": "Bruneian", "exampleDishes": ["ambuyat", "nasi katok"], "surprisePick": false }
       ]
     },
     "pakistan": {
@@ -552,7 +591,8 @@
         { "cuisineCountryId": "turkey", "cuisineName": "Turkish", "exampleDishes": ["döner kebab", "baklava", "köfte"], "surprisePick": false, "source": "OpenStreetMap 2026 (51 turkish-tagged restaurants in Pakistan)" },
         { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "tempura"], "surprisePick": false },
         { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["shawarma", "mezze", "hummus"], "surprisePick": false },
-        { "cuisineCountryId": "iran", "cuisineName": "Persian", "exampleDishes": ["chelow kebab", "ghormeh sabzi", "tahdig"], "surprisePick": false }
+        { "cuisineCountryId": "iran", "cuisineName": "Persian", "exampleDishes": ["chelow kebab", "ghormeh sabzi", "tahdig"], "surprisePick": false },
+        { "cuisineCountryId": "afghanistan", "cuisineName": "Afghan", "exampleDishes": ["Kabuli pulao", "mantu"], "surprisePick": false, "source": "Kabuli pulao is a beloved staple across Pakistan" }
       ]
     },
     "bangladesh": {
@@ -618,7 +658,9 @@
         { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false, "source": "Jumia Nigeria Food Index 2020 (pizza among fastest-growing cuisines; Pizza Hut a top international brand)" },
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "BBQ"], "surprisePick": false, "source": "Jumia Nigeria Food Index 2020 (KFC the most popular international brand)" },
         { "cuisineCountryId": "turkey", "cuisineName": "Turkish", "exampleDishes": ["döner kebab", "börek", "baklava"], "surprisePick": false },
-        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "gyoza"], "surprisePick": false }
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "gyoza"], "surprisePick": false },
+        { "cuisineCountryId": "niger", "cuisineName": "Nigerien", "exampleDishes": ["kilishi", "dambou"], "surprisePick": false, "source": "Shared Hausa food culture: kilishi crosses the border both ways" },
+        { "cuisineCountryId": "benin", "cuisineName": "Beninese", "exampleDishes": ["amiwo", "akassa"], "surprisePick": false, "source": "Yoruba kinship: shared dishes across the Benin-Nigeria border" }
       ]
     },
     "south-africa": {
@@ -631,7 +673,10 @@
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum", "Peking duck", "spring rolls"], "surprisePick": false, "source": "OpenStreetMap 2026 (87 chinese-tagged restaurants in South Africa)" },
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "BBQ"], "surprisePick": false, "source": "OpenStreetMap 2026 (1252 american-tagged restaurants in South Africa)" },
         { "cuisineCountryId": "portugal", "cuisineName": "Portuguese", "exampleDishes": ["piri-piri chicken", "bacalhau", "pastéis de nata"], "surprisePick": true, "source": "Portuguese peri-peri culture is ubiquitous (Nando’s founded in Johannesburg, 1987)" },
-        { "cuisineCountryId": "greece", "cuisineName": "Greek", "exampleDishes": ["souvlaki", "moussaka", "baklava"], "surprisePick": false, "source": "OpenStreetMap 2026 (28 greek-tagged restaurants in South Africa)" }
+        { "cuisineCountryId": "greece", "cuisineName": "Greek", "exampleDishes": ["souvlaki", "moussaka", "baklava"], "surprisePick": false, "source": "OpenStreetMap 2026 (28 greek-tagged restaurants in South Africa)" },
+        { "cuisineCountryId": "botswana", "cuisineName": "Botswanan", "exampleDishes": ["seswaa", "bogobe"], "surprisePick": false },
+        { "cuisineCountryId": "namibia", "cuisineName": "Namibian", "exampleDishes": ["kapana", "Namibian beef biltong"], "surprisePick": false, "source": "Namibian beef is prized across southern Africa" },
+        { "cuisineCountryId": "lesotho", "cuisineName": "Basotho", "exampleDishes": ["papa", "moroho"], "surprisePick": false }
       ]
     },
     "kenya": {
@@ -644,7 +689,9 @@
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "BBQ"], "surprisePick": false, "source": "OpenStreetMap 2026 (30 american-tagged restaurants in Kenya)" },
         { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["shawarma", "hummus", "falafel"], "surprisePick": false },
         { "cuisineCountryId": "ethiopia", "cuisineName": "Ethiopian", "exampleDishes": ["injera", "tibs", "doro wat"], "surprisePick": true, "source": "Ethiopian cuisine \"winning Kenyan foodies\" (Business Daily): injera houses across Nairobi’s neighbourhoods" },
-        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "tempura"], "surprisePick": false }
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "tempura"], "surprisePick": false },
+        { "cuisineCountryId": "tanzania", "cuisineName": "Zanzibari", "exampleDishes": ["Zanzibar pilau", "urojo", "mishkaki"], "surprisePick": false, "source": "Zanzibar’s spice-island cooking draws East Africa" },
+        { "cuisineCountryId": "eritrea", "cuisineName": "Eritrean", "exampleDishes": ["zigni", "injera", "kitcha"], "surprisePick": false, "source": "Nairobi’s habesha restaurants serve Eritrean classics" }
       ]
     },
     "ghana": {
@@ -657,7 +704,8 @@
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "BBQ"], "surprisePick": false, "source": "OpenStreetMap 2026 (43 american-tagged restaurants in Ghana)" },
         { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["biryani", "curry", "naan"], "surprisePick": false },
         { "cuisineCountryId": "turkey", "cuisineName": "Turkish", "exampleDishes": ["döner kebab", "baklava", "börek"], "surprisePick": false, "source": "OpenStreetMap 2026 (26 turkish-tagged restaurants in Ghana)" },
-        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "tempura"], "surprisePick": false }
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "tempura"], "surprisePick": false },
+        { "cuisineCountryId": "togo", "cuisineName": "Togolese", "exampleDishes": ["akple", "koklo meme"], "surprisePick": false, "source": "Ewe kinship: akple and fufu shared across the Ghana-Togo border" }
       ]
     },
     "lebanon": {
@@ -683,7 +731,8 @@
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "BBQ", "cheesecake"], "surprisePick": false, "source": "OpenStreetMap 2026 (387 american-tagged restaurants in Israel)" },
         { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["curry", "biryani", "naan"], "surprisePick": false },
         { "cuisineCountryId": "mexico", "cuisineName": "Mexican", "exampleDishes": ["tacos", "guacamole", "nachos"], "surprisePick": false },
-        { "cuisineCountryId": "georgia", "cuisineName": "Georgian", "exampleDishes": ["khachapuri", "khinkali", "churchkhela"], "surprisePick": true, "source": "~140,000 Georgian Jews since the 1970s: khachapuri is a \"national love affair\" (RFE/RL), flagship spots on Rothschild Blvd" }
+        { "cuisineCountryId": "georgia", "cuisineName": "Georgian", "exampleDishes": ["khachapuri", "khinkali", "churchkhela"], "surprisePick": true, "source": "~140,000 Georgian Jews since the 1970s: khachapuri is a \"national love affair\" (RFE/RL), flagship spots on Rothschild Blvd" },
+        { "cuisineCountryId": "bulgaria", "cuisineName": "Bulgarian", "exampleDishes": ["shopska salad", "banitsa", "sirene cheese"], "surprisePick": false, "source": "\"Bulgarian cheese\" is an Israeli supermarket staple via Bulgarian-Jewish immigration" }
       ]
     },
     "iran": {
@@ -709,7 +758,9 @@
         { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["biryani", "tikka masala", "naan"], "surprisePick": false, "strength": 76, "source": "YouGov Global Cuisine Survey 2019" },
         { "cuisineCountryId": "uae", "cuisineName": "Emirati", "exampleDishes": ["machboos", "harees", "luqaimat"], "surprisePick": false, "strength": 71, "source": "YouGov Global Cuisine Survey 2019" },
         { "cuisineCountryId": "morocco", "cuisineName": "Moroccan", "exampleDishes": ["couscous", "tajine", "bastilla"], "surprisePick": false, "strength": 67, "source": "YouGov Global Cuisine Survey 2019" },
-        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "cheesecake"], "surprisePick": false, "strength": 66, "source": "YouGov Global Cuisine Survey 2019" }
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "cheesecake"], "surprisePick": false, "strength": 66, "source": "YouGov Global Cuisine Survey 2019" },
+        { "cuisineCountryId": "kuwait", "cuisineName": "Kuwaiti", "exampleDishes": ["machboos", "mutabbaq samak"], "surprisePick": false },
+        { "cuisineCountryId": "bahrain", "cuisineName": "Bahraini", "exampleDishes": ["machboos", "muhammar"], "surprisePick": false, "source": "Saudis cross the King Fahd Causeway for Bahrain’s restaurant weekends" }
       ]
     },
     "uae": {
@@ -722,7 +773,9 @@
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "brunch", "cheesecake"], "surprisePick": false, "strength": 75, "source": "YouGov Global Cuisine Survey 2019" },
         { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["baguette", "croissant", "steak frites"], "surprisePick": false, "strength": 71, "source": "YouGov Global Cuisine Survey 2019" },
         { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["biryani", "curry", "dosa"], "surprisePick": false, "strength": 71, "source": "YouGov Global Cuisine Survey 2019" },
-        { "cuisineCountryId": "mexico", "cuisineName": "Mexican", "exampleDishes": ["tacos", "guacamole", "enchiladas"], "surprisePick": false, "strength": 71, "source": "YouGov Global Cuisine Survey 2019" }
+        { "cuisineCountryId": "mexico", "cuisineName": "Mexican", "exampleDishes": ["tacos", "guacamole", "enchiladas"], "surprisePick": false, "strength": 71, "source": "YouGov Global Cuisine Survey 2019" },
+        { "cuisineCountryId": "qatar", "cuisineName": "Qatari", "exampleDishes": ["machboos", "harees"], "surprisePick": false },
+        { "cuisineCountryId": "oman", "cuisineName": "Omani", "exampleDishes": ["Omani halwa", "shuwa", "mashuai"], "surprisePick": false, "source": "Omani halwa is prized across the Gulf" }
       ]
     },
     "australia": {
@@ -738,7 +791,8 @@
         { "cuisineCountryId": "singapore", "cuisineName": "Singaporean", "exampleDishes": ["Hainanese chicken rice", "chilli crab", "laksa"], "surprisePick": false, "strength": 75, "source": "YouGov Global Cuisine Survey 2019" },
         { "cuisineCountryId": "vietnam", "cuisineName": "Vietnamese", "exampleDishes": ["phở", "bánh mì", "bún bò Huế"], "surprisePick": false, "strength": 75, "source": "YouGov Global Cuisine Survey 2019" },
         { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["butter chicken", "biryani", "dosa"], "surprisePick": false, "strength": 74, "source": "YouGov Global Cuisine Survey 2019" },
-        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "donburi"], "surprisePick": false, "strength": 74, "source": "YouGov Global Cuisine Survey 2019" }
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "donburi"], "surprisePick": false, "strength": 74, "source": "YouGov Global Cuisine Survey 2019" },
+        { "cuisineCountryId": "timor-leste", "cuisineName": "Timorese", "exampleDishes": ["ikan sabuko", "batar daan"], "surprisePick": false }
       ]
     },
     "new-zealand": {
@@ -782,7 +836,8 @@
         { "cuisineCountryId": "germany", "cuisineName": "German", "exampleDishes": ["schnitzel", "bratwurst", "sauerkraut"], "surprisePick": false },
         { "cuisineCountryId": "hungary", "cuisineName": "Hungarian", "exampleDishes": ["goulash", "lángos", "pörkölt"], "surprisePick": false },
         { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["tikka masala", "biryani", "naan"], "surprisePick": false, "source": "OpenStreetMap 2026 (40 indian-tagged restaurants in Slovakia)" },
-        { "cuisineCountryId": "turkey", "cuisineName": "Turkish", "exampleDishes": ["döner kebab", "dürüm", "lahmacun"], "surprisePick": false, "source": "OpenStreetMap 2026 (300 turkish/kebab-tagged restaurants in Slovakia)" }
+        { "cuisineCountryId": "turkey", "cuisineName": "Turkish", "exampleDishes": ["döner kebab", "dürüm", "lahmacun"], "surprisePick": false, "source": "OpenStreetMap 2026 (300 turkish/kebab-tagged restaurants in Slovakia)" },
+        { "cuisineCountryId": "czechia", "cuisineName": "Czech", "exampleDishes": ["svíčková", "smažený sýr", "trdelník"], "surprisePick": false, "source": "Shared Czechoslovak table: Czech classics remain Slovak comfort food" }
       ]
     },
     "bulgaria": {
@@ -810,7 +865,10 @@
         { "cuisineCountryId": "greece", "cuisineName": "Greek", "exampleDishes": ["souvlaki", "moussaka", "tzatziki"], "surprisePick": false, "source": "OpenStreetMap 2026 (28 greek-tagged restaurants in Serbia)" },
         { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["croissant", "steak frites", "crème brûlée"], "surprisePick": false },
         { "cuisineCountryId": "turkey", "cuisineName": "Turkish", "exampleDishes": ["döner kebab", "baklava", "börek"], "surprisePick": false, "source": "OpenStreetMap 2026 (44 turkish-tagged restaurants in Serbia)" },
-        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["tikka masala", "biryani", "naan"], "surprisePick": false }
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["tikka masala", "biryani", "naan"], "surprisePick": false },
+        { "cuisineCountryId": "bosnia", "cuisineName": "Bosnian", "exampleDishes": ["sarajevski ćevapi", "burek", "begova čorba"], "surprisePick": false, "source": "Sarajevo ćevapi are prized across the former Yugoslavia" },
+        { "cuisineCountryId": "north-macedonia", "cuisineName": "Macedonian", "exampleDishes": ["ajvar", "tavče gravče", "shopska"], "surprisePick": false, "source": "Macedonian ajvar is the benchmark across the Balkans" },
+        { "cuisineCountryId": "montenegro", "cuisineName": "Montenegrin", "exampleDishes": ["njeguški pršut", "kačamak", "grilled squid"], "surprisePick": false }
       ]
     },
     "lithuania": {
@@ -909,7 +967,8 @@
         { "cuisineCountryId": "south-korea", "cuisineName": "Korean", "exampleDishes": ["Korean BBQ", "fried chicken", "tteokbokki"], "surprisePick": false, "strength": 86, "source": "YouGov Global Cuisine Survey 2019" },
         { "cuisineCountryId": "indonesia", "cuisineName": "Indonesian", "exampleDishes": ["rijsttafel", "nasi goreng", "satay"], "surprisePick": false, "strength": 84, "source": "YouGov Global Cuisine Survey 2019" },
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "BBQ"], "surprisePick": false, "strength": 83, "source": "YouGov Global Cuisine Survey 2019" },
-        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["patisserie", "foie gras", "bouillabaisse"], "surprisePick": true, "strength": 79, "source": "YouGov Global Cuisine Survey 2019" }
+        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["patisserie", "foie gras", "bouillabaisse"], "surprisePick": true, "strength": 79, "source": "YouGov Global Cuisine Survey 2019" },
+        { "cuisineCountryId": "sweden", "cuisineName": "Swedish", "exampleDishes": ["meatballs", "gravlax", "kanelbullar"], "surprisePick": false, "strength": 63, "source": "YouGov Global Cuisine Survey 2019" }
       ]
     },
     "myanmar": {
@@ -935,7 +994,8 @@
         { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false, "source": "OpenStreetMap 2026 (190 italian-tagged restaurants in Sri Lanka)" },
         { "cuisineCountryId": "south-korea", "cuisineName": "Korean", "exampleDishes": ["Korean BBQ", "fried chicken", "tteokbokki"], "surprisePick": true },
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "cheesecake"], "surprisePick": false, "source": "OpenStreetMap 2026 (101 american-tagged restaurants in Sri Lanka)" },
-        { "cuisineCountryId": "thailand", "cuisineName": "Thai", "exampleDishes": ["pad thai", "massaman curry", "mango sticky rice"], "surprisePick": false, "source": "OpenStreetMap 2026 (24 thai-tagged restaurants in Sri Lanka)" }
+        { "cuisineCountryId": "thailand", "cuisineName": "Thai", "exampleDishes": ["pad thai", "massaman curry", "mango sticky rice"], "surprisePick": false, "source": "OpenStreetMap 2026 (24 thai-tagged restaurants in Sri Lanka)" },
+        { "cuisineCountryId": "maldives", "cuisineName": "Maldivian", "exampleDishes": ["mas huni", "garudhiya"], "surprisePick": false, "source": "Maldive fish (umbalakada) is a cornerstone Sri Lankan ingredient" }
       ]
     },
     "nepal": {
@@ -949,7 +1009,8 @@
         { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "tiramisu"], "surprisePick": false, "source": "OpenStreetMap 2026 (119 italian-tagged restaurants in Nepal)" },
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "cheesecake"], "surprisePick": false, "source": "OpenStreetMap 2026 (123 american-tagged restaurants in Nepal)" },
         { "cuisineCountryId": "thailand", "cuisineName": "Thai", "exampleDishes": ["pad thai", "green curry", "tom yum"], "surprisePick": false },
-        { "cuisineCountryId": "turkey", "cuisineName": "Turkish", "exampleDishes": ["döner kebab", "baklava", "köfte"], "surprisePick": false }
+        { "cuisineCountryId": "turkey", "cuisineName": "Turkish", "exampleDishes": ["döner kebab", "baklava", "köfte"], "surprisePick": false },
+        { "cuisineCountryId": "bhutan", "cuisineName": "Bhutanese", "exampleDishes": ["ema datshi", "red rice"], "surprisePick": false }
       ]
     },
     "kazakhstan": {
@@ -962,7 +1023,8 @@
         { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false, "source": "OpenStreetMap 2026 (185 italian-tagged restaurants in Kazakhstan)" },
         { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "gyoza"], "surprisePick": false, "source": "OpenStreetMap 2026 (81 japanese-tagged restaurants in Kazakhstan)" },
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "BBQ"], "surprisePick": false, "source": "OpenStreetMap 2026 (162 american-tagged restaurants in Kazakhstan)" },
-        { "cuisineCountryId": "turkey", "cuisineName": "Turkish", "exampleDishes": ["döner kebab", "baklava", "köfte"], "surprisePick": false, "source": "OpenStreetMap 2026 (158 turkish-tagged restaurants in Kazakhstan)" }
+        { "cuisineCountryId": "turkey", "cuisineName": "Turkish", "exampleDishes": ["döner kebab", "baklava", "köfte"], "surprisePick": false, "source": "OpenStreetMap 2026 (158 turkish-tagged restaurants in Kazakhstan)" },
+        { "cuisineCountryId": "kyrgyzstan", "cuisineName": "Kyrgyz", "exampleDishes": ["beshbarmak", "lagman", "kurut"], "surprisePick": false }
       ]
     },
     "taiwan": {
@@ -1002,7 +1064,9 @@
         { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false, "source": "OpenStreetMap 2026 (175 italian-tagged restaurants in Uzbekistan)" },
         { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "gyoza"], "surprisePick": false, "source": "OpenStreetMap 2026 (51 japanese-tagged restaurants in Uzbekistan)" },
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "BBQ"], "surprisePick": false, "source": "OpenStreetMap 2026 (182 american-tagged restaurants in Uzbekistan)" },
-        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["biryani", "curry", "naan"], "surprisePick": false }
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["biryani", "curry", "naan"], "surprisePick": false },
+        { "cuisineCountryId": "tajikistan", "cuisineName": "Tajik", "exampleDishes": ["qurutob", "osh"], "surprisePick": false },
+        { "cuisineCountryId": "turkmenistan", "cuisineName": "Turkmen", "exampleDishes": ["dograma", "plov"], "surprisePick": false }
       ]
     },
     "jordan": {
@@ -1016,7 +1080,8 @@
         { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["biryani", "tikka masala", "naan"], "surprisePick": false },
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum", "fried rice", "spring rolls"], "surprisePick": false },
         { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "teppanyaki"], "surprisePick": true },
-        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["croissant", "crème brûlée", "steak frites"], "surprisePick": false }
+        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["croissant", "crème brûlée", "steak frites"], "surprisePick": false },
+        { "cuisineCountryId": "palestine", "cuisineName": "Palestinian", "exampleDishes": ["maqluba", "musakhan", "knafeh"], "surprisePick": false, "source": "Jordan’s majority-Palestinian population keeps maqluba and musakhan at the heart of its table" }
       ]
     },
     "iraq": {
@@ -1085,7 +1150,9 @@
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "dim sum", "chow mein"], "surprisePick": false },
         { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false, "source": "OpenStreetMap 2026 (67 italian-tagged restaurants in Senegal)" },
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "BBQ"], "surprisePick": false, "source": "OpenStreetMap 2026 (38 american-tagged restaurants in Senegal)" },
-        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "tempura"], "surprisePick": false }
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "tempura"], "surprisePick": false },
+        { "cuisineCountryId": "gambia", "cuisineName": "Gambian", "exampleDishes": ["domoda", "benachin"], "surprisePick": false, "source": "Senegambia: one shared table across the border" },
+        { "cuisineCountryId": "mauritania", "cuisineName": "Mauritanian", "exampleDishes": ["thieboudienne", "mechoui"], "surprisePick": false }
       ]
     },
     "algeria": {
@@ -1113,7 +1180,8 @@
         { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["shawarma", "mezze", "hummus"], "surprisePick": false },
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "dim sum", "spring rolls"], "surprisePick": false },
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "BBQ"], "surprisePick": false, "source": "OpenStreetMap 2026 (67 american-tagged restaurants in Tunisia)" },
-        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "tempura"], "surprisePick": false }
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "tempura"], "surprisePick": false },
+        { "cuisineCountryId": "libya", "cuisineName": "Libyan", "exampleDishes": ["bazin", "Libyan shorba", "magrood"], "surprisePick": false }
       ]
     },
     "cameroon": {
@@ -1126,7 +1194,10 @@
         { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false, "source": "OpenStreetMap 2026 (28 italian-tagged restaurants in Cameroon)" },
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "BBQ"], "surprisePick": false, "source": "OpenStreetMap 2026 (17 american-tagged restaurants in Cameroon)" },
         { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["biryani", "curry", "naan"], "surprisePick": false },
-        { "cuisineCountryId": "turkey", "cuisineName": "Turkish", "exampleDishes": ["döner kebab", "baklava", "köfte"], "surprisePick": false }
+        { "cuisineCountryId": "turkey", "cuisineName": "Turkish", "exampleDishes": ["döner kebab", "baklava", "köfte"], "surprisePick": false },
+        { "cuisineCountryId": "chad", "cuisineName": "Chadian", "exampleDishes": ["boule", "daraba"], "surprisePick": false },
+        { "cuisineCountryId": "central-african-republic", "cuisineName": "Central African", "exampleDishes": ["gozo", "kanda"], "surprisePick": false },
+        { "cuisineCountryId": "gabon", "cuisineName": "Gabonese", "exampleDishes": ["poulet nyembwe", "odika"], "surprisePick": false }
       ]
     },
     "latvia": {
@@ -1141,7 +1212,8 @@
         { "cuisineCountryId": "georgia", "cuisineName": "Georgian", "exampleDishes": ["khachapuri", "khinkali", "badrijani"], "surprisePick": true, "source": "Riga’s dynamic Georgian community: khinkalnyas and khachapuri spots across the centre" },
         { "cuisineCountryId": "germany", "cuisineName": "German", "exampleDishes": ["schnitzel", "bratwurst", "pretzels"], "surprisePick": false },
         { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["tikka masala", "biryani", "naan"], "surprisePick": false },
-        { "cuisineCountryId": "turkey", "cuisineName": "Turkish", "exampleDishes": ["döner kebab", "dürüm", "lahmacun"], "surprisePick": false, "source": "OpenStreetMap 2026 (129 turkish/kebab-tagged restaurants in Latvia)" }
+        { "cuisineCountryId": "turkey", "cuisineName": "Turkish", "exampleDishes": ["döner kebab", "dürüm", "lahmacun"], "surprisePick": false, "source": "OpenStreetMap 2026 (129 turkish/kebab-tagged restaurants in Latvia)" },
+        { "cuisineCountryId": "lithuania", "cuisineName": "Lithuanian", "exampleDishes": ["cepelinai", "šaltibarščiai"], "surprisePick": false }
       ]
     },
     "estonia": {
@@ -1155,7 +1227,8 @@
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum", "Peking duck", "noodles"], "surprisePick": false, "source": "OpenStreetMap 2026 (23 chinese-tagged restaurants in Estonia)" },
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "cheesecake"], "surprisePick": false, "source": "OpenStreetMap 2026 (159 american-tagged restaurants in Estonia)" },
         { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["tikka masala", "biryani", "naan"], "surprisePick": false, "source": "OpenStreetMap 2026 (23 indian-tagged restaurants in Estonia)" },
-        { "cuisineCountryId": "thailand", "cuisineName": "Thai", "exampleDishes": ["pad thai", "green curry", "tom yum"], "surprisePick": false, "source": "OpenStreetMap 2026 (25 thai-tagged restaurants in Estonia)" }
+        { "cuisineCountryId": "thailand", "cuisineName": "Thai", "exampleDishes": ["pad thai", "green curry", "tom yum"], "surprisePick": false, "source": "OpenStreetMap 2026 (25 thai-tagged restaurants in Estonia)" },
+        { "cuisineCountryId": "latvia", "cuisineName": "Latvian", "exampleDishes": ["grey peas with bacon", "rye bread", "sklandrausis"], "surprisePick": false }
       ]
     },
     "paraguay": {
@@ -1197,7 +1270,8 @@
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "chow mein", "dim sum"], "surprisePick": false, "source": "OpenStreetMap 2026 (208 chinese-tagged restaurants in Costa Rica)" },
         { "cuisineCountryId": "spain", "cuisineName": "Spanish", "exampleDishes": ["paella", "tapas", "churros"], "surprisePick": false },
         { "cuisineCountryId": "colombia", "cuisineName": "Colombian", "exampleDishes": ["bandeja paisa", "arepas", "sancocho"], "surprisePick": false },
-        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["curry", "biryani", "naan"], "surprisePick": false }
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["curry", "biryani", "naan"], "surprisePick": false },
+        { "cuisineCountryId": "nicaragua", "cuisineName": "Nicaraguan", "exampleDishes": ["gallo pinto", "nacatamal", "vigorón"], "surprisePick": false, "source": "Large Nicaraguan community in Costa Rica; the two share (and dispute) gallo pinto" }
       ]
     },
     "cambodia": {
@@ -1265,7 +1339,8 @@
         { "cuisineCountryId": "uk", "cuisineName": "British", "exampleDishes": ["fish and chips", "sausage rolls", "baked beans on toast"], "surprisePick": true, "source": "Colonial tea culture endures: 4pm milky tea with Marie biscuits, and British scones claimed as Zimbabwe’s own" },
         { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false, "source": "OpenStreetMap 2026 (25 italian-tagged restaurants in Zimbabwe)" },
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "BBQ"], "surprisePick": false, "source": "OpenStreetMap 2026 (20 american-tagged restaurants in Zimbabwe)" },
-        { "cuisineCountryId": "portugal", "cuisineName": "Portuguese", "exampleDishes": ["piri-piri chicken", "bacalhau", "pastéis de nata"], "surprisePick": false }
+        { "cuisineCountryId": "portugal", "cuisineName": "Portuguese", "exampleDishes": ["piri-piri chicken", "bacalhau", "pastéis de nata"], "surprisePick": false },
+        { "cuisineCountryId": "zambia", "cuisineName": "Zambian", "exampleDishes": ["nshima", "ifisashi"], "surprisePick": false }
       ]
     },
     "madagascar": {
@@ -1278,7 +1353,8 @@
         { "cuisineCountryId": "south-africa", "cuisineName": "South African", "exampleDishes": ["braai", "biltong", "boerewors"], "surprisePick": false },
         { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false, "source": "OpenStreetMap 2026 (146 italian-tagged restaurants in Madagascar)" },
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "BBQ"], "surprisePick": false, "source": "OpenStreetMap 2026 (46 american-tagged restaurants in Madagascar)" },
-        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "tempura"], "surprisePick": false }
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "tempura"], "surprisePick": false },
+        { "cuisineCountryId": "comoros", "cuisineName": "Comorian", "exampleDishes": ["langouste à la vanille", "mataba"], "surprisePick": false }
       ]
     },
     "drc": {
@@ -1291,7 +1367,8 @@
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "dim sum", "spring rolls"], "surprisePick": false, "source": "OpenStreetMap 2026 (8 chinese-tagged restaurants in DR Congo)" },
         { "cuisineCountryId": "south-africa", "cuisineName": "South African", "exampleDishes": ["braai", "boerewors", "biltong"], "surprisePick": false },
         { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false, "source": "OpenStreetMap 2026 (25 italian-tagged restaurants in DR Congo)" },
-        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "BBQ"], "surprisePick": false, "source": "OpenStreetMap 2026 (15 american-tagged restaurants in DR Congo)" }
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "BBQ"], "surprisePick": false, "source": "OpenStreetMap 2026 (15 american-tagged restaurants in DR Congo)" },
+        { "cuisineCountryId": "congo-republic", "cuisineName": "Congolese (Brazzaville)", "exampleDishes": ["liboke", "saka-saka"], "surprisePick": false, "source": "Kinshasa and Brazzaville — the world’s closest capitals — share one river cuisine" }
       ]
     },
     "libya": {
@@ -1317,7 +1394,8 @@
         { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["biryani", "curry", "naan"], "surprisePick": false },
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "dim sum", "chow mein"], "surprisePick": false },
         { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false, "source": "OpenStreetMap 2026 (19 italian-tagged restaurants in Sudan)" },
-        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "BBQ"], "surprisePick": false, "source": "OpenStreetMap 2026 (12 american-tagged restaurants in Sudan)" }
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "BBQ"], "surprisePick": false, "source": "OpenStreetMap 2026 (12 american-tagged restaurants in Sudan)" },
+        { "cuisineCountryId": "south-sudan", "cuisineName": "South Sudanese", "exampleDishes": ["kisra", "asida"], "surprisePick": false }
       ]
     },
     "papua-new-guinea": {
@@ -1330,7 +1408,8 @@
         { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "gyoza"], "surprisePick": false },
         { "cuisineCountryId": "malaysia", "cuisineName": "Malaysian", "exampleDishes": ["nasi lemak", "laksa", "char kway teow"], "surprisePick": false },
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "BBQ"], "surprisePick": false, "source": "OpenStreetMap 2026 (16 american-tagged restaurants in Papua New Guinea)" },
-        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false, "source": "OpenStreetMap 2026 (15 italian-tagged restaurants in Papua New Guinea)" }
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false, "source": "OpenStreetMap 2026 (15 italian-tagged restaurants in Papua New Guinea)" },
+        { "cuisineCountryId": "solomon-islands", "cuisineName": "Solomon Islander", "exampleDishes": ["mumu pork", "cassava pudding"], "surprisePick": false }
       ]
     },
     "fiji": {
@@ -1343,7 +1422,8 @@
         { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "tempura"], "surprisePick": false },
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "BBQ"], "surprisePick": false, "source": "OpenStreetMap 2026 (18 american-tagged restaurants in Fiji)" },
         { "cuisineCountryId": "new-zealand", "cuisineName": "New Zealand", "exampleDishes": ["lamb roast", "pavlova", "hangi"], "surprisePick": false },
-        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false, "source": "OpenStreetMap 2026 (19 italian-tagged restaurants in Fiji)" }
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false, "source": "OpenStreetMap 2026 (19 italian-tagged restaurants in Fiji)" },
+        { "cuisineCountryId": "vanuatu", "cuisineName": "Ni-Vanuatu", "exampleDishes": ["laplap", "tuluk"], "surprisePick": false }
       ]
     },
     "el-salvador": {
@@ -1369,7 +1449,9 @@
         { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false, "source": "OpenStreetMap 2026 (297 italian-tagged restaurants in Guatemala)" },
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["chow mein", "fried rice", "dim sum"], "surprisePick": false, "source": "OpenStreetMap 2026 (69 chinese-tagged restaurants in Guatemala)" },
         { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "tempura"], "surprisePick": false, "source": "OpenStreetMap 2026 (21 japanese-tagged restaurants in Guatemala)" },
-        { "cuisineCountryId": "spain", "cuisineName": "Spanish", "exampleDishes": ["paella", "tapas", "churros"], "surprisePick": false }
+        { "cuisineCountryId": "spain", "cuisineName": "Spanish", "exampleDishes": ["paella", "tapas", "churros"], "surprisePick": false },
+        { "cuisineCountryId": "honduras", "cuisineName": "Honduran", "exampleDishes": ["baleadas", "sopa de caracol"], "surprisePick": false },
+        { "cuisineCountryId": "belize", "cuisineName": "Belizean", "exampleDishes": ["rice and beans", "garnaches"], "surprisePick": false }
       ]
     },
     "yemen": {
@@ -1410,7 +1492,8 @@
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum", "Peking duck", "noodles"], "surprisePick": false },
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "cheesecake"], "surprisePick": false, "source": "OpenStreetMap 2026 (114 american-tagged restaurants in Albania)" },
         { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["croissant", "crème brûlée", "patisserie"], "surprisePick": false },
-        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "gyoza"], "surprisePick": false }
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "gyoza"], "surprisePick": false },
+        { "cuisineCountryId": "kosovo", "cuisineName": "Kosovar", "exampleDishes": ["flija", "byrek", "tavë"], "surprisePick": false, "source": "Shared Albanian table across the border" }
       ]
     },
     "armenia": {
@@ -1465,7 +1548,8 @@
         { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "gyoza"], "surprisePick": true },
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum", "Peking duck", "spring rolls"], "surprisePick": false },
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "BBQ"], "surprisePick": false, "source": "OpenStreetMap 2026 (83 american-tagged restaurants in Bosnia & Herzegovina)" },
-        { "cuisineCountryId": "greece", "cuisineName": "Greek", "exampleDishes": ["souvlaki", "moussaka", "tzatziki"], "surprisePick": false }
+        { "cuisineCountryId": "greece", "cuisineName": "Greek", "exampleDishes": ["souvlaki", "moussaka", "tzatziki"], "surprisePick": false },
+        { "cuisineCountryId": "serbia", "cuisineName": "Serbian", "exampleDishes": ["pljeskavica", "karađorđeva šnicla", "ajvar"], "surprisePick": false }
       ]
     },
     "moldova": {
@@ -1506,7 +1590,10 @@
         { "cuisineCountryId": "uk", "cuisineName": "British", "exampleDishes": ["fish and chips", "Sunday roast", "beef patty"], "surprisePick": false },
         { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "tiramisu"], "surprisePick": false, "source": "OpenStreetMap 2026 (36 italian-tagged restaurants in Jamaica)" },
         { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "tempura"], "surprisePick": false },
-        { "cuisineCountryId": "mexico", "cuisineName": "Mexican", "exampleDishes": ["tacos", "guacamole", "enchiladas"], "surprisePick": false }
+        { "cuisineCountryId": "mexico", "cuisineName": "Mexican", "exampleDishes": ["tacos", "guacamole", "enchiladas"], "surprisePick": false },
+        { "cuisineCountryId": "bahamas", "cuisineName": "Bahamian", "exampleDishes": ["conch fritters", "rock lobster"], "surprisePick": false },
+        { "cuisineCountryId": "antigua", "cuisineName": "Antiguan", "exampleDishes": ["fungee and pepperpot", "ducana"], "surprisePick": false },
+        { "cuisineCountryId": "saint-kitts", "cuisineName": "Kittitian", "exampleDishes": ["stewed saltfish", "goat water"], "surprisePick": false }
       ]
     },
     "trinidad": {
@@ -1519,7 +1606,10 @@
         { "cuisineCountryId": "uk", "cuisineName": "British", "exampleDishes": ["fish and chips", "Sunday roast", "sausage rolls"], "surprisePick": false },
         { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false, "source": "OpenStreetMap 2026 (101 italian-tagged restaurants in Trinidad & Tobago)" },
         { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "gyoza"], "surprisePick": false },
-        { "cuisineCountryId": "mexico", "cuisineName": "Mexican", "exampleDishes": ["tacos", "guacamole", "nachos"], "surprisePick": false }
+        { "cuisineCountryId": "mexico", "cuisineName": "Mexican", "exampleDishes": ["tacos", "guacamole", "nachos"], "surprisePick": false },
+        { "cuisineCountryId": "guyana", "cuisineName": "Guyanese", "exampleDishes": ["pepperpot", "cook-up rice", "Guyanese roti"], "surprisePick": false, "source": "Guyanese cooking is a fixture of the southern Caribbean table" },
+        { "cuisineCountryId": "barbados", "cuisineName": "Bajan", "exampleDishes": ["cou-cou and flying fish", "fishcakes"], "surprisePick": false },
+        { "cuisineCountryId": "grenada", "cuisineName": "Grenadian", "exampleDishes": ["oil down", "nutmeg ice cream"], "surprisePick": false }
       ]
     },
     "honduras": {
@@ -1558,7 +1648,10 @@
         { "cuisineCountryId": "morocco", "cuisineName": "Moroccan", "exampleDishes": ["couscous", "tajine", "harissa"], "surprisePick": false },
         { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false, "source": "OpenStreetMap 2026 (63 italian-tagged restaurants in Côte d'Ivoire)" },
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "BBQ"], "surprisePick": false, "source": "OpenStreetMap 2026 (42 american-tagged restaurants in Côte d'Ivoire)" },
-        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["biryani", "curry", "naan"], "surprisePick": false }
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["biryani", "curry", "naan"], "surprisePick": false },
+        { "cuisineCountryId": "mali", "cuisineName": "Malian", "exampleDishes": ["maafe", "fakoye"], "surprisePick": false, "source": "Mali’s maafe spread across West Africa; large Malian community in Abidjan" },
+        { "cuisineCountryId": "burkina-faso", "cuisineName": "Burkinabé", "exampleDishes": ["riz gras", "tô"], "surprisePick": false },
+        { "cuisineCountryId": "guinea", "cuisineName": "Guinean", "exampleDishes": ["konkoé", "riz gras"], "surprisePick": false }
       ]
     },
     "rwanda": {
@@ -1571,7 +1664,8 @@
         { "cuisineCountryId": "belgium", "cuisineName": "Belgian", "exampleDishes": ["frites", "moules-frites", "speculoos"], "surprisePick": true },
         { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false, "source": "OpenStreetMap 2026 (18 italian-tagged restaurants in Rwanda)" },
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "BBQ"], "surprisePick": false },
-        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["baguette", "croissant", "steak frites"], "surprisePick": false }
+        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["baguette", "croissant", "steak frites"], "surprisePick": false },
+        { "cuisineCountryId": "burundi", "cuisineName": "Burundian", "exampleDishes": ["brochettes", "ibiharage"], "surprisePick": false }
       ]
     },
     "iceland": {
@@ -1666,7 +1760,8 @@
         { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["baguette", "crème brûlée", "steak frites"], "surprisePick": false },
         { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false, "source": "OpenStreetMap 2026 (54 italian-tagged restaurants in Angola)" },
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "BBQ"], "surprisePick": false, "source": "OpenStreetMap 2026 (73 american-tagged restaurants in Angola)" },
-        { "cuisineCountryId": "south-africa", "cuisineName": "South African", "exampleDishes": ["braai", "biltong", "boerewors"], "surprisePick": false }
+        { "cuisineCountryId": "south-africa", "cuisineName": "South African", "exampleDishes": ["braai", "biltong", "boerewors"], "surprisePick": false },
+        { "cuisineCountryId": "sao-tome", "cuisineName": "São Toméan", "exampleDishes": ["calulu", "blablá"], "surprisePick": false, "source": "Calulu binds the Lusophone African table" }
       ]
     },
     "mozambique": {
@@ -1679,7 +1774,8 @@
         { "cuisineCountryId": "brazil", "cuisineName": "Brazilian", "exampleDishes": ["churrasco", "feijoada", "pão de queijo"], "surprisePick": false },
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "chow mein", "dim sum"], "surprisePick": false, "source": "OpenStreetMap 2026 (8 chinese-tagged restaurants in Mozambique)" },
         { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false, "source": "OpenStreetMap 2026 (38 italian-tagged restaurants in Mozambique)" },
-        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "BBQ"], "surprisePick": false, "source": "OpenStreetMap 2026 (15 american-tagged restaurants in Mozambique)" }
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "BBQ"], "surprisePick": false, "source": "OpenStreetMap 2026 (15 american-tagged restaurants in Mozambique)" },
+        { "cuisineCountryId": "eswatini", "cuisineName": "Swazi", "exampleDishes": ["sishwala", "emasi"], "surprisePick": false }
       ]
     },
     "namibia": {
@@ -1706,7 +1802,8 @@
         { "cuisineCountryId": "uzbekistan", "cuisineName": "Uzbek", "exampleDishes": ["plov", "shashlik", "samsa"], "surprisePick": false },
         { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false, "source": "OpenStreetMap 2026 (60 italian-tagged restaurants in Kyrgyzstan)" },
         { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "gyoza"], "surprisePick": false, "source": "OpenStreetMap 2026 (30 japanese-tagged restaurants in Kyrgyzstan)" },
-        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "BBQ"], "surprisePick": false, "source": "OpenStreetMap 2026 (66 american-tagged restaurants in Kyrgyzstan)" }
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "BBQ"], "surprisePick": false, "source": "OpenStreetMap 2026 (66 american-tagged restaurants in Kyrgyzstan)" },
+        { "cuisineCountryId": "kazakhstan", "cuisineName": "Kazakh", "exampleDishes": ["beshbarmak", "baursak"], "surprisePick": false, "source": "Beshbarmak is the shared national dish of the steppe" }
       ]
     },
     "nicaragua": {
@@ -1719,7 +1816,8 @@
         { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false, "source": "OpenStreetMap 2026 (123 italian-tagged restaurants in Nicaragua)" },
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["chow mein", "fried rice", "dim sum"], "surprisePick": false, "source": "OpenStreetMap 2026 (41 chinese-tagged restaurants in Nicaragua)" },
         { "cuisineCountryId": "colombia", "cuisineName": "Colombian", "exampleDishes": ["bandeja paisa", "arepas", "empanadas"], "surprisePick": false },
-        { "cuisineCountryId": "spain", "cuisineName": "Spanish", "exampleDishes": ["paella", "tapas", "churros"], "surprisePick": false }
+        { "cuisineCountryId": "spain", "cuisineName": "Spanish", "exampleDishes": ["paella", "tapas", "churros"], "surprisePick": false },
+        { "cuisineCountryId": "costa-rica", "cuisineName": "Costa Rican", "exampleDishes": ["gallo pinto", "casado"], "surprisePick": false }
       ]
     },
     "zambia": {
@@ -1732,7 +1830,9 @@
         { "cuisineCountryId": "ethiopia", "cuisineName": "Ethiopian", "exampleDishes": ["injera", "tibs", "doro wat"], "surprisePick": false },
         { "cuisineCountryId": "uk", "cuisineName": "British", "exampleDishes": ["fish and chips", "sausage rolls", "baked beans on toast"], "surprisePick": false },
         { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false, "source": "OpenStreetMap 2026 (50 italian-tagged restaurants in Zambia)" },
-        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "BBQ"], "surprisePick": false, "source": "OpenStreetMap 2026 (16 american-tagged restaurants in Zambia)" }
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "BBQ"], "surprisePick": false, "source": "OpenStreetMap 2026 (16 american-tagged restaurants in Zambia)" },
+        { "cuisineCountryId": "zimbabwe", "cuisineName": "Zimbabwean", "exampleDishes": ["sadza", "nyama", "muriwo"], "surprisePick": false },
+        { "cuisineCountryId": "malawi", "cuisineName": "Malawian", "exampleDishes": ["chambo", "nsima"], "surprisePick": false, "source": "Lake Malawi chambo is prized across the region" }
       ]
     },
     "malawi": {
@@ -1771,7 +1871,8 @@
         { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "tempura"], "surprisePick": false },
         { "cuisineCountryId": "uk", "cuisineName": "British", "exampleDishes": ["fish and chips", "afternoon tea", "Sunday roast"], "surprisePick": false },
         { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false, "source": "OpenStreetMap 2026 (76 italian-tagged restaurants in Mauritius)" },
-        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "cheesecake"], "surprisePick": false, "source": "OpenStreetMap 2026 (43 american-tagged restaurants in Mauritius)" }
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "cheesecake"], "surprisePick": false, "source": "OpenStreetMap 2026 (43 american-tagged restaurants in Mauritius)" },
+        { "cuisineCountryId": "seychelles", "cuisineName": "Seychellois", "exampleDishes": ["Creole fish curry", "ladob"], "surprisePick": false }
       ]
     },
     "burkina-faso": {
@@ -1836,7 +1937,8 @@
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "dim sum", "chow mein"], "surprisePick": false },
         { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "tempura"], "surprisePick": true },
         { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false, "source": "OpenStreetMap 2026 (61 italian-tagged restaurants in Gabon)" },
-        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "BBQ"], "surprisePick": false, "source": "OpenStreetMap 2026 (27 american-tagged restaurants in Gabon)" }
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "BBQ"], "surprisePick": false, "source": "OpenStreetMap 2026 (27 american-tagged restaurants in Gabon)" },
+        { "cuisineCountryId": "equatorial-guinea", "cuisineName": "Equatoguinean", "exampleDishes": ["pepesup", "akwadu"], "surprisePick": false }
       ]
     },
     "eritrea": {
@@ -1862,7 +1964,8 @@
         { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "lasagna"], "surprisePick": false, "source": "OpenStreetMap 2026 (50 italian-tagged restaurants in Cape Verde)" },
         { "cuisineCountryId": "senegal", "cuisineName": "Senegalese", "exampleDishes": ["thieboudienne", "yassa", "mafé"], "surprisePick": false },
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "chow mein", "spring rolls"], "surprisePick": false },
-        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["baguette", "crêpes", "ratatouille"], "surprisePick": false }
+        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["baguette", "crêpes", "ratatouille"], "surprisePick": false },
+        { "cuisineCountryId": "guinea-bissau", "cuisineName": "Bissau-Guinean", "exampleDishes": ["caldo de chabéu", "fish rice"], "surprisePick": false }
       ]
     },
     "samoa": {
@@ -1875,7 +1978,8 @@
         { "cuisineCountryId": "australia", "cuisineName": "Australian", "exampleDishes": ["meat pies", "BBQ", "lamingtons"], "surprisePick": false },
         { "cuisineCountryId": "fiji", "cuisineName": "Fijian", "exampleDishes": ["kokoda", "lovo", "rourou"], "surprisePick": false },
         { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sashimi", "teriyaki", "ramen"], "surprisePick": false },
-        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["curry", "roti", "samosa"], "surprisePick": false }
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["curry", "roti", "samosa"], "surprisePick": false },
+        { "cuisineCountryId": "tonga", "cuisineName": "Tongan", "exampleDishes": ["lū pulu", "ʻota ʻika"], "surprisePick": false }
       ]
     },
     "suriname": {
@@ -1901,7 +2005,8 @@
         { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["curry", "biryani", "samosa"], "surprisePick": false },
         { "cuisineCountryId": "turkey", "cuisineName": "Turkish", "exampleDishes": ["döner kebab", "köfte", "baklava"], "surprisePick": true },
         { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["shawarma", "hummus", "tabbouleh"], "surprisePick": false },
-        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burgers", "fried chicken", "fries"], "surprisePick": false, "source": "OpenStreetMap 2026 (9 american-tagged restaurants in Somalia)" }
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burgers", "fried chicken", "fries"], "surprisePick": false, "source": "OpenStreetMap 2026 (9 american-tagged restaurants in Somalia)" },
+        { "cuisineCountryId": "djibouti", "cuisineName": "Djiboutian", "exampleDishes": ["skoudehkaris", "lahoh"], "surprisePick": false }
       ]
     },
     "chad": {
@@ -2070,7 +2175,8 @@
         { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["curry", "biryani", "samosa"], "surprisePick": false },
         { "cuisineCountryId": "ghana", "cuisineName": "Ghanaian", "exampleDishes": ["jollof rice", "waakye", "kelewele"], "surprisePick": false },
         { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "lasagna"], "surprisePick": false },
-        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["baguette", "croissants", "steak frites"], "surprisePick": false }
+        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["baguette", "croissants", "steak frites"], "surprisePick": false },
+        { "cuisineCountryId": "sierra-leone", "cuisineName": "Sierra Leonean", "exampleDishes": ["cassava leaves", "groundnut stew"], "surprisePick": false }
       ]
     },
     "sierra-leone": {
@@ -2083,7 +2189,8 @@
         { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["curry", "biryani", "samosa"], "surprisePick": false },
         { "cuisineCountryId": "nigeria", "cuisineName": "Nigerian", "exampleDishes": ["jollof rice", "suya", "egusi soup"], "surprisePick": false },
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burgers", "fried chicken", "fries"], "surprisePick": false },
-        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["baguette", "croissants", "steak frites"], "surprisePick": false }
+        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["baguette", "croissants", "steak frites"], "surprisePick": false },
+        { "cuisineCountryId": "liberia", "cuisineName": "Liberian", "exampleDishes": ["cassava leaf soup", "jollof rice"], "surprisePick": false }
       ]
     },
     "central-african-republic": {
@@ -2135,7 +2242,8 @@
         { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["curry", "biryani", "samosa"], "surprisePick": false },
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "chow mein", "dumplings"], "surprisePick": false },
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burgers", "fried chicken", "fries"], "surprisePick": false },
-        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "lasagna"], "surprisePick": false }
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "lasagna"], "surprisePick": false },
+        { "cuisineCountryId": "rwanda", "cuisineName": "Rwandan", "exampleDishes": ["brochettes", "isombe"], "surprisePick": false }
       ]
     },
     "palestine": {
@@ -2265,7 +2373,8 @@
         { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "tempura"], "surprisePick": false },
         { "cuisineCountryId": "new-zealand", "cuisineName": "New Zealand", "exampleDishes": ["fish and chips", "meat pies", "pavlova"], "surprisePick": false },
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burgers", "fried chicken", "fries"], "surprisePick": false },
-        { "cuisineCountryId": "uk", "cuisineName": "British", "exampleDishes": ["fish and chips", "roast dinner", "meat pies"], "surprisePick": false }
+        { "cuisineCountryId": "uk", "cuisineName": "British", "exampleDishes": ["fish and chips", "roast dinner", "meat pies"], "surprisePick": false },
+        { "cuisineCountryId": "papua-new-guinea", "cuisineName": "Papua New Guinean", "exampleDishes": ["mumu", "kaukau"], "surprisePick": false }
       ]
     },
     "brunei": {
@@ -2408,7 +2517,8 @@
         { "cuisineCountryId": "uk", "cuisineName": "British", "exampleDishes": ["fish and chips", "roast dinner", "meat pies"], "surprisePick": false },
         { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "lasagna"], "surprisePick": false, "source": "OpenStreetMap 2026 (25 italian-tagged restaurants in Seychelles)" },
         { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "tempura"], "surprisePick": false },
-        { "cuisineCountryId": "thailand", "cuisineName": "Thai", "exampleDishes": ["pad thai", "green curry", "som tam"], "surprisePick": false }
+        { "cuisineCountryId": "thailand", "cuisineName": "Thai", "exampleDishes": ["pad thai", "green curry", "som tam"], "surprisePick": false },
+        { "cuisineCountryId": "mauritius", "cuisineName": "Mauritian", "exampleDishes": ["dholl puri", "bol renversé", "gateau piment"], "surprisePick": false }
       ]
     },
     "sao-tome": {
@@ -2434,7 +2544,10 @@
         { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["curry", "biryani", "roti"], "surprisePick": true, "source": "Indo-Caribbean roti culture is everyday Bajan fast food" },
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "chow mein", "dumplings"], "surprisePick": false, "source": "OpenStreetMap 2026 (18 chinese-tagged restaurants in Barbados)" },
         { "cuisineCountryId": "jamaica", "cuisineName": "Jamaican", "exampleDishes": ["jerk chicken", "patties", "ackee & saltfish"], "surprisePick": false },
-        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "lasagna"], "surprisePick": false, "source": "OpenStreetMap 2026 (26 italian-tagged restaurants in Barbados)" }
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "lasagna"], "surprisePick": false, "source": "OpenStreetMap 2026 (26 italian-tagged restaurants in Barbados)" },
+        { "cuisineCountryId": "saint-lucia", "cuisineName": "Saint Lucian", "exampleDishes": ["green fig and saltfish", "bouyon"], "surprisePick": false },
+        { "cuisineCountryId": "dominica", "cuisineName": "Dominica Creole", "exampleDishes": ["callaloo soup", "bakes"], "surprisePick": false },
+        { "cuisineCountryId": "saint-vincent", "cuisineName": "Vincentian", "exampleDishes": ["roasted breadfruit and jackfish", "ducana"], "surprisePick": false }
       ]
     },
     "saint-lucia": {
@@ -2538,7 +2651,8 @@
         { "cuisineCountryId": "fiji", "cuisineName": "Fijian", "exampleDishes": ["kokoda", "lovo", "rourou"], "surprisePick": false },
         { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "tempura"], "surprisePick": false },
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burgers", "fried chicken", "fries"], "surprisePick": false },
-        { "cuisineCountryId": "samoa", "cuisineName": "Samoan", "exampleDishes": ["sapasui", "oka", "palusami"], "surprisePick": false }
+        { "cuisineCountryId": "samoa", "cuisineName": "Samoan", "exampleDishes": ["sapasui", "oka", "palusami"], "surprisePick": false },
+        { "cuisineCountryId": "tuvalu", "cuisineName": "Tuvaluan", "exampleDishes": ["pulaka", "coconut fish"], "surprisePick": false }
       ]
     },
     "micronesia": {
@@ -2551,7 +2665,9 @@
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "chow mein", "dumplings"], "surprisePick": false },
         { "cuisineCountryId": "australia", "cuisineName": "Australian", "exampleDishes": ["meat pies", "BBQ", "lamingtons"], "surprisePick": false },
         { "cuisineCountryId": "fiji", "cuisineName": "Fijian", "exampleDishes": ["kokoda", "lovo", "rourou"], "surprisePick": false },
-        { "cuisineCountryId": "south-korea", "cuisineName": "Korean", "exampleDishes": ["korean bbq", "bibimbap", "kimchi"], "surprisePick": false }
+        { "cuisineCountryId": "south-korea", "cuisineName": "Korean", "exampleDishes": ["korean bbq", "bibimbap", "kimchi"], "surprisePick": false },
+        { "cuisineCountryId": "palau", "cuisineName": "Palauan", "exampleDishes": ["demok soup", "grilled reef fish"], "surprisePick": false },
+        { "cuisineCountryId": "marshall-islands", "cuisineName": "Marshallese", "exampleDishes": ["chukuchuk", "grilled fish"], "surprisePick": false }
       ]
     },
     "palau": {
@@ -2564,7 +2680,8 @@
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "chow mein", "dumplings"], "surprisePick": false },
         { "cuisineCountryId": "south-korea", "cuisineName": "Korean", "exampleDishes": ["korean bbq", "bibimbap", "kimchi"], "surprisePick": false },
         { "cuisineCountryId": "australia", "cuisineName": "Australian", "exampleDishes": ["meat pies", "BBQ", "lamingtons"], "surprisePick": false },
-        { "cuisineCountryId": "thailand", "cuisineName": "Thai", "exampleDishes": ["pad thai", "green curry", "som tam"], "surprisePick": false }
+        { "cuisineCountryId": "thailand", "cuisineName": "Thai", "exampleDishes": ["pad thai", "green curry", "som tam"], "surprisePick": false },
+        { "cuisineCountryId": "micronesia", "cuisineName": "Micronesian", "exampleDishes": ["breadfruit", "pounded taro"], "surprisePick": false }
       ]
     },
     "marshall-islands": {
@@ -2603,7 +2720,9 @@
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "chow mein", "dumplings"], "surprisePick": true },
         { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "tempura"], "surprisePick": false },
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burgers", "fried chicken", "fries"], "surprisePick": false },
-        { "cuisineCountryId": "samoa", "cuisineName": "Samoan", "exampleDishes": ["sapasui", "oka", "palusami"], "surprisePick": false }
+        { "cuisineCountryId": "samoa", "cuisineName": "Samoan", "exampleDishes": ["sapasui", "oka", "palusami"], "surprisePick": false },
+        { "cuisineCountryId": "kiribati", "cuisineName": "I-Kiribati", "exampleDishes": ["palu sami", "ika mata"], "surprisePick": false },
+        { "cuisineCountryId": "nauru", "cuisineName": "Nauruan", "exampleDishes": ["coconut fish", "pandanus cakes"], "surprisePick": false }
       ]
     },
     "kosovo": {
