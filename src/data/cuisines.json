@@ -340,7 +340,7 @@
         { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "katsu curry"], "surprisePick": false },
         { "cuisineCountryId": "thailand", "cuisineName": "Thai", "exampleDishes": ["pad thai", "green curry", "tom yum"], "surprisePick": false },
         { "cuisineCountryId": "vietnam", "cuisineName": "Vietnamese", "exampleDishes": ["phở", "bánh mì", "bún bò"], "surprisePick": false },
-        { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["shawarma", "mezze", "fattoush"], "surprisePick": true },
+        { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["shawarma", "mezze", "fattoush"], "surprisePick": true, "source": "Ottawa was officially declared \"Shawarma Capital of Canada\" (2024): ~200 shawarma shops, rooted in 1980s Lebanese refuge" },
         { "cuisineCountryId": "mexico", "cuisineName": "Mexican", "exampleDishes": ["tacos", "burritos", "nachos"], "surprisePick": false, "source": "Mintel Canada 2018 (82% eat Latin/Mexican)" }
       ]
     },
@@ -377,7 +377,7 @@
         { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "gnocchi del 29"], "surprisePick": false },
         { "cuisineCountryId": "spain", "cuisineName": "Spanish", "exampleDishes": ["paella", "tapas", "jamón ibérico"], "surprisePick": false },
         { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "tempura"], "surprisePick": false, "source": "PedidosYa 2025 (top-3 sushi-ordering country in Latin America)" },
-        { "cuisineCountryId": "peru", "cuisineName": "Peruvian", "exampleDishes": ["ceviche", "lomo saltado", "tiradito"], "surprisePick": true },
+        { "cuisineCountryId": "peru", "cuisineName": "Peruvian", "exampleDishes": ["ceviche", "lomo saltado", "tiradito"], "surprisePick": true, "source": "Peruvian food became a Buenos Aires staple via immigration; fusion ceviche bars are wildly popular" },
         { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["hummus", "shawarma", "sfija"], "surprisePick": false },
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum", "fried rice", "chow mein"], "surprisePick": false },
         { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["croissant", "boeuf bourguignon", "crème brûlée"], "surprisePick": false }
@@ -415,7 +415,7 @@
       "loves": [
         { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "gnocchi"], "surprisePick": false },
         { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "tempura"], "surprisePick": false, "source": "PedidosYa 2025 (sushi 3rd most-ordered category; top-3 sushi market in Latin America)" },
-        { "cuisineCountryId": "peru", "cuisineName": "Peruvian", "exampleDishes": ["ceviche", "tiradito", "lomo saltado"], "surprisePick": true },
+        { "cuisineCountryId": "peru", "cuisineName": "Peruvian", "exampleDishes": ["ceviche", "tiradito", "lomo saltado"], "surprisePick": true, "source": "Peruvian restaurants are everywhere in Santiago (+18% 2022–2025); ceviche deeply integrated into Chilean dining" },
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum", "fried rice", "chow mein"], "surprisePick": false },
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "hot dog"], "surprisePick": false },
         { "cuisineCountryId": "spain", "cuisineName": "Spanish", "exampleDishes": ["paella", "tapas", "chorizo"], "surprisePick": false },
@@ -470,7 +470,7 @@
         { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false, "source": "OpenStreetMap 2026 (1239 italian-tagged restaurants in South Korea)" },
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "cheesecake"], "surprisePick": false, "source": "OpenStreetMap 2026 (1656 american-tagged restaurants in South Korea)" },
         { "cuisineCountryId": "thailand", "cuisineName": "Thai", "exampleDishes": ["pad thai", "green curry", "mango sticky rice"], "surprisePick": false },
-        { "cuisineCountryId": "vietnam", "cuisineName": "Vietnamese", "exampleDishes": ["phở", "bánh mì", "bún bò"], "surprisePick": true },
+        { "cuisineCountryId": "vietnam", "cuisineName": "Vietnamese", "exampleDishes": ["phở", "bánh mì", "bún bò"], "surprisePick": true, "source": "Phở boom since Pho Hoa Gangnam (1998): Vietnamese restaurant counts among Seoul’s highest despite a small diaspora" },
         { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["curry", "naan", "biryani"], "surprisePick": false }
       ]
     },
@@ -1285,7 +1285,7 @@
       "name": "DR Congo",
       "code": "CD",
       "loves": [
-        { "cuisineCountryId": "belgium", "cuisineName": "Belgian", "exampleDishes": ["frites", "moules-frites", "speculoos"], "surprisePick": true },
+        { "cuisineCountryId": "belgium", "cuisineName": "Belgian", "exampleDishes": ["frites", "moules-frites", "speculoos"], "surprisePick": true, "source": "Belgian colonial era (1908–1960): braised moambe hybrids, bread and beer as everyday staples" },
         { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["baguette", "crème brûlée", "steak frites"], "surprisePick": false, "source": "OpenStreetMap 2026 (11 french-tagged restaurants in DR Congo)" },
         { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["shawarma", "mezze", "falafel"], "surprisePick": false },
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "dim sum", "spring rolls"], "surprisePick": false, "source": "OpenStreetMap 2026 (8 chinese-tagged restaurants in DR Congo)" },
@@ -1324,7 +1324,7 @@
       "name": "Papua New Guinea",
       "code": "PG",
       "loves": [
-        { "cuisineCountryId": "australia", "cuisineName": "Australian", "exampleDishes": ["meat pie", "fish and chips", "lamington"], "surprisePick": true },
+        { "cuisineCountryId": "australia", "cuisineName": "Australian", "exampleDishes": ["meat pie", "fish and chips", "lamington"], "surprisePick": true, "source": "Australian lamb flaps are PNG’s #1 street food — 21,000 tonnes imported in 2024 (4th-largest Aussie lamb market)" },
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "dim sum", "chow mein"], "surprisePick": false, "source": "OpenStreetMap 2026 (18 chinese-tagged restaurants in Papua New Guinea)" },
         { "cuisineCountryId": "indonesia", "cuisineName": "Indonesian", "exampleDishes": ["nasi goreng", "satay", "rendang"], "surprisePick": false },
         { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "gyoza"], "surprisePick": false },
@@ -1687,7 +1687,7 @@
       "code": "NA",
       "loves": [
         { "cuisineCountryId": "south-africa", "cuisineName": "South African", "exampleDishes": ["braai", "biltong", "boerewors"], "surprisePick": false },
-        { "cuisineCountryId": "germany", "cuisineName": "German", "exampleDishes": ["schnitzel", "bratwurst", "Black Forest cake"], "surprisePick": true },
+        { "cuisineCountryId": "germany", "cuisineName": "German", "exampleDishes": ["schnitzel", "bratwurst", "Black Forest cake"], "surprisePick": true, "source": "Colonial-era German community persists: Windhoek’s brötchen bakeries, Schwarzwälder torte, and a major Oktoberfest" },
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "dim sum", "chow mein"], "surprisePick": false },
         { "cuisineCountryId": "portugal", "cuisineName": "Portuguese", "exampleDishes": ["piri-piri chicken", "bacalhau", "pastéis de nata"], "surprisePick": false },
         { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false, "source": "OpenStreetMap 2026 (45 italian-tagged restaurants in Namibia)" },
