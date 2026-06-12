@@ -106,7 +106,7 @@
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum", "Peking duck", "spring rolls"], "surprisePick": false, "source": "OpenStreetMap 2026 (60 chinese-tagged restaurants in Greece)" },
         { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "gyoza"], "surprisePick": false, "source": "OpenStreetMap 2026 (96 japanese-tagged restaurants in Greece)" },
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "cheesecake"], "surprisePick": false, "source": "OpenStreetMap 2026 (512 american-tagged restaurants in Greece)" },
-        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["curry", "biryani", "naan"], "surprisePick": false }
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["curry", "biryani", "naan"], "surprisePick": false, "source": "OpenStreetMap 2026 (46 indian-tagged restaurants in Greece)" }
       ]
     },
     "hungary": {
@@ -118,8 +118,8 @@
         { "cuisineCountryId": "turkey", "cuisineName": "Turkish", "exampleDishes": ["stuffed peppers", "baklava", "döner kebab"], "surprisePick": true, "source": "OpenStreetMap 2026 (323 turkish-tagged restaurants in Hungary)" },
         { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "teriyaki"], "surprisePick": false, "source": "OpenStreetMap 2026 (119 japanese-tagged restaurants in Hungary)" },
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "hot dog"], "surprisePick": false, "source": "foodora Hungary (hamburgers 21% of hot-food orders; American dishes 8%)" },
-        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["curry", "biryani", "samosa"], "surprisePick": false },
-        { "cuisineCountryId": "greece", "cuisineName": "Greek", "exampleDishes": ["gyros", "moussaka", "tzatziki"], "surprisePick": false },
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["curry", "biryani", "samosa"], "surprisePick": false, "source": "OpenStreetMap 2026 (51 indian-tagged restaurants in Hungary)" },
+        { "cuisineCountryId": "greece", "cuisineName": "Greek", "exampleDishes": ["gyros", "moussaka", "tzatziki"], "surprisePick": false, "source": "OpenStreetMap 2026 (88 greek-tagged restaurants in Hungary)" },
         { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["shawarma", "mezze", "falafel"], "surprisePick": false }
       ]
     },
@@ -199,10 +199,10 @@
         { "cuisineCountryId": "brazil", "cuisineName": "Brazilian", "exampleDishes": ["churrasco", "feijoada", "brigadeiro"], "surprisePick": false },
         { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false, "source": "OpenStreetMap 2026 (1524 italian-tagged restaurants in Portugal)" },
         { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["vindaloo", "xacuti", "bebinca"], "surprisePick": true, "source": "OpenStreetMap 2026 (256 indian-tagged restaurants in Portugal)" },
-        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum", "char siu", "egg tarts"], "surprisePick": false },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum", "char siu", "egg tarts"], "surprisePick": false, "source": "OpenStreetMap 2026 (205 chinese-tagged restaurants in Portugal)" },
         { "cuisineCountryId": "angola", "cuisineName": "Angolan", "exampleDishes": ["muamba de galinha", "calulu", "funje"], "surprisePick": false },
         { "cuisineCountryId": "mozambique", "cuisineName": "Mozambican", "exampleDishes": ["piri-piri chicken", "matapa", "camarão"], "surprisePick": false },
-        { "cuisineCountryId": "spain", "cuisineName": "Spanish", "exampleDishes": ["tapas", "paella", "tortilla española"], "surprisePick": false },
+        { "cuisineCountryId": "spain", "cuisineName": "Spanish", "exampleDishes": ["tapas", "paella", "tortilla española"], "surprisePick": false, "source": "OpenStreetMap 2026 (119 spanish-tagged restaurants in Portugal)" },
         { "cuisineCountryId": "cape-verde", "cuisineName": "Cape Verdean", "exampleDishes": ["cachupa", "buzio", "jagacida"], "surprisePick": false },
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burgers", "fried chicken", "brunch"], "surprisePick": false, "source": "OpenStreetMap 2026 (972 american-tagged restaurants in Portugal)" },
         { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "tempura"], "surprisePick": false, "source": "OpenStreetMap 2026 (572 japanese-tagged restaurants in Portugal)" }
@@ -217,9 +217,9 @@
         { "cuisineCountryId": "turkey", "cuisineName": "Turkish", "exampleDishes": ["döner kebab", "baklava", "meze"], "surprisePick": false, "source": "Glovo Romania 2024 (shawarma/shaorma a top-3 most-ordered dish)" },
         { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "gyoza"], "surprisePick": false, "source": "OpenStreetMap 2026 (100 japanese-tagged restaurants in Romania)" },
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "cheesecake"], "surprisePick": false, "source": "Glovo Romania 2024 (6.1M burgers ordered per year; American 2nd most appreciated)" },
-        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["croissant", "boeuf bourguignon", "crème brûlée"], "surprisePick": false },
-        { "cuisineCountryId": "greece", "cuisineName": "Greek", "exampleDishes": ["moussaka", "souvlaki", "spanakopita"], "surprisePick": false },
-        { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["shawarma", "hummus", "mezze"], "surprisePick": false }
+        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["croissant", "boeuf bourguignon", "crème brûlée"], "surprisePick": false, "source": "OpenStreetMap 2026 (30 french-tagged restaurants in Romania)" },
+        { "cuisineCountryId": "greece", "cuisineName": "Greek", "exampleDishes": ["moussaka", "souvlaki", "spanakopita"], "surprisePick": false, "source": "OpenStreetMap 2026 (80 greek-tagged restaurants in Romania)" },
+        { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["shawarma", "hummus", "mezze"], "surprisePick": false, "source": "OpenStreetMap 2026 (46 lebanese-tagged restaurants in Romania)" }
       ]
     },
     "spain": {
@@ -253,13 +253,13 @@
       "code": "CH",
       "loves": [
         { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false, "source": "Just Eat Schweiz Report 2024 (pizza the favourite order for 83% nationwide)" },
-        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["boeuf bourguignon", "quiche lorraine", "soufflé"], "surprisePick": false },
+        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["boeuf bourguignon", "quiche lorraine", "soufflé"], "surprisePick": false, "source": "OpenStreetMap 2026 (175 french-tagged restaurants in Switzerland)" },
         { "cuisineCountryId": "turkey", "cuisineName": "Turkish", "exampleDishes": ["döner kebab", "dürüm", "lahmacun"], "surprisePick": false, "source": "Just Eat Schweiz Report 2024 (Döner the 2nd most-named favourite order, 22%)" },
         { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "teppanyaki"], "surprisePick": false, "source": "Just Eat Schweiz Report 2024 (Japanese orders +55% vs 2022)" },
         { "cuisineCountryId": "thailand", "cuisineName": "Thai", "exampleDishes": ["pad thai", "green curry", "mango sticky rice"], "surprisePick": true, "source": "Just Eat Schweiz Report 2024 (Thai newly in high demand)" },
         { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["tikka masala", "biryani", "dhal"], "surprisePick": false, "source": "Just Eat Schweiz Report 2024 (Indian orders +77% vs 2022)" },
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum", "Peking duck", "dumplings"], "surprisePick": false, "source": "Just Eat Schweiz Report 2024 (Chinese 3rd most-named favourite, 21%)" },
-        { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["mezze", "shawarma", "baklava"], "surprisePick": false },
+        { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["mezze", "shawarma", "baklava"], "surprisePick": false, "source": "OpenStreetMap 2026 (93 lebanese-tagged restaurants in Switzerland)" },
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "cheesecake", "BBQ"], "surprisePick": false, "source": "OpenStreetMap 2026 (832 american-tagged restaurants in Switzerland)" }
       ]
     },
@@ -312,7 +312,7 @@
         { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "gyoza"], "surprisePick": true, "source": "OpenStreetMap 2026 (89 japanese-tagged restaurants in Turkey)" },
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum", "Peking duck", "noodles"], "surprisePick": false, "source": "OpenStreetMap 2026 (54 chinese-tagged restaurants in Turkey)" },
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "cheesecake"], "surprisePick": false, "source": "Yemeksepeti 2024 (burger a top-5 most-ordered food nationwide)" },
-        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["curry", "biryani", "naan"], "surprisePick": false },
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["curry", "biryani", "naan"], "surprisePick": false, "source": "OpenStreetMap 2026 (25 indian-tagged restaurants in Turkey)" },
         { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["croissant", "boeuf bourguignon", "crème brûlée"], "surprisePick": false },
         { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["mezze", "kibbeh", "tabbouleh"], "surprisePick": false }
       ]
@@ -393,7 +393,7 @@
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "BBQ"], "surprisePick": false, "source": "Rappi Colombia (hamburgers the most-ordered dish, ~9.6M orders/year)" },
         { "cuisineCountryId": "mexico", "cuisineName": "Mexican", "exampleDishes": ["tacos", "guacamole", "enchiladas"], "surprisePick": false, "source": "OpenStreetMap 2026 (187 mexican-tagged restaurants in Colombia)" },
         { "cuisineCountryId": "peru", "cuisineName": "Peruvian", "exampleDishes": ["ceviche", "tiradito", "causa"], "surprisePick": true, "source": "Peruvian is one of Bogotá’s most impressive international dining scenes — cevicherías from budget spots to Acurio’s La Mar" },
-        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["crêpes", "croissant", "quiche"], "surprisePick": false }
+        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["crêpes", "croissant", "quiche"], "surprisePick": false, "source": "OpenStreetMap 2026 (40 french-tagged restaurants in Colombia)" }
       ]
     },
     "peru": {
@@ -403,10 +403,10 @@
         { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["tiradito", "Nikkei ceviche", "maki rolls"], "surprisePick": false, "source": "Nikkei (Japanese-Peruvian) cuisine; Lima’s Maido named world’s best restaurant 2025" },
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["arroz chaufa", "lomo saltado", "wonton soup"], "surprisePick": false, "source": "~6,000 chifa (Chinese-Peruvian) restaurants in Lima alone — a national institution since the 1850s" },
         { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false, "source": "OpenStreetMap 2026 (631 italian-tagged restaurants in Peru)" },
-        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["haute cuisine", "patisserie", "soufflé"], "surprisePick": true },
+        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["haute cuisine", "patisserie", "soufflé"], "surprisePick": true, "source": "OpenStreetMap 2026 (24 french-tagged restaurants in Peru)" },
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "BBQ"], "surprisePick": false, "source": "OpenStreetMap 2026 (368 american-tagged restaurants in Peru)" },
         { "cuisineCountryId": "mexico", "cuisineName": "Mexican", "exampleDishes": ["tacos", "guacamole", "enchiladas"], "surprisePick": false, "source": "OpenStreetMap 2026 (29 mexican-tagged restaurants in Peru)" },
-        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["curry", "biryani", "naan"], "surprisePick": false }
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["curry", "biryani", "naan"], "surprisePick": false, "source": "OpenStreetMap 2026 (20 indian-tagged restaurants in Peru)" }
       ]
     },
     "chile": {
@@ -469,9 +469,9 @@
         { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "katsu"], "surprisePick": false, "source": "OpenStreetMap 2026 (1507 japanese-tagged restaurants in South Korea)" },
         { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false, "source": "OpenStreetMap 2026 (1239 italian-tagged restaurants in South Korea)" },
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "cheesecake"], "surprisePick": false, "source": "OpenStreetMap 2026 (1656 american-tagged restaurants in South Korea)" },
-        { "cuisineCountryId": "thailand", "cuisineName": "Thai", "exampleDishes": ["pad thai", "green curry", "mango sticky rice"], "surprisePick": false },
+        { "cuisineCountryId": "thailand", "cuisineName": "Thai", "exampleDishes": ["pad thai", "green curry", "mango sticky rice"], "surprisePick": false, "source": "OpenStreetMap 2026 (64 thai-tagged restaurants in South Korea)" },
         { "cuisineCountryId": "vietnam", "cuisineName": "Vietnamese", "exampleDishes": ["phở", "bánh mì", "bún bò"], "surprisePick": true, "source": "Phở boom since Pho Hoa Gangnam (1998): Vietnamese restaurant counts among Seoul’s highest despite a small diaspora" },
-        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["curry", "naan", "biryani"], "surprisePick": false }
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["curry", "naan", "biryani"], "surprisePick": false, "source": "OpenStreetMap 2026 (130 indian-tagged restaurants in South Korea)" }
       ]
     },
     "thailand": {
@@ -564,7 +564,7 @@
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "BBQ"], "surprisePick": false, "source": "OpenStreetMap 2026 (121 american-tagged restaurants in Bangladesh)" },
         { "cuisineCountryId": "turkey", "cuisineName": "Turkish", "exampleDishes": ["döner kebab", "baklava", "köfte"], "surprisePick": false, "source": "OpenStreetMap 2026 (41 turkish-tagged restaurants in Bangladesh)" },
         { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "tempura"], "surprisePick": true },
-        { "cuisineCountryId": "thailand", "cuisineName": "Thai", "exampleDishes": ["pad thai", "green curry", "tom yum"], "surprisePick": false },
+        { "cuisineCountryId": "thailand", "cuisineName": "Thai", "exampleDishes": ["pad thai", "green curry", "tom yum"], "surprisePick": false, "source": "OpenStreetMap 2026 (25 thai-tagged restaurants in Bangladesh)" },
         { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["shawarma", "falafel", "mezze"], "surprisePick": false }
       ]
     },
@@ -573,7 +573,7 @@
       "code": "MA",
       "loves": [
         { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["croissant", "baguette", "crème brûlée"], "surprisePick": false, "source": "OpenStreetMap 2026 (43 french-tagged restaurants in Morocco)" },
-        { "cuisineCountryId": "spain", "cuisineName": "Spanish", "exampleDishes": ["paella", "tapas", "churros"], "surprisePick": false },
+        { "cuisineCountryId": "spain", "cuisineName": "Spanish", "exampleDishes": ["paella", "tapas", "churros"], "surprisePick": false, "source": "OpenStreetMap 2026 (26 spanish-tagged restaurants in Morocco)" },
         { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false, "source": "OpenStreetMap 2026 (343 italian-tagged restaurants in Morocco)" },
         { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["hummus", "tabbouleh", "fattoush"], "surprisePick": false },
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum", "fried rice", "spring rolls"], "surprisePick": false },
@@ -586,7 +586,7 @@
       "name": "Egypt",
       "code": "EG",
       "loves": [
-        { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["hummus", "shawarma", "tabbouleh"], "surprisePick": false },
+        { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["hummus", "shawarma", "tabbouleh"], "surprisePick": false, "source": "OpenStreetMap 2026 (21 lebanese-tagged restaurants in Egypt)" },
         { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false, "source": "OpenStreetMap 2026 (196 italian-tagged restaurants in Egypt)" },
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum", "fried rice", "noodles"], "surprisePick": false, "source": "OpenStreetMap 2026 (22 chinese-tagged restaurants in Egypt)" },
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "cheesecake"], "surprisePick": false, "source": "OpenStreetMap 2026 (153 american-tagged restaurants in Egypt)" },
@@ -631,7 +631,7 @@
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum", "Peking duck", "spring rolls"], "surprisePick": false, "source": "OpenStreetMap 2026 (87 chinese-tagged restaurants in South Africa)" },
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "BBQ"], "surprisePick": false, "source": "OpenStreetMap 2026 (1252 american-tagged restaurants in South Africa)" },
         { "cuisineCountryId": "portugal", "cuisineName": "Portuguese", "exampleDishes": ["piri-piri chicken", "bacalhau", "pastéis de nata"], "surprisePick": true, "source": "Portuguese peri-peri culture is ubiquitous (Nando’s founded in Johannesburg, 1987)" },
-        { "cuisineCountryId": "greece", "cuisineName": "Greek", "exampleDishes": ["souvlaki", "moussaka", "baklava"], "surprisePick": false }
+        { "cuisineCountryId": "greece", "cuisineName": "Greek", "exampleDishes": ["souvlaki", "moussaka", "baklava"], "surprisePick": false, "source": "OpenStreetMap 2026 (28 greek-tagged restaurants in South Africa)" }
       ]
     },
     "kenya": {
@@ -777,11 +777,11 @@
         { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "tiramisu"], "surprisePick": false, "source": "OpenStreetMap 2026 (1107 italian-tagged restaurants in Slovakia)" },
         { "cuisineCountryId": "vietnam", "cuisineName": "Vietnamese", "exampleDishes": ["phở", "bánh mì", "bún bò"], "surprisePick": true, "source": "OpenStreetMap 2026 (152 vietnamese-tagged restaurants in Slovakia)" },
         { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "gyoza"], "surprisePick": false, "source": "OpenStreetMap 2026 (87 japanese-tagged restaurants in Slovakia)" },
-        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum", "Peking duck", "spring rolls"], "surprisePick": false },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum", "Peking duck", "spring rolls"], "surprisePick": false, "source": "OpenStreetMap 2026 (71 chinese-tagged restaurants in Slovakia)" },
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "BBQ"], "surprisePick": false, "source": "OpenStreetMap 2026 (415 american-tagged restaurants in Slovakia)" },
         { "cuisineCountryId": "germany", "cuisineName": "German", "exampleDishes": ["schnitzel", "bratwurst", "sauerkraut"], "surprisePick": false },
         { "cuisineCountryId": "hungary", "cuisineName": "Hungarian", "exampleDishes": ["goulash", "lángos", "pörkölt"], "surprisePick": false },
-        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["tikka masala", "biryani", "naan"], "surprisePick": false },
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["tikka masala", "biryani", "naan"], "surprisePick": false, "source": "OpenStreetMap 2026 (40 indian-tagged restaurants in Slovakia)" },
         { "cuisineCountryId": "turkey", "cuisineName": "Turkish", "exampleDishes": ["döner kebab", "dürüm", "lahmacun"], "surprisePick": false, "source": "OpenStreetMap 2026 (300 turkish/kebab-tagged restaurants in Slovakia)" }
       ]
     },
@@ -791,7 +791,7 @@
       "loves": [
         { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta carbonara", "tiramisu"], "surprisePick": false, "source": "OpenStreetMap 2026 (657 italian-tagged restaurants in Bulgaria)" },
         { "cuisineCountryId": "turkey", "cuisineName": "Turkish", "exampleDishes": ["döner kebab", "baklava", "börek"], "surprisePick": true, "source": "OpenStreetMap 2026 (241 turkish-tagged restaurants in Bulgaria)" },
-        { "cuisineCountryId": "greece", "cuisineName": "Greek", "exampleDishes": ["souvlaki", "gyros", "tzatziki"], "surprisePick": false },
+        { "cuisineCountryId": "greece", "cuisineName": "Greek", "exampleDishes": ["souvlaki", "gyros", "tzatziki"], "surprisePick": false, "source": "OpenStreetMap 2026 (46 greek-tagged restaurants in Bulgaria)" },
         { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "gyoza"], "surprisePick": false, "source": "OpenStreetMap 2026 (54 japanese-tagged restaurants in Bulgaria)" },
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum", "Peking duck", "spring rolls"], "surprisePick": false, "source": "OpenStreetMap 2026 (103 chinese-tagged restaurants in Bulgaria)" },
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "cheesecake"], "surprisePick": false, "source": "OpenStreetMap 2026 (245 american-tagged restaurants in Bulgaria)" },
@@ -807,7 +807,7 @@
         { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "gyoza"], "surprisePick": true, "source": "OpenStreetMap 2026 (64 japanese-tagged restaurants in Serbia)" },
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum", "Peking duck", "fried noodles"], "surprisePick": false, "source": "OpenStreetMap 2026 (109 chinese-tagged restaurants in Serbia)" },
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "BBQ"], "surprisePick": false, "source": "OpenStreetMap 2026 (248 american-tagged restaurants in Serbia)" },
-        { "cuisineCountryId": "greece", "cuisineName": "Greek", "exampleDishes": ["souvlaki", "moussaka", "tzatziki"], "surprisePick": false },
+        { "cuisineCountryId": "greece", "cuisineName": "Greek", "exampleDishes": ["souvlaki", "moussaka", "tzatziki"], "surprisePick": false, "source": "OpenStreetMap 2026 (28 greek-tagged restaurants in Serbia)" },
         { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["croissant", "steak frites", "crème brûlée"], "surprisePick": false },
         { "cuisineCountryId": "turkey", "cuisineName": "Turkish", "exampleDishes": ["döner kebab", "baklava", "börek"], "surprisePick": false, "source": "OpenStreetMap 2026 (44 turkish-tagged restaurants in Serbia)" },
         { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["tikka masala", "biryani", "naan"], "surprisePick": false }
@@ -835,7 +835,7 @@
         { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "tiramisu"], "surprisePick": false, "source": "OpenStreetMap 2026 (169 italian-tagged restaurants in Georgia)" },
         { "cuisineCountryId": "turkey", "cuisineName": "Turkish", "exampleDishes": ["döner kebab", "baklava", "börek"], "surprisePick": false, "source": "OpenStreetMap 2026 (113 turkish-tagged restaurants in Georgia)" },
         { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["croissant", "patisserie", "boeuf bourguignon"], "surprisePick": false },
-        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum", "noodles", "Peking duck"], "surprisePick": false },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum", "noodles", "Peking duck"], "surprisePick": false, "source": "OpenStreetMap 2026 (20 chinese-tagged restaurants in Georgia)" },
         { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "gyoza"], "surprisePick": false, "source": "OpenStreetMap 2026 (51 japanese-tagged restaurants in Georgia)" },
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "cheesecake"], "surprisePick": false, "source": "OpenStreetMap 2026 (201 american-tagged restaurants in Georgia)" }
       ]
@@ -865,7 +865,7 @@
         { "cuisineCountryId": "peru", "cuisineName": "Peruvian", "exampleDishes": ["ceviche", "lomo saltado", "causa"], "surprisePick": false },
         { "cuisineCountryId": "mexico", "cuisineName": "Mexican", "exampleDishes": ["tacos", "guacamole", "enchiladas"], "surprisePick": false, "source": "OpenStreetMap 2026 (107 mexican-tagged restaurants in Ecuador)" },
         { "cuisineCountryId": "colombia", "cuisineName": "Colombian", "exampleDishes": ["bandeja paisa", "arepas", "sancocho"], "surprisePick": false },
-        { "cuisineCountryId": "spain", "cuisineName": "Spanish", "exampleDishes": ["paella", "tapas", "chorizo"], "surprisePick": false }
+        { "cuisineCountryId": "spain", "cuisineName": "Spanish", "exampleDishes": ["paella", "tapas", "chorizo"], "surprisePick": false, "source": "OpenStreetMap 2026 (41 spanish-tagged restaurants in Ecuador)" }
       ]
     },
     "cuba": {
@@ -878,7 +878,7 @@
         { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "tiramisu"], "surprisePick": true, "source": "Cuban street pizza: born of the 1990s crisis, now a street-food staple on every Havana corner" },
         { "cuisineCountryId": "mexico", "cuisineName": "Mexican", "exampleDishes": ["tacos", "tamales", "guacamole"], "surprisePick": false, "source": "OpenStreetMap 2026 (37 mexican-tagged restaurants in Cuba)" },
         { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["croissant", "crème brûlée", "bouillabaisse"], "surprisePick": false },
-        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "gyoza"], "surprisePick": false },
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "gyoza"], "surprisePick": false, "source": "OpenStreetMap 2026 (31 japanese-tagged restaurants in Cuba)" },
         { "cuisineCountryId": "vietnam", "cuisineName": "Vietnamese", "exampleDishes": ["phở", "bánh mì", "gỏi cuốn"], "surprisePick": false }
       ]
     },
@@ -920,7 +920,7 @@
         { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["curry", "biryani", "roti"], "surprisePick": true, "source": "Danbauk (Burmese biryani) is a national staple; samusa and curries arrived via colonial-era Indian migration" },
         { "cuisineCountryId": "thailand", "cuisineName": "Thai", "exampleDishes": ["pad thai", "green curry", "som tam"], "surprisePick": false, "source": "OpenStreetMap 2026 (207 thai-tagged restaurants in Myanmar)" },
         { "cuisineCountryId": "south-korea", "cuisineName": "Korean", "exampleDishes": ["Korean BBQ", "fried chicken", "ramyeon"], "surprisePick": false },
-        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "gyoza"], "surprisePick": false },
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "gyoza"], "surprisePick": false, "source": "OpenStreetMap 2026 (65 japanese-tagged restaurants in Myanmar)" },
         { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false, "source": "OpenStreetMap 2026 (73 italian-tagged restaurants in Myanmar)" },
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "cheesecake"], "surprisePick": false, "source": "OpenStreetMap 2026 (88 american-tagged restaurants in Myanmar)" }
       ]
@@ -931,7 +931,7 @@
       "loves": [
         { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["masala dosa", "biryani", "parotta"], "surprisePick": false, "source": "OpenStreetMap 2026 (129 indian-tagged restaurants in Sri Lanka)" },
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "dim sum", "spring rolls"], "surprisePick": false, "source": "\"Chinese rolls\" are a national short-eat; Chinese restaurants ubiquitous in Colombo (Colombo 13 Chinatown)" },
-        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "tempura"], "surprisePick": false },
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "tempura"], "surprisePick": false, "source": "OpenStreetMap 2026 (22 japanese-tagged restaurants in Sri Lanka)" },
         { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false, "source": "OpenStreetMap 2026 (190 italian-tagged restaurants in Sri Lanka)" },
         { "cuisineCountryId": "south-korea", "cuisineName": "Korean", "exampleDishes": ["Korean BBQ", "fried chicken", "tteokbokki"], "surprisePick": true },
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "cheesecake"], "surprisePick": false, "source": "OpenStreetMap 2026 (101 american-tagged restaurants in Sri Lanka)" },
@@ -944,7 +944,7 @@
       "loves": [
         { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["dal makhani", "biryani", "puri"], "surprisePick": false, "source": "OpenStreetMap 2026 (152 indian-tagged restaurants in Nepal)" },
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum", "hot pot", "noodles"], "surprisePick": false, "source": "Momo — Nepal’s most popular dish — descends from Chinese/Tibetan dumplings via Newar traders; chowmein a national fast-food staple" },
-        { "cuisineCountryId": "south-korea", "cuisineName": "Korean", "exampleDishes": ["Korean BBQ", "tteokbokki", "bibimbap"], "surprisePick": true },
+        { "cuisineCountryId": "south-korea", "cuisineName": "Korean", "exampleDishes": ["Korean BBQ", "tteokbokki", "bibimbap"], "surprisePick": true, "source": "OpenStreetMap 2026 (20 korean-tagged restaurants in Nepal)" },
         { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "gyoza"], "surprisePick": false, "source": "OpenStreetMap 2026 (29 japanese-tagged restaurants in Nepal)" },
         { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "tiramisu"], "surprisePick": false, "source": "OpenStreetMap 2026 (119 italian-tagged restaurants in Nepal)" },
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "cheesecake"], "surprisePick": false, "source": "OpenStreetMap 2026 (123 american-tagged restaurants in Nepal)" },
@@ -988,7 +988,7 @@
         { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "gyoza"], "surprisePick": false, "source": "OpenStreetMap 2026 (23 japanese-tagged restaurants in Mongolia)" },
         { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false, "source": "OpenStreetMap 2026 (38 italian-tagged restaurants in Mongolia)" },
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "cheesecake"], "surprisePick": false, "source": "OpenStreetMap 2026 (32 american-tagged restaurants in Mongolia)" },
-        { "cuisineCountryId": "turkey", "cuisineName": "Turkish", "exampleDishes": ["döner kebab", "baklava", "köfte"], "surprisePick": false }
+        { "cuisineCountryId": "turkey", "cuisineName": "Turkish", "exampleDishes": ["döner kebab", "baklava", "köfte"], "surprisePick": false, "source": "OpenStreetMap 2026 (8 turkish-tagged restaurants in Mongolia)" }
       ]
     },
     "uzbekistan": {
@@ -997,7 +997,7 @@
       "loves": [
         { "cuisineCountryId": "south-korea", "cuisineName": "Korean", "exampleDishes": ["Korean BBQ", "kimchi jjigae", "doenjang jjigae"], "surprisePick": true, "source": "Koryo-saram heritage (76,000 Koreans resettled 1937): morkovcha and funchoza in every grocery store" },
         { "cuisineCountryId": "russia", "cuisineName": "Russian", "exampleDishes": ["pelmeni", "borscht", "olivier salad"], "surprisePick": false },
-        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["lagman", "dim sum", "noodles"], "surprisePick": false },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["lagman", "dim sum", "noodles"], "surprisePick": false, "source": "OpenStreetMap 2026 (20 chinese-tagged restaurants in Uzbekistan)" },
         { "cuisineCountryId": "turkey", "cuisineName": "Turkish", "exampleDishes": ["döner kebab", "baklava", "börek"], "surprisePick": false, "source": "OpenStreetMap 2026 (219 turkish-tagged restaurants in Uzbekistan)" },
         { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false, "source": "OpenStreetMap 2026 (175 italian-tagged restaurants in Uzbekistan)" },
         { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "gyoza"], "surprisePick": false, "source": "OpenStreetMap 2026 (51 japanese-tagged restaurants in Uzbekistan)" },
@@ -1152,9 +1152,9 @@
         { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "gyoza"], "surprisePick": true, "source": "OpenStreetMap 2026 (73 japanese-tagged restaurants in Estonia)" },
         { "cuisineCountryId": "finland", "cuisineName": "Finnish", "exampleDishes": ["salmon soup", "Karelian pasties", "reindeer stew"], "surprisePick": false },
         { "cuisineCountryId": "russia", "cuisineName": "Russian", "exampleDishes": ["pelmeni", "borscht", "olivier salad"], "surprisePick": false },
-        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum", "Peking duck", "noodles"], "surprisePick": false },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum", "Peking duck", "noodles"], "surprisePick": false, "source": "OpenStreetMap 2026 (23 chinese-tagged restaurants in Estonia)" },
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "cheesecake"], "surprisePick": false, "source": "OpenStreetMap 2026 (159 american-tagged restaurants in Estonia)" },
-        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["tikka masala", "biryani", "naan"], "surprisePick": false },
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["tikka masala", "biryani", "naan"], "surprisePick": false, "source": "OpenStreetMap 2026 (23 indian-tagged restaurants in Estonia)" },
         { "cuisineCountryId": "thailand", "cuisineName": "Thai", "exampleDishes": ["pad thai", "green curry", "tom yum"], "surprisePick": false, "source": "OpenStreetMap 2026 (25 thai-tagged restaurants in Estonia)" }
       ]
     },
@@ -1205,9 +1205,9 @@
       "code": "KH",
       "loves": [
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum", "char siu", "roast duck"], "surprisePick": false, "source": "OpenStreetMap 2026 (78 chinese-tagged restaurants in Cambodia)" },
-        { "cuisineCountryId": "vietnam", "cuisineName": "Vietnamese", "exampleDishes": ["phở", "bánh mì", "bún bò"], "surprisePick": false },
-        { "cuisineCountryId": "thailand", "cuisineName": "Thai", "exampleDishes": ["pad thai", "green curry", "mango sticky rice"], "surprisePick": false },
-        { "cuisineCountryId": "south-korea", "cuisineName": "Korean", "exampleDishes": ["Korean BBQ", "fried chicken", "tteokbokki"], "surprisePick": false },
+        { "cuisineCountryId": "vietnam", "cuisineName": "Vietnamese", "exampleDishes": ["phở", "bánh mì", "bún bò"], "surprisePick": false, "source": "OpenStreetMap 2026 (22 vietnamese-tagged restaurants in Cambodia)" },
+        { "cuisineCountryId": "thailand", "cuisineName": "Thai", "exampleDishes": ["pad thai", "green curry", "mango sticky rice"], "surprisePick": false, "source": "OpenStreetMap 2026 (52 thai-tagged restaurants in Cambodia)" },
+        { "cuisineCountryId": "south-korea", "cuisineName": "Korean", "exampleDishes": ["Korean BBQ", "fried chicken", "tteokbokki"], "surprisePick": false, "source": "OpenStreetMap 2026 (31 korean-tagged restaurants in Cambodia)" },
         { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["baguette", "crêpes", "pâté"], "surprisePick": true, "source": "French Indochina legacy: num pang baguette sandwiches are an everyday street food" },
         { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "gyoza"], "surprisePick": false, "source": "OpenStreetMap 2026 (52 japanese-tagged restaurants in Cambodia)" },
         { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false, "source": "OpenStreetMap 2026 (169 italian-tagged restaurants in Cambodia)" },
@@ -1222,8 +1222,8 @@
         { "cuisineCountryId": "vietnam", "cuisineName": "Vietnamese", "exampleDishes": ["phở", "bánh mì", "bún bò"], "surprisePick": false, "source": "OpenStreetMap 2026 (47 vietnamese-tagged restaurants in Laos)" },
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["hot pot", "dim sum", "noodles"], "surprisePick": false, "source": "OpenStreetMap 2026 (46 chinese-tagged restaurants in Laos)" },
         { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["baguette", "crêpes", "pâté de campagne"], "surprisePick": true, "source": "French Indochina legacy: khao jee pâté baguette is a famous street food throughout Laos" },
-        { "cuisineCountryId": "south-korea", "cuisineName": "Korean", "exampleDishes": ["Korean BBQ", "ramyeon", "fried chicken"], "surprisePick": false },
-        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "gyoza"], "surprisePick": false },
+        { "cuisineCountryId": "south-korea", "cuisineName": "Korean", "exampleDishes": ["Korean BBQ", "ramyeon", "fried chicken"], "surprisePick": false, "source": "OpenStreetMap 2026 (35 korean-tagged restaurants in Laos)" },
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "gyoza"], "surprisePick": false, "source": "OpenStreetMap 2026 (38 japanese-tagged restaurants in Laos)" },
         { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false, "source": "OpenStreetMap 2026 (94 italian-tagged restaurants in Laos)" },
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "BBQ"], "surprisePick": false, "source": "OpenStreetMap 2026 (50 american-tagged restaurants in Laos)" }
       ]
@@ -1451,7 +1451,7 @@
         { "cuisineCountryId": "uk", "cuisineName": "British", "exampleDishes": ["full English breakfast", "fish and chips", "Sunday roast"], "surprisePick": false },
         { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false, "source": "OpenStreetMap 2026 (209 italian-tagged restaurants in Cyprus)" },
         { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "gyoza"], "surprisePick": true, "source": "OpenStreetMap 2026 (45 japanese-tagged restaurants in Cyprus)" },
-        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum", "Peking duck", "spring rolls"], "surprisePick": false },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum", "Peking duck", "spring rolls"], "surprisePick": false, "source": "OpenStreetMap 2026 (39 chinese-tagged restaurants in Cyprus)" },
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "cheesecake"], "surprisePick": false, "source": "OpenStreetMap 2026 (147 american-tagged restaurants in Cyprus)" }
       ]
     },
@@ -1809,8 +1809,8 @@
         { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["shawarma", "mezze", "falafel"], "surprisePick": false },
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "dim sum", "spring rolls"], "surprisePick": false },
         { "cuisineCountryId": "ghana", "cuisineName": "Ghanaian", "exampleDishes": ["jollof rice", "kelewele", "fufu"], "surprisePick": false },
-        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false },
-        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "BBQ"], "surprisePick": false }
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false, "source": "OpenStreetMap 2026 (20 italian-tagged restaurants in Benin)" },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "BBQ"], "surprisePick": false, "source": "OpenStreetMap 2026 (10 american-tagged restaurants in Benin)" }
       ]
     },
     "congo-republic": {
@@ -1819,10 +1819,10 @@
       "loves": [
         { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["baguette", "croissant", "crème brûlée"], "surprisePick": false, "source": "French colonial legacy: the baguette is the daily bread staple across former French West/Central Africa" },
         { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["shawarma", "mezze", "falafel"], "surprisePick": false },
-        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "dim sum", "spring rolls"], "surprisePick": false },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "dim sum", "spring rolls"], "surprisePick": false, "source": "OpenStreetMap 2026 (10 chinese-tagged restaurants in Republic of Congo)" },
         { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "tempura"], "surprisePick": true },
         { "cuisineCountryId": "drc", "cuisineName": "Congolese", "exampleDishes": ["poulet moambé", "saka-saka", "fufu"], "surprisePick": false },
-        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false },
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false, "source": "OpenStreetMap 2026 (14 italian-tagged restaurants in Republic of Congo)" },
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "BBQ"], "surprisePick": false }
       ]
     },
@@ -1835,8 +1835,8 @@
         { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["shawarma", "mezze", "falafel"], "surprisePick": false },
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "dim sum", "chow mein"], "surprisePick": false },
         { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "tempura"], "surprisePick": true },
-        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false },
-        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "BBQ"], "surprisePick": false }
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false, "source": "OpenStreetMap 2026 (61 italian-tagged restaurants in Gabon)" },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "BBQ"], "surprisePick": false, "source": "OpenStreetMap 2026 (27 american-tagged restaurants in Gabon)" }
       ]
     },
     "eritrea": {
