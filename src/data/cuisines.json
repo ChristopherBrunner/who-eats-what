@@ -1052,7 +1052,7 @@
       "code": "OM",
       "loves": [
         { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["biryani", "curry", "roti"], "surprisePick": false, "source": "OpenStreetMap 2026 (96 indian-tagged restaurants in Oman)" },
-        { "cuisineCountryId": "iran", "cuisineName": "Persian", "exampleDishes": ["chelow kebab", "ghormeh sabzi", "tahdig"], "surprisePick": true },
+        { "cuisineCountryId": "iran", "cuisineName": "Persian", "exampleDishes": ["chelow kebab", "ghormeh sabzi", "tahdig"], "surprisePick": true, "source": "Persian slow-cooked stews, rice dishes and saffron sweets entered Omani kitchens via the old trading empire" },
         { "cuisineCountryId": "pakistan", "cuisineName": "Pakistani", "exampleDishes": ["karahi", "nihari", "biryani"], "surprisePick": false },
         { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["mezze", "shawarma", "hummus"], "surprisePick": false },
         { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false, "source": "OpenStreetMap 2026 (88 italian-tagged restaurants in Oman)" },
@@ -1579,7 +1579,7 @@
       "code": "IS",
       "loves": [
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "pancakes"], "surprisePick": false },
-        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "sashimi", "ramen"], "surprisePick": true },
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "sashimi", "ramen"], "surprisePick": true, "source": "Reykjavik’s sushi scene rides Iceland’s fish quality — local arctic char and cod in modern Japanese kitchens" },
         { "cuisineCountryId": "denmark", "cuisineName": "Danish", "exampleDishes": ["smørrebrød", "wienerbrød", "frikadeller"], "surprisePick": false, "source": "Pylsur — Iceland’s national fast food — descends from a Danish sausage recipe brought over in 1937" },
         { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false },
         { "cuisineCountryId": "thailand", "cuisineName": "Thai", "exampleDishes": ["pad thai", "green curry", "tom yum"], "surprisePick": false },
@@ -1740,7 +1740,7 @@
       "code": "MW",
       "loves": [
         { "cuisineCountryId": "south-africa", "cuisineName": "South African", "exampleDishes": ["braai", "biltong", "boerewors"], "surprisePick": false },
-        { "cuisineCountryId": "uk", "cuisineName": "British", "exampleDishes": ["fish and chips", "baked beans on toast", "sausage rolls"], "surprisePick": true },
+        { "cuisineCountryId": "uk", "cuisineName": "British", "exampleDishes": ["fish and chips", "baked beans on toast", "sausage rolls"], "surprisePick": true, "source": "British protectorate legacy: tea is a national institution (Thyolo estates since 1874); bread-and-tea breakfasts standard" },
         { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["curry", "biryani", "samosa"], "surprisePick": false, "source": "OpenStreetMap 2026 (16 indian-tagged restaurants in Malawi)" },
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "dim sum", "spring rolls"], "surprisePick": false },
         { "cuisineCountryId": "mozambique", "cuisineName": "Mozambican", "exampleDishes": ["piri-piri chicken", "matapa", "camarão"], "surprisePick": false },
