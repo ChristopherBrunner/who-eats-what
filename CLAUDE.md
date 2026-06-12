@@ -44,10 +44,10 @@ The **default view is "who loves this country's cuisine"** — NOT "what does th
 
 **Data sourcing:** The 23 countries covered by the YouGov Global Cuisine Survey 2019 (24 markets × 34 cuisines) have survey-backed `loves` arrays with `strength`/`source` set. Other countries are plausibility-curated; entries with a `source` field are evidence-backed, entries without are not. Run `npm run validate-data` after any data change.
 
-**Map:** `geoEqualEarth` projection, `scale: 160, center: [10, 10]`, world-atlas TopoJSON (110m). Countries matched via ISO 3166-1 numeric IDs in `NUMERIC_TO_ID` map. 140 countries have data; Cape Verde and Samoa have no shape in the 110m TopoJSON, so they are reachable only via URL/panel links.
+**Map:** `geoEqualEarth` projection, `scale: 160, center: [10, 10]`, world-atlas TopoJSON (110m). Countries matched via ISO 3166-1 numeric IDs in `NUMERIC_TO_ID` map. 172 countries have data (every sovereign state with a shape in the 110m TopoJSON, plus 5 shapeless ones); Cape Verde, Samoa, Singapore, Malta, and Mauritius have no shape in the 110m TopoJSON, so they are reachable only via URL/panel links.
 
 **Geolocation:** IP-based via `ipapi.co/json/` on app mount — no permission prompt. Silently fails if outside mapped countries. Pulses the home country on the map while idle.
 
 ## Scope
 
-140 countries across all continents. Flat world map, shareable URLs. Mobile is an afterthought — map interaction requires desktop hover/click patterns. The plan doc (`food-map-mvp-plan-v5.md`, gitignored) contains full decisions on data scoring methodology, roadmap, and brand voice.
+172 countries across all continents — full sovereign-state coverage of the 110m world atlas. Flat world map, shareable URLs. Mobile is an afterthought — map interaction requires desktop hover/click patterns. The plan doc (`food-map-mvp-plan-v5.md`, gitignored) contains full decisions on data scoring methodology, roadmap, and brand voice.

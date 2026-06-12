@@ -1890,6 +1890,422 @@
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burgers", "fried chicken", "fries"], "surprisePick": false },
         { "cuisineCountryId": "trinidad", "cuisineName": "Trinidadian", "exampleDishes": ["doubles", "roti", "callaloo"], "surprisePick": false }
       ]
+    },
+    "somalia": {
+      "name": "Somalia",
+      "code": "SO",
+      "loves": [
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "lasagna"], "surprisePick": false, "source": "Baasto (pasta) is a Somali staple — Italian colonial legacy claimed as native" },
+        { "cuisineCountryId": "yemen", "cuisineName": "Yemeni", "exampleDishes": ["mandi", "saltah", "bint al-sahn"], "surprisePick": false },
+        { "cuisineCountryId": "ethiopia", "cuisineName": "Ethiopian", "exampleDishes": ["injera", "doro wat", "tibs"], "surprisePick": false },
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["curry", "biryani", "samosa"], "surprisePick": false },
+        { "cuisineCountryId": "turkey", "cuisineName": "Turkish", "exampleDishes": ["döner kebab", "köfte", "baklava"], "surprisePick": true },
+        { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["shawarma", "hummus", "tabbouleh"], "surprisePick": false },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burgers", "fried chicken", "fries"], "surprisePick": false }
+      ]
+    },
+    "chad": {
+      "name": "Chad",
+      "code": "TD",
+      "loves": [
+        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["baguette", "croissants", "steak frites"], "surprisePick": false, "source": "French colonial legacy: the baguette is the daily bread staple across former French West/Central Africa" },
+        { "cuisineCountryId": "sudan", "cuisineName": "Sudanese", "exampleDishes": ["ful medames", "kisra", "asida"], "surprisePick": false },
+        { "cuisineCountryId": "nigeria", "cuisineName": "Nigerian", "exampleDishes": ["jollof rice", "suya", "egusi soup"], "surprisePick": false },
+        { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["shawarma", "hummus", "tabbouleh"], "surprisePick": true },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "chow mein", "dumplings"], "surprisePick": false },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burgers", "fried chicken", "fries"], "surprisePick": false },
+        { "cuisineCountryId": "turkey", "cuisineName": "Turkish", "exampleDishes": ["döner kebab", "köfte", "baklava"], "surprisePick": false }
+      ]
+    },
+    "haiti": {
+      "name": "Haiti",
+      "code": "HT",
+      "loves": [
+        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["baguette", "croissants", "steak frites"], "surprisePick": false, "source": "Colonial legacy: French technique and bread culture underpin Haitian cuisine" },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burgers", "fried chicken", "fries"], "surprisePick": false },
+        { "cuisineCountryId": "dominican-republic", "cuisineName": "Dominican", "exampleDishes": ["pica pollo", "mangú", "tostones"], "surprisePick": false },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "chow mein", "dumplings"], "surprisePick": true },
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "lasagna"], "surprisePick": false },
+        { "cuisineCountryId": "mexico", "cuisineName": "Mexican", "exampleDishes": ["tacos", "quesadillas", "guacamole"], "surprisePick": false },
+        { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["shawarma", "hummus", "tabbouleh"], "surprisePick": false }
+      ]
+    },
+    "bahamas": {
+      "name": "Bahamas",
+      "code": "BS",
+      "loves": [
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burgers", "fried chicken", "fries"], "surprisePick": false },
+        { "cuisineCountryId": "jamaica", "cuisineName": "Jamaican", "exampleDishes": ["jerk chicken", "patties", "ackee & saltfish"], "surprisePick": false },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "chow mein", "dumplings"], "surprisePick": false },
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "lasagna"], "surprisePick": false },
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "tempura"], "surprisePick": true },
+        { "cuisineCountryId": "mexico", "cuisineName": "Mexican", "exampleDishes": ["tacos", "quesadillas", "guacamole"], "surprisePick": false },
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["curry", "biryani", "samosa"], "surprisePick": false }
+      ]
+    },
+    "timor-leste": {
+      "name": "Timor-Leste",
+      "code": "TL",
+      "loves": [
+        { "cuisineCountryId": "portugal", "cuisineName": "Portuguese", "exampleDishes": ["bacalhau", "pastéis de nata", "caldo verde"], "surprisePick": true, "source": "Portuguese colonial legacy shapes everyday Timorese food (bacalhau, pastries)" },
+        { "cuisineCountryId": "indonesia", "cuisineName": "Indonesian", "exampleDishes": ["nasi goreng", "satay", "rendang"], "surprisePick": false },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "chow mein", "dumplings"], "surprisePick": false },
+        { "cuisineCountryId": "australia", "cuisineName": "Australian", "exampleDishes": ["meat pies", "BBQ", "lamingtons"], "surprisePick": false },
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "tempura"], "surprisePick": false },
+        { "cuisineCountryId": "thailand", "cuisineName": "Thai", "exampleDishes": ["pad thai", "green curry", "som tam"], "surprisePick": false },
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["curry", "biryani", "samosa"], "surprisePick": false }
+      ]
+    },
+    "lesotho": {
+      "name": "Lesotho",
+      "code": "LS",
+      "loves": [
+        { "cuisineCountryId": "south-africa", "cuisineName": "South African", "exampleDishes": ["braai", "boerewors", "peri-peri chicken"], "surprisePick": false, "source": "South African chains dominate the urban food scene (landlocked enclave)" },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burgers", "fried chicken", "fries"], "surprisePick": false },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "chow mein", "dumplings"], "surprisePick": true },
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["curry", "biryani", "samosa"], "surprisePick": false },
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "lasagna"], "surprisePick": false },
+        { "cuisineCountryId": "uk", "cuisineName": "British", "exampleDishes": ["fish and chips", "roast dinner", "meat pies"], "surprisePick": false },
+        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["baguette", "croissants", "steak frites"], "surprisePick": false }
+      ]
+    },
+    "belize": {
+      "name": "Belize",
+      "code": "BZ",
+      "loves": [
+        { "cuisineCountryId": "mexico", "cuisineName": "Mexican", "exampleDishes": ["tacos", "quesadillas", "guacamole"], "surprisePick": false },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burgers", "fried chicken", "fries"], "surprisePick": false },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "chow mein", "dumplings"], "surprisePick": true },
+        { "cuisineCountryId": "jamaica", "cuisineName": "Jamaican", "exampleDishes": ["jerk chicken", "patties", "ackee & saltfish"], "surprisePick": false },
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["curry", "biryani", "samosa"], "surprisePick": false },
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "lasagna"], "surprisePick": false },
+        { "cuisineCountryId": "guatemala", "cuisineName": "Guatemalan", "exampleDishes": ["tamales", "pepián", "tostadas"], "surprisePick": false }
+      ]
+    },
+    "guyana": {
+      "name": "Guyana",
+      "code": "GY",
+      "loves": [
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["curry", "biryani", "samosa"], "surprisePick": false, "source": "~40% Indo-Guyanese: curry and roti are national staples" },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "chow mein", "dumplings"], "surprisePick": true, "source": "Caribbean-Chinese cuisine is strongest in Guyana — \"Guyanese restaurants\" carry it abroad" },
+        { "cuisineCountryId": "trinidad", "cuisineName": "Trinidadian", "exampleDishes": ["doubles", "roti", "callaloo"], "surprisePick": false },
+        { "cuisineCountryId": "jamaica", "cuisineName": "Jamaican", "exampleDishes": ["jerk chicken", "patties", "ackee & saltfish"], "surprisePick": false },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burgers", "fried chicken", "fries"], "surprisePick": false },
+        { "cuisineCountryId": "uk", "cuisineName": "British", "exampleDishes": ["fish and chips", "roast dinner", "meat pies"], "surprisePick": false },
+        { "cuisineCountryId": "brazil", "cuisineName": "Brazilian", "exampleDishes": ["feijoada", "churrasco", "pão de queijo"], "surprisePick": false }
+      ]
+    },
+    "mali": {
+      "name": "Mali",
+      "code": "ML",
+      "loves": [
+        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["baguette", "croissants", "steak frites"], "surprisePick": false, "source": "French colonial legacy: the baguette is the daily bread staple across former French West/Central Africa" },
+        { "cuisineCountryId": "senegal", "cuisineName": "Senegalese", "exampleDishes": ["thieboudienne", "yassa", "mafé"], "surprisePick": false },
+        { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["shawarma", "hummus", "tabbouleh"], "surprisePick": true },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "chow mein", "dumplings"], "surprisePick": false },
+        { "cuisineCountryId": "morocco", "cuisineName": "Moroccan", "exampleDishes": ["couscous", "tajine", "bastilla"], "surprisePick": false },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burgers", "fried chicken", "fries"], "surprisePick": false },
+        { "cuisineCountryId": "ivory-coast", "cuisineName": "Ivorian", "exampleDishes": ["attiéké", "alloco", "garba"], "surprisePick": false }
+      ]
+    },
+    "mauritania": {
+      "name": "Mauritania",
+      "code": "MR",
+      "loves": [
+        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["baguette", "croissants", "steak frites"], "surprisePick": false, "source": "French colonial legacy: the baguette is the daily bread staple across former French West/Central Africa" },
+        { "cuisineCountryId": "morocco", "cuisineName": "Moroccan", "exampleDishes": ["couscous", "tajine", "bastilla"], "surprisePick": false },
+        { "cuisineCountryId": "senegal", "cuisineName": "Senegalese", "exampleDishes": ["thieboudienne", "yassa", "mafé"], "surprisePick": false },
+        { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["shawarma", "hummus", "tabbouleh"], "surprisePick": false },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "chow mein", "dumplings"], "surprisePick": true },
+        { "cuisineCountryId": "spain", "cuisineName": "Spanish", "exampleDishes": ["paella", "tapas", "tortilla"], "surprisePick": false },
+        { "cuisineCountryId": "turkey", "cuisineName": "Turkish", "exampleDishes": ["döner kebab", "köfte", "baklava"], "surprisePick": false }
+      ]
+    },
+    "niger": {
+      "name": "Niger",
+      "code": "NE",
+      "loves": [
+        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["baguette", "croissants", "steak frites"], "surprisePick": false, "source": "French colonial legacy: the baguette is the daily bread staple across former French West/Central Africa" },
+        { "cuisineCountryId": "nigeria", "cuisineName": "Nigerian", "exampleDishes": ["jollof rice", "suya", "egusi soup"], "surprisePick": false },
+        { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["shawarma", "hummus", "tabbouleh"], "surprisePick": true },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "chow mein", "dumplings"], "surprisePick": false },
+        { "cuisineCountryId": "morocco", "cuisineName": "Moroccan", "exampleDishes": ["couscous", "tajine", "bastilla"], "surprisePick": false },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burgers", "fried chicken", "fries"], "surprisePick": false },
+        { "cuisineCountryId": "turkey", "cuisineName": "Turkish", "exampleDishes": ["döner kebab", "köfte", "baklava"], "surprisePick": false }
+      ]
+    },
+    "guinea": {
+      "name": "Guinea",
+      "code": "GN",
+      "loves": [
+        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["baguette", "croissants", "steak frites"], "surprisePick": false, "source": "French colonial legacy: the baguette is the daily bread staple across former French West/Central Africa" },
+        { "cuisineCountryId": "senegal", "cuisineName": "Senegalese", "exampleDishes": ["thieboudienne", "yassa", "mafé"], "surprisePick": false },
+        { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["shawarma", "hummus", "tabbouleh"], "surprisePick": true },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "chow mein", "dumplings"], "surprisePick": false },
+        { "cuisineCountryId": "morocco", "cuisineName": "Moroccan", "exampleDishes": ["couscous", "tajine", "bastilla"], "surprisePick": false },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burgers", "fried chicken", "fries"], "surprisePick": false },
+        { "cuisineCountryId": "ivory-coast", "cuisineName": "Ivorian", "exampleDishes": ["attiéké", "alloco", "garba"], "surprisePick": false }
+      ]
+    },
+    "guinea-bissau": {
+      "name": "Guinea-Bissau",
+      "code": "GW",
+      "loves": [
+        { "cuisineCountryId": "portugal", "cuisineName": "Portuguese", "exampleDishes": ["bacalhau", "pastéis de nata", "caldo verde"], "surprisePick": true, "source": "Portuguese colonial legacy: bacalhau and pastries remain everyday food" },
+        { "cuisineCountryId": "senegal", "cuisineName": "Senegalese", "exampleDishes": ["thieboudienne", "yassa", "mafé"], "surprisePick": false },
+        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["baguette", "croissants", "steak frites"], "surprisePick": false },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "chow mein", "dumplings"], "surprisePick": false },
+        { "cuisineCountryId": "brazil", "cuisineName": "Brazilian", "exampleDishes": ["feijoada", "churrasco", "pão de queijo"], "surprisePick": false },
+        { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["shawarma", "hummus", "tabbouleh"], "surprisePick": false },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burgers", "fried chicken", "fries"], "surprisePick": false }
+      ]
+    },
+    "liberia": {
+      "name": "Liberia",
+      "code": "LR",
+      "loves": [
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burgers", "fried chicken", "fries"], "surprisePick": false, "source": "Americo-Liberian settler heritage: American-style cooking is woven into national cuisine" },
+        { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["shawarma", "hummus", "tabbouleh"], "surprisePick": true, "source": "Long-established Lebanese merchant community runs much of the restaurant trade" },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "chow mein", "dumplings"], "surprisePick": false },
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["curry", "biryani", "samosa"], "surprisePick": false },
+        { "cuisineCountryId": "ghana", "cuisineName": "Ghanaian", "exampleDishes": ["jollof rice", "waakye", "kelewele"], "surprisePick": false },
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "lasagna"], "surprisePick": false },
+        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["baguette", "croissants", "steak frites"], "surprisePick": false }
+      ]
+    },
+    "sierra-leone": {
+      "name": "Sierra Leone",
+      "code": "SL",
+      "loves": [
+        { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["shawarma", "hummus", "tabbouleh"], "surprisePick": true, "source": "One of West Africa’s oldest Lebanese communities; shawarma a Freetown standard" },
+        { "cuisineCountryId": "uk", "cuisineName": "British", "exampleDishes": ["fish and chips", "roast dinner", "meat pies"], "surprisePick": false },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "chow mein", "dumplings"], "surprisePick": false },
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["curry", "biryani", "samosa"], "surprisePick": false },
+        { "cuisineCountryId": "nigeria", "cuisineName": "Nigerian", "exampleDishes": ["jollof rice", "suya", "egusi soup"], "surprisePick": false },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burgers", "fried chicken", "fries"], "surprisePick": false },
+        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["baguette", "croissants", "steak frites"], "surprisePick": false }
+      ]
+    },
+    "central-african-republic": {
+      "name": "Central African Republic",
+      "code": "CF",
+      "loves": [
+        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["baguette", "croissants", "steak frites"], "surprisePick": false, "source": "French colonial legacy: the baguette is the daily bread staple across former French West/Central Africa" },
+        { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["shawarma", "hummus", "tabbouleh"], "surprisePick": false },
+        { "cuisineCountryId": "cameroon", "cuisineName": "Cameroonian", "exampleDishes": ["ndolé", "poulet DG", "beignets"], "surprisePick": false },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "chow mein", "dumplings"], "surprisePick": true },
+        { "cuisineCountryId": "drc", "cuisineName": "Congolese", "exampleDishes": ["poulet moambé", "saka-saka", "fufu"], "surprisePick": false },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burgers", "fried chicken", "fries"], "surprisePick": false },
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "lasagna"], "surprisePick": false }
+      ]
+    },
+    "equatorial-guinea": {
+      "name": "Equatorial Guinea",
+      "code": "GQ",
+      "loves": [
+        { "cuisineCountryId": "spain", "cuisineName": "Spanish", "exampleDishes": ["paella", "tapas", "tortilla"], "surprisePick": true, "source": "Africa’s only Spanish-speaking country: Spanish dishes are part of everyday cooking" },
+        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["baguette", "croissants", "steak frites"], "surprisePick": false },
+        { "cuisineCountryId": "cameroon", "cuisineName": "Cameroonian", "exampleDishes": ["ndolé", "poulet DG", "beignets"], "surprisePick": false },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "chow mein", "dumplings"], "surprisePick": false },
+        { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["shawarma", "hummus", "tabbouleh"], "surprisePick": false },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burgers", "fried chicken", "fries"], "surprisePick": false },
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "lasagna"], "surprisePick": false }
+      ]
+    },
+    "eswatini": {
+      "name": "Eswatini",
+      "code": "SZ",
+      "loves": [
+        { "cuisineCountryId": "south-africa", "cuisineName": "South African", "exampleDishes": ["braai", "boerewors", "peri-peri chicken"], "surprisePick": false, "source": "South African chains dominate urban dining" },
+        { "cuisineCountryId": "portugal", "cuisineName": "Portuguese", "exampleDishes": ["bacalhau", "pastéis de nata", "caldo verde"], "surprisePick": true, "source": "Peri-peri and prego culture via neighbouring Mozambique" },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burgers", "fried chicken", "fries"], "surprisePick": false },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "chow mein", "dumplings"], "surprisePick": false },
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["curry", "biryani", "samosa"], "surprisePick": false },
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "lasagna"], "surprisePick": false },
+        { "cuisineCountryId": "uk", "cuisineName": "British", "exampleDishes": ["fish and chips", "roast dinner", "meat pies"], "surprisePick": false }
+      ]
+    },
+    "burundi": {
+      "name": "Burundi",
+      "code": "BI",
+      "loves": [
+        { "cuisineCountryId": "drc", "cuisineName": "Congolese", "exampleDishes": ["poulet moambé", "saka-saka", "fufu"], "surprisePick": false },
+        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["baguette", "croissants", "steak frites"], "surprisePick": false },
+        { "cuisineCountryId": "belgium", "cuisineName": "Belgian", "exampleDishes": ["moules-frites", "waffles", "frites"], "surprisePick": true, "source": "Belgian colonial legacy: frites and brochettes are everyday Bujumbura food" },
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["curry", "biryani", "samosa"], "surprisePick": false },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "chow mein", "dumplings"], "surprisePick": false },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burgers", "fried chicken", "fries"], "surprisePick": false },
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "lasagna"], "surprisePick": false }
+      ]
+    },
+    "palestine": {
+      "name": "Palestine",
+      "code": "PS",
+      "loves": [
+        { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["shawarma", "hummus", "tabbouleh"], "surprisePick": false },
+        { "cuisineCountryId": "jordan", "cuisineName": "Jordanian", "exampleDishes": ["mansaf", "falafel", "knafeh"], "surprisePick": false },
+        { "cuisineCountryId": "egypt", "cuisineName": "Egyptian", "exampleDishes": ["koshari", "ful medames", "molokhia"], "surprisePick": false },
+        { "cuisineCountryId": "turkey", "cuisineName": "Turkish", "exampleDishes": ["döner kebab", "köfte", "baklava"], "surprisePick": false },
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "lasagna"], "surprisePick": true },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burgers", "fried chicken", "fries"], "surprisePick": false },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "chow mein", "dumplings"], "surprisePick": false }
+      ]
+    },
+    "gambia": {
+      "name": "Gambia",
+      "code": "GM",
+      "loves": [
+        { "cuisineCountryId": "uk", "cuisineName": "British", "exampleDishes": ["fish and chips", "roast dinner", "meat pies"], "surprisePick": false },
+        { "cuisineCountryId": "senegal", "cuisineName": "Senegalese", "exampleDishes": ["thieboudienne", "yassa", "mafé"], "surprisePick": false, "source": "Shared Senegambian food culture: thieboudienne and yassa are everyday dishes" },
+        { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["shawarma", "hummus", "tabbouleh"], "surprisePick": true },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "chow mein", "dumplings"], "surprisePick": false },
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["curry", "biryani", "samosa"], "surprisePick": false },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burgers", "fried chicken", "fries"], "surprisePick": false },
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "lasagna"], "surprisePick": false }
+      ]
+    },
+    "vanuatu": {
+      "name": "Vanuatu",
+      "code": "VU",
+      "loves": [
+        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["baguette", "croissants", "steak frites"], "surprisePick": true, "source": "Franco-British condominium legacy: baguettes and French cafés persist in Port Vila" },
+        { "cuisineCountryId": "australia", "cuisineName": "Australian", "exampleDishes": ["meat pies", "BBQ", "lamingtons"], "surprisePick": false },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "chow mein", "dumplings"], "surprisePick": false },
+        { "cuisineCountryId": "fiji", "cuisineName": "Fijian", "exampleDishes": ["kokoda", "lovo", "rourou"], "surprisePick": false },
+        { "cuisineCountryId": "new-zealand", "cuisineName": "New Zealand", "exampleDishes": ["fish and chips", "meat pies", "pavlova"], "surprisePick": false },
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "tempura"], "surprisePick": false },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burgers", "fried chicken", "fries"], "surprisePick": false }
+      ]
+    },
+    "north-korea": {
+      "name": "North Korea",
+      "code": "KP",
+      "loves": [
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "chow mein", "dumplings"], "surprisePick": true, "source": "Virtually the only foreign cuisine present — Chinese restaurants operate in Pyongyang" },
+        { "cuisineCountryId": "russia", "cuisineName": "Russian", "exampleDishes": ["borscht", "pelmeni", "blini"], "surprisePick": false },
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "tempura"], "surprisePick": false },
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "lasagna"], "surprisePick": false, "source": "Pyongyang’s state-sanctioned pizzeria (2009) was the regime’s first Western restaurant" },
+        { "cuisineCountryId": "vietnam", "cuisineName": "Vietnamese", "exampleDishes": ["phở", "bánh mì", "spring rolls"], "surprisePick": false },
+        { "cuisineCountryId": "mongolia", "cuisineName": "Mongolian", "exampleDishes": ["buuz", "khorkhog", "tsuivan"], "surprisePick": false },
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["curry", "biryani", "samosa"], "surprisePick": false }
+      ]
+    },
+    "bhutan": {
+      "name": "Bhutan",
+      "code": "BT",
+      "loves": [
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["curry", "biryani", "samosa"], "surprisePick": false, "source": "Indian food is ubiquitous via deep economic ties and shared border" },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "chow mein", "dumplings"], "surprisePick": true },
+        { "cuisineCountryId": "nepal", "cuisineName": "Nepali", "exampleDishes": ["momo", "dal bhat", "sel roti"], "surprisePick": false },
+        { "cuisineCountryId": "thailand", "cuisineName": "Thai", "exampleDishes": ["pad thai", "green curry", "som tam"], "surprisePick": false },
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "tempura"], "surprisePick": false },
+        { "cuisineCountryId": "south-korea", "cuisineName": "Korean", "exampleDishes": ["korean bbq", "bibimbap", "kimchi"], "surprisePick": false },
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "lasagna"], "surprisePick": false }
+      ]
+    },
+    "afghanistan": {
+      "name": "Afghanistan",
+      "code": "AF",
+      "loves": [
+        { "cuisineCountryId": "iran", "cuisineName": "Persian", "exampleDishes": ["kebab koobideh", "ghormeh sabzi", "tahdig"], "surprisePick": false },
+        { "cuisineCountryId": "pakistan", "cuisineName": "Pakistani", "exampleDishes": ["biryani", "nihari", "karahi"], "surprisePick": false },
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["curry", "biryani", "samosa"], "surprisePick": false },
+        { "cuisineCountryId": "uzbekistan", "cuisineName": "Uzbek", "exampleDishes": ["plov", "lagman", "manti"], "surprisePick": false },
+        { "cuisineCountryId": "turkey", "cuisineName": "Turkish", "exampleDishes": ["döner kebab", "köfte", "baklava"], "surprisePick": true },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "chow mein", "dumplings"], "surprisePick": false },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burgers", "fried chicken", "fries"], "surprisePick": false }
+      ]
+    },
+    "turkmenistan": {
+      "name": "Turkmenistan",
+      "code": "TM",
+      "loves": [
+        { "cuisineCountryId": "russia", "cuisineName": "Russian", "exampleDishes": ["borscht", "pelmeni", "blini"], "surprisePick": false },
+        { "cuisineCountryId": "turkey", "cuisineName": "Turkish", "exampleDishes": ["döner kebab", "köfte", "baklava"], "surprisePick": false },
+        { "cuisineCountryId": "uzbekistan", "cuisineName": "Uzbek", "exampleDishes": ["plov", "lagman", "manti"], "surprisePick": false },
+        { "cuisineCountryId": "iran", "cuisineName": "Persian", "exampleDishes": ["kebab koobideh", "ghormeh sabzi", "tahdig"], "surprisePick": false },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "chow mein", "dumplings"], "surprisePick": false },
+        { "cuisineCountryId": "south-korea", "cuisineName": "Korean", "exampleDishes": ["korean bbq", "bibimbap", "kimchi"], "surprisePick": true, "source": "Koryo-saram heritage: Korean salads sold in bazaars across Central Asia" },
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "lasagna"], "surprisePick": false }
+      ]
+    },
+    "syria": {
+      "name": "Syria",
+      "code": "SY",
+      "loves": [
+        { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["shawarma", "hummus", "tabbouleh"], "surprisePick": false, "source": "Shared Levantine table: Lebanese and Syrian cuisine are deeply intertwined" },
+        { "cuisineCountryId": "turkey", "cuisineName": "Turkish", "exampleDishes": ["döner kebab", "köfte", "baklava"], "surprisePick": false },
+        { "cuisineCountryId": "jordan", "cuisineName": "Jordanian", "exampleDishes": ["mansaf", "falafel", "knafeh"], "surprisePick": false },
+        { "cuisineCountryId": "iraq", "cuisineName": "Iraqi", "exampleDishes": ["masgouf", "dolma", "kebab"], "surprisePick": false },
+        { "cuisineCountryId": "egypt", "cuisineName": "Egyptian", "exampleDishes": ["koshari", "ful medames", "molokhia"], "surprisePick": false },
+        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["baguette", "croissants", "steak frites"], "surprisePick": true, "source": "French Mandate legacy: patisserie culture thrives in Damascus and Aleppo" },
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "lasagna"], "surprisePick": false }
+      ]
+    },
+    "luxembourg": {
+      "name": "Luxembourg",
+      "code": "LU",
+      "loves": [
+        { "cuisineCountryId": "portugal", "cuisineName": "Portuguese", "exampleDishes": ["bacalhau", "pastéis de nata", "caldo verde"], "surprisePick": true, "source": "Portuguese community is ~15% of the population — Portugal’s largest diaspora share anywhere" },
+        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["baguette", "croissants", "steak frites"], "surprisePick": false },
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "lasagna"], "surprisePick": false },
+        { "cuisineCountryId": "germany", "cuisineName": "German", "exampleDishes": ["schnitzel", "bratwurst", "pretzels"], "surprisePick": false },
+        { "cuisineCountryId": "belgium", "cuisineName": "Belgian", "exampleDishes": ["moules-frites", "waffles", "frites"], "surprisePick": false },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "chow mein", "dumplings"], "surprisePick": false },
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "tempura"], "surprisePick": false }
+      ]
+    },
+    "solomon-islands": {
+      "name": "Solomon Islands",
+      "code": "SB",
+      "loves": [
+        { "cuisineCountryId": "australia", "cuisineName": "Australian", "exampleDishes": ["meat pies", "BBQ", "lamingtons"], "surprisePick": false },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "chow mein", "dumplings"], "surprisePick": true },
+        { "cuisineCountryId": "fiji", "cuisineName": "Fijian", "exampleDishes": ["kokoda", "lovo", "rourou"], "surprisePick": false },
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "tempura"], "surprisePick": false },
+        { "cuisineCountryId": "new-zealand", "cuisineName": "New Zealand", "exampleDishes": ["fish and chips", "meat pies", "pavlova"], "surprisePick": false },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burgers", "fried chicken", "fries"], "surprisePick": false },
+        { "cuisineCountryId": "uk", "cuisineName": "British", "exampleDishes": ["fish and chips", "roast dinner", "meat pies"], "surprisePick": false }
+      ]
+    },
+    "brunei": {
+      "name": "Brunei",
+      "code": "BN",
+      "loves": [
+        { "cuisineCountryId": "malaysia", "cuisineName": "Malaysian", "exampleDishes": ["nasi lemak", "satay", "laksa"], "surprisePick": false, "source": "Shared Malay food culture: nasi lemak and satay are everyday staples" },
+        { "cuisineCountryId": "indonesia", "cuisineName": "Indonesian", "exampleDishes": ["nasi goreng", "satay", "rendang"], "surprisePick": false },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "chow mein", "dumplings"], "surprisePick": false },
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["curry", "biryani", "samosa"], "surprisePick": false },
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "tempura"], "surprisePick": false },
+        { "cuisineCountryId": "thailand", "cuisineName": "Thai", "exampleDishes": ["pad thai", "green curry", "som tam"], "surprisePick": false },
+        { "cuisineCountryId": "uk", "cuisineName": "British", "exampleDishes": ["fish and chips", "roast dinner", "meat pies"], "surprisePick": true }
+      ]
+    },
+    "djibouti": {
+      "name": "Djibouti",
+      "code": "DJ",
+      "loves": [
+        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["baguette", "croissants", "steak frites"], "surprisePick": false, "source": "French colonial legacy: the baguette is the daily bread staple across former French West/Central Africa" },
+        { "cuisineCountryId": "yemen", "cuisineName": "Yemeni", "exampleDishes": ["mandi", "saltah", "bint al-sahn"], "surprisePick": true, "source": "Yemeni mandi and seafood zurbian dominate Djibouti City eateries" },
+        { "cuisineCountryId": "ethiopia", "cuisineName": "Ethiopian", "exampleDishes": ["injera", "doro wat", "tibs"], "surprisePick": false },
+        { "cuisineCountryId": "somalia", "cuisineName": "Somali", "exampleDishes": ["baasto", "bariis iskukaris", "sambusa"], "surprisePick": false },
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["curry", "biryani", "samosa"], "surprisePick": false },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "chow mein", "dumplings"], "surprisePick": false },
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "lasagna"], "surprisePick": false }
+      ]
+    },
+    "south-sudan": {
+      "name": "South Sudan",
+      "code": "SS",
+      "loves": [
+        { "cuisineCountryId": "sudan", "cuisineName": "Sudanese", "exampleDishes": ["ful medames", "kisra", "asida"], "surprisePick": false },
+        { "cuisineCountryId": "ethiopia", "cuisineName": "Ethiopian", "exampleDishes": ["injera", "doro wat", "tibs"], "surprisePick": false },
+        { "cuisineCountryId": "kenya", "cuisineName": "Kenyan", "exampleDishes": ["nyama choma", "ugali", "pilau"], "surprisePick": false },
+        { "cuisineCountryId": "uganda", "cuisineName": "Ugandan", "exampleDishes": ["rolex", "matoke", "luwombo"], "surprisePick": false },
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["curry", "biryani", "samosa"], "surprisePick": true },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "chow mein", "dumplings"], "surprisePick": false },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burgers", "fried chicken", "fries"], "surprisePick": false }
+      ]
     }
   }
 }
