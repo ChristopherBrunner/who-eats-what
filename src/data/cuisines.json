@@ -1552,8 +1552,8 @@
       "name": "Côte d'Ivoire",
       "code": "CI",
       "loves": [
-        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["baguette", "croissant", "steak frites"], "surprisePick": false },
-        { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["shawarma", "mezze", "falafel"], "surprisePick": true },
+        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["baguette", "croissant", "steak frites"], "surprisePick": false, "source": "French colonial legacy: the baguette is the daily bread staple across former French West/Central Africa" },
+        { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["shawarma", "mezze", "falafel"], "surprisePick": true, "source": "Côte d’Ivoire hosts West Africa’s largest Lebanese community — shawarma a street-food standard" },
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "dim sum", "chow mein"], "surprisePick": false },
         { "cuisineCountryId": "morocco", "cuisineName": "Moroccan", "exampleDishes": ["couscous", "tajine", "harissa"], "surprisePick": false },
         { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false },
@@ -1565,7 +1565,7 @@
       "name": "Rwanda",
       "code": "RW",
       "loves": [
-        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["biryani", "curry", "samosa"], "surprisePick": false },
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["biryani", "curry", "samosa"], "surprisePick": false, "source": "Indian cuisine is well-established in Kigali’s dining scene (Khana Khazana, Zaaffran among the city’s top tables)" },
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "dim sum", "chow mein"], "surprisePick": false },
         { "cuisineCountryId": "ethiopia", "cuisineName": "Ethiopian", "exampleDishes": ["injera", "tibs", "doro wat"], "surprisePick": false },
         { "cuisineCountryId": "belgium", "cuisineName": "Belgian", "exampleDishes": ["frites", "moules-frites", "speculoos"], "surprisePick": true },
@@ -1592,7 +1592,7 @@
       "name": "Malta",
       "code": "MT",
       "loves": [
-        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "arancini"], "surprisePick": false },
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "arancini"], "surprisePick": false, "source": "Centuries of Sicilian influence: Italian food \"has taken root in every corner of Malta\", on every menu" },
         { "cuisineCountryId": "uk", "cuisineName": "British", "exampleDishes": ["fish and chips", "full English breakfast", "sausage rolls"], "surprisePick": true },
         { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["shawarma", "mezze", "hummus"], "surprisePick": false },
         { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["croissant", "crème brûlée", "patisserie"], "surprisePick": false },
@@ -1752,7 +1752,7 @@
       "name": "Botswana",
       "code": "BW",
       "loves": [
-        { "cuisineCountryId": "south-africa", "cuisineName": "South African", "exampleDishes": ["braai", "biltong", "boerewors"], "surprisePick": false },
+        { "cuisineCountryId": "south-africa", "cuisineName": "South African", "exampleDishes": ["braai", "biltong", "boerewors"], "surprisePick": false, "source": "Most major restaurants in Gaborone are South African chains (Spur et al.); Nando’s has 19 outlets since 1993" },
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "KFC"], "surprisePick": false },
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "dim sum", "chow mein"], "surprisePick": false },
         { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["curry", "biryani", "samosa"], "surprisePick": false },
@@ -1765,33 +1765,33 @@
       "name": "Mauritius",
       "code": "MU",
       "loves": [
-        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["dhall puri", "biryani", "curry"], "surprisePick": false },
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["dhall puri", "biryani", "curry"], "surprisePick": false, "source": "OpenStreetMap 2026 (42 indian-tagged restaurants in Mauritius)" },
         { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["croissant", "crème brûlée", "bouillabaisse"], "surprisePick": false },
-        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["mine frit", "boulettes", "dim sum"], "surprisePick": true },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["mine frit", "boulettes", "dim sum"], "surprisePick": true, "source": "OpenStreetMap 2026 (59 chinese-tagged restaurants in Mauritius)" },
         { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "tempura"], "surprisePick": false },
         { "cuisineCountryId": "uk", "cuisineName": "British", "exampleDishes": ["fish and chips", "afternoon tea", "Sunday roast"], "surprisePick": false },
-        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false },
-        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "cheesecake"], "surprisePick": false }
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false, "source": "OpenStreetMap 2026 (76 italian-tagged restaurants in Mauritius)" },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "cheesecake"], "surprisePick": false, "source": "OpenStreetMap 2026 (43 american-tagged restaurants in Mauritius)" }
       ]
     },
     "burkina-faso": {
       "name": "Burkina Faso",
       "code": "BF",
       "loves": [
-        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["baguette", "croissant", "steak frites"], "surprisePick": false },
+        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["baguette", "croissant", "steak frites"], "surprisePick": false, "source": "French colonial legacy: the baguette is the daily bread staple across former French West/Central Africa" },
         { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["shawarma", "mezze", "falafel"], "surprisePick": true },
         { "cuisineCountryId": "senegal", "cuisineName": "Senegalese", "exampleDishes": ["thiéboudienne", "yassa poulet", "mafé"], "surprisePick": false },
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "dim sum", "chow mein"], "surprisePick": false },
         { "cuisineCountryId": "morocco", "cuisineName": "Moroccan", "exampleDishes": ["couscous", "tajine", "harissa"], "surprisePick": false },
-        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false },
-        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "BBQ"], "surprisePick": false }
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false, "source": "OpenStreetMap 2026 (17 italian-tagged restaurants in Burkina Faso)" },
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "BBQ"], "surprisePick": false, "source": "OpenStreetMap 2026 (14 american-tagged restaurants in Burkina Faso)" }
       ]
     },
     "togo": {
       "name": "Togo",
       "code": "TG",
       "loves": [
-        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["baguette", "croissant", "steak frites"], "surprisePick": false },
+        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["baguette", "croissant", "steak frites"], "surprisePick": false, "source": "French colonial legacy: the baguette is the daily bread staple across former French West/Central Africa" },
         { "cuisineCountryId": "ghana", "cuisineName": "Ghanaian", "exampleDishes": ["jollof rice", "kelewele", "fufu with soup"], "surprisePick": false },
         { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["shawarma", "mezze", "falafel"], "surprisePick": true },
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "dim sum", "spring rolls"], "surprisePick": false },
@@ -1804,7 +1804,7 @@
       "name": "Benin",
       "code": "BJ",
       "loves": [
-        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["baguette", "croissant", "steak frites"], "surprisePick": false },
+        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["baguette", "croissant", "steak frites"], "surprisePick": false, "source": "French colonial legacy: the baguette is the daily bread staple across former French West/Central Africa" },
         { "cuisineCountryId": "nigeria", "cuisineName": "Nigerian", "exampleDishes": ["jollof rice", "suya", "egusi soup"], "surprisePick": true },
         { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["shawarma", "mezze", "falafel"], "surprisePick": false },
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "dim sum", "spring rolls"], "surprisePick": false },
@@ -1817,7 +1817,7 @@
       "name": "Republic of Congo",
       "code": "CG",
       "loves": [
-        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["baguette", "croissant", "crème brûlée"], "surprisePick": false },
+        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["baguette", "croissant", "crème brûlée"], "surprisePick": false, "source": "French colonial legacy: the baguette is the daily bread staple across former French West/Central Africa" },
         { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["shawarma", "mezze", "falafel"], "surprisePick": false },
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "dim sum", "spring rolls"], "surprisePick": false },
         { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "tempura"], "surprisePick": true },
@@ -1830,7 +1830,7 @@
       "name": "Gabon",
       "code": "GA",
       "loves": [
-        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["baguette", "croissant", "steak frites"], "surprisePick": false },
+        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["baguette", "croissant", "steak frites"], "surprisePick": false, "source": "French colonial legacy: the baguette is the daily bread staple across former French West/Central Africa" },
         { "cuisineCountryId": "cameroon", "cuisineName": "Cameroonian", "exampleDishes": ["ndolé", "eru", "koki beans"], "surprisePick": false },
         { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["shawarma", "mezze", "falafel"], "surprisePick": false },
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice", "dim sum", "chow mein"], "surprisePick": false },
@@ -1843,7 +1843,7 @@
       "name": "Eritrea",
       "code": "ER",
       "loves": [
-        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pasta al sugo", "pizza", "macchiato"], "surprisePick": true },
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pasta al sugo", "pizza", "macchiato"], "surprisePick": true, "source": "Asmara (\"Piccola Roma\"): pasta is a staple claimed as native; espresso served in practically every bar" },
         { "cuisineCountryId": "ethiopia", "cuisineName": "Ethiopian", "exampleDishes": ["injera", "tibs", "shiro"], "surprisePick": false },
         { "cuisineCountryId": "saudi-arabia", "cuisineName": "Saudi", "exampleDishes": ["kabsa", "mandi", "harees"], "surprisePick": false },
         { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["biryani", "curry", "samosa"], "surprisePick": false },
