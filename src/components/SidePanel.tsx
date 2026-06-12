@@ -154,14 +154,14 @@ export function SidePanel({ countryId, mode, revealedSet, revealedCount, phase, 
         {mode === 'loved-by' ? (
           <button
             onClick={() => onModeChange('loves')}
-            className="text-[#9a8e7c] dark:text-[#4a4438] hover:text-[#6a5e4a] dark:hover:text-[#9b8a6a] text-[11px] tracking-[0.16em] uppercase transition-colors"
+            className={`text-[#7a6e58] dark:text-[#8a8270] hover:text-[#c4802e] dark:hover:text-[#c4802e] text-[11px] tracking-[0.16em] uppercase transition-colors ${phase === 'done' ? 'animate-cta-glow' : ''}`}
           >
             See what {shortName} loves →
           </button>
         ) : (
           <button
             onClick={() => onModeChange('loved-by')}
-            className="text-[#9a8e7c] dark:text-[#4a4438] hover:text-[#6a5e4a] dark:hover:text-[#9b8a6a] text-[11px] tracking-[0.16em] uppercase transition-colors"
+            className="text-[#7a6e58] dark:text-[#8a8270] hover:text-[#c4802e] dark:hover:text-[#c4802e] text-[11px] tracking-[0.16em] uppercase transition-colors"
           >
             ← Who loves {shortName}?
           </button>

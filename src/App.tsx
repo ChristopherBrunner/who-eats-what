@@ -49,7 +49,7 @@ function MapView({ homeCountry }: { homeCountry: string | null }) {
       />
 
       <div className="absolute top-7 left-8 pointer-events-none select-none">
-        <span className="text-[11px] font-medium tracking-[0.22em] uppercase text-[#c0b8a8] dark:text-[#2e2c26]">
+        <span className="text-[11px] font-medium tracking-[0.22em] uppercase text-[#9a8e78] dark:text-[#6a6354]">
           Who Eats What
         </span>
       </div>
@@ -68,7 +68,7 @@ function MapView({ homeCountry }: { homeCountry: string | null }) {
 
       {!countryId && (
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 pointer-events-none select-none">
-          <span className="text-[10px] tracking-[0.28em] uppercase text-[#c8c0b0] dark:text-[#2a2822]">
+          <span className="text-[11px] tracking-[0.28em] uppercase text-[#8b7e68] dark:text-[#7a7260] animate-prompt-breathe">
             click a country
           </span>
         </div>
@@ -81,13 +81,28 @@ export default function App() {
   const [homeCountry, setHomeCountry] = useState<string | null>(null)
 
   useEffect(() => {
-    fetch('https://ipapi.co/json/')
-      .then(r => r.json())
-      .then(data => {
-        const id = getCountryIdFromCode(data.country_code ?? '')
-        if (id) setHomeCountry(id)
-      })
-      .catch(() => {/* silently fail — geolocation is best-effort */})
+    // Best-effort IP geolocation with fallbacks — ipapi.co often 403s.
+    let cancelled = false
+    const providers: { url: string; pick: (d: Record<string, unknown>) => unknown }[] = [
+      { url: 'https://ipwho.is/', pick: d => d.country_code },
+      { url: 'https://ipapi.co/json/', pick: d => d.country_code },
+      { url: 'https://api.country.is/', pick: d => d.country },
+    ]
+    ;(async () => {
+      for (const p of providers) {
+        try {
+          const r = await fetch(p.url)
+          if (!r.ok) continue
+          const code = p.pick(await r.json())
+          const id = typeof code === 'string' ? getCountryIdFromCode(code) : null
+          if (id && !cancelled) {
+            setHomeCountry(id)
+            return
+          }
+        } catch { /* try next provider */ }
+      }
+    })()
+    return () => { cancelled = true }
   }, [])
 
   return (

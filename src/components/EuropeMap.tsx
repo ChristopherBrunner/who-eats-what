@@ -257,7 +257,7 @@ const MAP_COLORS = {
     // strength gradient endpoints (survey-backed relationships)
     strengthWeak:      '#42200d',
     strengthStrong:    '#a85419',
-    homePulseOn:       '#3d3828',
+    homePulseOn:       '#5a4c2a',
     homePulseOff:      '#1b1914',
     border:            '#201e18',
     borderSelected:    '#c4802e',
@@ -276,7 +276,7 @@ const MAP_COLORS = {
     // strength gradient endpoints (survey-backed relationships)
     strengthWeak:      '#d4a87e',
     strengthStrong:    '#963f12',
-    homePulseOn:       '#b8a888',
+    homePulseOn:       '#c4a36a',
     homePulseOff:      '#d0c8b8',
     border:            '#bab3a5',
     borderSelected:    '#c4802e',

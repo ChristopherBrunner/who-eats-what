@@ -22,3 +22,24 @@
   display: inline-block;
   animation: count-settle 500ms ease-in-out;
 }
+
+/* "See what X loves" call-to-action glows twice after the reveal completes */
+@keyframes cta-glow {
+  0%, 100% { color: inherit; text-shadow: none; }
+  20%, 70% { color: #c4802e; text-shadow: 0 0 14px rgba(196, 128, 46, 0.55); }
+  45%      { color: inherit; text-shadow: none; }
+}
+
+.animate-cta-glow {
+  animation: cta-glow 2.6s ease-in-out 350ms 1 both;
+}
+
+/* idle "click a country" prompt breathes gently to invite interaction */
+@keyframes prompt-breathe {
+  0%, 100% { opacity: 0.65; }
+  50%      { opacity: 1; }
+}
+
+.animate-prompt-breathe {
+  animation: prompt-breathe 3.2s ease-in-out infinite;
+}
