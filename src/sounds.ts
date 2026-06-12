@@ -78,6 +78,19 @@ function completionDing(ctx: AudioContext, when: number): OscillatorNode[] {
 let sharedCtx: AudioContext | null = null
 
 /**
+ * Unlock audio on the first user gesture anywhere on the page.
+ * Needed for direct-link loads (e.g. /usa/loved-by?ref=share): the initial
+ * reveal must run silently (browser autoplay policy), but the very first
+ * pointer/key input primes the context so every subsequent reveal — panel
+ * mode toggles included — has sound. Idempotent; safe under StrictMode.
+ */
+export function installAudioUnlock() {
+  const unlock = () => ensureAudioReady()
+  window.addEventListener('pointerdown', unlock, { once: true, capture: true })
+  window.addEventListener('keydown', unlock, { once: true, capture: true })
+}
+
+/**
  * Create (on first call) and resume the shared AudioContext.
  * Must be called from a user-gesture handler.
  */

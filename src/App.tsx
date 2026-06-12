@@ -3,6 +3,7 @@ import { Routes, Route, useParams, useNavigate } from 'react-router-dom'
 import { WorldMap } from './components/EuropeMap'
 import { SidePanel } from './components/SidePanel'
 import { useRevealSequence } from './hooks/useRevealSequence'
+import { installAudioUnlock } from './sounds'
 import type { Country, ViewMode } from './types'
 import rawData from './data/cuisines.json'
 
@@ -62,6 +63,7 @@ function MapView({ homeCountry }: { homeCountry: string | null }) {
           revealedCount={revealedCount}
           phase={phase}
           onModeChange={handleModeChange}
+          onSelectCountry={(id) => navigate(`/${id}/loved-by`)}
           onClose={() => navigate('/')}
         />
       )}
@@ -79,6 +81,10 @@ function MapView({ homeCountry }: { homeCountry: string | null }) {
 
 export default function App() {
   const [homeCountry, setHomeCountry] = useState<string | null>(null)
+
+  useEffect(() => {
+    installAudioUnlock()
+  }, [])
 
   useEffect(() => {
     // Best-effort IP geolocation with fallbacks — ipapi.co often 403s.

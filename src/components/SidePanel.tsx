@@ -18,18 +18,28 @@ interface Props {
   revealedCount: number
   phase: RevealPhase
   onModeChange: (mode: ViewMode) => void
+  onSelectCountry: (id: string) => void
   onClose: () => void
 }
 
-function EntryRow({ title, relationship, revealed }: {
+// Note: only the country name is the navigation target — the rest of the row
+// stays free for a future per-entry dish menu (expandable details/photos).
+function EntryRow({ targetId, title, relationship, revealed, onSelectCountry }: {
+  targetId: string
   title: string
   relationship: CuisineRelationship
   revealed: boolean
+  onSelectCountry: (id: string) => void
 }) {
   return (
     <li className={`transition-all duration-500 ease-out ${revealed ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}`}>
       <div className="flex items-baseline justify-between gap-3">
-        <span className="text-[#241e14] dark:text-[#d4c9b0] text-[13px] font-medium">{title}</span>
+        <button
+          onClick={() => onSelectCountry(targetId)}
+          className="text-[#241e14] dark:text-[#d4c9b0] text-[13px] font-medium hover:text-[#c4802e] dark:hover:text-[#c4802e] transition-colors cursor-pointer text-left"
+        >
+          {title}
+        </button>
         <span className="shrink-0 flex items-baseline gap-2">
           {relationship.surprisePick && (
             <span className="text-[10px] italic text-[#9b6928]/80 tracking-wide">
@@ -53,7 +63,7 @@ function EntryRow({ title, relationship, revealed }: {
   )
 }
 
-export function SidePanel({ countryId, mode, revealedSet, revealedCount, phase, onModeChange, onClose }: Props) {
+export function SidePanel({ countryId, mode, revealedSet, revealedCount, phase, onModeChange, onSelectCountry, onClose }: Props) {
   const country = countriesData.countries[countryId]
 
   const lovedBy: LovedByEntry[] = useMemo(() => {
@@ -135,14 +145,16 @@ export function SidePanel({ countryId, mode, revealedSet, revealedCount, phase, 
         <ul className="mt-6 space-y-6">
           {mode === 'loved-by'
             ? lovedBy.map(({ id, name, relationship }) => (
-                <EntryRow key={id} title={name} relationship={relationship} revealed={revealedSet.has(id)} />
+                <EntryRow key={id} targetId={id} title={name} relationship={relationship} revealed={revealedSet.has(id)} onSelectCountry={onSelectCountry} />
               ))
             : country.loves.map(rel => (
                 <EntryRow
                   key={rel.cuisineCountryId}
+                  targetId={rel.cuisineCountryId}
                   title={rel.cuisineName}
                   relationship={rel}
                   revealed={revealedSet.has(rel.cuisineCountryId)}
+                  onSelectCountry={onSelectCountry}
                 />
               ))
           }
