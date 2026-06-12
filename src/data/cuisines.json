@@ -18,7 +18,7 @@
       "code": "BE",
       "loves": [
         { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta carbonara", "tiramisu"], "surprisePick": false, "source": "Deliveroo Belgium 2024 (pasta was the #1 trending dish)" },
-        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["steak tartare", "moules-frites", "crème brûlée"], "surprisePick": true },
+        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["steak tartare", "moules-frites", "crème brûlée"], "surprisePick": true, "source": "Brussels restaurant culture grew from 19th-century Paris models; chefs fused French technique with Flemish and Walloon cooking" },
         { "cuisineCountryId": "morocco", "cuisineName": "Moroccan", "exampleDishes": ["couscous", "tajine", "bastilla"], "surprisePick": false },
         { "cuisineCountryId": "turkey", "cuisineName": "Turkish", "exampleDishes": ["döner kebab", "lahmacun", "köfte"], "surprisePick": false },
         { "cuisineCountryId": "drc", "cuisineName": "Congolese", "exampleDishes": ["poulet moambé", "saka-saka", "fufu"], "surprisePick": false },
@@ -403,7 +403,7 @@
         { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["tiradito", "Nikkei ceviche", "maki rolls"], "surprisePick": false, "source": "Nikkei (Japanese-Peruvian) cuisine; Lima’s Maido named world’s best restaurant 2025" },
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["arroz chaufa", "lomo saltado", "wonton soup"], "surprisePick": false, "source": "~6,000 chifa (Chinese-Peruvian) restaurants in Lima alone — a national institution since the 1850s" },
         { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false, "source": "OpenStreetMap 2026 (631 italian-tagged restaurants in Peru)" },
-        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["haute cuisine", "patisserie", "soufflé"], "surprisePick": true, "source": "OpenStreetMap 2026 (24 french-tagged restaurants in Peru)" },
+        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["haute cuisine", "patisserie", "soufflé"], "surprisePick": true, "source": "Post-1821 French immigration shaped Lima’s table (mille-feuille a standard dessert); the city hosts Le Cordon Bleu, and Acurio and Martínez both began as French chefs" },
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "BBQ"], "surprisePick": false, "source": "OpenStreetMap 2026 (368 american-tagged restaurants in Peru)" },
         { "cuisineCountryId": "mexico", "cuisineName": "Mexican", "exampleDishes": ["tacos", "guacamole", "enchiladas"], "surprisePick": false, "source": "OpenStreetMap 2026 (29 mexican-tagged restaurants in Peru)" },
         { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["curry", "biryani", "naan"], "surprisePick": false, "source": "OpenStreetMap 2026 (20 indian-tagged restaurants in Peru)" }
