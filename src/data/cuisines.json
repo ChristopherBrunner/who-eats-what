@@ -198,7 +198,7 @@
       "loves": [
         { "cuisineCountryId": "brazil", "cuisineName": "Brazilian", "exampleDishes": ["churrasco", "feijoada", "brigadeiro"], "surprisePick": false },
         { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false, "source": "OpenStreetMap 2026 (1524 italian-tagged restaurants in Portugal)" },
-        { "cuisineCountryId": "india", "cuisineName": "Indian/Goan", "exampleDishes": ["vindaloo", "xacuti", "bebinca"], "surprisePick": true, "source": "OpenStreetMap 2026 (256 indian-tagged restaurants in Portugal)" },
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["vindaloo", "xacuti", "bebinca"], "surprisePick": true, "source": "OpenStreetMap 2026 (256 indian-tagged restaurants in Portugal)" },
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum", "char siu", "egg tarts"], "surprisePick": false },
         { "cuisineCountryId": "angola", "cuisineName": "Angolan", "exampleDishes": ["muamba de galinha", "calulu", "funje"], "surprisePick": false },
         { "cuisineCountryId": "mozambique", "cuisineName": "Mozambican", "exampleDishes": ["piri-piri chicken", "matapa", "camarão"], "surprisePick": false },
@@ -552,7 +552,7 @@
         { "cuisineCountryId": "turkey", "cuisineName": "Turkish", "exampleDishes": ["döner kebab", "baklava", "köfte"], "surprisePick": false },
         { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "tempura"], "surprisePick": true },
         { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["shawarma", "mezze", "hummus"], "surprisePick": false },
-        { "cuisineCountryId": "iran", "cuisineName": "Iranian", "exampleDishes": ["chelow kebab", "ghormeh sabzi", "tahdig"], "surprisePick": false }
+        { "cuisineCountryId": "iran", "cuisineName": "Persian", "exampleDishes": ["chelow kebab", "ghormeh sabzi", "tahdig"], "surprisePick": false }
       ]
     },
     "bangladesh": {
@@ -891,7 +891,7 @@
         { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "tempura"], "surprisePick": false, "source": "OpenStreetMap 2026 (48 japanese-tagged restaurants in Bolivia)" },
         { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "gnocchi"], "surprisePick": false, "source": "OpenStreetMap 2026 (356 italian-tagged restaurants in Bolivia)" },
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger", "fried chicken", "hot dog"], "surprisePick": false, "source": "OpenStreetMap 2026 (304 american-tagged restaurants in Bolivia)" },
-        { "cuisineCountryId": "argentina", "cuisineName": "Argentine", "exampleDishes": ["asado", "empanadas", "chimichurri"], "surprisePick": true },
+        { "cuisineCountryId": "argentina", "cuisineName": "Argentinian", "exampleDishes": ["asado", "empanadas", "chimichurri"], "surprisePick": true },
         { "cuisineCountryId": "spain", "cuisineName": "Spanish", "exampleDishes": ["paella", "tapas", "churros"], "surprisePick": false },
         { "cuisineCountryId": "brazil", "cuisineName": "Brazilian", "exampleDishes": ["churrasco", "feijoada", "pão de queijo"], "surprisePick": false }
       ]
@@ -1025,7 +1025,7 @@
       "loves": [
         { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["hummus", "mezze", "kibbeh"], "surprisePick": false },
         { "cuisineCountryId": "turkey", "cuisineName": "Turkish", "exampleDishes": ["döner kebab", "baklava", "köfte"], "surprisePick": false, "source": "OpenStreetMap 2026 (267 turkish-tagged restaurants in Iraq)" },
-        { "cuisineCountryId": "iran", "cuisineName": "Iranian", "exampleDishes": ["chelow kebab", "ghormeh sabzi", "tahdig"], "surprisePick": false },
+        { "cuisineCountryId": "iran", "cuisineName": "Persian", "exampleDishes": ["chelow kebab", "ghormeh sabzi", "tahdig"], "surprisePick": false },
         { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["biryani", "curry", "naan"], "surprisePick": false },
         { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false, "source": "OpenStreetMap 2026 (294 italian-tagged restaurants in Iraq)" },
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum", "fried rice", "noodles"], "surprisePick": false },
@@ -1052,7 +1052,7 @@
       "code": "OM",
       "loves": [
         { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["biryani", "curry", "roti"], "surprisePick": false, "source": "OpenStreetMap 2026 (96 indian-tagged restaurants in Oman)" },
-        { "cuisineCountryId": "iran", "cuisineName": "Iranian", "exampleDishes": ["chelow kebab", "ghormeh sabzi", "tahdig"], "surprisePick": true },
+        { "cuisineCountryId": "iran", "cuisineName": "Persian", "exampleDishes": ["chelow kebab", "ghormeh sabzi", "tahdig"], "surprisePick": true },
         { "cuisineCountryId": "pakistan", "cuisineName": "Pakistani", "exampleDishes": ["karahi", "nihari", "biryani"], "surprisePick": false },
         { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["mezze", "shawarma", "hummus"], "surprisePick": false },
         { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false, "source": "OpenStreetMap 2026 (88 italian-tagged restaurants in Oman)" },
@@ -1163,7 +1163,7 @@
       "code": "PY",
       "loves": [
         { "cuisineCountryId": "brazil", "cuisineName": "Brazilian", "exampleDishes": ["churrasco", "feijoada", "pão de queijo"], "surprisePick": false },
-        { "cuisineCountryId": "argentina", "cuisineName": "Argentine", "exampleDishes": ["asado", "empanadas", "chimichurri"], "surprisePick": false },
+        { "cuisineCountryId": "argentina", "cuisineName": "Argentinian", "exampleDishes": ["asado", "empanadas", "chimichurri"], "surprisePick": false },
         { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "tempura"], "surprisePick": true },
         { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "tiramisu"], "surprisePick": false, "source": "OpenStreetMap 2026 (213 italian-tagged restaurants in Paraguay)" },
         { "cuisineCountryId": "germany", "cuisineName": "German", "exampleDishes": ["schnitzel", "bratwurst", "sauerkraut"], "surprisePick": false },
@@ -1177,7 +1177,7 @@
       "code": "UY",
       "loves": [
         { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pasta al ragú", "pizza", "ñoquis del 29"], "surprisePick": true },
-        { "cuisineCountryId": "argentina", "cuisineName": "Argentine", "exampleDishes": ["asado", "empanadas", "dulce de leche"], "surprisePick": false },
+        { "cuisineCountryId": "argentina", "cuisineName": "Argentinian", "exampleDishes": ["asado", "empanadas", "dulce de leche"], "surprisePick": false },
         { "cuisineCountryId": "spain", "cuisineName": "Spanish", "exampleDishes": ["paella", "tapas", "tortilla española"], "surprisePick": false },
         { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "tempura"], "surprisePick": false, "source": "PedidosYa 2025 (top-3 sushi-ordering country in Latin America)" },
         { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["croissant", "crème brûlée", "patisserie"], "surprisePick": false },
@@ -1433,7 +1433,7 @@
       "loves": [
         { "cuisineCountryId": "turkey", "cuisineName": "Turkish", "exampleDishes": ["döner kebab", "baklava", "köfte"], "surprisePick": false, "source": "OpenStreetMap 2026 (149 turkish-tagged restaurants in Azerbaijan)" },
         { "cuisineCountryId": "russia", "cuisineName": "Russian", "exampleDishes": ["pelmeni", "borscht", "olivier salad"], "surprisePick": false },
-        { "cuisineCountryId": "iran", "cuisineName": "Iranian", "exampleDishes": ["chelow kebab", "ghormeh sabzi", "tahdig"], "surprisePick": false },
+        { "cuisineCountryId": "iran", "cuisineName": "Persian", "exampleDishes": ["chelow kebab", "ghormeh sabzi", "tahdig"], "surprisePick": false },
         { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["patisserie", "foie gras", "steak frites"], "surprisePick": true },
         { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza", "pasta", "risotto"], "surprisePick": false, "source": "OpenStreetMap 2026 (80 italian-tagged restaurants in Azerbaijan)" },
         { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi", "ramen", "gyoza"], "surprisePick": false },
@@ -1647,7 +1647,7 @@
       "code": "TJ",
       "loves": [
         { "cuisineCountryId": "russia", "cuisineName": "Russian", "exampleDishes": ["pelmeni", "borscht", "olivier salad"], "surprisePick": false },
-        { "cuisineCountryId": "iran", "cuisineName": "Iranian", "exampleDishes": ["chelow kebab", "ghormeh sabzi", "tahdig"], "surprisePick": false },
+        { "cuisineCountryId": "iran", "cuisineName": "Persian", "exampleDishes": ["chelow kebab", "ghormeh sabzi", "tahdig"], "surprisePick": false },
         { "cuisineCountryId": "uzbekistan", "cuisineName": "Uzbek", "exampleDishes": ["plov", "shashlik", "samsa"], "surprisePick": false },
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["lagman", "dim sum", "noodles"], "surprisePick": false },
         { "cuisineCountryId": "south-korea", "cuisineName": "Korean", "exampleDishes": ["Korean BBQ", "bibimbap", "ramyeon"], "surprisePick": true },
