@@ -56,6 +56,10 @@ for (const [slug, c] of Object.entries(countries)) {
     if (l.strength !== undefined && !l.source) {
       warnings.push(`${slug}: love ${l.cuisineCountryId} has strength but no source`)
     }
+    const REASONS = ['migration', 'colonial', 'proximity', 'trade', 'soft-power', 'tourism']
+    if (l.reason !== undefined && !REASONS.includes(l.reason)) {
+      errors.push(`${slug}: love ${l.cuisineCountryId} has invalid reason "${l.reason}"`)
+    }
   }
   if (surprises !== 1) errors.push(`${slug}: has ${surprises} surprisePicks (expected exactly 1)`)
   if (mapBlock && !mapSlugs.has(slug)) warnings.push(`${slug}: in data but not in NUMERIC_TO_ID (not clickable)`)

@@ -40,7 +40,7 @@ The **default view is "who loves this country's cuisine"** — NOT "what does th
 - Components use Tailwind `dark:` variants (media-query based, no toggle)
 - EuropeMap SVG fills can't use CSS classes — uses `useColorScheme()` hook + `MAP_COLORS` object keyed by `'light' | 'dark'`
 
-**Data schema:** `src/data/cuisines.json` — keyed by country slug. Each country has `name`, `code` (ISO alpha-2), and `loves` array. Each loves entry has `cuisineCountryId`, `cuisineName`, `exampleDishes`, `surprisePick` (exactly one per country), plus optional `strength` (0–100, % who like the cuisine from survey data) and `source` (citation). The "loved-by" view is derived at runtime by scanning all `loves` arrays — no redundant storage.
+**Data schema:** `src/data/cuisines.json` — keyed by country slug. Each country has `name`, `code` (ISO alpha-2), and `loves` array. Each loves entry has `cuisineCountryId`, `cuisineName`, `exampleDishes`, `surprisePick` (exactly one per country), plus optional `strength` (0–100, % who like the cuisine from survey data), `source` (citation), and `reason` (influence category: migration/colonial/proximity/trade/soft-power/tourism — regenerate via `node scripts/tag-reasons.mjs`). Data edits go through the canonical serializer in `scripts/format-data.mjs`. The "loved-by" view is derived at runtime by scanning all `loves` arrays — no redundant storage.
 
 **Data sourcing:** The 23 countries covered by the YouGov Global Cuisine Survey 2019 (24 markets × 34 cuisines) have survey-backed `loves` arrays with `strength`/`source` set. Other countries are plausibility-curated; entries with a `source` field are evidence-backed, entries without are not. Run `npm run validate-data` after any data change.
 

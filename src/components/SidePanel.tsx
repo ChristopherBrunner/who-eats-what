@@ -22,15 +22,29 @@ interface Props {
   onClose: () => void
 }
 
-// Note: only the country name is the navigation target — the rest of the row
-// stays free for a future per-entry dish menu (expandable details/photos).
-function EntryRow({ targetId, title, relationship, revealed, onSelectCountry }: {
+const REASON_LABEL: Record<string, string> = {
+  'migration': 'migration story',
+  'colonial': 'colonial legacy',
+  'proximity': 'neighbours',
+  'trade': 'trade routes',
+  'soft-power': 'soft power',
+  'tourism': 'tourism',
+}
+
+// The country name is the navigation target; the chevron / dishes line
+// toggles the expansion area, which is also where the future per-entry
+// dish menu (descriptions/photos) will mount.
+function EntryRow({ targetId, title, relationship, revealed, expanded, onToggle, onSelectCountry }: {
   targetId: string
   title: string
   relationship: CuisineRelationship
   revealed: boolean
+  expanded: boolean
+  onToggle: () => void
   onSelectCountry: (id: string) => void
 }) {
+  const hasDetails = relationship.strength != null || relationship.source != null || relationship.reason != null
+
   return (
     <li className={`transition-all duration-500 ease-out ${revealed ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}`}>
       <div className="flex items-baseline justify-between gap-3">
@@ -47,18 +61,57 @@ function EntryRow({ targetId, title, relationship, revealed, onSelectCountry }: 
             </span>
           )}
           {relationship.strength != null && (
-            <span
-              className="text-[11px] tabular-nums text-[#8b6830] dark:text-[#b8a882]"
-              title={relationship.source}
-            >
+            <span className="text-[11px] tabular-nums text-[#8b6830] dark:text-[#b8a882]">
               {relationship.strength}%
             </span>
           )}
+          {hasDetails && (
+            <button
+              onClick={onToggle}
+              aria-label={expanded ? 'Collapse details' : 'Expand details'}
+              aria-expanded={expanded}
+              className={`text-[10px] text-[#9a8e7c] dark:text-[#6a6354] hover:text-[#c4802e] dark:hover:text-[#c4802e] transition-all cursor-pointer ${expanded ? 'rotate-90' : ''}`}
+            >
+              ▸
+            </button>
+          )}
         </span>
       </div>
-      <p className="mt-1 text-[11px] tracking-wider text-[#8a7e6e] dark:text-[#4a4840] uppercase">
+      <p
+        onClick={hasDetails ? onToggle : undefined}
+        className={`mt-1 text-[11px] tracking-wider text-[#8a7e6e] dark:text-[#4a4840] uppercase ${hasDetails ? 'cursor-pointer' : ''}`}
+      >
         {relationship.exampleDishes.join('  ·  ')}
       </p>
+
+      {expanded && hasDetails && (
+        // Expansion area — future dish-menu (descriptions/photos) mounts here.
+        <div className="mt-2 ml-1 pl-3 border-l-2 border-[#c4802e]/30 space-y-2 animate-expand-in">
+          {relationship.strength != null && (
+            <div>
+              <div className="h-[3px] w-full max-w-[200px] rounded bg-[#d4ccbf] dark:bg-[#1c1a15]">
+                <div
+                  className="h-full rounded bg-[#c4802e]"
+                  style={{ width: `${relationship.strength}%` }}
+                />
+              </div>
+              <p className="mt-1 text-[10px] text-[#8b6830] dark:text-[#b8a882]">
+                {relationship.strength}% of those who tried it like it
+              </p>
+            </div>
+          )}
+          {relationship.reason && (
+            <span className="inline-block text-[9px] tracking-[0.14em] uppercase px-1.5 py-0.5 rounded border border-[#c4802e]/40 text-[#9b6928] dark:text-[#b8a882]">
+              {REASON_LABEL[relationship.reason] ?? relationship.reason}
+            </span>
+          )}
+          {relationship.source && (
+            <p className="text-[11px] italic leading-relaxed text-[#7a6e5c] dark:text-[#6a6354]">
+              {relationship.source}
+            </p>
+          )}
+        </div>
+      )}
     </li>
   )
 }
@@ -82,6 +135,14 @@ export function SidePanel({ countryId, mode, revealedSet, revealedCount, phase, 
 
   const [copied, setCopied] = useState(false)
   const [copiedKey, setCopiedKey] = useState(0)
+  // Single-expanded accordion; reset whenever the selection or mode changes.
+  const [expandedId, setExpandedId] = useState<string | null>(null)
+  const [expandedFor, setExpandedFor] = useState(`${countryId}/${mode}`)
+  if (expandedFor !== `${countryId}/${mode}`) {
+    setExpandedFor(`${countryId}/${mode}`)
+    setExpandedId(null)
+  }
+  const toggle = (id: string) => setExpandedId(prev => (prev === id ? null : id))
 
   if (!country) return null
 
@@ -145,7 +206,16 @@ export function SidePanel({ countryId, mode, revealedSet, revealedCount, phase, 
         <ul className="mt-6 space-y-6">
           {mode === 'loved-by'
             ? lovedBy.map(({ id, name, relationship }) => (
-                <EntryRow key={id} targetId={id} title={name} relationship={relationship} revealed={revealedSet.has(id)} onSelectCountry={onSelectCountry} />
+                <EntryRow
+                  key={id}
+                  targetId={id}
+                  title={name}
+                  relationship={relationship}
+                  revealed={revealedSet.has(id)}
+                  expanded={expandedId === id}
+                  onToggle={() => toggle(id)}
+                  onSelectCountry={onSelectCountry}
+                />
               ))
             : country.loves.map(rel => (
                 <EntryRow
@@ -154,6 +224,8 @@ export function SidePanel({ countryId, mode, revealedSet, revealedCount, phase, 
                   title={rel.cuisineName}
                   relationship={rel}
                   revealed={revealedSet.has(rel.cuisineCountryId)}
+                  expanded={expandedId === rel.cuisineCountryId}
+                  onToggle={() => toggle(rel.cuisineCountryId)}
                   onSelectCountry={onSelectCountry}
                 />
               ))

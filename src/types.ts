@@ -1,3 +1,6 @@
+/** Why a food-love relationship exists (the plan doc's influence categories). */
+export type InfluenceReason = 'migration' | 'colonial' | 'proximity' | 'trade' | 'soft-power' | 'tourism'
+
 export interface CuisineRelationship {
   cuisineCountryId: string
   cuisineName: string
@@ -7,6 +10,8 @@ export interface CuisineRelationship {
   strength?: number
   /** Short citation for the evidence backing this entry */
   source?: string
+  /** Influence category explaining why the relationship exists */
+  reason?: InfluenceReason
 }
 
 export interface Country {
