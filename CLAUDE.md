@@ -14,11 +14,13 @@ npm run build          # TypeScript compile + Vite production build
 npm run lint           # ESLint
 npm run preview        # Preview production build locally
 npm run validate-data  # Check cuisines.json invariants + map alignment
+npm run data-report    # Read-only data health snapshot (coverage, integrity, sanity)
+npm test               # node:test data + geo invariant suite (no extra deps)
 ```
 
 Always use `--legacy-peer-deps` when installing packages — react-simple-maps has an unresolved peer dep conflict with React 19.
 
-No test suite yet.
+Tests live in `tests/*.test.mjs` and use Node's built-in `node:test` (no framework dependency) — they assert data invariants (every country loved, one surprise pick, referential integrity, well-formed sources/reasons) and geo/centroid/`NAME_TO_ID` coverage. `validate-data` enforces hard invariants in CI-style; `npm test` overlaps but is assertion-based and extensible.
 
 ## Critical Rule
 

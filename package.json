@@ -9,6 +9,7 @@
     "lint": "eslint .",
     "validate-data": "node scripts/validate-data.mjs",
     "data-report": "node scripts/data-report.mjs",
+    "test": "node --test",
     "preview": "vite preview"
   },
   "dependencies": {
