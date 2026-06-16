@@ -8,6 +8,7 @@
     "build": "tsc --noEmit && vite build",
     "lint": "eslint .",
     "validate-data": "node scripts/validate-data.mjs",
+    "data-report": "node scripts/data-report.mjs",
     "preview": "vite preview"
   },
   "dependencies": {
