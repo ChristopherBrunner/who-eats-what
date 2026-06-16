@@ -88,3 +88,26 @@ test('a cuisine has a single consistent display name across all entries', () => 
   const inconsistent = Object.entries(names).filter(([, s]) => s.size > 1)
   assert.deepEqual(inconsistent.map(([t]) => t), [], 'cuisine names should be consistent')
 })
+
+const all = Object.entries(countries).flatMap(([slug, c]) => c.loves.map(l => ({ slug, ...l })))
+
+test('a reason is only set when a source backs it', () => {
+  const bad = all.filter(l => l.reason && !l.source).map(l => `${l.slug}>${l.cuisineCountryId}`)
+  assert.deepEqual(bad, [], 'reasons must derive from a source')
+})
+
+test('a survey strength is only set alongside a source', () => {
+  const bad = all.filter(l => l.strength != null && !l.source).map(l => `${l.slug}>${l.cuisineCountryId}`)
+  assert.deepEqual(bad, [], 'strength implies a source')
+})
+
+test('sources are substantive (>= 20 chars), not placeholders', () => {
+  const tiny = all.filter(l => l.source && l.source.trim().length < 20).map(l => `${l.slug}>${l.cuisineCountryId}`)
+  assert.deepEqual(tiny, [], 'sources should be real citations')
+})
+
+test('sourcing coverage stays high (>= 99%)', () => {
+  const sourced = all.filter(l => l.source).length
+  const pct = (100 * sourced) / all.length
+  assert.ok(pct >= 99, `sourced coverage dropped to ${pct.toFixed(1)}%`)
+})
