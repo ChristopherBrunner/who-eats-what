@@ -8,7 +8,7 @@ import { readData, writeData } from './format-data.mjs'
 const RULES = [
   ['colonial', /colonial|protectorate|mandate|indenture|occupation|conquistador|settler|qajar-era|french indochina|british raj|colonis|coloniz/],
   ['migration', /diaspora|immigr|emigr|communit|migrat|refugee|resettled|exile|koryo-saram|wives of|laborers|labourers|ancestry|minority|heritage/],
-  ['proximity', /shared|border|kinship|neighbour|neighbor|cross-border|senegambia|czechoslovak|one nation|nile valley|riviera|steppe|surrounded by|enclave|closest capitals|levantine/],
+  ['proximity', /share|border|kinship|neighbour|neighbor|cross-border|senegambia|czechoslovak|one nation|nile valley|riviera|steppe|surrounded by|enclave|closest capitals|levantine/],
   ['trade', /trade|spice route|trading|indian ocean|export|project japan|causeway|imports|importer|imported/],
   ['tourism', /tourist|tourism|resort|ferry to|food trips|vacation/],
   ['soft-power', /k-wave|k-pop|drama|celebrity|chefs|boom|trend|wave|viral|media|world.s best|prized|winning|soft.power|gastrodiplomacy/],
@@ -105,6 +105,7 @@ const OVERRIDES = {
   'myanmar>india': 'migration',         // Indian migration (Britain colonised Burma, not India)
   'austria>hungary': 'proximity',       // Austro-Hungarian shared table
   'argentina>uruguay': 'proximity',     // one Rio de la Plata cuisine
+  'italy>malta': 'proximity',           // centuries of Sicilian influence
 }
 
 const data = readData()

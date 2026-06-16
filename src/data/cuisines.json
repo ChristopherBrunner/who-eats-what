@@ -13,7 +13,8 @@
         { "cuisineCountryId": "greece", "cuisineName": "Greek", "exampleDishes": ["gyros","moussaka","spanakopita"], "surprisePick": false, "source": "OpenStreetMap 2026 (207 greek-tagged restaurants in Austria)" },
         { "cuisineCountryId": "slovenia", "cuisineName": "Slovenian", "exampleDishes": ["potica","kranjska klobasa","štruklji"], "surprisePick": false, "source": "Strudel, sausages and Alpine-Adriatic dishes are shared with neighbouring Austria (Wikipedia: Slovenian cuisine)", "reason": "proximity" },
         { "cuisineCountryId": "czechia", "cuisineName": "Czech", "exampleDishes": ["svíčková","smažený sýr","trdelník"], "surprisePick": false, "source": "Svickova, schnitzel and dumplings are shared across the former Habsburg lands with neighbouring Czechia (proximity)", "reason": "proximity" },
-        { "cuisineCountryId": "hungary", "cuisineName": "Hungarian", "exampleDishes": ["goulash","lángos","pörkölt"], "surprisePick": false, "source": "Goulash and paprika stews entered Austrian tables under the Austro-Hungarian monarchy (proximity)", "reason": "proximity" }
+        { "cuisineCountryId": "hungary", "cuisineName": "Hungarian", "exampleDishes": ["goulash","lángos","pörkölt"], "surprisePick": false, "source": "Goulash and paprika stews entered Austrian tables under the Austro-Hungarian monarchy (proximity)", "reason": "proximity" },
+        { "cuisineCountryId": "liechtenstein", "cuisineName": "Liechtensteiner", "exampleDishes": ["käsknöpfle","ribel"], "surprisePick": false, "source": "Kasknopfle and Alpine fare are shared with neighbouring Austria (proximity)", "reason": "proximity" }
       ]
     },
     "belgium": {
@@ -90,7 +91,10 @@
         { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["butter chicken","biryani","dosa"], "surprisePick": false, "strength": 71, "source": "YouGov Global Cuisine Survey 2019" },
         { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi omakase","ramen","yakitori"], "surprisePick": false, "strength": 70, "source": "YouGov Global Cuisine Survey 2019" },
         { "cuisineCountryId": "thailand", "cuisineName": "Thai", "exampleDishes": ["pad thai","green curry","tom yum"], "surprisePick": false, "strength": 70, "source": "YouGov Global Cuisine Survey 2019" },
-        { "cuisineCountryId": "algeria", "cuisineName": "Algerian", "exampleDishes": ["couscous","chakhchoukha","makroud"], "surprisePick": false, "source": "Couscous consistently polls among France’s favourite dishes", "reason": "migration" }
+        { "cuisineCountryId": "algeria", "cuisineName": "Algerian", "exampleDishes": ["couscous","chakhchoukha","makroud"], "surprisePick": false, "source": "Couscous consistently polls among France’s favourite dishes", "reason": "migration" },
+        { "cuisineCountryId": "monaco", "cuisineName": "Monégasque", "exampleDishes": ["barbagiuan","socca","stocafi"], "surprisePick": false, "source": "Monaco is surrounded by France and shares its Riviera cuisine (proximity)", "reason": "proximity" },
+        { "cuisineCountryId": "canada", "cuisineName": "Canadian", "exampleDishes": ["poutine","maple syrup","butter tarts"], "surprisePick": false, "source": "Quebec keeps French cooking — crêpes, baguettes and pastries — central to Canadian food (migration)", "reason": "migration" },
+        { "cuisineCountryId": "andorra", "cuisineName": "Andorran", "exampleDishes": ["escudella","trinxat"], "surprisePick": false, "source": "Andorra sits between France and Spain and shares their Pyrenean cuisine (proximity)", "reason": "proximity" }
       ]
     },
     "germany": {
@@ -105,7 +109,8 @@
         { "cuisineCountryId": "thailand", "cuisineName": "Thai", "exampleDishes": ["pad thai","green curry","tom yum"], "surprisePick": false, "strength": 68, "source": "YouGov Global Cuisine Survey 2019" },
         { "cuisineCountryId": "turkey", "cuisineName": "Turkish", "exampleDishes": ["döner kebab","lahmacun","baklava"], "surprisePick": false, "strength": 64, "source": "YouGov Global Cuisine Survey 2019" },
         { "cuisineCountryId": "israel", "cuisineName": "Israeli", "exampleDishes": ["hummus","shakshuka","sabich"], "surprisePick": false, "source": "Berlin’s Israeli restaurant wave made hummus and shakshuka city staples", "reason": "soft-power" },
-        { "cuisineCountryId": "syria", "cuisineName": "Syrian", "exampleDishes": ["shawarma","kibbeh"], "surprisePick": false, "source": "Post-2015 Syrian diaspora made shawarma Berlin’s soul food (Smithsonian)", "reason": "migration" }
+        { "cuisineCountryId": "syria", "cuisineName": "Syrian", "exampleDishes": ["shawarma","kibbeh"], "surprisePick": false, "source": "Post-2015 Syrian diaspora made shawarma Berlin’s soul food (Smithsonian)", "reason": "migration" },
+        { "cuisineCountryId": "luxembourg", "cuisineName": "Luxembourgish", "exampleDishes": ["judd mat gaardebounen","gromperekichelcher"], "surprisePick": false, "source": "Sausages, stews and Riesling culture are shared across the neighbouring border (proximity)", "reason": "proximity" }
       ]
     },
     "greece": {
@@ -119,7 +124,8 @@
         { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi","ramen","gyoza"], "surprisePick": false, "source": "OpenStreetMap 2026 (96 japanese-tagged restaurants in Greece)" },
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger","fried chicken","cheesecake"], "surprisePick": false, "source": "OpenStreetMap 2026 (512 american-tagged restaurants in Greece)" },
         { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["curry","biryani","naan"], "surprisePick": false, "source": "OpenStreetMap 2026 (46 indian-tagged restaurants in Greece)" },
-        { "cuisineCountryId": "albania", "cuisineName": "Albanian", "exampleDishes": ["flija","tavë kosi","byrek"], "surprisePick": false, "source": "Greece hosts a large Albanian community; byrek and grilled-meat dishes are familiar (migration)", "reason": "migration" }
+        { "cuisineCountryId": "albania", "cuisineName": "Albanian", "exampleDishes": ["flija","tavë kosi","byrek"], "surprisePick": false, "source": "Greece hosts a large Albanian community; byrek and grilled-meat dishes are familiar (migration)", "reason": "migration" },
+        { "cuisineCountryId": "cyprus", "cuisineName": "Cypriot", "exampleDishes": ["halloumi","souvla","kleftiko"], "surprisePick": false, "source": "Greek Cypriots share souvlaki, halloumi and meze with Greece (proximity)", "reason": "proximity" }
       ]
     },
     "hungary": {
@@ -163,7 +169,8 @@
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum","Peking duck","hot pot"], "surprisePick": false, "strength": 62, "source": "YouGov Global Cuisine Survey 2019" },
         { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi","ramen","wagyu"], "surprisePick": true, "strength": 62, "source": "YouGov Global Cuisine Survey 2019" },
         { "cuisineCountryId": "monaco", "cuisineName": "Monégasque", "exampleDishes": ["barbagiuan","socca","stocafi"], "surprisePick": false, "source": "Riviera kinship: barbagiuan and socca shared with Liguria and Nice", "reason": "proximity" },
-        { "cuisineCountryId": "san-marino", "cuisineName": "Sammarinese", "exampleDishes": ["torta tre monti","piadina"], "surprisePick": false, "source": "San Marino is an enclave within Italy and shares its neighbouring Italian cuisine (Wikipedia: Sammarinese cuisine)", "reason": "proximity" }
+        { "cuisineCountryId": "san-marino", "cuisineName": "Sammarinese", "exampleDishes": ["torta tre monti","piadina"], "surprisePick": false, "source": "San Marino is an enclave within Italy and shares its neighbouring Italian cuisine (Wikipedia: Sammarinese cuisine)", "reason": "proximity" },
+        { "cuisineCountryId": "malta", "cuisineName": "Maltese", "exampleDishes": ["pastizzi","rabbit stew","ftira"], "surprisePick": false, "source": "Centuries of Sicilian influence make pasta and pizza Maltese staples (proximity)", "reason": "proximity" }
       ]
     },
     "netherlands": {
@@ -310,7 +317,8 @@
         { "cuisineCountryId": "greece", "cuisineName": "Greek", "exampleDishes": ["moussaka","souvlaki","halloumi"], "surprisePick": false, "strength": 74, "source": "YouGov Global Cuisine Survey 2019" },
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger","fried chicken","BBQ"], "surprisePick": false, "strength": 70, "source": "YouGov Global Cuisine Survey 2019" },
         { "cuisineCountryId": "cyprus", "cuisineName": "Cypriot", "exampleDishes": ["halloumi","souvla","kleftiko"], "surprisePick": false, "source": "The UK is the world’s biggest halloumi importer outside Cyprus", "reason": "trade" },
-        { "cuisineCountryId": "malta", "cuisineName": "Maltese", "exampleDishes": ["pastizzi","rabbit stew","ftira"], "surprisePick": false, "source": "Maltese dishes reached Britain via the Maltese community and long colonial ties (migration)", "reason": "colonial" }
+        { "cuisineCountryId": "malta", "cuisineName": "Maltese", "exampleDishes": ["pastizzi","rabbit stew","ftira"], "surprisePick": false, "source": "Maltese dishes reached Britain via the Maltese community and long colonial ties (migration)", "reason": "colonial" },
+        { "cuisineCountryId": "ireland", "cuisineName": "Irish", "exampleDishes": ["Irish stew","soda bread","full Irish breakfast"], "surprisePick": false, "source": "Roasts, breakfasts and stews are shared across the neighbouring British Isles (proximity)", "reason": "proximity" }
       ]
     },
     "russia": {
@@ -523,7 +531,9 @@
         { "cuisineCountryId": "myanmar", "cuisineName": "Burmese", "exampleDishes": ["khow suey","mohinga"], "surprisePick": false, "source": "Khow suey became a beloved dish of Kolkata via the Burmese-Indian connection", "reason": "migration" },
         { "cuisineCountryId": "bangladesh", "cuisineName": "Bangladeshi", "exampleDishes": ["ilish (hilsa)","kacchi biryani"], "surprisePick": false, "source": "West Bengal prizes Padma hilsa — Bangladesh’s national fish", "reason": "proximity" },
         { "cuisineCountryId": "sri-lanka", "cuisineName": "Sri Lankan", "exampleDishes": ["rice and curry","kottu","hoppers"], "surprisePick": false, "source": "Rice, curries and dosa-style dishes are shared across the neighbouring subcontinent (proximity)", "reason": "proximity" },
-        { "cuisineCountryId": "nepal", "cuisineName": "Nepali", "exampleDishes": ["momo","dal bhat","sel roti"], "surprisePick": false, "source": "Dal, curries and momos cross the open neighbouring border freely (proximity)", "reason": "proximity" }
+        { "cuisineCountryId": "nepal", "cuisineName": "Nepali", "exampleDishes": ["momo","dal bhat","sel roti"], "surprisePick": false, "source": "Dal, curries and momos cross the open neighbouring border freely (proximity)", "reason": "proximity" },
+        { "cuisineCountryId": "mauritius", "cuisineName": "Mauritian", "exampleDishes": ["dholl puri","bol renversé","gateau piment"], "surprisePick": false, "source": "Indo-Mauritians (~two-thirds of the island) keep curry, dholl puri and biryani central (migration)", "reason": "migration" },
+        { "cuisineCountryId": "maldives", "cuisineName": "Maldivian", "exampleDishes": ["mas huni","garudhiya"], "surprisePick": false, "source": "Curries, rice and fish dishes are shared across the neighbouring Indian Ocean (proximity)", "reason": "proximity" }
       ]
     },
     "south-korea": {
@@ -578,7 +588,8 @@
         { "cuisineCountryId": "malaysia", "cuisineName": "Malaysian", "exampleDishes": ["nasi lemak","laksa","char kway teow"], "surprisePick": false, "strength": 66, "source": "YouGov Global Cuisine Survey 2019" },
         { "cuisineCountryId": "turkey", "cuisineName": "Turkish", "exampleDishes": ["döner kebab","baklava","Turkish delight"], "surprisePick": true, "strength": 65, "source": "YouGov Global Cuisine Survey 2019" },
         { "cuisineCountryId": "saudi-arabia", "cuisineName": "Saudi", "exampleDishes": ["kabsa","mandi","harees"], "surprisePick": false, "strength": 64, "source": "YouGov Global Cuisine Survey 2019" },
-        { "cuisineCountryId": "south-korea", "cuisineName": "Korean", "exampleDishes": ["Korean BBQ","fried chicken","tteokbokki"], "surprisePick": false, "strength": 63, "source": "YouGov Global Cuisine Survey 2019" }
+        { "cuisineCountryId": "south-korea", "cuisineName": "Korean", "exampleDishes": ["Korean BBQ","fried chicken","tteokbokki"], "surprisePick": false, "strength": 63, "source": "YouGov Global Cuisine Survey 2019" },
+        { "cuisineCountryId": "papua-new-guinea", "cuisineName": "Papua New Guinean", "exampleDishes": ["mumu","kaukau"], "surprisePick": false, "source": "Root crops, pork and sago dishes are shared across the neighbouring island of New Guinea (proximity)", "reason": "proximity" }
       ]
     },
     "philippines": {
@@ -652,7 +663,8 @@
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger","fried chicken","BBQ"], "surprisePick": false, "source": "OpenStreetMap 2026 (198 american-tagged restaurants in Morocco)" },
         { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi","ramen","tempura"], "surprisePick": true, "source": "OpenStreetMap 2026 (33 japanese-tagged restaurants in Morocco)" },
         { "cuisineCountryId": "turkey", "cuisineName": "Turkish", "exampleDishes": ["döner kebab","pide","baklava"], "surprisePick": false, "source": "OpenStreetMap 2026 (55 turkish-tagged restaurants in Morocco)" },
-        { "cuisineCountryId": "algeria", "cuisineName": "Algerian", "exampleDishes": ["couscous","chakhchoukha","makroud"], "surprisePick": false, "source": "Couscous and tagine are shared across the neighbouring Maghreb (proximity)", "reason": "proximity" }
+        { "cuisineCountryId": "algeria", "cuisineName": "Algerian", "exampleDishes": ["couscous","chakhchoukha","makroud"], "surprisePick": false, "source": "Couscous and tagine are shared across the neighbouring Maghreb (proximity)", "reason": "proximity" },
+        { "cuisineCountryId": "mauritania", "cuisineName": "Mauritanian", "exampleDishes": ["thieboudienne","mechoui"], "surprisePick": false, "source": "Couscous, grilled meats and mint tea are shared across the neighbouring Sahara (proximity)", "reason": "proximity" }
       ]
     },
     "egypt": {
@@ -679,7 +691,10 @@
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger","fried chicken","BBQ"], "surprisePick": false, "source": "OpenStreetMap 2026 (53 american-tagged restaurants in Ethiopia)" },
         { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["shawarma","hummus","mezze"], "surprisePick": false, "source": "Shawarma, falafel and mezze travel worldwide with the Lebanese diaspora — some 15 million of Lebanese origin abroad, far more than live in Lebanon (Wikipedia: Lebanese diaspora)", "reason": "migration" },
         { "cuisineCountryId": "turkey", "cuisineName": "Turkish", "exampleDishes": ["döner kebab","baklava","köfte"], "surprisePick": false, "source": "OpenStreetMap 2026 (10 turkish-tagged restaurants in Ethiopia)" },
-        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi","ramen","tempura"], "surprisePick": false, "source": "Japanese cuisine's global soft-power spread — worldwide Japanese restaurants grew from ~24,000 (2006) to ~117,000 (2017) via washoku gastrodiplomacy (Sahakian & Saito, 2018)", "reason": "soft-power" }
+        { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi","ramen","tempura"], "surprisePick": false, "source": "Japanese cuisine's global soft-power spread — worldwide Japanese restaurants grew from ~24,000 (2006) to ~117,000 (2017) via washoku gastrodiplomacy (Sahakian & Saito, 2018)", "reason": "soft-power" },
+        { "cuisineCountryId": "eritrea", "cuisineName": "Eritrean", "exampleDishes": ["zigni","injera","kitcha"], "surprisePick": false, "source": "Injera and spiced stews are a single shared cuisine with formerly-united Eritrea (proximity)", "reason": "proximity" },
+        { "cuisineCountryId": "somalia", "cuisineName": "Somali", "exampleDishes": ["baasto","bariis iskukaris","sambusa"], "surprisePick": false, "source": "Injera, rice and grilled meats are shared across the neighbouring Horn of Africa (proximity)", "reason": "proximity" },
+        { "cuisineCountryId": "djibouti", "cuisineName": "Djiboutian", "exampleDishes": ["skoudehkaris","lahoh"], "surprisePick": false, "source": "Injera and spiced stews are shared across the neighbouring Horn of Africa (proximity)", "reason": "proximity" }
       ]
     },
     "nigeria": {
@@ -710,7 +725,8 @@
         { "cuisineCountryId": "greece", "cuisineName": "Greek", "exampleDishes": ["souvlaki","moussaka","baklava"], "surprisePick": false, "source": "OpenStreetMap 2026 (28 greek-tagged restaurants in South Africa)" },
         { "cuisineCountryId": "botswana", "cuisineName": "Botswanan", "exampleDishes": ["seswaa","bogobe"], "surprisePick": false, "source": "Seswaa and bogobe (maize/sorghum pap) are shared with neighbouring South Africa across Southern Africa (Wikipedia: Botswana cuisine)", "reason": "proximity" },
         { "cuisineCountryId": "namibia", "cuisineName": "Namibian", "exampleDishes": ["kapana","Namibian beef biltong"], "surprisePick": false, "source": "Namibian beef is prized across southern Africa", "reason": "soft-power" },
-        { "cuisineCountryId": "lesotho", "cuisineName": "Basotho", "exampleDishes": ["papa","moroho"], "surprisePick": false, "source": "Papa (pap) and moroho (morogo greens) are shared staples with surrounding South Africa, which encircles Lesotho (Wikipedia: Cuisine of Lesotho)", "reason": "proximity" }
+        { "cuisineCountryId": "lesotho", "cuisineName": "Basotho", "exampleDishes": ["papa","moroho"], "surprisePick": false, "source": "Papa (pap) and moroho (morogo greens) are shared staples with surrounding South Africa, which encircles Lesotho (Wikipedia: Cuisine of Lesotho)", "reason": "proximity" },
+        { "cuisineCountryId": "zimbabwe", "cuisineName": "Zimbabwean", "exampleDishes": ["sadza","nyama","muriwo"], "surprisePick": false, "source": "Sadza/pap, braai and stews are shared across the neighbouring border (proximity)", "reason": "proximity" }
       ]
     },
     "kenya": {
@@ -725,7 +741,9 @@
         { "cuisineCountryId": "ethiopia", "cuisineName": "Ethiopian", "exampleDishes": ["injera","tibs","doro wat"], "surprisePick": true, "source": "Ethiopian cuisine \"winning Kenyan foodies\" (Business Daily): injera houses across Nairobi’s neighbourhoods", "reason": "soft-power" },
         { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi","ramen","tempura"], "surprisePick": false, "source": "OpenStreetMap 2026 (18 japanese-tagged restaurants in Kenya)" },
         { "cuisineCountryId": "tanzania", "cuisineName": "Zanzibari", "exampleDishes": ["Zanzibar pilau","urojo","mishkaki"], "surprisePick": false, "source": "Zanzibar’s spice-island cooking draws East Africa", "reason": "proximity" },
-        { "cuisineCountryId": "eritrea", "cuisineName": "Eritrean", "exampleDishes": ["zigni","injera","kitcha"], "surprisePick": false, "source": "Nairobi’s habesha restaurants serve Eritrean classics", "reason": "migration" }
+        { "cuisineCountryId": "eritrea", "cuisineName": "Eritrean", "exampleDishes": ["zigni","injera","kitcha"], "surprisePick": false, "source": "Nairobi’s habesha restaurants serve Eritrean classics", "reason": "migration" },
+        { "cuisineCountryId": "uganda", "cuisineName": "Ugandan", "exampleDishes": ["rolex","matoke","luwombo"], "surprisePick": false, "source": "Ugali, nyama choma and matoke are shared across neighbouring East Africa (proximity)", "reason": "proximity" },
+        { "cuisineCountryId": "somalia", "cuisineName": "Somali", "exampleDishes": ["baasto","bariis iskukaris","sambusa"], "surprisePick": false, "source": "Rice, grilled meat and Swahili-coast dishes are shared across the neighbouring Horn (proximity)", "reason": "proximity" }
       ]
     },
     "ghana": {
@@ -739,7 +757,8 @@
         { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["biryani","curry","naan"], "surprisePick": false, "source": "OpenStreetMap 2026 (11 indian-tagged restaurants in Ghana)" },
         { "cuisineCountryId": "turkey", "cuisineName": "Turkish", "exampleDishes": ["döner kebab","baklava","börek"], "surprisePick": false, "source": "OpenStreetMap 2026 (26 turkish-tagged restaurants in Ghana)" },
         { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi","ramen","tempura"], "surprisePick": false, "source": "Japanese cuisine's global soft-power spread — worldwide Japanese restaurants grew from ~24,000 (2006) to ~117,000 (2017) via washoku gastrodiplomacy (Sahakian & Saito, 2018)", "reason": "soft-power" },
-        { "cuisineCountryId": "togo", "cuisineName": "Togolese", "exampleDishes": ["akple","koklo meme"], "surprisePick": false, "source": "Ewe kinship: akple and fufu shared across the Ghana-Togo border", "reason": "proximity" }
+        { "cuisineCountryId": "togo", "cuisineName": "Togolese", "exampleDishes": ["akple","koklo meme"], "surprisePick": false, "source": "Ewe kinship: akple and fufu shared across the Ghana-Togo border", "reason": "proximity" },
+        { "cuisineCountryId": "benin", "cuisineName": "Beninese", "exampleDishes": ["amiwo","akassa"], "surprisePick": false, "source": "Jollof, grilled fish and pepper sauces are shared across neighbouring West Africa (proximity)", "reason": "proximity" }
       ]
     },
     "lebanon": {
@@ -846,7 +865,8 @@
         { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi","ramen","gyoza"], "surprisePick": false, "source": "OpenStreetMap 2026 (689 japanese-tagged restaurants in New Zealand)" },
         { "cuisineCountryId": "south-korea", "cuisineName": "Korean", "exampleDishes": ["Korean BBQ","bibimbap","fried chicken"], "surprisePick": false, "source": "OpenStreetMap 2026 (123 korean-tagged restaurants in New Zealand)" },
         { "cuisineCountryId": "mexico", "cuisineName": "Mexican", "exampleDishes": ["tacos","burritos","guacamole"], "surprisePick": false, "source": "OpenStreetMap 2026 (92 mexican-tagged restaurants in New Zealand)" },
-        { "cuisineCountryId": "samoa", "cuisineName": "Samoan", "exampleDishes": ["palusami","umu-baked taro","chop suey"], "surprisePick": true, "source": "New Zealand's 440,000-strong Pasifika community makes Samoan palusami and umu feasts everyday fare, centred on South Auckland (Pasifika New Zealanders, 2023 census)", "reason": "migration" }
+        { "cuisineCountryId": "samoa", "cuisineName": "Samoan", "exampleDishes": ["palusami","umu-baked taro","chop suey"], "surprisePick": true, "source": "New Zealand's 440,000-strong Pasifika community makes Samoan palusami and umu feasts everyday fare, centred on South Auckland (Pasifika New Zealanders, 2023 census)", "reason": "migration" },
+        { "cuisineCountryId": "tonga", "cuisineName": "Tongan", "exampleDishes": ["lū pulu","ʻota ʻika"], "surprisePick": false, "source": "Tonga's large community in New Zealand keeps lu and umu feasts familiar (migration)", "reason": "migration" }
       ]
     },
     "croatia": {
@@ -982,7 +1002,8 @@
         { "cuisineCountryId": "mexico", "cuisineName": "Mexican", "exampleDishes": ["tacos","tamales","guacamole"], "surprisePick": false, "source": "OpenStreetMap 2026 (37 mexican-tagged restaurants in Cuba)" },
         { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["croissant","crème brûlée","bouillabaisse"], "surprisePick": false, "source": "OpenStreetMap 2026 (10 french-tagged restaurants in Cuba)" },
         { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi","ramen","gyoza"], "surprisePick": false, "source": "OpenStreetMap 2026 (31 japanese-tagged restaurants in Cuba)" },
-        { "cuisineCountryId": "vietnam", "cuisineName": "Vietnamese", "exampleDishes": ["phở","bánh mì","gỏi cuốn"], "surprisePick": false, "source": "Pho and banh mi spread worldwide with the Vietnamese diaspora (Wikipedia: Vietnamese diaspora)", "reason": "migration" }
+        { "cuisineCountryId": "vietnam", "cuisineName": "Vietnamese", "exampleDishes": ["phở","bánh mì","gỏi cuốn"], "surprisePick": false, "source": "Pho and banh mi spread worldwide with the Vietnamese diaspora (Wikipedia: Vietnamese diaspora)", "reason": "migration" },
+        { "cuisineCountryId": "dominican-republic", "cuisineName": "Dominican", "exampleDishes": ["pica pollo","mangú","tostones"], "surprisePick": false, "source": "Rice, beans and stews are shared across the Hispanic Caribbean (proximity)", "reason": "proximity" }
       ]
     },
     "bolivia": {
@@ -1202,7 +1223,10 @@
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger","fried chicken","BBQ"], "surprisePick": false, "source": "OpenStreetMap 2026 (38 american-tagged restaurants in Senegal)" },
         { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi","ramen","tempura"], "surprisePick": false, "source": "OpenStreetMap 2026 (9 japanese-tagged restaurants in Senegal)" },
         { "cuisineCountryId": "gambia", "cuisineName": "Gambian", "exampleDishes": ["domoda","benachin"], "surprisePick": false, "source": "Senegambia: one shared table across the border", "reason": "proximity" },
-        { "cuisineCountryId": "mauritania", "cuisineName": "Mauritanian", "exampleDishes": ["thieboudienne","mechoui"], "surprisePick": false, "source": "Thieboudienne and grilled meats are shared with neighbouring Senegal and the Sahel (Wikipedia: Mauritanian cuisine)", "reason": "proximity" }
+        { "cuisineCountryId": "mauritania", "cuisineName": "Mauritanian", "exampleDishes": ["thieboudienne","mechoui"], "surprisePick": false, "source": "Thieboudienne and grilled meats are shared with neighbouring Senegal and the Sahel (Wikipedia: Mauritanian cuisine)", "reason": "proximity" },
+        { "cuisineCountryId": "mali", "cuisineName": "Malian", "exampleDishes": ["maafe","fakoye"], "surprisePick": false, "source": "Thieboudienne and rice dishes are shared across the neighbouring Sahel (proximity)", "reason": "proximity" },
+        { "cuisineCountryId": "guinea", "cuisineName": "Guinean", "exampleDishes": ["konkoé","riz gras"], "surprisePick": false, "source": "Rice, cassava and peanut stews are shared across neighbouring West Africa (proximity)", "reason": "proximity" },
+        { "cuisineCountryId": "guinea-bissau", "cuisineName": "Bissau-Guinean", "exampleDishes": ["caldo de chabéu","fish rice"], "surprisePick": false, "source": "Jollof-style rice and seafood stews are shared across the neighbouring coast (proximity)", "reason": "proximity" }
       ]
     },
     "algeria": {
@@ -1249,7 +1273,9 @@
         { "cuisineCountryId": "turkey", "cuisineName": "Turkish", "exampleDishes": ["döner kebab","baklava","köfte"], "surprisePick": false, "source": "Doner kebab and Turkish grills spread across Europe and beyond with the Turkish diaspora (Wikipedia: Turkish diaspora)", "reason": "migration" },
         { "cuisineCountryId": "chad", "cuisineName": "Chadian", "exampleDishes": ["boule","daraba"], "surprisePick": false, "source": "Millet staples and stews are shared across the neighbouring Sahel (Wikipedia: Chadian cuisine)", "reason": "proximity" },
         { "cuisineCountryId": "central-african-republic", "cuisineName": "Central African", "exampleDishes": ["gozo","kanda"], "surprisePick": false, "source": "Cassava, fufu and bushmeat stews are shared across the neighbouring Congo basin (Wikipedia: Central African Republic cuisine)", "reason": "proximity" },
-        { "cuisineCountryId": "gabon", "cuisineName": "Gabonese", "exampleDishes": ["poulet nyembwe","odika"], "surprisePick": false, "source": "Cassava, plantain and fish stews are shared across the neighbouring Congo basin (Wikipedia: Gabonese cuisine)", "reason": "proximity" }
+        { "cuisineCountryId": "gabon", "cuisineName": "Gabonese", "exampleDishes": ["poulet nyembwe","odika"], "surprisePick": false, "source": "Cassava, plantain and fish stews are shared across the neighbouring Congo basin (Wikipedia: Gabonese cuisine)", "reason": "proximity" },
+        { "cuisineCountryId": "congo-republic", "cuisineName": "Congolese (Brazzaville)", "exampleDishes": ["liboke","saka-saka"], "surprisePick": false, "source": "Cassava, fufu and grilled fish are shared across the neighbouring Congo basin (proximity)", "reason": "proximity" },
+        { "cuisineCountryId": "equatorial-guinea", "cuisineName": "Equatoguinean", "exampleDishes": ["pepesup","akwadu"], "surprisePick": false, "source": "Cassava, plantain and fish dishes are shared across the neighbouring Gulf of Guinea coast (proximity)", "reason": "proximity" }
       ]
     },
     "latvia": {
@@ -1381,7 +1407,10 @@
         { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza","pasta","risotto"], "surprisePick": false, "source": "OpenStreetMap 2026 (44 italian-tagged restaurants in Uganda)" },
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger","fried chicken","BBQ"], "surprisePick": false, "source": "OpenStreetMap 2026 (21 american-tagged restaurants in Uganda)" },
         { "cuisineCountryId": "lebanon", "cuisineName": "Lebanese", "exampleDishes": ["shawarma","hummus","mezze"], "surprisePick": false, "source": "Shawarma, falafel and mezze travel worldwide with the Lebanese diaspora — some 15 million of Lebanese origin abroad, far more than live in Lebanon (Wikipedia: Lebanese diaspora)", "reason": "migration" },
-        { "cuisineCountryId": "kenya", "cuisineName": "Kenyan", "exampleDishes": ["nyama choma","ugali","sukuma wiki"], "surprisePick": false, "source": "Nyama choma and ugali are shared across neighbouring East Africa (Wikipedia: Kenyan cuisine)", "reason": "proximity" }
+        { "cuisineCountryId": "kenya", "cuisineName": "Kenyan", "exampleDishes": ["nyama choma","ugali","sukuma wiki"], "surprisePick": false, "source": "Nyama choma and ugali are shared across neighbouring East Africa (Wikipedia: Kenyan cuisine)", "reason": "proximity" },
+        { "cuisineCountryId": "tanzania", "cuisineName": "Zanzibari", "exampleDishes": ["Zanzibar pilau","urojo","mishkaki"], "surprisePick": false, "source": "Ugali, matoke and grilled meats are shared across neighbouring East Africa (proximity)", "reason": "proximity" },
+        { "cuisineCountryId": "south-sudan", "cuisineName": "South Sudanese", "exampleDishes": ["kisra","asida"], "surprisePick": false, "source": "Sorghum staples, stews and grilled meats are shared across the neighbouring border (proximity)", "reason": "proximity" },
+        { "cuisineCountryId": "rwanda", "cuisineName": "Rwandan", "exampleDishes": ["brochettes","isombe"], "surprisePick": false, "source": "Matoke, beans and ugali are shared across the neighbouring Great Lakes (proximity)", "reason": "proximity" }
       ]
     },
     "zimbabwe": {
@@ -1395,7 +1424,8 @@
         { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza","pasta","risotto"], "surprisePick": false, "source": "OpenStreetMap 2026 (25 italian-tagged restaurants in Zimbabwe)" },
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger","fried chicken","BBQ"], "surprisePick": false, "source": "OpenStreetMap 2026 (20 american-tagged restaurants in Zimbabwe)" },
         { "cuisineCountryId": "portugal", "cuisineName": "Portuguese", "exampleDishes": ["piri-piri chicken","bacalhau","pastéis de nata"], "surprisePick": false, "source": "Peri-peri and Portuguese-African cooking spread from neighbouring Mozambique and Angola (Wikipedia: Portuguese cuisine)", "reason": "proximity" },
-        { "cuisineCountryId": "zambia", "cuisineName": "Zambian", "exampleDishes": ["nshima","ifisashi"], "surprisePick": false, "source": "Nshima and relishes are shared with neighbouring Zimbabwe across Southern Africa (Wikipedia: Zambian cuisine)", "reason": "proximity" }
+        { "cuisineCountryId": "zambia", "cuisineName": "Zambian", "exampleDishes": ["nshima","ifisashi"], "surprisePick": false, "source": "Nshima and relishes are shared with neighbouring Zimbabwe across Southern Africa (Wikipedia: Zambian cuisine)", "reason": "proximity" },
+        { "cuisineCountryId": "botswana", "cuisineName": "Botswanan", "exampleDishes": ["seswaa","bogobe"], "surprisePick": false, "source": "Sadza/pap, braai and dried meat are shared across the neighbouring border (proximity)", "reason": "proximity" }
       ]
     },
     "madagascar": {
@@ -1423,7 +1453,9 @@
         { "cuisineCountryId": "south-africa", "cuisineName": "South African", "exampleDishes": ["braai","boerewors","biltong"], "surprisePick": false, "source": "Braai and biltong are a shared social custom across Southern Africa — South Africa, Namibia, Zimbabwe, Zambia and their neighbours (CNN Travel, 2018)", "reason": "proximity" },
         { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza","pasta","risotto"], "surprisePick": false, "source": "OpenStreetMap 2026 (25 italian-tagged restaurants in DR Congo)" },
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger","fried chicken","BBQ"], "surprisePick": false, "source": "OpenStreetMap 2026 (15 american-tagged restaurants in DR Congo)" },
-        { "cuisineCountryId": "congo-republic", "cuisineName": "Congolese (Brazzaville)", "exampleDishes": ["liboke","saka-saka"], "surprisePick": false, "source": "Kinshasa and Brazzaville — the world’s closest capitals — share one river cuisine", "reason": "proximity" }
+        { "cuisineCountryId": "congo-republic", "cuisineName": "Congolese (Brazzaville)", "exampleDishes": ["liboke","saka-saka"], "surprisePick": false, "source": "Kinshasa and Brazzaville — the world’s closest capitals — share one river cuisine", "reason": "proximity" },
+        { "cuisineCountryId": "central-african-republic", "cuisineName": "Central African", "exampleDishes": ["gozo","kanda"], "surprisePick": false, "source": "Cassava, fufu and bushmeat stews are shared across the neighbouring Congo basin (proximity)", "reason": "proximity" },
+        { "cuisineCountryId": "burundi", "cuisineName": "Burundian", "exampleDishes": ["brochettes","ibiharage"], "surprisePick": false, "source": "Beans, plantains and ugali are shared across the neighbouring Great Lakes (proximity)", "reason": "proximity" }
       ]
     },
     "libya": {
@@ -1478,7 +1510,11 @@
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger","fried chicken","BBQ"], "surprisePick": false, "source": "OpenStreetMap 2026 (18 american-tagged restaurants in Fiji)" },
         { "cuisineCountryId": "new-zealand", "cuisineName": "New Zealand", "exampleDishes": ["lamb roast","pavlova","hangi"], "surprisePick": false, "source": "Fish and chips, meat pies and pavlova are Anglophone-Pacific staples spread by New Zealand's regional reach to its island neighbours (NZ cuisine, Wikipedia)", "reason": "proximity" },
         { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza","pasta","risotto"], "surprisePick": false, "source": "OpenStreetMap 2026 (19 italian-tagged restaurants in Fiji)" },
-        { "cuisineCountryId": "vanuatu", "cuisineName": "Ni-Vanuatu", "exampleDishes": ["laplap","tuluk"], "surprisePick": false, "source": "Laplap, root crops and coconut are shared across the neighbouring Pacific Islands (Wikipedia: Vanuatuan cuisine)", "reason": "proximity" }
+        { "cuisineCountryId": "vanuatu", "cuisineName": "Ni-Vanuatu", "exampleDishes": ["laplap","tuluk"], "surprisePick": false, "source": "Laplap, root crops and coconut are shared across the neighbouring Pacific Islands (Wikipedia: Vanuatuan cuisine)", "reason": "proximity" },
+        { "cuisineCountryId": "solomon-islands", "cuisineName": "Solomon Islander", "exampleDishes": ["mumu pork","cassava pudding"], "surprisePick": false, "source": "Root vegetables, fish and coconut are shared across the neighbouring Pacific islands (proximity)", "reason": "proximity" },
+        { "cuisineCountryId": "tonga", "cuisineName": "Tongan", "exampleDishes": ["lū pulu","ʻota ʻika"], "surprisePick": false, "source": "Root crops, lu and umu feasts are shared across the neighbouring Pacific islands (proximity)", "reason": "proximity" },
+        { "cuisineCountryId": "kiribati", "cuisineName": "I-Kiribati", "exampleDishes": ["palu sami","ika mata"], "surprisePick": false, "source": "Fish, coconut and breadfruit are shared across the neighbouring Pacific islands (proximity)", "reason": "proximity" },
+        { "cuisineCountryId": "tuvalu", "cuisineName": "Tuvaluan", "exampleDishes": ["pulaka","coconut fish"], "surprisePick": false, "source": "Fish, coconut and root crops are shared across the neighbouring Pacific islands (proximity)", "reason": "proximity" }
       ]
     },
     "el-salvador": {
@@ -1635,7 +1671,8 @@
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["chow mein","fried rice","dim sum"], "surprisePick": false, "source": "Pica pollo — the national fast food — was born in Chinese immigrant eateries of the early 1900s", "reason": "migration" },
         { "cuisineCountryId": "mexico", "cuisineName": "Mexican", "exampleDishes": ["tacos","guacamole","enchiladas"], "surprisePick": false, "source": "OpenStreetMap 2026 (30 mexican-tagged restaurants in Dominican Republic)" },
         { "cuisineCountryId": "colombia", "cuisineName": "Colombian", "exampleDishes": ["bandeja paisa","arepas","empanadas"], "surprisePick": false, "source": "Arepas and empanadas are shared across northern Latin America, carried further by the Colombian diaspora (Americas Quarterly)", "reason": "migration" },
-        { "cuisineCountryId": "cuba", "cuisineName": "Cuban", "exampleDishes": ["Cuban sandwich","ropa vieja","lechón"], "surprisePick": false, "source": "Rice, beans and ropa-vieja-style dishes are shared across the Hispanic Caribbean (proximity)", "reason": "proximity" }
+        { "cuisineCountryId": "cuba", "cuisineName": "Cuban", "exampleDishes": ["Cuban sandwich","ropa vieja","lechón"], "surprisePick": false, "source": "Rice, beans and ropa-vieja-style dishes are shared across the Hispanic Caribbean (proximity)", "reason": "proximity" },
+        { "cuisineCountryId": "haiti", "cuisineName": "Haitian", "exampleDishes": ["griot","diri ak djon djon","pikliz"], "surprisePick": false, "source": "Rice, beans and stews are shared across the neighbouring island of Hispaniola (proximity)", "reason": "proximity" }
       ]
     },
     "jamaica": {
@@ -1651,7 +1688,8 @@
         { "cuisineCountryId": "mexico", "cuisineName": "Mexican", "exampleDishes": ["tacos","guacamole","enchiladas"], "surprisePick": false, "source": "Tacos and Mexican cooking are globally prized; traditional Mexican cuisine is UNESCO-listed (UNESCO Intangible Cultural Heritage)", "reason": "migration" },
         { "cuisineCountryId": "bahamas", "cuisineName": "Bahamian", "exampleDishes": ["conch fritters","rock lobster"], "surprisePick": false, "source": "Conch, rice and peas and fried fish are shared across the neighbouring Caribbean (Wikipedia: Caribbean cuisine)", "reason": "proximity" },
         { "cuisineCountryId": "antigua", "cuisineName": "Antiguan", "exampleDishes": ["fungee and pepperpot","ducana"], "surprisePick": false, "source": "Saltfish, fungie and rice dishes are shared across the neighbouring Caribbean (Wikipedia: Caribbean cuisine)", "reason": "proximity" },
-        { "cuisineCountryId": "saint-kitts", "cuisineName": "Kittitian", "exampleDishes": ["stewed saltfish","goat water"], "surprisePick": false, "source": "Saltfish and pelau are shared across the neighbouring Caribbean (Wikipedia: Caribbean cuisine)", "reason": "proximity" }
+        { "cuisineCountryId": "saint-kitts", "cuisineName": "Kittitian", "exampleDishes": ["stewed saltfish","goat water"], "surprisePick": false, "source": "Saltfish and pelau are shared across the neighbouring Caribbean (Wikipedia: Caribbean cuisine)", "reason": "proximity" },
+        { "cuisineCountryId": "barbados", "cuisineName": "Bajan", "exampleDishes": ["cou-cou and flying fish","fishcakes"], "surprisePick": false, "source": "Saltfish, rice-and-peas and stews are shared across the neighbouring Caribbean (proximity)", "reason": "proximity" }
       ]
     },
     "trinidad": {
@@ -1667,7 +1705,10 @@
         { "cuisineCountryId": "mexico", "cuisineName": "Mexican", "exampleDishes": ["tacos","guacamole","nachos"], "surprisePick": false, "source": "Tacos and Mexican cooking are globally prized; traditional Mexican cuisine is UNESCO-listed (UNESCO Intangible Cultural Heritage)", "reason": "migration" },
         { "cuisineCountryId": "guyana", "cuisineName": "Guyanese", "exampleDishes": ["pepperpot","cook-up rice","Guyanese roti"], "surprisePick": false, "source": "Guyanese cooking is a fixture of the southern Caribbean table", "reason": "proximity" },
         { "cuisineCountryId": "barbados", "cuisineName": "Bajan", "exampleDishes": ["cou-cou and flying fish","fishcakes"], "surprisePick": false, "source": "Cou-cou, flying fish and macaroni pie are shared across the neighbouring Caribbean (Wikipedia: Barbadian cuisine)", "reason": "proximity" },
-        { "cuisineCountryId": "grenada", "cuisineName": "Grenadian", "exampleDishes": ["oil down","nutmeg ice cream"], "surprisePick": false, "source": "Oil down and spiced dishes are shared across the neighbouring Caribbean (Wikipedia: Grenadian cuisine)", "reason": "proximity" }
+        { "cuisineCountryId": "grenada", "cuisineName": "Grenadian", "exampleDishes": ["oil down","nutmeg ice cream"], "surprisePick": false, "source": "Oil down and spiced dishes are shared across the neighbouring Caribbean (Wikipedia: Grenadian cuisine)", "reason": "proximity" },
+        { "cuisineCountryId": "bahamas", "cuisineName": "Bahamian", "exampleDishes": ["conch fritters","rock lobster"], "surprisePick": false, "source": "Conch, rice-and-peas and fried fish are shared across the neighbouring Caribbean (proximity)", "reason": "proximity" },
+        { "cuisineCountryId": "saint-lucia", "cuisineName": "Saint Lucian", "exampleDishes": ["green fig and saltfish","bouyon"], "surprisePick": false, "source": "Creole stews, saltfish and ground provisions are shared across the neighbouring Caribbean (proximity)", "reason": "proximity" },
+        { "cuisineCountryId": "antigua", "cuisineName": "Antiguan", "exampleDishes": ["fungee and pepperpot","ducana"], "surprisePick": false, "source": "Saltfish, fungie and rice dishes are shared across the neighbouring Caribbean (proximity)", "reason": "proximity" }
       ]
     },
     "honduras": {
@@ -1709,7 +1750,8 @@
         { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["biryani","curry","naan"], "surprisePick": false, "source": "Curry houses and Indian restaurants span the globe with the world's largest diaspora — about 35 million people of Indian origin abroad (Indiandiaspora.org; WEF, 2019)", "reason": "migration" },
         { "cuisineCountryId": "mali", "cuisineName": "Malian", "exampleDishes": ["maafe","fakoye"], "surprisePick": false, "source": "Mali’s maafe spread across West Africa; large Malian community in Abidjan", "reason": "migration" },
         { "cuisineCountryId": "burkina-faso", "cuisineName": "Burkinabé", "exampleDishes": ["riz gras","tô"], "surprisePick": false, "source": "Riz gras and to are shared across neighbouring West Africa (Wikipedia: Burkinabe cuisine)", "reason": "proximity" },
-        { "cuisineCountryId": "guinea", "cuisineName": "Guinean", "exampleDishes": ["konkoé","riz gras"], "surprisePick": false, "source": "Rice, cassava and peanut stews are shared across neighbouring West Africa (Wikipedia: Guinean cuisine)", "reason": "proximity" }
+        { "cuisineCountryId": "guinea", "cuisineName": "Guinean", "exampleDishes": ["konkoé","riz gras"], "surprisePick": false, "source": "Rice, cassava and peanut stews are shared across neighbouring West Africa (Wikipedia: Guinean cuisine)", "reason": "proximity" },
+        { "cuisineCountryId": "liberia", "cuisineName": "Liberian", "exampleDishes": ["cassava leaf soup","jollof rice"], "surprisePick": false, "source": "Rice, cassava leaf and pepper soup are shared across the neighbouring coast (proximity)", "reason": "proximity" }
       ]
     },
     "rwanda": {
@@ -1823,7 +1865,8 @@
         { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza","pasta","risotto"], "surprisePick": false, "source": "OpenStreetMap 2026 (54 italian-tagged restaurants in Angola)" },
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger","fried chicken","BBQ"], "surprisePick": false, "source": "OpenStreetMap 2026 (73 american-tagged restaurants in Angola)" },
         { "cuisineCountryId": "south-africa", "cuisineName": "South African", "exampleDishes": ["braai","biltong","boerewors"], "surprisePick": false, "source": "Braai and biltong are a shared social custom across Southern Africa — South Africa, Namibia, Zimbabwe, Zambia and their neighbours (CNN Travel, 2018)", "reason": "proximity" },
-        { "cuisineCountryId": "sao-tome", "cuisineName": "São Toméan", "exampleDishes": ["calulu","blablá"], "surprisePick": false, "source": "Calulu binds the Lusophone African table", "reason": "proximity" }
+        { "cuisineCountryId": "sao-tome", "cuisineName": "São Toméan", "exampleDishes": ["calulu","blablá"], "surprisePick": false, "source": "Calulu binds the Lusophone African table", "reason": "proximity" },
+        { "cuisineCountryId": "namibia", "cuisineName": "Namibian", "exampleDishes": ["kapana","Namibian beef biltong"], "surprisePick": false, "source": "Funje, grilled meat and fish are shared across the neighbouring border (proximity)", "reason": "proximity" }
       ]
     },
     "mozambique": {
@@ -1908,7 +1951,8 @@
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice","dim sum","spring rolls"], "surprisePick": false, "source": "Chinese restaurants reach virtually every country through the global Chinese diaspora, found even in the world's remotest places (CBC, 'Have You Eaten Yet?', 2022)", "reason": "migration" },
         { "cuisineCountryId": "mozambique", "cuisineName": "Mozambican", "exampleDishes": ["piri-piri chicken","matapa","camarão"], "surprisePick": false, "source": "Peri-peri cooking and matapa are shared across neighbouring Southeast Africa (Wikipedia: Mozambican cuisine)", "reason": "proximity" },
         { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza","pasta","risotto"], "surprisePick": false, "source": "OpenStreetMap 2026 (18 italian-tagged restaurants in Malawi)" },
-        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger","fried chicken","BBQ"], "surprisePick": false, "source": "OpenStreetMap 2026 (13 american-tagged restaurants in Malawi)" }
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger","fried chicken","BBQ"], "surprisePick": false, "source": "OpenStreetMap 2026 (13 american-tagged restaurants in Malawi)" },
+        { "cuisineCountryId": "zambia", "cuisineName": "Zambian", "exampleDishes": ["nshima","ifisashi"], "surprisePick": false, "source": "Nshima and relishes are shared across the neighbouring border (proximity)", "reason": "proximity" }
       ]
     },
     "botswana": {
@@ -1974,7 +2018,8 @@
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice","dim sum","spring rolls"], "surprisePick": false, "source": "Chinese restaurants reach virtually every country through the global Chinese diaspora, found even in the world's remotest places (CBC, 'Have You Eaten Yet?', 2022)", "reason": "migration" },
         { "cuisineCountryId": "ghana", "cuisineName": "Ghanaian", "exampleDishes": ["jollof rice","kelewele","fufu"], "surprisePick": false, "source": "Ghanaian jollof and waakye are shared across neighbouring West Africa (Wikipedia: Ghanaian cuisine)", "reason": "proximity" },
         { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza","pasta","risotto"], "surprisePick": false, "source": "OpenStreetMap 2026 (20 italian-tagged restaurants in Benin)" },
-        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger","fried chicken","BBQ"], "surprisePick": false, "source": "OpenStreetMap 2026 (10 american-tagged restaurants in Benin)" }
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger","fried chicken","BBQ"], "surprisePick": false, "source": "OpenStreetMap 2026 (10 american-tagged restaurants in Benin)" },
+        { "cuisineCountryId": "togo", "cuisineName": "Togolese", "exampleDishes": ["akple","koklo meme"], "surprisePick": false, "source": "Pate, grilled fish and pepper sauces are shared across the neighbouring West African coast (proximity)", "reason": "proximity" }
       ]
     },
     "congo-republic": {
@@ -1987,7 +2032,8 @@
         { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi","ramen","tempura"], "surprisePick": true, "source": "Japanese cuisine's global soft-power spread — worldwide Japanese restaurants grew from ~24,000 (2006) to ~117,000 (2017) via washoku gastrodiplomacy (Sahakian & Saito, 2018)", "reason": "soft-power" },
         { "cuisineCountryId": "drc", "cuisineName": "Congolese", "exampleDishes": ["poulet moambé","saka-saka","fufu"], "surprisePick": false, "source": "Congo Basin staples like fufu and moambe are shared across the neighbouring Congo region (Wikipedia: Cuisine of the DRC)", "reason": "proximity" },
         { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza","pasta","risotto"], "surprisePick": false, "source": "OpenStreetMap 2026 (14 italian-tagged restaurants in Republic of Congo)" },
-        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger","fried chicken","BBQ"], "surprisePick": false, "source": "American fast-food chains (McDonald's, KFC, Domino's) operate in over 100 countries, making US-style food globally ubiquitous as soft power", "reason": "soft-power" }
+        { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger","fried chicken","BBQ"], "surprisePick": false, "source": "American fast-food chains (McDonald's, KFC, Domino's) operate in over 100 countries, making US-style food globally ubiquitous as soft power", "reason": "soft-power" },
+        { "cuisineCountryId": "gabon", "cuisineName": "Gabonese", "exampleDishes": ["poulet nyembwe","odika"], "surprisePick": false, "source": "Cassava, plantain and fish stews are shared across the neighbouring Congo basin (proximity)", "reason": "proximity" }
       ]
     },
     "gabon": {
@@ -2055,7 +2101,8 @@
         { "cuisineCountryId": "netherlands", "cuisineName": "Dutch", "exampleDishes": ["pom","frikandel","pancakes"], "surprisePick": false, "source": "Dutch cooking is familiar in Suriname, a Dutch colony until 1975 (colonial legacy)", "reason": "colonial" },
         { "cuisineCountryId": "brazil", "cuisineName": "Brazilian", "exampleDishes": ["churrasco","feijoada","pão de queijo"], "surprisePick": false, "source": "Churrasco, feijoada and Brazilian dishes are shared across neighbouring South America and the Lusophone world (Wikipedia: Brazilian cuisine)", "reason": "proximity" },
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burgers","fried chicken","fries"], "surprisePick": false, "source": "OpenStreetMap 2026 (9 american-tagged restaurants in Suriname)" },
-        { "cuisineCountryId": "trinidad", "cuisineName": "Trinidadian", "exampleDishes": ["doubles","roti","callaloo"], "surprisePick": false, "source": "Trinidad's doubles and roti are shared Indo-Caribbean street food across the neighbouring islands (Munchery; Royal Caribbean food guide)", "reason": "proximity" }
+        { "cuisineCountryId": "trinidad", "cuisineName": "Trinidadian", "exampleDishes": ["doubles","roti","callaloo"], "surprisePick": false, "source": "Trinidad's doubles and roti are shared Indo-Caribbean street food across the neighbouring islands (Munchery; Royal Caribbean food guide)", "reason": "proximity" },
+        { "cuisineCountryId": "guyana", "cuisineName": "Guyanese", "exampleDishes": ["pepperpot","cook-up rice","Guyanese roti"], "surprisePick": false, "source": "Roti, curry and pepperpot are shared across the neighbouring Guianas (proximity)", "reason": "proximity" }
       ]
     },
     "somalia": {
@@ -2173,7 +2220,9 @@
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice","chow mein","dumplings"], "surprisePick": false, "source": "Chinese restaurants reach virtually every country through the global Chinese diaspora, found even in the world's remotest places (CBC, 'Have You Eaten Yet?', 2022)", "reason": "migration" },
         { "cuisineCountryId": "morocco", "cuisineName": "Moroccan", "exampleDishes": ["couscous","tajine","bastilla"], "surprisePick": false, "source": "Couscous and tagine are shared across the neighbouring Maghreb and Sahel (Wikipedia: Moroccan cuisine)", "reason": "proximity" },
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burgers","fried chicken","fries"], "surprisePick": false, "source": "American fast-food chains (McDonald's, KFC, Domino's) operate in over 100 countries, making US-style food globally ubiquitous as soft power", "reason": "soft-power" },
-        { "cuisineCountryId": "ivory-coast", "cuisineName": "Ivorian", "exampleDishes": ["attiéké","alloco","garba"], "surprisePick": false, "source": "Attieke and foutou are shared across neighbouring West Africa (Wikipedia: Ivorian cuisine)", "reason": "proximity" }
+        { "cuisineCountryId": "ivory-coast", "cuisineName": "Ivorian", "exampleDishes": ["attiéké","alloco","garba"], "surprisePick": false, "source": "Attieke and foutou are shared across neighbouring West Africa (Wikipedia: Ivorian cuisine)", "reason": "proximity" },
+        { "cuisineCountryId": "burkina-faso", "cuisineName": "Burkinabé", "exampleDishes": ["riz gras","tô"], "surprisePick": false, "source": "Riz gras, to and grilled meats are shared across the neighbouring Sahel (proximity)", "reason": "proximity" },
+        { "cuisineCountryId": "niger", "cuisineName": "Nigerien", "exampleDishes": ["kilishi","dambou"], "surprisePick": false, "source": "Millet staples and grilled meats are shared across the neighbouring Sahel (proximity)", "reason": "proximity" }
       ]
     },
     "mauritania": {
@@ -2199,7 +2248,8 @@
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice","chow mein","dumplings"], "surprisePick": false, "source": "Chinese restaurants reach virtually every country through the global Chinese diaspora, found even in the world's remotest places (CBC, 'Have You Eaten Yet?', 2022)", "reason": "migration" },
         { "cuisineCountryId": "morocco", "cuisineName": "Moroccan", "exampleDishes": ["couscous","tajine","bastilla"], "surprisePick": false, "source": "Couscous and tagine are shared across the neighbouring Maghreb and Sahel (Wikipedia: Moroccan cuisine)", "reason": "proximity" },
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burgers","fried chicken","fries"], "surprisePick": false, "source": "American fast-food chains (McDonald's, KFC, Domino's) operate in over 100 countries, making US-style food globally ubiquitous as soft power", "reason": "soft-power" },
-        { "cuisineCountryId": "turkey", "cuisineName": "Turkish", "exampleDishes": ["döner kebab","köfte","baklava"], "surprisePick": false, "source": "Doner kebab and Turkish grills spread across Europe and beyond with the Turkish diaspora (Wikipedia: Turkish diaspora)", "reason": "migration" }
+        { "cuisineCountryId": "turkey", "cuisineName": "Turkish", "exampleDishes": ["döner kebab","köfte","baklava"], "surprisePick": false, "source": "Doner kebab and Turkish grills spread across Europe and beyond with the Turkish diaspora (Wikipedia: Turkish diaspora)", "reason": "migration" },
+        { "cuisineCountryId": "chad", "cuisineName": "Chadian", "exampleDishes": ["boule","daraba"], "surprisePick": false, "source": "Millet staples and stews are shared across the neighbouring Sahel (proximity)", "reason": "proximity" }
       ]
     },
     "guinea": {
@@ -2212,7 +2262,8 @@
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice","chow mein","dumplings"], "surprisePick": false, "source": "Chinese restaurants reach virtually every country through the global Chinese diaspora, found even in the world's remotest places (CBC, 'Have You Eaten Yet?', 2022)", "reason": "migration" },
         { "cuisineCountryId": "morocco", "cuisineName": "Moroccan", "exampleDishes": ["couscous","tajine","bastilla"], "surprisePick": false, "source": "Couscous and tagine are shared across the neighbouring Maghreb and Sahel (Wikipedia: Moroccan cuisine)", "reason": "proximity" },
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burgers","fried chicken","fries"], "surprisePick": false, "source": "American fast-food chains (McDonald's, KFC, Domino's) operate in over 100 countries, making US-style food globally ubiquitous as soft power", "reason": "soft-power" },
-        { "cuisineCountryId": "ivory-coast", "cuisineName": "Ivorian", "exampleDishes": ["attiéké","alloco","garba"], "surprisePick": false, "source": "Attieke and foutou are shared across neighbouring West Africa (Wikipedia: Ivorian cuisine)", "reason": "proximity" }
+        { "cuisineCountryId": "ivory-coast", "cuisineName": "Ivorian", "exampleDishes": ["attiéké","alloco","garba"], "surprisePick": false, "source": "Attieke and foutou are shared across neighbouring West Africa (Wikipedia: Ivorian cuisine)", "reason": "proximity" },
+        { "cuisineCountryId": "sierra-leone", "cuisineName": "Sierra Leonean", "exampleDishes": ["cassava leaves","groundnut stew"], "surprisePick": false, "source": "Cassava leaf, rice and pepper soup are shared across neighbouring West Africa (proximity)", "reason": "proximity" }
       ]
     },
     "guinea-bissau": {
@@ -2437,7 +2488,8 @@
         { "cuisineCountryId": "new-zealand", "cuisineName": "New Zealand", "exampleDishes": ["fish and chips","meat pies","pavlova"], "surprisePick": false, "source": "Fish and chips, meat pies and pavlova are Anglophone-Pacific staples spread by New Zealand's regional reach to its island neighbours (NZ cuisine, Wikipedia)", "reason": "proximity" },
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burgers","fried chicken","fries"], "surprisePick": false, "source": "American fast-food chains (McDonald's, KFC, Domino's) operate in over 100 countries, making US-style food globally ubiquitous as soft power", "reason": "soft-power" },
         { "cuisineCountryId": "uk", "cuisineName": "British", "exampleDishes": ["fish and chips","roast dinner","meat pies"], "surprisePick": false, "source": "British colonial legacy — tea culture, baking, roasts and fish and chips persist across the former British Empire (British cuisine; Amazing Food & Drink: Influence of the British Empire)", "reason": "colonial" },
-        { "cuisineCountryId": "papua-new-guinea", "cuisineName": "Papua New Guinean", "exampleDishes": ["mumu","kaukau"], "surprisePick": false, "source": "Mumu-cooked pork and root crops are shared across the neighbouring Pacific Islands (Wikipedia: Cuisine of Papua New Guinea)", "reason": "proximity" }
+        { "cuisineCountryId": "papua-new-guinea", "cuisineName": "Papua New Guinean", "exampleDishes": ["mumu","kaukau"], "surprisePick": false, "source": "Mumu-cooked pork and root crops are shared across the neighbouring Pacific Islands (Wikipedia: Cuisine of Papua New Guinea)", "reason": "proximity" },
+        { "cuisineCountryId": "vanuatu", "cuisineName": "Ni-Vanuatu", "exampleDishes": ["laplap","tuluk"], "surprisePick": false, "source": "Laplap, root crops and coconut are shared across the neighbouring Melanesian islands (proximity)", "reason": "proximity" }
       ]
     },
     "brunei": {
@@ -2610,7 +2662,8 @@
         { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza","pasta","lasagna"], "surprisePick": false, "source": "OpenStreetMap 2026 (26 italian-tagged restaurants in Barbados)" },
         { "cuisineCountryId": "saint-lucia", "cuisineName": "Saint Lucian", "exampleDishes": ["green fig and saltfish","bouyon"], "surprisePick": false, "source": "Green figs, saltfish and creole stews are shared across the neighbouring Caribbean (Wikipedia: Caribbean cuisine)", "reason": "proximity" },
         { "cuisineCountryId": "dominica", "cuisineName": "Dominica Creole", "exampleDishes": ["callaloo soup","bakes"], "surprisePick": false, "source": "Callaloo and creole dishes are shared across the neighbouring Caribbean (Wikipedia: Caribbean cuisine)", "reason": "proximity" },
-        { "cuisineCountryId": "saint-vincent", "cuisineName": "Vincentian", "exampleDishes": ["roasted breadfruit and jackfish","ducana"], "surprisePick": false, "source": "Roasted breadfruit and saltfish are shared across the neighbouring Caribbean (Wikipedia: Caribbean cuisine)", "reason": "proximity" }
+        { "cuisineCountryId": "saint-vincent", "cuisineName": "Vincentian", "exampleDishes": ["roasted breadfruit and jackfish","ducana"], "surprisePick": false, "source": "Roasted breadfruit and saltfish are shared across the neighbouring Caribbean (Wikipedia: Caribbean cuisine)", "reason": "proximity" },
+        { "cuisineCountryId": "grenada", "cuisineName": "Grenadian", "exampleDishes": ["oil down","nutmeg ice cream"], "surprisePick": false, "source": "Oil down, saltfish and ground provisions are shared across the neighbouring Caribbean (proximity)", "reason": "proximity" }
       ]
     },
     "saint-lucia": {
@@ -2623,7 +2676,8 @@
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burgers","fried chicken","fries"], "surprisePick": false, "source": "OpenStreetMap 2026 (15 american-tagged restaurants in Saint Lucia)" },
         { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["curry","biryani","roti"], "surprisePick": false, "source": "Curry houses and Indian restaurants span the globe with the world's largest diaspora — about 35 million people of Indian origin abroad (Indiandiaspora.org; WEF, 2019)", "reason": "migration" },
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice","chow mein","dumplings"], "surprisePick": false, "source": "OpenStreetMap 2026 (11 chinese-tagged restaurants in Saint Lucia)" },
-        { "cuisineCountryId": "jamaica", "cuisineName": "Jamaican", "exampleDishes": ["jerk chicken","patties","ackee & saltfish"], "surprisePick": false, "source": "Jerk chicken and patties are shared across the Anglophone Caribbean, where Jamaica's cuisine is the region's most recognised (Emerald Cruises; Munchery)", "reason": "proximity" }
+        { "cuisineCountryId": "jamaica", "cuisineName": "Jamaican", "exampleDishes": ["jerk chicken","patties","ackee & saltfish"], "surprisePick": false, "source": "Jerk chicken and patties are shared across the Anglophone Caribbean, where Jamaica's cuisine is the region's most recognised (Emerald Cruises; Munchery)", "reason": "proximity" },
+        { "cuisineCountryId": "dominica", "cuisineName": "Dominica Creole", "exampleDishes": ["callaloo soup","bakes"], "surprisePick": false, "source": "Callaloo, green figs and creole stews are shared across the neighbouring Caribbean (proximity)", "reason": "proximity" }
       ]
     },
     "grenada": {
@@ -2636,7 +2690,8 @@
         { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["curry","biryani","roti"], "surprisePick": false, "source": "Curry houses and Indian restaurants span the globe with the world's largest diaspora — about 35 million people of Indian origin abroad (Indiandiaspora.org; WEF, 2019)", "reason": "migration" },
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice","chow mein","dumplings"], "surprisePick": true, "source": "Chinese restaurants reach virtually every country through the Chinese diaspora, documented even in the world's remotest places (CBC, 'Have You Eaten Yet?', 2022)", "reason": "migration" },
         { "cuisineCountryId": "jamaica", "cuisineName": "Jamaican", "exampleDishes": ["jerk chicken","patties","ackee & saltfish"], "surprisePick": false, "source": "Jerk chicken and patties are shared across the Anglophone Caribbean, where Jamaica's cuisine is the region's most recognised (Emerald Cruises; Munchery)", "reason": "proximity" },
-        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza","pasta","lasagna"], "surprisePick": false, "source": "OpenStreetMap 2026 (10 italian-tagged restaurants in Grenada)" }
+        { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza","pasta","lasagna"], "surprisePick": false, "source": "OpenStreetMap 2026 (10 italian-tagged restaurants in Grenada)" },
+        { "cuisineCountryId": "saint-vincent", "cuisineName": "Vincentian", "exampleDishes": ["roasted breadfruit and jackfish","ducana"], "surprisePick": false, "source": "Roasted breadfruit, saltfish and oil down are shared across the neighbouring Caribbean (proximity)", "reason": "proximity" }
       ]
     },
     "antigua": {
@@ -2649,7 +2704,8 @@
         { "cuisineCountryId": "trinidad", "cuisineName": "Trinidadian", "exampleDishes": ["doubles","roti","callaloo"], "surprisePick": false, "source": "Trinidad's doubles and roti are shared Indo-Caribbean street food across the neighbouring islands (Munchery; Royal Caribbean food guide)", "reason": "proximity" },
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice","chow mein","dumplings"], "surprisePick": false, "source": "OpenStreetMap 2026 (8 chinese-tagged restaurants in Antigua and Barbuda)" },
         { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza","pasta","lasagna"], "surprisePick": true, "source": "OpenStreetMap 2026 (12 italian-tagged restaurants in Antigua and Barbuda)" },
-        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["curry","biryani","roti"], "surprisePick": false, "source": "Curry houses and Indian restaurants span the globe with the world's largest diaspora — about 35 million people of Indian origin abroad (Indiandiaspora.org; WEF, 2019)", "reason": "migration" }
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["curry","biryani","roti"], "surprisePick": false, "source": "Curry houses and Indian restaurants span the globe with the world's largest diaspora — about 35 million people of Indian origin abroad (Indiandiaspora.org; WEF, 2019)", "reason": "migration" },
+        { "cuisineCountryId": "saint-kitts", "cuisineName": "Kittitian", "exampleDishes": ["stewed saltfish","goat water"], "surprisePick": false, "source": "Saltfish, pelau and rice dishes are shared across the neighbouring Caribbean (proximity)", "reason": "proximity" }
       ]
     },
     "dominica": {
@@ -2715,7 +2771,9 @@
         { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi","ramen","tempura"], "surprisePick": false, "source": "Japanese cuisine's global soft-power spread — worldwide Japanese restaurants grew from ~24,000 (2006) to ~117,000 (2017) via washoku gastrodiplomacy (Sahakian & Saito, 2018)", "reason": "soft-power" },
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burgers","fried chicken","fries"], "surprisePick": false, "source": "American fast-food chains (McDonald's, KFC, Domino's) operate in over 100 countries, making US-style food globally ubiquitous as soft power", "reason": "soft-power" },
         { "cuisineCountryId": "samoa", "cuisineName": "Samoan", "exampleDishes": ["sapasui","oka","palusami"], "surprisePick": false, "source": "Samoan palusami and umu feasts are shared across neighbouring Polynesia (Wikipedia: Samoan cuisine)", "reason": "proximity" },
-        { "cuisineCountryId": "tuvalu", "cuisineName": "Tuvaluan", "exampleDishes": ["pulaka","coconut fish"], "surprisePick": false, "source": "Fish, coconut and root crops are shared across the neighbouring Pacific Islands (Wikipedia: Tuvaluan cuisine)", "reason": "proximity" }
+        { "cuisineCountryId": "tuvalu", "cuisineName": "Tuvaluan", "exampleDishes": ["pulaka","coconut fish"], "surprisePick": false, "source": "Fish, coconut and root crops are shared across the neighbouring Pacific Islands (Wikipedia: Tuvaluan cuisine)", "reason": "proximity" },
+        { "cuisineCountryId": "marshall-islands", "cuisineName": "Marshallese", "exampleDishes": ["chukuchuk","grilled fish"], "surprisePick": false, "source": "Fish, breadfruit and coconut are shared across the neighbouring Micronesian islands (proximity)", "reason": "proximity" },
+        { "cuisineCountryId": "nauru", "cuisineName": "Nauruan", "exampleDishes": ["coconut fish","pandanus cakes"], "surprisePick": false, "source": "Fish and coconut dishes are shared across the neighbouring Pacific islands (proximity)", "reason": "proximity" }
       ]
     },
     "micronesia": {
@@ -2757,7 +2815,8 @@
         { "cuisineCountryId": "philippines", "cuisineName": "Filipino", "exampleDishes": ["adobo","lumpia","pancit"], "surprisePick": false, "source": "Adobo, lumpia and rice dishes are shared across the neighbouring western Pacific (Wikipedia: Filipino cuisine)", "reason": "proximity" },
         { "cuisineCountryId": "australia", "cuisineName": "Australian", "exampleDishes": ["meat pies","BBQ","lamingtons"], "surprisePick": false, "source": "Australia is the dominant food exporter to the Pacific — meat pies, lamb and wheat staples are everyday fare across the islands (ScienceDirect, 2022; 'Cheap Meat: Flap Food Nations')", "reason": "trade" },
         { "cuisineCountryId": "south-korea", "cuisineName": "Korean", "exampleDishes": ["korean bbq","bibimbap","kimchi"], "surprisePick": false, "source": "Korean fried chicken and BBQ rode the Hallyu boom to global reach; chains like BBQ Chicken now operate locally (Smithsonian Magazine, 2017)", "reason": "soft-power" },
-        { "cuisineCountryId": "fiji", "cuisineName": "Fijian", "exampleDishes": ["kokoda","lovo","rourou"], "surprisePick": false, "source": "Fiji is the Pacific's culinary hub — kokoda and lovo are shared across neighbouring Melanesia and Polynesia (Travel Food Atlas; Remitly)", "reason": "proximity" }
+        { "cuisineCountryId": "fiji", "cuisineName": "Fijian", "exampleDishes": ["kokoda","lovo","rourou"], "surprisePick": false, "source": "Fiji is the Pacific's culinary hub — kokoda and lovo are shared across neighbouring Melanesia and Polynesia (Travel Food Atlas; Remitly)", "reason": "proximity" },
+        { "cuisineCountryId": "micronesia", "cuisineName": "Micronesian", "exampleDishes": ["breadfruit","pounded taro"], "surprisePick": false, "source": "Fish, taro and coconut are shared across the neighbouring Micronesian islands (proximity)", "reason": "proximity" }
       ]
     },
     "nauru": {
