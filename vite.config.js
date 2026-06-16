@@ -8,4 +8,15 @@ export default defineConfig({
   optimizeDeps: {
     include: ['react-simple-maps', 'prop-types'],
   },
+  build: {
+    rollupOptions: {
+      output: {
+        // The cuisine dataset is large and changes independently of app code;
+        // split it into its own chunk so it caches separately across deploys.
+        manualChunks(id) {
+          if (id.includes('/data/cuisines.json')) return 'cuisine-data'
+        },
+      },
+    },
+  },
 })
