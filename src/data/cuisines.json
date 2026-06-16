@@ -61,7 +61,7 @@
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger","hot dog","pancakes"], "surprisePick": false, "strength": 70, "source": "YouGov Global Cuisine Survey 2019" },
         { "cuisineCountryId": "greece", "cuisineName": "Greek", "exampleDishes": ["souvlaki","moussaka","tzatziki"], "surprisePick": true, "strength": 69, "source": "YouGov Global Cuisine Survey 2019" },
         { "cuisineCountryId": "iceland", "cuisineName": "Icelandic", "exampleDishes": ["skyr","lamb soup","plokkfiskur"], "surprisePick": false, "source": "Skyr conquered Danish (and European) supermarket shelves", "reason": "trade" },
-        { "cuisineCountryId": "norway", "cuisineName": "Norwegian", "exampleDishes": ["salmon sushi","gravlaks","skrei cod"], "surprisePick": false, "source": "Norwegian salmon and seafood are staples shared across the Nordic region (proximity)", "reason": "proximity" }
+        { "cuisineCountryId": "norway", "cuisineName": "Norwegian", "exampleDishes": ["gravlaks","skrei cod","brunost"], "surprisePick": false, "source": "Norwegian salmon and seafood are staples shared across the Nordic region (proximity)", "reason": "proximity" }
       ]
     },
     "finland": {
@@ -292,7 +292,7 @@
         { "cuisineCountryId": "chile", "cuisineName": "Chilean", "exampleDishes": ["completos","empanadas de pino","pastel de choclo"], "surprisePick": false, "source": "Chileans are Sweden’s largest Latin American community (1970s exiles) — completo stands in Stockholm", "reason": "migration" },
         { "cuisineCountryId": "denmark", "cuisineName": "Danish", "exampleDishes": ["smørrebrød","wienerbrød","frikadeller"], "surprisePick": false, "source": "The Oresund region shares Danish baking and smorrebrod with neighbouring Sweden (proximity)", "reason": "proximity" },
         { "cuisineCountryId": "finland", "cuisineName": "Finnish", "exampleDishes": ["salmon soup","Karelian pasties","reindeer stew"], "surprisePick": false, "source": "Sweden Finns are the country's largest minority (~700,000) — Finnish foods are familiar staples (migration)", "reason": "migration" },
-        { "cuisineCountryId": "norway", "cuisineName": "Norwegian", "exampleDishes": ["salmon sushi","gravlaks","skrei cod"], "surprisePick": false, "source": "Gravlaks and seafood are shared across the Nordic neighbours (proximity)", "reason": "proximity" },
+        { "cuisineCountryId": "norway", "cuisineName": "Norwegian", "exampleDishes": ["gravlaks","skrei cod","brunost"], "surprisePick": false, "source": "Gravlaks and seafood are shared across the Nordic neighbours (proximity)", "reason": "proximity" },
         { "cuisineCountryId": "iceland", "cuisineName": "Icelandic", "exampleDishes": ["skyr","lamb soup","plokkfiskur"], "surprisePick": false, "source": "Icelandic skyr is exported and popular across the Nordic countries (trade)", "reason": "trade" }
       ]
     },
