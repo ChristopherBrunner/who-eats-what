@@ -55,7 +55,8 @@
         { "cuisineCountryId": "thailand", "cuisineName": "Thai", "exampleDishes": ["pad thai","massaman curry","som tam"], "surprisePick": false, "strength": 73, "source": "YouGov Global Cuisine Survey 2019" },
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger","hot dog","pancakes"], "surprisePick": false, "strength": 70, "source": "YouGov Global Cuisine Survey 2019" },
         { "cuisineCountryId": "greece", "cuisineName": "Greek", "exampleDishes": ["souvlaki","moussaka","tzatziki"], "surprisePick": true, "strength": 69, "source": "YouGov Global Cuisine Survey 2019" },
-        { "cuisineCountryId": "iceland", "cuisineName": "Icelandic", "exampleDishes": ["skyr","lamb soup","plokkfiskur"], "surprisePick": false, "source": "Skyr conquered Danish (and European) supermarket shelves", "reason": "trade" }
+        { "cuisineCountryId": "iceland", "cuisineName": "Icelandic", "exampleDishes": ["skyr","lamb soup","plokkfiskur"], "surprisePick": false, "source": "Skyr conquered Danish (and European) supermarket shelves", "reason": "trade" },
+        { "cuisineCountryId": "norway", "cuisineName": "Norwegian", "exampleDishes": ["salmon sushi","gravlaks","skrei cod"], "surprisePick": false, "source": "Norwegian salmon and seafood are staples shared across the Nordic region (proximity)", "reason": "proximity" }
       ]
     },
     "finland": {
@@ -186,7 +187,10 @@
         { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["tikka masala","biryani","palak paneer"], "surprisePick": false, "strength": 75, "source": "YouGov Global Cuisine Survey 2019" },
         { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["baguette","croissant","steak frites"], "surprisePick": false, "strength": 74, "source": "YouGov Global Cuisine Survey 2019" },
         { "cuisineCountryId": "thailand", "cuisineName": "Thai", "exampleDishes": ["pad thai","green curry","massaman"], "surprisePick": false, "strength": 74, "source": "YouGov Global Cuisine Survey 2019" },
-        { "cuisineCountryId": "sweden", "cuisineName": "Swedish", "exampleDishes": ["meatballs","gravlax","kanelbullar"], "surprisePick": false, "strength": 62, "source": "YouGov Global Cuisine Survey 2019" }
+        { "cuisineCountryId": "sweden", "cuisineName": "Swedish", "exampleDishes": ["meatballs","gravlax","kanelbullar"], "surprisePick": false, "strength": 62, "source": "YouGov Global Cuisine Survey 2019" },
+        { "cuisineCountryId": "denmark", "cuisineName": "Danish", "exampleDishes": ["smørrebrød","wienerbrød","frikadeller"], "surprisePick": false, "source": "Danish pastries (wienerbrod) and smorrebrod are everyday fare shared across the Nordic neighbours (proximity)", "reason": "proximity" },
+        { "cuisineCountryId": "finland", "cuisineName": "Finnish", "exampleDishes": ["salmon soup","Karelian pasties","reindeer stew"], "surprisePick": false, "source": "Karelian pasties and salmon soup are shared across the Nordic neighbours (proximity)", "reason": "proximity" },
+        { "cuisineCountryId": "iceland", "cuisineName": "Icelandic", "exampleDishes": ["skyr","lamb soup","plokkfiskur"], "surprisePick": false, "source": "Icelandic skyr is now sold across the Nordic countries (trade)", "reason": "trade" }
       ]
     },
     "poland": {
@@ -200,7 +204,8 @@
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum","Peking duck","spring rolls"], "surprisePick": false, "source": "OpenStreetMap 2026 (329 chinese-tagged restaurants in Poland)" },
         { "cuisineCountryId": "ukraine", "cuisineName": "Ukrainian", "exampleDishes": ["borscht","varenyky","holubtsi"], "surprisePick": false, "source": "Borscht and varenyky are shared across neighbouring Eastern Europe (Wikipedia: Ukrainian cuisine)", "reason": "proximity" },
         { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["curry","biryani","naan"], "surprisePick": false, "source": "OpenStreetMap 2026 (282 indian-tagged restaurants in Poland)" },
-        { "cuisineCountryId": "germany", "cuisineName": "German", "exampleDishes": ["schnitzel","bratwurst","pretzels"], "surprisePick": false, "source": "Sausages, schnitzel and beer culture are shared across neighbouring Central Europe (Wikipedia: German cuisine)", "reason": "proximity" }
+        { "cuisineCountryId": "germany", "cuisineName": "German", "exampleDishes": ["schnitzel","bratwurst","pretzels"], "surprisePick": false, "source": "Sausages, schnitzel and beer culture are shared across neighbouring Central Europe (Wikipedia: German cuisine)", "reason": "proximity" },
+        { "cuisineCountryId": "lithuania", "cuisineName": "Lithuanian", "exampleDishes": ["cepelinai","šaltibarščiai"], "surprisePick": false, "source": "Polish-Lithuanian Commonwealth heritage — cepelinai and kugelis are shared with neighbouring Poland (proximity)", "reason": "migration" }
       ]
     },
     "portugal": {
@@ -261,7 +266,11 @@
         { "cuisineCountryId": "thailand", "cuisineName": "Thai", "exampleDishes": ["pad thai","green curry","tom yum"], "surprisePick": true, "strength": 78, "source": "YouGov Global Cuisine Survey 2019" },
         { "cuisineCountryId": "mexico", "cuisineName": "Mexican", "exampleDishes": ["tacos","guacamole","fajitas"], "surprisePick": false, "strength": 77, "source": "YouGov Global Cuisine Survey 2019" },
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum","Peking duck","noodles"], "surprisePick": false, "strength": 74, "source": "YouGov Global Cuisine Survey 2019" },
-        { "cuisineCountryId": "chile", "cuisineName": "Chilean", "exampleDishes": ["completos","empanadas de pino","pastel de choclo"], "surprisePick": false, "source": "Chileans are Sweden’s largest Latin American community (1970s exiles) — completo stands in Stockholm", "reason": "migration" }
+        { "cuisineCountryId": "chile", "cuisineName": "Chilean", "exampleDishes": ["completos","empanadas de pino","pastel de choclo"], "surprisePick": false, "source": "Chileans are Sweden’s largest Latin American community (1970s exiles) — completo stands in Stockholm", "reason": "migration" },
+        { "cuisineCountryId": "denmark", "cuisineName": "Danish", "exampleDishes": ["smørrebrød","wienerbrød","frikadeller"], "surprisePick": false, "source": "The Oresund region shares Danish baking and smorrebrod with neighbouring Sweden (proximity)", "reason": "proximity" },
+        { "cuisineCountryId": "finland", "cuisineName": "Finnish", "exampleDishes": ["salmon soup","Karelian pasties","reindeer stew"], "surprisePick": false, "source": "Sweden Finns are the country's largest minority (~700,000) — Finnish foods are familiar staples (migration)", "reason": "migration" },
+        { "cuisineCountryId": "norway", "cuisineName": "Norwegian", "exampleDishes": ["salmon sushi","gravlaks","skrei cod"], "surprisePick": false, "source": "Gravlaks and seafood are shared across the Nordic neighbours (proximity)", "reason": "proximity" },
+        { "cuisineCountryId": "iceland", "cuisineName": "Icelandic", "exampleDishes": ["skyr","lamb soup","plokkfiskur"], "surprisePick": false, "source": "Icelandic skyr is exported and popular across the Nordic countries (trade)", "reason": "trade" }
       ]
     },
     "switzerland": {
@@ -882,7 +891,9 @@
         { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["tikka masala","biryani","naan"], "surprisePick": false, "source": "OpenStreetMap 2026 (14 indian-tagged restaurants in Lithuania)" },
         { "cuisineCountryId": "thailand", "cuisineName": "Thai", "exampleDishes": ["pad thai","green curry","som tam"], "surprisePick": false, "source": "Thailand's 'Global Thai' gastrodiplomacy programme (2002) grew Thai restaurants worldwide to over 17,000 (Paste Magazine; Food Republic)", "reason": "soft-power" },
         { "cuisineCountryId": "georgia", "cuisineName": "Georgian", "exampleDishes": ["khachapuri","khinkali","badrijani"], "surprisePick": true, "source": "Khinkali chains (Chinkalnia) and Georgian houses are Vilnius dining fixtures", "reason": "soft-power" },
-        { "cuisineCountryId": "germany", "cuisineName": "German", "exampleDishes": ["schnitzel","bratwurst","pretzels"], "surprisePick": false, "source": "Sausages, schnitzel and beer culture are shared across neighbouring Central Europe (Wikipedia: German cuisine)", "reason": "proximity" }
+        { "cuisineCountryId": "germany", "cuisineName": "German", "exampleDishes": ["schnitzel","bratwurst","pretzels"], "surprisePick": false, "source": "Sausages, schnitzel and beer culture are shared across neighbouring Central Europe (Wikipedia: German cuisine)", "reason": "proximity" },
+        { "cuisineCountryId": "latvia", "cuisineName": "Latvian", "exampleDishes": ["grey peas with bacon","rye bread","sklandrausis"], "surprisePick": false, "source": "Rye bread and grey peas are shared across the neighbouring Baltic states (proximity)", "reason": "proximity" },
+        { "cuisineCountryId": "estonia", "cuisineName": "Estonian", "exampleDishes": ["kiluvõileib","black bread","kama"], "surprisePick": false, "source": "Black bread and cold soups are shared across the neighbouring Baltic states (proximity)", "reason": "proximity" }
       ]
     },
     "georgia": {
@@ -1213,7 +1224,8 @@
         { "cuisineCountryId": "germany", "cuisineName": "German", "exampleDishes": ["schnitzel","bratwurst","pretzels"], "surprisePick": false, "source": "Sausages, schnitzel and beer culture are shared across neighbouring Central Europe (Wikipedia: German cuisine)", "reason": "proximity" },
         { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["tikka masala","biryani","naan"], "surprisePick": false, "source": "OpenStreetMap 2026 (10 indian-tagged restaurants in Latvia)" },
         { "cuisineCountryId": "turkey", "cuisineName": "Turkish", "exampleDishes": ["döner kebab","dürüm","lahmacun"], "surprisePick": false, "source": "OpenStreetMap 2026 (129 turkish/kebab-tagged restaurants in Latvia)" },
-        { "cuisineCountryId": "lithuania", "cuisineName": "Lithuanian", "exampleDishes": ["cepelinai","šaltibarščiai"], "surprisePick": false, "source": "Rye bread, potato dishes and cold beet soup are shared across the neighbouring Baltic states (Wikipedia: Baltic cuisine)", "reason": "proximity" }
+        { "cuisineCountryId": "lithuania", "cuisineName": "Lithuanian", "exampleDishes": ["cepelinai","šaltibarščiai"], "surprisePick": false, "source": "Rye bread, potato dishes and cold beet soup are shared across the neighbouring Baltic states (Wikipedia: Baltic cuisine)", "reason": "proximity" },
+        { "cuisineCountryId": "estonia", "cuisineName": "Estonian", "exampleDishes": ["kiluvõileib","black bread","kama"], "surprisePick": false, "source": "Sprats, black bread and kama-style dishes are shared across the neighbouring Baltic states (proximity)", "reason": "proximity" }
       ]
     },
     "estonia": {
@@ -1228,7 +1240,8 @@
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger","fried chicken","cheesecake"], "surprisePick": false, "source": "OpenStreetMap 2026 (159 american-tagged restaurants in Estonia)" },
         { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["tikka masala","biryani","naan"], "surprisePick": false, "source": "OpenStreetMap 2026 (23 indian-tagged restaurants in Estonia)" },
         { "cuisineCountryId": "thailand", "cuisineName": "Thai", "exampleDishes": ["pad thai","green curry","tom yum"], "surprisePick": false, "source": "OpenStreetMap 2026 (25 thai-tagged restaurants in Estonia)" },
-        { "cuisineCountryId": "latvia", "cuisineName": "Latvian", "exampleDishes": ["grey peas with bacon","rye bread","sklandrausis"], "surprisePick": false, "source": "Rye bread and grey peas are shared across the neighbouring Baltic states (Wikipedia: Baltic cuisine)", "reason": "proximity" }
+        { "cuisineCountryId": "latvia", "cuisineName": "Latvian", "exampleDishes": ["grey peas with bacon","rye bread","sklandrausis"], "surprisePick": false, "source": "Rye bread and grey peas are shared across the neighbouring Baltic states (Wikipedia: Baltic cuisine)", "reason": "proximity" },
+        { "cuisineCountryId": "lithuania", "cuisineName": "Lithuanian", "exampleDishes": ["cepelinai","šaltibarščiai"], "surprisePick": false, "source": "Cepelinai and cold beet soup are shared across the neighbouring Baltic states (proximity)", "reason": "proximity" }
       ]
     },
     "paraguay": {
