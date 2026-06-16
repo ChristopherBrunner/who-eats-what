@@ -3,6 +3,7 @@
 // Survey/platform/OSM-only evidence stays untagged: it proves THAT people
 // love a cuisine, not WHY. Idempotent: re-running re-derives all tags.
 // Run: node scripts/tag-reasons.mjs
+import { fileURLToPath } from 'node:url'
 import { readData, writeData } from './format-data.mjs'
 
 const RULES = [
@@ -108,27 +109,36 @@ const OVERRIDES = {
   'italy>malta': 'proximity',           // centuries of Sicilian influence
 }
 
-const data = readData()
-const counts = {}
-for (const [slug, c] of Object.entries(data.countries)) {
-  for (const l of c.loves) {
-    delete l.reason
-    let reason = OVERRIDES[`${slug}>${l.cuisineCountryId}`]
-    if (!reason) {
-      const src = l.source
-      if (!src || SURVEY_ONLY.test(src)) continue
-      const low = src.toLowerCase()
-      for (const [r, pat] of RULES) {
-        if (pat.test(low)) { reason = r; break }
-      }
-    }
-    if (reason) {
-      l.reason = reason
-      counts[reason] = (counts[reason] ?? 0) + 1
-    }
-  }
+// Pure classifier: an explicit override wins (even over survey-only sources,
+// since it encodes the *why*); otherwise survey/platform/OSM evidence stays
+// untagged and keyword RULES (most-specific first) decide. Exported for tests.
+export function classifyReason(source, key) {
+  const override = OVERRIDES[key]
+  if (override) return override
+  if (!source || SURVEY_ONLY.test(source)) return undefined
+  const low = source.toLowerCase()
+  for (const [r, pat] of RULES) if (pat.test(low)) return r
+  return undefined
 }
 
-writeData(data)
-const total = Object.values(counts).reduce((a, b) => a + b, 0)
-console.log(`tagged ${total}:`, counts)
+function main() {
+  const data = readData()
+  const counts = {}
+  for (const [slug, c] of Object.entries(data.countries)) {
+    for (const l of c.loves) {
+      delete l.reason
+      const reason = classifyReason(l.source, `${slug}>${l.cuisineCountryId}`)
+      if (reason) {
+        l.reason = reason
+        counts[reason] = (counts[reason] ?? 0) + 1
+      }
+    }
+  }
+  writeData(data)
+  const total = Object.values(counts).reduce((a, b) => a + b, 0)
+  console.log(`tagged ${total}:`, counts)
+}
+
+// Run the file-writing pass only when invoked directly (so tests can import
+// classifyReason without side effects).
+if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) main()
