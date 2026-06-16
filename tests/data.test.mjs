@@ -111,3 +111,29 @@ test('sourcing coverage stays high (>= 99%)', () => {
   const pct = (100 * sourced) / all.length
   assert.ok(pct >= 99, `sourced coverage dropped to ${pct.toFixed(1)}%`)
 })
+
+test('strength, when present, is an integer 0-100', () => {
+  const bad = all.filter(l => l.strength != null && (!Number.isInteger(l.strength) || l.strength < 0 || l.strength > 100))
+    .map(l => `${l.slug}>${l.cuisineCountryId}=${l.strength}`)
+  assert.deepEqual(bad, [], 'strength must be an integer percentage')
+})
+
+test('example dishes are non-empty trimmed strings', () => {
+  const bad = []
+  for (const l of all) for (const dish of l.exampleDishes) {
+    if (typeof dish !== 'string' || dish !== dish.trim() || dish === '') bad.push(`${l.slug}>${l.cuisineCountryId}: "${dish}"`)
+  }
+  assert.deepEqual(bad, [], 'dishes should be clean strings')
+})
+
+test('country names are non-empty trimmed strings', () => {
+  const bad = Object.entries(countries).filter(([, c]) => typeof c.name !== 'string' || c.name !== c.name.trim() || !c.name).map(([s]) => s)
+  assert.deepEqual(bad, [], 'names should be clean')
+})
+
+test('ISO alpha-2 codes are unique across countries', () => {
+  const byCode = {}
+  for (const [slug, c] of Object.entries(countries)) (byCode[c.code] ??= []).push(slug)
+  const dups = Object.entries(byCode).filter(([, a]) => a.length > 1).map(([code, a]) => `${code}: ${a.join(',')}`)
+  assert.deepEqual(dups, [], 'ISO codes must be unique')
+})

@@ -43,3 +43,25 @@ test('Kosovo is reachable via the NAME_TO_ID fallback (id-less in TopoJSON)', ()
   assert.ok(countries.kosovo, 'kosovo has data')
   assert.ok(centroids.kosovo, 'kosovo has a centroid')
 })
+
+test('no two countries share an identical centroid (copy-error guard)', () => {
+  const seen = {}
+  const dups = []
+  for (const [slug, v] of Object.entries(centroids)) {
+    const key = v.join(',')
+    if (seen[key]) dups.push(`${slug} == ${seen[key]}`)
+    else seen[key] = slug
+  }
+  assert.deepEqual(dups, [], 'centroids should be distinct per country')
+})
+
+test('NUMERIC_TO_ID keys are bare (unpadded) numeric strings', () => {
+  // The zero-padding bug: TopoJSON ids are padded ('040') but keys must be bare
+  // ('40'); countryIdFromGeoId normalises via String(Number(id)).
+  const numBlock = mapSrc.match(/NUMERIC_TO_ID[^=]*=\s*\{([\s\S]*?)\n\}/)[1]
+  const bad = []
+  for (const m of numBlock.matchAll(/'(\d+)':/g)) {
+    if (String(Number(m[1])) !== m[1]) bad.push(m[1])
+  }
+  assert.deepEqual(bad, [], 'NUMERIC_TO_ID keys must be unpadded')
+})
