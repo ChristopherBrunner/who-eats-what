@@ -97,6 +97,12 @@ const OVERRIDES = {
   'sao-tome>brazil': 'soft-power',
   'guinea-bissau>brazil': 'soft-power',
   'cape-verde>brazil': 'soft-power',
+  // These had NO direct colonial tie — the link is third-party diaspora or
+  // cultural emulation, not colonialism (the 'qajar-era'/'indenture' keywords
+  // over-fired). Correct them explicitly.
+  'iran>france': 'soft-power',          // Qajar elite emulated French chefs, not colonised
+  'trinidad>china': 'migration',        // Cantonese indenture diaspora
+  'myanmar>india': 'migration',         // Indian migration (Britain colonised Burma, not India)
 }
 
 const data = readData()

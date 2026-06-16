@@ -744,7 +744,7 @@
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["dim sum","fried rice","noodles"], "surprisePick": false, "source": "OpenStreetMap 2026 (17 chinese-tagged restaurants in Iran)" },
         { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["biryani","curry","naan"], "surprisePick": false, "source": "OpenStreetMap 2026 (12 indian-tagged restaurants in Iran)" },
         { "cuisineCountryId": "turkey", "cuisineName": "Turkish", "exampleDishes": ["döner kebab","baklava","köfte"], "surprisePick": false, "source": "OpenStreetMap 2026 (786 turkish-tagged restaurants in Iran)" },
-        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["patisserie","croissant","crème brûlée"], "surprisePick": true, "source": "Qajar-era French chefs shaped Iranian pâtisserie: shirini napoleoni, naan khamei choux and génoise birthday cakes", "reason": "colonial" },
+        { "cuisineCountryId": "france", "cuisineName": "French", "exampleDishes": ["patisserie","croissant","crème brûlée"], "surprisePick": true, "source": "Qajar-era French chefs shaped Iranian pâtisserie: shirini napoleoni, naan khamei choux and génoise birthday cakes", "reason": "soft-power" },
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger","fried chicken","BBQ"], "surprisePick": false, "source": "Bootleg American fast-food chains ubiquitous (Mash Donald’s et al.) — burgers spread even to remote villages (Atlas Obscura)", "reason": "soft-power" }
       ]
     },
@@ -976,7 +976,7 @@
       "code": "MM",
       "loves": [
         { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["hot pot","dim sum","Yunnan noodles"], "surprisePick": false, "source": "OpenStreetMap 2026 (309 chinese-tagged restaurants in Myanmar)" },
-        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["curry","biryani","roti"], "surprisePick": true, "source": "Danbauk (Burmese biryani) is a national staple; samusa and curries arrived via colonial-era Indian migration", "reason": "colonial" },
+        { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["curry","biryani","roti"], "surprisePick": true, "source": "Danbauk (Burmese biryani) is a national staple; samusa and curries arrived via colonial-era Indian migration", "reason": "migration" },
         { "cuisineCountryId": "thailand", "cuisineName": "Thai", "exampleDishes": ["pad thai","green curry","som tam"], "surprisePick": false, "source": "OpenStreetMap 2026 (207 thai-tagged restaurants in Myanmar)" },
         { "cuisineCountryId": "south-korea", "cuisineName": "Korean", "exampleDishes": ["Korean BBQ","fried chicken","ramyeon"], "surprisePick": false, "source": "OpenStreetMap 2026 (16 korean-tagged restaurants in Myanmar)" },
         { "cuisineCountryId": "japan", "cuisineName": "Japanese", "exampleDishes": ["sushi","ramen","gyoza"], "surprisePick": false, "source": "OpenStreetMap 2026 (65 japanese-tagged restaurants in Myanmar)" },
@@ -1601,7 +1601,7 @@
       "code": "TT",
       "loves": [
         { "cuisineCountryId": "india", "cuisineName": "Indian", "exampleDishes": ["doubles","roti","curry"], "surprisePick": true, "source": "OpenStreetMap 2026 (40 indian-tagged restaurants in Trinidad & Tobago)" },
-        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice","chow mein","dim sum"], "surprisePick": false, "source": "Caribbean-Chinese cuisine: 19th-century Cantonese indenture diaspora made Chinese food a West Indian restaurant mainstay", "reason": "colonial" },
+        { "cuisineCountryId": "china", "cuisineName": "Chinese", "exampleDishes": ["fried rice","chow mein","dim sum"], "surprisePick": false, "source": "Caribbean-Chinese cuisine: 19th-century Cantonese indenture diaspora made Chinese food a West Indian restaurant mainstay", "reason": "migration" },
         { "cuisineCountryId": "usa", "cuisineName": "American", "exampleDishes": ["burger","fried chicken","BBQ"], "surprisePick": false, "source": "OpenStreetMap 2026 (91 american-tagged restaurants in Trinidad & Tobago)" },
         { "cuisineCountryId": "uk", "cuisineName": "British", "exampleDishes": ["fish and chips","Sunday roast","sausage rolls"], "surprisePick": false, "source": "British colonial legacy — tea culture, baking, roasts and fish and chips persist across the former British Empire (British cuisine; Amazing Food & Drink: Influence of the British Empire)", "reason": "colonial" },
         { "cuisineCountryId": "italy", "cuisineName": "Italian", "exampleDishes": ["pizza","pasta","risotto"], "surprisePick": false, "source": "OpenStreetMap 2026 (101 italian-tagged restaurants in Trinidad & Tobago)" },
