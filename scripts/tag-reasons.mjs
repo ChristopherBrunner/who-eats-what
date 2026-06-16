@@ -92,6 +92,11 @@ const OVERRIDES = {
   'tonga>china': 'migration',
   'nauru>china': 'migration',
   'kosovo>usa': 'soft-power',           // post-1999 Americophilia
+  'netherlands>suriname': 'migration',  // Surinamese-Dutch diaspora
+  'mozambique>brazil': 'soft-power',    // Brazilian cultural reach in Lusophone Africa
+  'sao-tome>brazil': 'soft-power',
+  'guinea-bissau>brazil': 'soft-power',
+  'cape-verde>brazil': 'soft-power',
 }
 
 const data = readData()
