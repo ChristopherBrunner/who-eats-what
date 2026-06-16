@@ -239,9 +239,24 @@ const NUMERIC_TO_ID: Record<string, string> = {
   '798': 'tuvalu',
 }
 
+// A few world-atlas geometries carry no numeric id (Natural Earth leaves
+// Kosovo, N. Cyprus and Somaliland id-less). Match the ones we have data for
+// by their geometry name instead.
+const NAME_TO_ID: Record<string, string> = {
+  'Kosovo': 'kosovo',
+}
+
 // TopoJSON geometry IDs are zero-padded ('040'), NUMERIC_TO_ID keys are not.
 export function countryIdFromGeoId(geoId: unknown): string | undefined {
   return NUMERIC_TO_ID[String(Number(geoId))]
+}
+
+// Resolve a geometry to a data slug: numeric id first, then name fallback.
+export function countryIdFromGeo(geo: { id?: unknown; properties?: { name?: string } }): string | undefined {
+  const byId = countryIdFromGeoId(geo.id)
+  if (byId) return byId
+  const name = geo.properties?.name
+  return name ? NAME_TO_ID[name] : undefined
 }
 
 const MAP_COLORS = {
@@ -403,7 +418,7 @@ export function WorldMap({ selectedCountry, homeCountry, mode, revealedSet, phas
         <Geographies geography={GEO_URL}>
           {({ geographies }) =>
             geographies.map(geo => {
-              const countryId = countryIdFromGeoId(geo.id)
+              const countryId = countryIdFromGeo(geo)
               const isInteractive = Boolean(countryId)
               const isHovered = countryId === hoveredCountry
               const isPulsing = !selectedCountry && countryId === homeCountry

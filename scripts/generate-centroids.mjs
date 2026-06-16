@@ -19,9 +19,14 @@ const block = mapSrc.match(/NUMERIC_TO_ID[^=]*=\s*\{([\s\S]*?)\n\}/)[1]
 const numericToId = {}
 for (const m of block.matchAll(/'(\d+)':\s*'([a-z0-9-]+)'/g)) numericToId[m[1]] = m[2]
 
+// Some geometries are id-less (e.g. Kosovo) and matched by name on the map.
+const nameBlock = mapSrc.match(/NAME_TO_ID[^=]*=\s*\{([\s\S]*?)\n\}/)
+const nameToId = {}
+if (nameBlock) for (const m of nameBlock[1].matchAll(/'([^']+)':\s*'([a-z0-9-]+)'/g)) nameToId[m[1]] = m[2]
+
 const centroids = {}
 for (const geom of topo.objects.countries.geometries) {
-  const slug = numericToId[String(Number(geom.id))]
+  const slug = numericToId[String(Number(geom.id))] || nameToId[geom.properties?.name]
   if (!slug) continue
   const [lon, lat] = geoCentroid(feature(topo, geom))
   centroids[slug] = [Math.round(lon * 10) / 10, Math.round(lat * 10) / 10]

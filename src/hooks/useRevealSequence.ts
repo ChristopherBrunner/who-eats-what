@@ -25,7 +25,7 @@ const SHAPELESS_COUNTRIES = new Set([
   'andorra', 'monaco', 'liechtenstein', 'san-marino', 'bahrain', 'maldives',
   'comoros', 'seychelles', 'sao-tome', 'barbados', 'saint-lucia', 'grenada',
   'antigua', 'dominica', 'saint-kitts', 'saint-vincent', 'tonga', 'kiribati',
-  'micronesia', 'palau', 'marshall-islands', 'nauru', 'tuvalu', 'kosovo',
+  'micronesia', 'palau', 'marshall-islands', 'nauru', 'tuvalu',
 ])
 
 function revealDelayMs(index: number, count: number): number {

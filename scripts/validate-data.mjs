@@ -29,6 +29,13 @@ if (!mapBlock) {
   }
 }
 
+// Geometries matched by name instead of numeric id (e.g. Kosovo, which the
+// world-atlas TopoJSON leaves id-less) are clickable too.
+const nameBlock = mapSrc.match(/NAME_TO_ID[^=]*=\s*\{([\s\S]*?)\n\}/)
+if (nameBlock) {
+  for (const m of nameBlock[1].matchAll(/:\s*'([a-z0-9-]+)'/g)) mapSlugs.add(m[1])
+}
+
 for (const [slug, c] of Object.entries(countries)) {
   if (!c.name) errors.push(`${slug}: missing name`)
   if (!/^[A-Z]{2}$/.test(c.code ?? '')) errors.push(`${slug}: bad ISO code "${c.code}"`)
