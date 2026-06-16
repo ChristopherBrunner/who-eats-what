@@ -103,6 +103,8 @@ const OVERRIDES = {
   'iran>france': 'soft-power',          // Qajar elite emulated French chefs, not colonised
   'trinidad>china': 'migration',        // Cantonese indenture diaspora
   'myanmar>india': 'migration',         // Indian migration (Britain colonised Burma, not India)
+  'austria>hungary': 'proximity',       // Austro-Hungarian shared table
+  'argentina>uruguay': 'proximity',     // one Rio de la Plata cuisine
 }
 
 const data = readData()
