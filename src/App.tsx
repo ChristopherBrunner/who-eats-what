@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Routes, Route, useParams, useNavigate } from 'react-router-dom'
 import { WorldMap } from './components/EuropeMap'
 import { SidePanel } from './components/SidePanel'
@@ -143,9 +143,23 @@ function MapView({ homeCountry, idleMode, onIdleModeChange }: {
   // How-it-works window; closes on any click outside it (ocean included).
   const [helpOpen, setHelpOpen] = useState(false)
 
-  // Ocean misclicks while the panel is open don't close it (closing shifts
-  // the map out from under the cursor) — they nudge the × button instead.
-  const [closeNudge, setCloseNudge] = useState(0)
+  // Ocean clicks deselect, but the map holds its compressed width for a
+  // grace period first — a misclicked target hasn't moved, so the user can
+  // simply click it again. Deliberate closes (×, Escape) expand right away.
+  const [compressed, setCompressed] = useState(Boolean(countryId))
+  const softClose = useRef(false)
+  useEffect(() => {
+    if (countryId) {
+      setCompressed(true)
+      return
+    }
+    if (softClose.current) {
+      softClose.current = false
+      const t = window.setTimeout(() => setCompressed(false), 1600)
+      return () => window.clearTimeout(t)
+    }
+    setCompressed(false)
+  }, [countryId])
 
   // Escape backs out: help window first, then the selected country.
   useEffect(() => {
@@ -189,7 +203,7 @@ function MapView({ homeCountry, idleMode, onIdleModeChange }: {
     >
 
       {/* map yields the panel's width so it never sits underneath it */}
-      <div className={`absolute inset-y-0 left-0 transition-[right] duration-300 ${countryId ? 'right-[400px]' : 'right-0'}`}>
+      <div className={`absolute inset-y-0 left-0 transition-[right] duration-300 ${compressed ? 'right-[400px]' : 'right-0'}`}>
         <WorldMap
           selectedCountry={countryId ?? null}
           homeCountry={homeCountry}
@@ -199,7 +213,12 @@ function MapView({ homeCountry, idleMode, onIdleModeChange }: {
           silentReveal={silent}
           previewCountry={previewCountry}
           onCountryClick={handleCountryClick}
-          onBackgroundClick={() => { if (countryId) setCloseNudge(n => n + 1) }}
+          onBackgroundClick={() => {
+            if (countryId) {
+              softClose.current = true
+              navigate('/')
+            }
+          }}
         />
       </div>
 
@@ -212,32 +231,35 @@ function MapView({ homeCountry, idleMode, onIdleModeChange }: {
         className="pointer-events-none absolute inset-0 transition-opacity duration-700"
         style={{
           opacity: mode === 'loves' ? 1 : 0,
-          // stacked shadows at staggered radii/alphas — a single big dark
-          // shadow shows 8-bit banding rings; layering dithers the falloff.
-          // Light needs a much stronger mix against the parchment.
-          boxShadow: scheme === 'light'
-            ? `inset 0 0 70px color-mix(in srgb, ${ACCENT_UI.loves.light} 30%, transparent),
-               inset 0 0 140px color-mix(in srgb, ${ACCENT_UI.loves.light} 25%, transparent),
-               inset 0 0 240px color-mix(in srgb, ${ACCENT_UI.loves.light} 22%, transparent)`
-            : `inset 0 0 50px color-mix(in srgb, ${ACCENT_UI.loves.dark} 10%, transparent),
-               inset 0 0 90px color-mix(in srgb, ${ACCENT_UI.loves.dark} 8%, transparent),
-               inset 0 0 150px color-mix(in srgb, ${ACCENT_UI.loves.dark} 7%, transparent),
-               inset 0 0 230px color-mix(in srgb, ${ACCENT_UI.loves.dark} 6%, transparent)`,
+          // Eased multi-stop radial gradient, NOT box-shadow: shadow blur
+          // quantizes into visible rings on dark, and two-stop gradients
+          // show Mach bands — many stops on an easing curve interpolate
+          // smoothly. Light needs a stronger mix against the parchment.
+          background: (() => {
+            const c = ACCENT_UI.loves[scheme]
+            const max = scheme === 'light' ? 55 : 24
+            const stop = (t: number, at: number) =>
+              `color-mix(in srgb, ${c} ${Math.round(max * t * 100) / 100}%, transparent) ${at}%`
+            return `radial-gradient(115% 115% at 50% 50%, transparent 38%, ${[
+              stop(0.03, 50), stop(0.1, 60), stop(0.22, 69), stop(0.4, 78),
+              stop(0.63, 87), stop(0.85, 94), stop(1, 100),
+            ].join(', ')})`
+          })(),
         }}
-      >
-        {/* fine grain confined to the edges — perceptual dither for the
-            residual banding that stacked shadows can't fully hide on dark */}
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='128' height='128'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='128' height='128' filter='url(%23n)'/%3E%3C/svg%3E")`,
-            opacity: scheme === 'light' ? 0.05 : 0.07,
-            mixBlendMode: 'overlay',
-            maskImage: 'radial-gradient(ellipse at center, transparent 45%, black 92%)',
-            WebkitMaskImage: 'radial-gradient(ellipse at center, transparent 45%, black 92%)',
-          }}
-        />
-      </div>
+      />
+      {/* grain sibling (NOT nested: a fading parent isolates blending, which
+          made the overlay blend shift as the fade finished — the old snap) */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 transition-opacity duration-700"
+        style={{
+          opacity: mode === 'loves' ? (scheme === 'light' ? 0.06 : 0.11) : 0,
+          backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='128' height='128'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='128' height='128' filter='url(%23n)'/%3E%3C/svg%3E")`,
+          mixBlendMode: 'overlay',
+          maskImage: 'radial-gradient(ellipse at center, transparent 40%, black 90%)',
+          WebkitMaskImage: 'radial-gradient(ellipse at center, transparent 40%, black 90%)',
+        }}
+      />
 
       {/* wordmark: quiet caps on the baseline of a big glowing serif-italic
           "eats" in the live mode accent, a tiny heart beating off the final s */}
@@ -282,7 +304,6 @@ function MapView({ homeCountry, idleMode, onIdleModeChange }: {
       {countryId && (
         <SidePanel
           countryId={countryId}
-          closeNudge={closeNudge}
           mode={mode}
           revealedSet={revealedSet}
           revealedCount={revealedCount}

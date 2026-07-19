@@ -12,8 +12,12 @@ const centroids = rawCentroids as unknown as Record<string, [number, number]>
 // Remaining reveals accelerate via sqrt curve from INITIAL_MS → TOTAL_MS.
 export const REVEAL_INITIAL_MS = 700
 export const REVEAL_TOTAL_MS = 3000
-// The completion ding fires just after the last tick (see sounds.ts).
-const DONE_MS = REVEAL_TOTAL_MS + 40
+// Heart particles travel this long from reveal to landing (EuropeMap's
+// drift/ripple timings derive from it too).
+export const HEART_FLIGHT_MS = 850
+// Completion (ding + finale) waits for the LAST heart to land, not just
+// the last reveal — otherwise the finale fires while hearts are mid-air.
+const DONE_MS = REVEAL_TOTAL_MS + HEART_FLIGHT_MS + 40
 
 export type RevealPhase = 'idle' | 'revealing' | 'done'
 
@@ -89,6 +93,7 @@ export function useRevealSequence(selectedCountry: string | null, mode: ViewMode
     const stopSounds = scheduleRevealSounds(
       orderedIds.length, REVEAL_INITIAL_MS, REVEAL_TOTAL_MS,
       mode === 'loves' ? 'falling' : 'rising',
+      HEART_FLIGHT_MS,
     )
 
     const start = performance.now()

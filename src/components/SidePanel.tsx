@@ -15,8 +15,6 @@ interface LovedByEntry {
 
 interface Props {
   countryId: string
-  /** Bumped when the user misclicks the ocean — pulses the close button. */
-  closeNudge: number
   mode: ViewMode
   revealedSet: Set<string>
   revealedCount: number
@@ -136,7 +134,7 @@ function EntryRow({ targetId, title, relationship, revealed, expanded, onToggle,
   )
 }
 
-export function SidePanel({ countryId, closeNudge, mode, revealedSet, revealedCount, phase, onModeChange, onSelectCountry, onClose }: Props) {
+export function SidePanel({ countryId, mode, revealedSet, revealedCount, phase, onModeChange, onSelectCountry, onClose }: Props) {
   const country = countriesData.countries[countryId]
 
   const lovedBy: LovedByEntry[] = useMemo(() => {
@@ -182,11 +180,10 @@ export function SidePanel({ countryId, closeNudge, mode, revealedSet, revealedCo
   return (
     <div className="absolute top-0 right-0 h-full w-[400px] flex flex-col bg-[#ece4d2]/96 dark:bg-[#0b0a08]/96 backdrop-blur-sm border-l border-[#d4ccbf] dark:border-[#1c1a15]">
 
-      {/* Close — replays the nudge animation on every ocean misclick */}
+      {/* Close */}
       <button
-        key={closeNudge}
         onClick={onClose}
-        className={`absolute top-5 right-6 text-[#b0a898] dark:text-[#3a3830] hover:text-[#6a6050] dark:hover:text-[#7a7468] transition-colors text-xl leading-none ${closeNudge > 0 ? 'animate-close-nudge' : ''}`}
+        className="absolute top-5 right-6 text-[#b0a898] dark:text-[#3a3830] hover:text-[#6a6050] dark:hover:text-[#7a7468] transition-colors text-xl leading-none"
         aria-label="Close panel"
       >
         ×

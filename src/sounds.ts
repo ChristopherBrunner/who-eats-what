@@ -136,6 +136,9 @@ export function scheduleRevealSounds(
   // 'rising' for loved-by (affection arriving), 'falling' for loves
   // (appetite reaching out) — the modes sound mirrored.
   pitchDirection: 'rising' | 'falling' = 'rising',
+  // Extra wait before the completion ding (heart flight time — the ding
+  // marks the last heart LANDING, in sync with the visual finale).
+  dingExtraMs = 0,
 ): () => void {
   const ctx = sharedCtx
   if (!ctx || count === 0) return () => {}
@@ -164,7 +167,7 @@ export function scheduleRevealSounds(
       nodes.push(tick(ctx, t, pitch))
     }
 
-    nodes.push(...completionDing(ctx, now + totalSec + 0.04))
+    nodes.push(...completionDing(ctx, now + totalSec + dingExtraMs / 1000 + 0.04))
   }
 
   if (ctx.state === 'running') {

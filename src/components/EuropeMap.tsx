@@ -3,7 +3,7 @@ import { ComposableMap, Geographies, Geography, Marker, ZoomableGroup } from 're
 import { geoRobinson } from 'd3-geo-projection'
 import type { Country, ViewMode } from '../types'
 import { useColorScheme } from '../hooks/useColorScheme'
-import { REVEAL_INITIAL_MS, SHAPELESS_COUNTRIES, type RevealPhase } from '../hooks/useRevealSequence'
+import { REVEAL_INITIAL_MS, HEART_FLIGHT_MS, SHAPELESS_COUNTRIES, type RevealPhase } from '../hooks/useRevealSequence'
 import { ensureAudioReady } from '../sounds'
 import { flagUrl } from '../flags'
 import rawData from '../data/cuisines.json'
@@ -304,6 +304,8 @@ const MODE_ACCENTS: Record<ViewMode, Record<'dark' | 'light', {
   strengthStrong: string
   borderSelected: string
   borderHighlighted: string
+  /** hearts/ripples/bursts — deliberately distinct from the fills */
+  effect: string
 }>> = {
   'loved-by': {
     dark: {
@@ -314,6 +316,7 @@ const MODE_ACCENTS: Record<ViewMode, Record<'dark' | 'light', {
       strengthStrong:    '#a85419',
       borderSelected:    '#c4802e',
       borderHighlighted: '#7a3b1c',
+      effect:            '#ffd9a0',
     },
     light: {
       selected:          '#d97f1f',
@@ -323,6 +326,7 @@ const MODE_ACCENTS: Record<ViewMode, Record<'dark' | 'light', {
       strengthStrong:    '#b55708',
       borderSelected:    '#c9731a',
       borderHighlighted: '#c07b2e',
+      effect:            '#8f4a06',
     },
   },
   'loves': {
@@ -334,6 +338,7 @@ const MODE_ACCENTS: Record<ViewMode, Record<'dark' | 'light', {
       strengthStrong:    '#b03a55',
       borderSelected:    '#cf4d68',
       borderHighlighted: '#70283c',
+      effect:            '#ffc2d1',
     },
     light: {
       selected:          '#c93b58',
@@ -343,6 +348,7 @@ const MODE_ACCENTS: Record<ViewMode, Record<'dark' | 'light', {
       strengthStrong:    '#a11f3d',
       borderSelected:    '#b52e4a',
       borderHighlighted: '#c25b74',
+      effect:            '#8f1f3d',
     },
   },
 }
@@ -498,7 +504,7 @@ export function WorldMap({ selectedCountry, homeCountry, mode, revealedSet, phas
       // In loved-by the selection is the receiver: once the first heart lands
       // (first reveal + flight time) it throbs with the incoming stream.
       const throb = mode === 'loved-by'
-        ? `, selection-throb 700ms ease-in-out ${REVEAL_INITIAL_MS + 850}ms infinite`
+        ? `, selection-throb 700ms ease-in-out ${REVEAL_INITIAL_MS + HEART_FLIGHT_MS}ms infinite`
         : ''
       return `selected-charge ${REVEAL_INITIAL_MS}ms ease-out${throb}`
     }
@@ -512,8 +518,8 @@ export function WorldMap({ selectedCountry, homeCountry, mode, revealedSet, phas
         return `completion-pulse 450ms ease-in-out ${delay}ms`
       }
       // In loves mode each revealed country is a receiver: blip when its
-      // heart arrives, 850ms (the flight time) after it lit up.
-      const arrive = mode === 'loves' ? ', heart-arrive 400ms ease-out 850ms' : ''
+      // heart arrives, one flight time after it lit up.
+      const arrive = mode === 'loves' ? `, heart-arrive 400ms ease-out ${HEART_FLIGHT_MS}ms` : ''
       return `reveal-pop 350ms ease-out${arrive}`
     }
     return undefined
@@ -578,9 +584,9 @@ export function WorldMap({ selectedCountry, homeCountry, mode, revealedSet, phas
         }
         /* Finale: the selection flashes with a glow while rings burst outward */
         @keyframes selection-finale {
-          0%   { filter: brightness(1) drop-shadow(0 0 0px ${hexToRgba(C.selected, 0)}); }
-          30%  { filter: brightness(1.75) drop-shadow(0 0 16px ${hexToRgba(C.selected, 0.95)}); }
-          100% { filter: brightness(1) drop-shadow(0 0 0px ${hexToRgba(C.selected, 0)}); }
+          0%   { filter: brightness(1) drop-shadow(0 0 0px ${hexToRgba(C.effect, 0)}); }
+          30%  { filter: brightness(1.75) drop-shadow(0 0 16px ${hexToRgba(C.effect, 0.95)}); }
+          100% { filter: brightness(1) drop-shadow(0 0 0px ${hexToRgba(C.effect, 0)}); }
         }
         @keyframes burst-ring {
           from { transform: scale(0.15); opacity: 0.95; }
@@ -748,12 +754,14 @@ export function WorldMap({ selectedCountry, homeCountry, mode, revealedSet, phas
                   style={{
                     '--dx': `${from[0] - to[0]}px`,
                     '--dy': `${from[1] - to[1]}px`,
-                    animation: 'particle-drift 850ms cubic-bezier(0.4, 0, 0.6, 1) forwards',
+                    animation: `particle-drift ${HEART_FLIGHT_MS}ms cubic-bezier(0.4, 0, 0.6, 1) forwards`,
                   } as React.CSSProperties}
                 >
                   <path
                     d={HEART_PATH}
-                    fill={C.selected}
+                    fill={C.effect}
+                    stroke={colorScheme === 'dark' ? 'rgba(15, 12, 8, 0.5)' : 'rgba(255, 252, 244, 0.65)'}
+                    strokeWidth={2}
                     transform={`translate(${to[0]} ${to[1]}) scale(${0.25 / zoomK}) translate(-12 -12)`}
                   />
                 </g>
@@ -763,12 +771,12 @@ export function WorldMap({ selectedCountry, homeCountry, mode, revealedSet, phas
                     <circle
                       r={4 / zoomK}
                       fill="none"
-                      stroke={C.selected}
+                      stroke={C.effect}
                       strokeWidth={1 / zoomK}
                       opacity="0"
                       style={{
                         transformOrigin: '0 0',
-                        animation: 'arrival-ripple 500ms ease-out 780ms forwards',
+                        animation: `arrival-ripple 500ms ease-out ${HEART_FLIGHT_MS - 70}ms forwards`,
                       }}
                     />
                   </g>
@@ -790,7 +798,7 @@ export function WorldMap({ selectedCountry, homeCountry, mode, revealedSet, phas
               <circle
                 r={14 / zoomK}
                 fill="none"
-                stroke={C.selected}
+                stroke={C.effect}
                 strokeWidth={1.8 / zoomK}
                 opacity="0"
                 style={{
@@ -809,7 +817,7 @@ export function WorldMap({ selectedCountry, homeCountry, mode, revealedSet, phas
                 <path
                   d={HEART_PATH}
                   fill="none"
-                  stroke={C.selected}
+                  stroke={C.effect}
                   strokeWidth={1.6}
                   transform={`scale(${0.55 / zoomK}) translate(-12 -12)`}
                   style={{ vectorEffect: 'non-scaling-stroke' }}
@@ -832,7 +840,9 @@ export function WorldMap({ selectedCountry, homeCountry, mode, revealedSet, phas
                   >
                     <path
                       d={HEART_PATH}
-                      fill={C.selected}
+                      fill={C.effect}
+                      stroke={colorScheme === 'dark' ? 'rgba(15, 12, 8, 0.5)' : 'rgba(255, 252, 244, 0.65)'}
+                      strokeWidth={2}
                       transform={`scale(${(i % 2 ? 0.16 : 0.21) / zoomK}) translate(-12 -12)`}
                     />
                   </g>
