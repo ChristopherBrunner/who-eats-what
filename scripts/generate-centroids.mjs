@@ -4,7 +4,7 @@
 import { writeFileSync, readFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 import { dirname, join } from 'node:path'
-import { geoCentroid } from 'd3-geo'
+import { geoCentroid, geoArea } from 'd3-geo'
 import { feature } from 'topojson-client'
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..')
@@ -28,7 +28,20 @@ const centroids = {}
 for (const geom of topo.objects.countries.geometries) {
   const slug = numericToId[String(Number(geom.id))] || nameToId[geom.properties?.name]
   if (!slug) continue
-  const [lon, lat] = geoCentroid(feature(topo, geom))
+  // Centroid of the LARGEST polygon only: whole-multipolygon centroids get
+  // dragged by far-flung territories (France + French Guiana landed in the
+  // Bay of Biscay; Alaska pulls the USA; Svalbard pulls Norway).
+  const f = feature(topo, geom)
+  let target = f
+  if (f.geometry.type === 'MultiPolygon') {
+    let bestArea = -1
+    for (const coords of f.geometry.coordinates) {
+      const poly = { type: 'Polygon', coordinates: coords }
+      const a = geoArea(poly)
+      if (a > bestArea) { bestArea = a; target = poly }
+    }
+  }
+  const [lon, lat] = geoCentroid(target)
   centroids[slug] = [Math.round(lon * 10) / 10, Math.round(lat * 10) / 10]
 }
 
