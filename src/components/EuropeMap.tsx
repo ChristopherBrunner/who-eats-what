@@ -413,8 +413,14 @@ export function WorldMap({ selectedCountry, homeCountry, mode, revealedSet, phas
       setZoomK(liveZoom.current)
     })
   }, [])
+  // After a zoom-in gesture Chrome keeps the layer's stale low-res raster
+  // until something in it repaints (that's why mouse-hover un-blurred it).
+  // Alternating fill-opacity by 1/20000 on gesture end is an invisible paint
+  // invalidation that forces a re-raster at the settled scale.
+  const [rasterBump, setRasterBump] = useState(0)
   const handleMoveEnd = useCallback(({ zoom }: { zoom: number }) => {
     setZoomK(zoom)
+    setRasterBump(b => b + 1)
   }, [])
 
   // Survey strength of each highlighted country's relationship to the
@@ -551,6 +557,7 @@ export function WorldMap({ selectedCountry, homeCountry, mode, revealedSet, phas
             which are otherwise dead for drag/zoom gestures. d3-zoom's extent
             comes from the svg viewBox, so an oversized rect is harmless. */}
         <rect x={-2000} y={-2000} width={4960} height={4500} fill="transparent" style={{ pointerEvents: 'all' }} />
+        <g fillOpacity={rasterBump % 2 ? 0.99995 : 1}>
         <Geographies geography={GEO_URL}>
           {({ geographies }) =>
             geographies.map(geo => {
@@ -674,6 +681,7 @@ export function WorldMap({ selectedCountry, homeCountry, mode, revealedSet, phas
             )
           })
         })()}
+        </g>
         </ZoomableGroup>
       </ComposableMap>
 
