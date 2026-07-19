@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react'
 import type { RevealPhase } from '../hooks/useRevealSequence'
 import type { Country, CuisineRelationship, ViewMode } from '../types'
+import { lovesModeUsed, markLovesModeUsed } from '../modeDiscovery'
 import rawData from '../data/cuisines.json'
 
 const countriesData = rawData as { countries: Record<string, Country> }
@@ -50,7 +51,7 @@ function EntryRow({ targetId, title, relationship, revealed, expanded, onToggle,
       <div className="flex items-baseline justify-between gap-3">
         <button
           onClick={() => onSelectCountry(targetId)}
-          className="text-[#241e14] dark:text-[#d4c9b0] text-[13px] font-medium hover:text-[#c4802e] dark:hover:text-[#c4802e] transition-colors cursor-pointer text-left"
+          className="text-[#241e14] dark:text-[#d4c9b0] text-[13px] font-medium hover:text-[var(--accent)] dark:hover:text-[var(--accent)] transition-colors cursor-pointer text-left"
         >
           {title}
         </button>
@@ -70,7 +71,7 @@ function EntryRow({ targetId, title, relationship, revealed, expanded, onToggle,
               onClick={onToggle}
               aria-label={expanded ? 'Collapse details' : 'Expand details'}
               aria-expanded={expanded}
-              className={`text-[10px] text-[#9a8e7c] dark:text-[#6a6354] hover:text-[#c4802e] dark:hover:text-[#c4802e] transition-all cursor-pointer ${expanded ? 'rotate-90' : ''}`}
+              className={`text-[10px] text-[#9a8e7c] dark:text-[#6a6354] hover:text-[var(--accent)] dark:hover:text-[var(--accent)] transition-all cursor-pointer ${expanded ? 'rotate-90' : ''}`}
             >
               ▸
             </button>
@@ -86,12 +87,12 @@ function EntryRow({ targetId, title, relationship, revealed, expanded, onToggle,
 
       {expanded && hasDetails && (
         // Expansion area — future dish-menu (descriptions/photos) mounts here.
-        <div className="mt-2 ml-1 pl-3 border-l-2 border-[#c4802e]/30 space-y-2 animate-expand-in">
+        <div className="mt-2 ml-1 pl-3 border-l-2 border-[var(--accent-30)] space-y-2 animate-expand-in">
           {relationship.strength != null && (
             <div>
               <div className="h-[3px] w-full max-w-[200px] rounded bg-[#d4ccbf] dark:bg-[#1c1a15]">
                 <div
-                  className="h-full rounded bg-[#c4802e]"
+                  className="h-full rounded bg-[var(--accent)]"
                   style={{ width: `${relationship.strength}%` }}
                 />
               </div>
@@ -101,7 +102,7 @@ function EntryRow({ targetId, title, relationship, revealed, expanded, onToggle,
             </div>
           )}
           {relationship.reason && (
-            <span className="inline-block text-[9px] tracking-[0.14em] uppercase px-1.5 py-0.5 rounded border border-[#c4802e]/40 text-[#9b6928] dark:text-[#b8a882]">
+            <span className="inline-block text-[9px] tracking-[0.14em] uppercase px-1.5 py-0.5 rounded border border-[var(--accent-40)] text-[#9b6928] dark:text-[#b8a882]">
               {REASON_LABEL[relationship.reason] ?? relationship.reason}
             </span>
           )}
@@ -135,6 +136,8 @@ export function SidePanel({ countryId, mode, revealedSet, revealedCount, phase, 
 
   const [copied, setCopied] = useState(false)
   const [copiedKey, setCopiedKey] = useState(0)
+  // The "see what X loves" CTA pulses until the user flips the view once.
+  const [lovesUsed, setLovesUsed] = useState(lovesModeUsed)
   // Single-expanded accordion; reset whenever the selection or mode changes.
   const [expandedId, setExpandedId] = useState<string | null>(null)
   const [expandedFor, setExpandedFor] = useState(`${countryId}/${mode}`)
@@ -237,15 +240,19 @@ export function SidePanel({ countryId, mode, revealedSet, revealedCount, phase, 
       <div className="border-t border-[#d4ccbf] dark:border-[#1c1a15] px-8 py-5 flex items-center justify-between">
         {mode === 'loved-by' ? (
           <button
-            onClick={() => onModeChange('loves')}
-            className={`text-[#7a6e58] dark:text-[#8a8270] hover:text-[#c4802e] dark:hover:text-[#c4802e] text-[11px] tracking-[0.16em] uppercase transition-colors ${phase === 'done' ? 'animate-cta-glow' : ''}`}
+            onClick={() => { markLovesModeUsed(); setLovesUsed(true); onModeChange('loves') }}
+            className={`text-[11px] tracking-[0.16em] uppercase transition-colors cursor-pointer
+              hover:text-[var(--accent)] dark:hover:text-[var(--accent)]
+              ${phase === 'done' && !lovesUsed
+                ? 'text-[var(--accent)] animate-cta-pulse'
+                : 'text-[#7a6e58] dark:text-[#8a8270]'}`}
           >
             See what {shortName} loves →
           </button>
         ) : (
           <button
             onClick={() => onModeChange('loved-by')}
-            className="text-[#7a6e58] dark:text-[#8a8270] hover:text-[#c4802e] dark:hover:text-[#c4802e] text-[11px] tracking-[0.16em] uppercase transition-colors"
+            className="text-[#7a6e58] dark:text-[#8a8270] hover:text-[var(--accent)] dark:hover:text-[var(--accent)] text-[11px] tracking-[0.16em] uppercase transition-colors cursor-pointer"
           >
             ← Who loves {shortName}?
           </button>

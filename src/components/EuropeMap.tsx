@@ -1,12 +1,18 @@
 import { useState, useMemo } from 'react'
-import { ComposableMap, Geographies, Geography } from 'react-simple-maps'
+import { ComposableMap, Geographies, Geography, Marker, ZoomableGroup } from 'react-simple-maps'
 import type { Country, ViewMode } from '../types'
 import { useColorScheme } from '../hooks/useColorScheme'
-import { REVEAL_INITIAL_MS, type RevealPhase } from '../hooks/useRevealSequence'
+import { REVEAL_INITIAL_MS, SHAPELESS_COUNTRIES, type RevealPhase } from '../hooks/useRevealSequence'
 import { ensureAudioReady } from '../sounds'
 import rawData from '../data/cuisines.json'
+import rawCentroids from '../data/centroids.json'
 
 const countriesData = rawData as { countries: Record<string, Country> }
+const centroids = rawCentroids as unknown as Record<string, [number, number]>
+
+// Micro/island states with no polygon in the 110m TopoJSON, drawn as
+// clickable dot markers at their centroids instead.
+const MARKER_IDS = [...SHAPELESS_COUNTRIES].filter(id => centroids[id])
 
 const GEO_URL = 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json'
 
@@ -175,7 +181,7 @@ const NUMERIC_TO_ID: Record<string, string> = {
   '266': 'gabon',
   '232': 'eritrea',
   // Note: Cape Verde and Samoa lack shapes in the 110m TopoJSON (see
-  // SHAPELESS_COUNTRIES); they stay reachable via URL and side-panel links.
+  // SHAPELESS_COUNTRIES); they render as centroid dot markers.
   '132': 'cape-verde',
   '882': 'samoa',
   '740': 'suriname',
@@ -212,8 +218,8 @@ const NUMERIC_TO_ID: Record<string, string> = {
   '96':  'brunei',
   '262': 'djibouti',
   '728': 'south-sudan',
-  // Micro/island states — no shape in the 110m TopoJSON; reachable via
-  // URL and side-panel links only (see SHAPELESS_COUNTRIES in useRevealSequence)
+  // Micro/island states — no shape in the 110m TopoJSON; drawn as centroid
+  // dot markers (see SHAPELESS_COUNTRIES in useRevealSequence)
   '20':  'andorra',
   '492': 'monaco',
   '438': 'liechtenstein',
@@ -259,24 +265,17 @@ export function countryIdFromGeo(geo: { id?: unknown; properties?: { name?: stri
   return name ? NAME_TO_ID[name] : undefined
 }
 
-const MAP_COLORS = {
+// Scheme-dependent base colors, shared by both view modes.
+const BASE_COLORS = {
   dark: {
     nonDataset:        '#0f0e0b',
     countryDefault:    '#1b1914',
     countryHover:      '#252119',
     countryDimmed:     '#161410',
     countryDimmedHover:'#201d16',
-    selected:          '#c4802e',
-    highlighted:       '#653216',
-    highlightedHover:  '#7a3b1c',
-    // strength gradient endpoints (survey-backed relationships)
-    strengthWeak:      '#42200d',
-    strengthStrong:    '#a85419',
     homePulseOn:       '#5a4c2a',
     homePulseOff:      '#1b1914',
-    border:            '#201e18',
-    borderSelected:    '#c4802e',
-    borderHighlighted: '#7a3b1c',
+    border:            '#312d23',
     tooltip:           '#a8a29e',
   },
   light: {
@@ -285,19 +284,72 @@ const MAP_COLORS = {
     countryHover:      '#c8c0b0',
     countryDimmed:     '#dbd4c8',
     countryDimmedHover:'#d0c9bc',
-    selected:          '#c4802e',
-    highlighted:       '#b86c3a',
-    highlightedHover:  '#a85e2e',
-    // strength gradient endpoints (survey-backed relationships)
-    strengthWeak:      '#d4a87e',
-    strengthStrong:    '#963f12',
     homePulseOn:       '#c4a36a',
     homePulseOff:      '#d0c8b8',
-    border:            '#bab3a5',
-    borderSelected:    '#c4802e',
-    borderHighlighted: '#a85e2e',
+    border:            '#a49b88',
     tooltip:           '#6a6054',
   },
+}
+
+// Accent palette per view mode: amber for "who loves X" (the default view,
+// incoming affection), rose for "what X loves" (outgoing appetite). The two
+// hues are the strongest mode signal in the whole UI — keep them distinct.
+// strengthWeak/strengthStrong are the gradient endpoints for survey-backed
+// relationships.
+const MODE_ACCENTS: Record<ViewMode, Record<'dark' | 'light', {
+  selected: string
+  highlighted: string
+  highlightedHover: string
+  strengthWeak: string
+  strengthStrong: string
+  borderSelected: string
+  borderHighlighted: string
+}>> = {
+  'loved-by': {
+    dark: {
+      selected:          '#c4802e',
+      highlighted:       '#653216',
+      highlightedHover:  '#7a3b1c',
+      strengthWeak:      '#42200d',
+      strengthStrong:    '#a85419',
+      borderSelected:    '#c4802e',
+      borderHighlighted: '#7a3b1c',
+    },
+    light: {
+      selected:          '#d97f1f',
+      highlighted:       '#e39b3d',
+      highlightedHover:  '#d98a26',
+      strengthWeak:      '#eec89a',
+      strengthStrong:    '#b55708',
+      borderSelected:    '#c9731a',
+      borderHighlighted: '#c07b2e',
+    },
+  },
+  'loves': {
+    dark: {
+      selected:          '#cf4d68',
+      highlighted:       '#5c2130',
+      highlightedHover:  '#70283c',
+      strengthWeak:      '#38141e',
+      strengthStrong:    '#b03a55',
+      borderSelected:    '#cf4d68',
+      borderHighlighted: '#70283c',
+    },
+    light: {
+      selected:          '#c93b58',
+      highlighted:       '#e2849a',
+      highlightedHover:  '#d76e87',
+      strengthWeak:      '#f0b9c6',
+      strengthStrong:    '#a11f3d',
+      borderSelected:    '#b52e4a',
+      borderHighlighted: '#c25b74',
+    },
+  },
+}
+
+function hexToRgba(hex: string, alpha: number): string {
+  const n = parseInt(hex.slice(1), 16)
+  return `rgba(${(n >> 16) & 0xff}, ${(n >> 8) & 0xff}, ${n & 0xff}, ${alpha})`
 }
 
 // Linear interpolation between two hex colors, t in [0, 1].
@@ -324,15 +376,20 @@ interface Props {
   revealedSet: Set<string>
   phase: RevealPhase
   silentReveal: boolean
+  /** Country previewed from the search bar — highlighted like a hover. */
+  previewCountry: string | null
   onCountryClick: (countryId: string) => void
 }
 
-export function WorldMap({ selectedCountry, homeCountry, mode, revealedSet, phase, silentReveal, onCountryClick }: Props) {
+export function WorldMap({ selectedCountry, homeCountry, mode, revealedSet, phase, silentReveal, previewCountry, onCountryClick }: Props) {
   const colorScheme = useColorScheme()
-  const C = MAP_COLORS[colorScheme]
+  const C = { ...BASE_COLORS[colorScheme], ...MODE_ACCENTS[mode][colorScheme] }
 
   const [hoveredCountry, setHoveredCountry] = useState<string | null>(null)
   const [tooltipPos, setTooltipPos] = useState({ x: 0, y: 0 })
+  // Settled zoom factor — marker dot radii divide by it so they keep a
+  // constant screen size (updated on gesture end, not per frame).
+  const [zoomK, setZoomK] = useState(1)
 
   // Survey strength of each highlighted country's relationship to the
   // selection, where known — drives the heat gradient.
@@ -379,6 +436,32 @@ export function WorldMap({ selectedCountry, homeCountry, mode, revealedSet, phas
     return 0.4
   }
 
+  // One-shot animations per sound act, shared by polygons and dot markers.
+  // Values stay constant for the element's lifetime in each state, so
+  // re-renders don't restart them; the reveal-pop → completion-pulse swap
+  // restarts on purpose.
+  const getAnimation = (countryId: string): string | undefined => {
+    if (!selectedCountry && countryId === homeCountry) return 'country-breath 3s ease-in-out infinite'
+    if (countryId === selectedCountry) {
+      return silentReveal && phase === 'revealing'
+        ? 'selected-halo 1s ease-in-out 3'
+        : `selected-charge ${REVEAL_INITIAL_MS}ms ease-out`
+    }
+    if (revealedSet.has(countryId)) {
+      return phase === 'done'
+        ? 'completion-pulse 500ms ease-in-out'
+        : 'reveal-pop 350ms ease-out'
+    }
+    return undefined
+  }
+
+  // Uninvolved countries sink slowly into the dimmed state during the
+  // build-up; reveals keep snapping in fast.
+  const getTransition = (countryId: string): string =>
+    selectedCountry && countryId !== selectedCountry && !revealedSet.has(countryId)
+      ? 'fill 600ms ease'
+      : 'fill 160ms ease'
+
   return (
     <div className="w-full h-full" onClick={() => { if (selectedCountry) onCountryClick(selectedCountry) }}>
       <style>{`
@@ -404,10 +487,10 @@ export function WorldMap({ selectedCountry, homeCountry, mode, revealedSet, phas
           100% { filter: brightness(1); }
         }
         /* Silent reveals (direct links, audio locked): the linked country
-           wears a blinking golden halo as a visual fanfare instead of sound */
+           wears a blinking accent halo as a visual fanfare instead of sound */
         @keyframes selected-halo {
-          0%, 100% { filter: brightness(1) drop-shadow(0 0 0px rgba(196, 128, 46, 0)); }
-          50%      { filter: brightness(1.55) drop-shadow(0 0 8px rgba(196, 128, 46, 0.9)); }
+          0%, 100% { filter: brightness(1) drop-shadow(0 0 0px ${hexToRgba(C.selected, 0)}); }
+          50%      { filter: brightness(1.55) drop-shadow(0 0 8px ${hexToRgba(C.selected, 0.9)}); }
         }
       `}</style>
       <ComposableMap
@@ -415,39 +498,28 @@ export function WorldMap({ selectedCountry, homeCountry, mode, revealedSet, phas
         projectionConfig={{ scale: 160, center: [10, 10] }}
         style={{ width: '100%', height: '100%', background: 'transparent' }}
       >
+        <ZoomableGroup
+          minZoom={1}
+          maxZoom={8}
+          translateExtent={[[0, 0], [800, 600]]}
+          // Runtime receives the raw event despite the typings; allow trackpad
+          // pinch (ctrl+wheel) but not double-click zoom (it fights selection).
+          filterZoomEvent={((e: WheelEvent | MouseEvent) =>
+            e.type === 'wheel' ? true : e.type !== 'dblclick' && !e.ctrlKey && e.button === 0
+          ) as unknown as (element: SVGElement) => boolean}
+          onMoveEnd={({ zoom }) => setZoomK(zoom)}
+        >
         <Geographies geography={GEO_URL}>
           {({ geographies }) =>
             geographies.map(geo => {
               const countryId = countryIdFromGeo(geo)
               const isInteractive = Boolean(countryId)
-              const isHovered = countryId === hoveredCountry
-              const isPulsing = !selectedCountry && countryId === homeCountry
-              const isSelected = countryId != null && countryId === selectedCountry
-              const isRevealed = countryId != null && revealedSet.has(countryId)
+              const isHovered = countryId != null && (countryId === hoveredCountry || countryId === previewCountry)
               const fill = getFill(countryId, isHovered)
               const stroke = getStroke(countryId)
               const strokeWidth = getStrokeWidth(countryId)
-
-              // One-shot animations per sound act. Values stay constant for the
-              // element's lifetime in each state, so re-renders don't restart
-              // them; the reveal-pop → completion-pulse swap restarts on purpose.
-              let animation: string | undefined
-              if (isPulsing) animation = 'country-breath 3s ease-in-out infinite'
-              else if (isSelected && silentReveal && phase === 'revealing') {
-                animation = 'selected-halo 1s ease-in-out 3'
-              }
-              else if (isSelected) animation = `selected-charge ${REVEAL_INITIAL_MS}ms ease-out`
-              else if (isRevealed) {
-                animation = phase === 'done'
-                  ? 'completion-pulse 500ms ease-in-out'
-                  : 'reveal-pop 350ms ease-out'
-              }
-
-              // Uninvolved countries sink slowly into the dimmed state during
-              // the build-up; reveals keep snapping in fast.
-              const transition = selectedCountry && !isSelected && !isRevealed
-                ? 'fill 600ms ease'
-                : 'fill 160ms ease'
+              const animation = countryId ? getAnimation(countryId) : undefined
+              const transition = countryId ? getTransition(countryId) : 'fill 160ms ease'
 
               return (
                 <Geography
@@ -460,15 +532,17 @@ export function WorldMap({ selectedCountry, homeCountry, mode, revealedSet, phas
                     default: {
                       outline: 'none',
                       cursor: isInteractive ? 'pointer' : 'default',
+                      vectorEffect: 'non-scaling-stroke',
                       transition,
                       ...(animation ? { animation } : {}),
                     },
                     hover: {
                       outline: 'none',
                       cursor: isInteractive ? 'pointer' : 'default',
+                      vectorEffect: 'non-scaling-stroke',
                       fill,
                     },
-                    pressed: { outline: 'none' },
+                    pressed: { outline: 'none', vectorEffect: 'non-scaling-stroke' },
                   }}
                   onMouseEnter={(e: React.MouseEvent) => {
                     if (countryId) {
@@ -486,6 +560,44 @@ export function WorldMap({ selectedCountry, homeCountry, mode, revealedSet, phas
             })
           }
         </Geographies>
+
+        {/* Micro/island states without a 110m polygon: clickable centroid dots */}
+        {MARKER_IDS.map(id => {
+          const isHovered = id === hoveredCountry || id === previewCountry
+          const isActive = id === selectedCountry || revealedSet.has(id)
+          const animation = getAnimation(id)
+          // Divide by the zoom factor so dots keep a constant screen size.
+          const r = ((isActive ? 3 : 2.2) + (isHovered ? 0.6 : 0)) / zoomK
+          return (
+            <Marker key={id} coordinates={centroids[id]}>
+              <g
+                style={{ cursor: 'pointer' }}
+                onMouseEnter={(e: React.MouseEvent) => {
+                  setHoveredCountry(id)
+                  setTooltipPos({ x: e.clientX, y: e.clientY })
+                }}
+                onMouseLeave={() => setHoveredCountry(null)}
+                onMouseMove={(e: React.MouseEvent) => setTooltipPos({ x: e.clientX, y: e.clientY })}
+                onClick={(e: React.MouseEvent) => { e.stopPropagation(); ensureAudioReady(); onCountryClick(id) }}
+              >
+                {/* slightly padded invisible hit area — the visible dot is tiny */}
+                <circle r={4 / zoomK} fill="transparent" />
+                <circle
+                  r={r}
+                  fill={getFill(id, isHovered)}
+                  stroke={getStroke(id)}
+                  strokeWidth={getStrokeWidth(id) + 0.2}
+                  style={{
+                    vectorEffect: 'non-scaling-stroke',
+                    transition: `${getTransition(id)}, r 160ms ease`,
+                    ...(animation ? { animation } : {}),
+                  }}
+                />
+              </g>
+            </Marker>
+          )
+        })}
+        </ZoomableGroup>
       </ComposableMap>
 
       {hoveredCountry && hoveredCountry !== selectedCountry && (

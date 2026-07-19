@@ -17,10 +17,10 @@ const DONE_MS = REVEAL_TOTAL_MS + 40
 
 export type RevealPhase = 'idle' | 'revealing' | 'done'
 
-// Countries in the dataset that have no geometry in the 110m TopoJSON.
-// They can't light up on the map, so they get no tick in the sound cascade;
-// their panel rows fade in as a final batch with the completion ding.
-const SHAPELESS_COUNTRIES = new Set([
+// Countries in the dataset that have no polygon in the 110m TopoJSON.
+// The map draws them as clickable dot markers at their centroids, so they
+// participate in the reveal cascade like any other country.
+export const SHAPELESS_COUNTRIES = new Set([
   'singapore', 'malta', 'mauritius', 'cape-verde', 'samoa',
   'andorra', 'monaco', 'liechtenstein', 'san-marino', 'bahrain', 'maldives',
   'comoros', 'seychelles', 'sao-tome', 'barbados', 'saint-lucia', 'grenada',
@@ -59,15 +59,12 @@ export function useRevealSequence(selectedCountry: string | null, mode: ViewMode
             .map(l => l.cuisineCountryId)
             .filter(id => id in countriesData.countries && id !== selectedCountry)
 
-    // Mappable countries sorted by distance from the selection (the timed
-    // cascade + ticks), shapeless ones appended as the final batch.
+    // Sorted by distance from the selection, so the timed cascade + ticks
+    // expand outward as a single wavefront.
     const origin = centroids[selectedCountry]
     const dist = (id: string) =>
       origin && centroids[id] ? geoDistance(origin, centroids[id]) : Infinity
-    return [
-      ...ids.filter(id => !SHAPELESS_COUNTRIES.has(id)).sort((a, b) => dist(a) - dist(b)),
-      ...ids.filter(id => SHAPELESS_COUNTRIES.has(id)),
-    ]
+    return ids.sort((a, b) => dist(a) - dist(b))
   }, [selectedCountry, mode])
 
   const [revealedCount, setRevealedCount] = useState(0)
@@ -85,13 +82,9 @@ export function useRevealSequence(selectedCountry: string | null, mode: ViewMode
     setPhase('revealing')
     setSilent(!isAudioUnlocked())
 
-    const mappableCount = orderedIds.filter(id => !SHAPELESS_COUNTRIES.has(id)).length
-    const delayAt = (i: number) =>
-      i < mappableCount
-        ? revealDelayMs(i, mappableCount)
-        : mappableCount > 0 ? REVEAL_TOTAL_MS : REVEAL_INITIAL_MS
+    const delayAt = (i: number) => revealDelayMs(i, orderedIds.length)
 
-    const stopSounds = scheduleRevealSounds(mappableCount, REVEAL_INITIAL_MS, REVEAL_TOTAL_MS)
+    const stopSounds = scheduleRevealSounds(orderedIds.length, REVEAL_INITIAL_MS, REVEAL_TOTAL_MS)
 
     const start = performance.now()
     let raf = requestAnimationFrame(function frame(now: number) {
