@@ -348,6 +348,15 @@ const MODE_ACCENTS: Record<ViewMode, Record<'dark' | 'light', {
   },
 }
 
+// Both MUST be stable identities: ZoomableGroup's internal effects depend on
+// them, and a fresh function per render makes it reset the zoom transform
+// after every gesture (snap-back) and shift the initial view.
+const ROBINSON = geoRobinson().rotate([-12, 0]).scale(148).translate([480, 255])
+// Allow trackpad pinch (ctrl+wheel) but not double-click zoom (fights selection).
+const zoomFilter = ((e: WheelEvent | MouseEvent) =>
+  e.type === 'wheel' ? true : e.type !== 'dblclick' && !e.ctrlKey && e.button === 0
+) as unknown as (element: SVGElement) => boolean
+
 function hexToRgba(hex: string, alpha: number): string {
   const n = parseInt(hex.slice(1), 16)
   return `rgba(${(n >> 16) & 0xff}, ${(n >> 8) & 0xff}, ${n & 0xff}, ${alpha})`
@@ -499,27 +508,23 @@ export function WorldMap({ selectedCountry, homeCountry, mode, revealedSet, phas
         height={500}
         // Robinson reads much less vertically squashed than Equal Earth
         // (South America / Australia kept their familiar proportions).
-        // A projection function bypasses projectionConfig, so scale/center
-        // are baked in here; rotate lon by -12° ≈ old center [10, 10].
-        // @types/react-simple-maps mistypes the function form; runtime accepts
-        // any d3 GeoProjection as-is.
-        projection={geoRobinson().rotate([-12, 0]).scale(172).translate([480, 265]) as unknown as string}
+        // A projection function bypasses projectionConfig, so scale/rotate are
+        // baked into ROBINSON. @types/react-simple-maps mistypes the function
+        // form; runtime accepts any d3 GeoProjection as-is.
+        projection={ROBINSON as unknown as string}
         style={{ width: '100%', height: '100%', background: 'transparent' }}
       >
         <ZoomableGroup
           minZoom={1}
           maxZoom={8}
           translateExtent={[[0, 0], [960, 500]]}
-          // Runtime receives the raw event despite the typings; allow trackpad
-          // pinch (ctrl+wheel) but not double-click zoom (it fights selection).
-          filterZoomEvent={((e: WheelEvent | MouseEvent) =>
-            e.type === 'wheel' ? true : e.type !== 'dblclick' && !e.ctrlKey && e.button === 0
-          ) as unknown as (element: SVGElement) => boolean}
+          filterZoomEvent={zoomFilter}
           onMoveEnd={({ zoom }) => setZoomK(zoom)}
         >
-        {/* Oversized event surface: ZoomableGroup's own rect only spans the
-            viewBox, leaving letterboxed margins dead for drag/zoom gestures */}
-        <rect x={-4000} y={-4000} width={8960} height={8500} fill="transparent" style={{ pointerEvents: 'all' }} />
+        {/* Event surface for the letterboxed margins outside the viewBox,
+            which are otherwise dead for drag/zoom gestures. d3-zoom's extent
+            comes from the svg viewBox, so an oversized rect is harmless. */}
+        <rect x={-2000} y={-2000} width={4960} height={4500} fill="transparent" style={{ pointerEvents: 'all' }} />
         <Geographies geography={GEO_URL}>
           {({ geographies }) =>
             geographies.map(geo => {

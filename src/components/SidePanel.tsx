@@ -78,10 +78,10 @@ function EntryRow({ targetId, title, relationship, revealed, expanded, onToggle,
           )}
         </span>
       </div>
-      <p
-        onClick={hasDetails ? onToggle : undefined}
-        className={`mt-1 text-[11px] tracking-wider text-[#8a7e6e] dark:text-[#4a4840] uppercase ${hasDetails ? 'cursor-pointer' : ''}`}
-      >
+      {/* dishes line is display-only for now — dishes become their own
+          clickable entities (dish detail view) later; expansion is the
+          chevron's job */}
+      <p className="mt-1 text-[11px] tracking-wider text-[#8a7e6e] dark:text-[#4a4840] uppercase">
         {relationship.exampleDishes.join('  ·  ')}
       </p>
 

@@ -60,35 +60,61 @@ const ACCENT_UI: Record<ViewMode, Record<'light' | 'dark', string>> = {
   'loves':    { light: '#b02747', dark: '#cf4d68' },
 }
 
-// Collapsible explainer under the wordmark.
-function HowItWorks() {
-  const [open, setOpen] = useState(false)
+// Explainer under the wordmark: the pill button morphs into the window
+// itself; any click outside (the ocean, other controls) closes it.
+function HowItWorks({ open, onOpen, onClose }: { open: boolean; onOpen: () => void; onClose: () => void }) {
   return (
-    <div className="absolute top-14 left-8 z-40 w-72">
-      <button
-        type="button"
-        onClick={() => setOpen(o => !o)}
-        aria-expanded={open}
-        className="px-3 py-1.5 rounded-full text-[10px] font-medium tracking-[0.18em] uppercase cursor-pointer
-          bg-white/55 dark:bg-white/[0.06] backdrop-blur-xl backdrop-saturate-150
-          border border-white/60 dark:border-white/10
-          shadow-md shadow-black/[0.06] dark:shadow-black/40
-          text-[#8a7e68] dark:text-[#7a7260] hover:text-[#5a5040] dark:hover:text-[#a89e8a] transition-colors"
-      >
-        {open ? '× close' : '? how it works'}
-      </button>
-      {open && (
-        <div className="mt-2 rounded-2xl p-4 space-y-2.5 text-[12px] leading-relaxed
+    <div className="absolute top-14 left-8 z-40 w-72" onClick={e => e.stopPropagation()}>
+      {!open ? (
+        <button
+          type="button"
+          onClick={onOpen}
+          aria-expanded={false}
+          className="px-3 py-1.5 rounded-full text-[10px] font-medium tracking-[0.18em] uppercase cursor-pointer
+            bg-white/55 dark:bg-white/[0.06] backdrop-blur-xl backdrop-saturate-150
+            border border-white/60 dark:border-white/10
+            shadow-md shadow-black/[0.06] dark:shadow-black/40
+            text-[#8a7e68] dark:text-[#7a7260] hover:text-[#5a5040] dark:hover:text-[#a89e8a] transition-colors"
+        >
+          ? how it works
+        </button>
+      ) : (
+        <div className="relative rounded-2xl p-4 pr-8 space-y-2.5 text-[12px] leading-relaxed animate-expand-in
           bg-white/65 dark:bg-[#171510]/85 backdrop-blur-xl backdrop-saturate-150
           border border-white/60 dark:border-white/10
           shadow-xl shadow-black/[0.08] dark:shadow-black/50
           text-[#4a4236] dark:text-[#c2bbaa]"
         >
-          <p><strong className="text-[#b5691a] dark:text-[#c4802e]">♥ Loved by</strong> — click any country to watch everyone who loves its cuisine light up, near to far.</p>
-          <p><strong className="text-[#b02747] dark:text-[#cf4d68]">⑂ Loves</strong> — flip the toggle to see what that country loves eating from elsewhere instead.</p>
+          <button
+            type="button"
+            onClick={onClose}
+            aria-label="Close"
+            className="absolute top-2.5 right-3.5 text-base leading-none cursor-pointer
+              text-[#b0a898] dark:text-[#5a5548] hover:text-[#6a6050] dark:hover:text-[#a89e8a] transition-colors"
+          >
+            ×
+          </button>
+          <p>
+            <strong className="text-[#b5691a] dark:text-[#c4802e]">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" className="inline-block w-3 h-3 mr-1 align-[-1px]">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+              </svg>
+              Loved by
+            </strong> — click any country to watch everyone who loves its cuisine light up, near to far.
+          </p>
+          <p>
+            <strong className="text-[#b02747] dark:text-[#cf4d68]">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="inline-block w-3 h-3 mr-1 align-[-1px]">
+                <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2" />
+                <path d="M7 2v20" />
+                <path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3zm0 0v7" />
+              </svg>
+              Loves
+            </strong> — flip the toggle to see what that country loves eating from elsewhere instead.
+          </p>
           <p><strong>Deeper color = stronger love.</strong> Percentages are the share of people who like that cuisine (YouGov survey where available).</p>
           <p><em>unexpected</em> tags each country's one surprise pick; expand a row for the story and source.</p>
-          <p>Tiny dots are micro-states — they're clickable too. Scroll to zoom, drag to pan, or find anywhere with the search bar.</p>
+          <p>Tiny dots are micro states. They're clickable too. Scroll to zoom, drag to pan, or find anywhere with the search bar.</p>
         </div>
       )}
     </div>
@@ -114,6 +140,8 @@ function MapView({ homeCountry, idleMode, onIdleModeChange }: {
 
   // Country highlighted in the search dropdown, previewed on the map.
   const [previewCountry, setPreviewCountry] = useState<string | null>(null)
+  // How-it-works window; closes on any click outside it (ocean included).
+  const [helpOpen, setHelpOpen] = useState(false)
 
   const handleCountryClick = (id: string) => {
     if (id === countryId) {
@@ -140,18 +168,22 @@ function MapView({ homeCountry, idleMode, onIdleModeChange }: {
     <div
       className="relative w-screen h-screen overflow-hidden bg-[#f0ead8] dark:bg-[#0d0c09]"
       style={accentVars}
+      onClick={() => setHelpOpen(false)}
     >
 
-      <WorldMap
-        selectedCountry={countryId ?? null}
-        homeCountry={homeCountry}
-        mode={mode}
-        revealedSet={revealedSet}
-        phase={phase}
-        silentReveal={silent}
-        previewCountry={previewCountry}
-        onCountryClick={handleCountryClick}
-      />
+      {/* map yields the panel's width so it never sits underneath it */}
+      <div className={`absolute inset-y-0 left-0 transition-[right] duration-300 ${countryId ? 'right-[400px]' : 'right-0'}`}>
+        <WorldMap
+          selectedCountry={countryId ?? null}
+          homeCountry={homeCountry}
+          mode={mode}
+          revealedSet={revealedSet}
+          phase={phase}
+          silentReveal={silent}
+          previewCountry={previewCountry}
+          onCountryClick={handleCountryClick}
+        />
+      </div>
 
       {/* rose inner vignette signals the flipped "what X loves" view */}
       <div
@@ -160,7 +192,7 @@ function MapView({ homeCountry, idleMode, onIdleModeChange }: {
         style={{
           boxShadow: mode === 'loves'
             // light needs a much stronger mix to read against the parchment
-            ? `inset 0 0 ${scheme === 'light' ? '180px' : '140px'} color-mix(in srgb, ${accent} ${scheme === 'light' ? '45%' : '24%'}, transparent)`
+            ? `inset 0 0 ${scheme === 'light' ? '180px' : '140px'} color-mix(in srgb, ${accent} ${scheme === 'light' ? '60%' : '24%'}, transparent)`
             : 'inset 0 0 0 0 transparent',
         }}
       />
@@ -179,7 +211,7 @@ function MapView({ homeCountry, idleMode, onIdleModeChange }: {
         <ModeToggle mode={mode} onChange={(m) => { ensureAudioReady(); handleModeChange(m) }} />
       </div>
 
-      <HowItWorks />
+      <HowItWorks open={helpOpen} onOpen={() => setHelpOpen(true)} onClose={() => setHelpOpen(false)} />
 
       <ThemeToggle />
 
