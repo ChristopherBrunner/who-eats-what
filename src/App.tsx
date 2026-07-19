@@ -102,7 +102,7 @@ function DiceButton({ onRoll }: { onRoll: () => void }) {
 // corner tint is roughly max × 0.14. The max values are user-calibrated
 // against that geometry; don't "fix" the sizing without retuning them.
 function vignetteBackground(c: string, scheme: 'light' | 'dark'): string {
-  const max = scheme === 'light' ? 78 : 45
+  const max = scheme === 'light' ? 100 : 45
   const stop = (t: number, at: number) =>
     `color-mix(in srgb, ${c} ${Math.round(max * t * 100) / 100}%, transparent) ${at}%`
   return `radial-gradient(115% 115% at 50% 50%, transparent 34%, ${[
@@ -270,7 +270,15 @@ function MapView({ homeCountry, idleMode, onIdleModeChange }: {
           className="pointer-events-none absolute inset-0 transition-opacity duration-700"
           style={{
             opacity: mode === m ? 1 : 0,
-            background: vignetteBackground(ACCENT_UI[m][scheme], scheme),
+            // Light mode paints with DEEPENED accents (mix % is maxed out,
+            // so extra presence has to come from darker pigment — the amber
+            // especially washed out against the parchment).
+            background: vignetteBackground(
+              scheme === 'light'
+                ? (m === 'loved-by' ? '#94500c' : '#9c2240')
+                : ACCENT_UI[m][scheme],
+              scheme,
+            ),
           }}
         />
       ))}
