@@ -47,28 +47,6 @@ function tick(ctx: AudioContext, when: number, pitchHz: number): OscillatorNode 
   return osc
 }
 
-function heartLand(ctx: AudioContext, when: number): OscillatorNode {
-  // Soft low "plip" as a heart touches down — rounder and quieter than the
-  // reveal ticks (which sit at 380–580Hz), so landings read as echoes.
-  const osc  = ctx.createOscillator()
-  const gain = ctx.createGain()
-
-  osc.type = 'sine'
-  osc.frequency.setValueAtTime(250, when)
-  osc.frequency.exponentialRampToValueAtTime(165, when + 0.08)
-
-  gain.gain.setValueAtTime(0, when)
-  gain.gain.linearRampToValueAtTime(0.05, when + 0.008)
-  gain.gain.exponentialRampToValueAtTime(0.001, when + 0.11)
-
-  osc.connect(gain)
-  gain.connect(ctx.destination)
-  osc.start(when)
-  osc.stop(when + 0.12)
-
-  return osc
-}
-
 function completionDing(ctx: AudioContext, when: number): OscillatorNode[] {
   // Soft two-note interval: E5 + B5 (major fifth — open and resolved).
   return [659, 988].map((freq, j) => {
@@ -179,27 +157,35 @@ export function scheduleRevealSounds(
     const totalSec = totalMs   / 1000
     const span     = totalSec - initSec
 
-    // 1. Build-up — fills the anticipation window
-    nodes.push(buildUp(ctx, now, initSec - 0.05))
+    // EXPERIMENT: build-up + reveal ticks muted to audition the arrival
+    // plips in isolation — restore by unsetting MUTE_LAUNCH_SOUNDS.
+    const MUTE_LAUNCH_SOUNDS = true
 
-    // 2. Ticks, one per revealed country
-    for (let i = 0; i < count; i++) {
-      // Anchored sqrt curve: i=0 → frac=0 → t=initSec,  i=N-1 → frac=1 → t=totalSec
-      const frac  = count === 1 ? 0 : i / (count - 1)
-      const t     = now + initSec + span * Math.sqrt(frac)
-      const pitch = pitchDirection === 'rising'
-        ? 380 + 200 * frac   // 380 Hz → 580 Hz, rising with the cascade
-        : 580 - 200 * frac   // 580 Hz → 380 Hz, falling
-      nodes.push(tick(ctx, t, pitch))
+    if (!MUTE_LAUNCH_SOUNDS) {
+      // 1. Build-up — fills the anticipation window
+      nodes.push(buildUp(ctx, now, initSec - 0.05))
+
+      // 2. Ticks, one per revealed country
+      for (let i = 0; i < count; i++) {
+        // Anchored sqrt curve: i=0 → frac=0 → t=initSec,  i=N-1 → frac=1 → t=totalSec
+        const frac  = count === 1 ? 0 : i / (count - 1)
+        const t     = now + initSec + span * Math.sqrt(frac)
+        const pitch = pitchDirection === 'rising'
+          ? 380 + 200 * frac   // 380 Hz → 580 Hz, rising with the cascade
+          : 580 - 200 * frac   // 580 Hz → 380 Hz, falling
+        nodes.push(tick(ctx, t, pitch))
+      }
     }
 
-    // 3. Landing plips — each tick's heart touches down one flight later
+    // 3. Arrival ticks — the og reveal-tick sound, played as each heart
+    // touches down one flight after launch; pitch still walks the cascade.
     if (landPattern !== 'none' && dingExtraMs > 0) {
       for (let i = 0; i < count; i++) {
         if (landPattern === 'sparse' && !(i < 6 || i % 6 === 0)) continue
         const frac = count === 1 ? 0 : i / (count - 1)
         const t = now + initSec + span * Math.sqrt(frac) + dingExtraMs / 1000
-        nodes.push(heartLand(ctx, t))
+        const pitch = pitchDirection === 'rising' ? 380 + 200 * frac : 580 - 200 * frac
+        nodes.push(tick(ctx, t, pitch))
       }
     }
 

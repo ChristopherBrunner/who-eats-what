@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import { Routes, Route, useParams, useNavigate } from 'react-router-dom'
 import { WorldMap } from './components/EuropeMap'
 import { SidePanel } from './components/SidePanel'
@@ -58,6 +58,57 @@ function ThemeToggle() {
 const ACCENT_UI: Record<ViewMode, Record<'light' | 'dark', string>> = {
   'loved-by': { light: '#b5691a', dark: '#c4802e' },
   'loves':    { light: '#b02747', dark: '#cf4d68' },
+}
+
+// Accent-colored die (5 face) between search bar and mode toggle: rolls a
+// random country in the current mode. Wobbles idly, spins on click.
+function DiceButton({ onRoll }: { onRoll: () => void }) {
+  const [rollKey, setRollKey] = useState(0)
+  return (
+    <button
+      type="button"
+      aria-label="Random country"
+      title="Roll a random country"
+      onClick={() => { setRollKey(k => k + 1); onRoll() }}
+      className="flex items-center justify-center w-11 h-11 rounded-full shrink-0
+        bg-white/55 dark:bg-white/[0.06] backdrop-blur-xl backdrop-saturate-150
+        border border-white/60 dark:border-white/10
+        shadow-lg shadow-black/[0.07] dark:shadow-black/40
+        transition-colors hover:bg-white/75 dark:hover:bg-white/[0.09] cursor-pointer"
+    >
+      <svg
+        key={rollKey}
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+        className="w-5 h-5 text-[var(--accent)] transition-colors duration-500"
+        style={{ animation: rollKey ? 'dice-roll 600ms ease-out' : 'dice-wobble 5s ease-in-out infinite' }}
+        onAnimationEnd={() => setRollKey(0)}
+      >
+        <rect x="3" y="3" width="18" height="18" rx="4.5" fill="currentColor" />
+        {[[7.6, 7.6], [16.4, 7.6], [12, 12], [7.6, 16.4], [16.4, 16.4]].map(([cx, cy]) => (
+          <circle key={`${cx}-${cy}`} cx={cx} cy={cy} r="1.7" className="fill-[#f5efe0] dark:fill-[#151310]" />
+        ))}
+      </svg>
+    </button>
+  )
+}
+
+// Inner-vignette paint for a mode accent. Eased multi-stop radial gradient,
+// NOT box-shadow: shadow blur quantizes into visible rings on dark, and
+// two-stop gradients show Mach bands — many stops on an easing curve
+// interpolate smoothly. Light needs a stronger mix against the parchment.
+// NOTE: the 115% size puts the container corner at only ~61% of the gradient
+// radius — the strong end of the ramp is offscreen by design, so the visible
+// corner tint is roughly max × 0.14. The max values are user-calibrated
+// against that geometry; don't "fix" the sizing without retuning them.
+function vignetteBackground(c: string, scheme: 'light' | 'dark'): string {
+  const max = scheme === 'light' ? 78 : 45
+  const stop = (t: number, at: number) =>
+    `color-mix(in srgb, ${c} ${Math.round(max * t * 100) / 100}%, transparent) ${at}%`
+  return `radial-gradient(115% 115% at 50% 50%, transparent 34%, ${[
+    stop(0.03, 47), stop(0.1, 58), stop(0.22, 68), stop(0.4, 77),
+    stop(0.63, 86), stop(0.85, 94), stop(1, 100),
+  ].join(', ')})`
 }
 
 // Explainer under the wordmark: the pill button morphs into the window
@@ -136,30 +187,15 @@ function MapView({ homeCountry, idleMode, onIdleModeChange }: {
     : idleMode
 
   // Shared reveal sequence: map highlights, panel rows, and sounds all sync.
-  const { revealedSet, revealedCount, phase, silent } = useRevealSequence(countryId ?? null, mode)
+  const { revealedSet, revealedCount, arrivedSet, arrivedCount, phase, silent } = useRevealSequence(countryId ?? null, mode)
+  // In loves the country lights up when its heart LANDS; loved-by at launch.
+  const litSet = mode === 'loves' ? arrivedSet : revealedSet
+  const litCount = mode === 'loves' ? arrivedCount : revealedCount
 
   // Country highlighted in the search dropdown, previewed on the map.
   const [previewCountry, setPreviewCountry] = useState<string | null>(null)
   // How-it-works window; closes on any click outside it (ocean included).
   const [helpOpen, setHelpOpen] = useState(false)
-
-  // Ocean clicks deselect, but the map holds its compressed width for a
-  // grace period first — a misclicked target hasn't moved, so the user can
-  // simply click it again. Deliberate closes (×, Escape) expand right away.
-  const [compressed, setCompressed] = useState(Boolean(countryId))
-  const softClose = useRef(false)
-  useEffect(() => {
-    if (countryId) {
-      setCompressed(true)
-      return
-    }
-    if (softClose.current) {
-      softClose.current = false
-      const t = window.setTimeout(() => setCompressed(false), 1600)
-      return () => window.clearTimeout(t)
-    }
-    setCompressed(false)
-  }, [countryId])
 
   // Escape backs out: help window first, then the selected country.
   useEffect(() => {
@@ -202,58 +238,49 @@ function MapView({ homeCountry, idleMode, onIdleModeChange }: {
       onClick={() => setHelpOpen(false)}
     >
 
-      {/* map yields the panel's width so it never sits underneath it */}
-      <div className={`absolute inset-y-0 left-0 transition-[right] duration-300 ${compressed ? 'right-[400px]' : 'right-0'}`}>
+      {/* The right rail is PERMANENT: the map area never resizes, so
+          selecting/deselecting a country can't shift targets under the
+          cursor. Flush against the 360px panel (a gap read as a seam). */}
+      <div className="absolute inset-y-0 left-0 right-[360px]">
         <WorldMap
           selectedCountry={countryId ?? null}
           homeCountry={homeCountry}
           mode={mode}
-          revealedSet={revealedSet}
+          revealedSet={litSet}
+          heartSet={revealedSet}
           phase={phase}
           silentReveal={silent}
           previewCountry={previewCountry}
           onCountryClick={handleCountryClick}
           onBackgroundClick={() => {
-            if (countryId) {
-              softClose.current = true
-              navigate('/')
-            }
+            if (countryId) navigate('/')
           }}
         />
 
-      {/* rose inner vignette signals the flipped "what X loves" view —
-          INSIDE the map area so it compresses with it and never runs under
-          the side panel (its corners banded through the panel edges).
-          Only opacity animates: transitioning the paint itself made Chrome
-          re-layerize at the transition's end, flickering the glow. */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 transition-opacity duration-700"
-        style={{
-          opacity: mode === 'loves' ? 1 : 0,
-          // Eased multi-stop radial gradient, NOT box-shadow: shadow blur
-          // quantizes into visible rings on dark, and two-stop gradients
-          // show Mach bands — many stops on an easing curve interpolate
-          // smoothly. Light needs a stronger mix against the parchment.
-          background: (() => {
-            const c = ACCENT_UI.loves[scheme]
-            const max = scheme === 'light' ? 55 : 38
-            const stop = (t: number, at: number) =>
-              `color-mix(in srgb, ${c} ${Math.round(max * t * 100) / 100}%, transparent) ${at}%`
-            return `radial-gradient(115% 115% at 50% 50%, transparent 34%, ${[
-              stop(0.03, 47), stop(0.1, 58), stop(0.22, 68), stop(0.4, 77),
-              stop(0.63, 86), stop(0.85, 94), stop(1, 100),
-            ].join(', ')})`
-          })(),
-        }}
-      />
+      {/* per-mode inner vignettes (amber for loved-by, rose for loves) —
+          INSIDE the map area so they never run under the side panel (their
+          corners banded through the panel edges). Two stacked layers that
+          cross-fade: only opacity animates, because transitioning the paint
+          itself made Chrome re-layerize at the transition's end, flickering
+          the glow. */}
+      {(['loved-by', 'loves'] as ViewMode[]).map(m => (
+        <div
+          key={m}
+          aria-hidden
+          className="pointer-events-none absolute inset-0 transition-opacity duration-700"
+          style={{
+            opacity: mode === m ? 1 : 0,
+            background: vignetteBackground(ACCENT_UI[m][scheme], scheme),
+          }}
+        />
+      ))}
       {/* grain sibling (NOT nested: a fading parent isolates blending, which
           made the overlay blend shift as the fade finished — the old snap) */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 transition-opacity duration-700"
+        className="pointer-events-none absolute inset-0"
         style={{
-          opacity: mode === 'loves' ? (scheme === 'light' ? 0.06 : 0.11) : 0,
+          opacity: scheme === 'light' ? 0.07 : 0.11,
           backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='128' height='128'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='128' height='128' filter='url(%23n)'/%3E%3C/svg%3E")`,
           mixBlendMode: 'overlay',
           maskImage: 'radial-gradient(ellipse at center, transparent 40%, black 90%)',
@@ -290,11 +317,17 @@ function MapView({ homeCountry, idleMode, onIdleModeChange }: {
         </span>
       </div>
 
-      <div className="absolute top-6 left-1/2 -translate-x-1/2 z-40 flex items-start gap-3">
+      {/* centered over the MAP AREA (screen minus the 360px right rail) */}
+      <div className="absolute top-6 left-[calc((100%-360px)/2)] -translate-x-1/2 z-40 flex items-start gap-3">
         <SearchBar
           onSelect={(id) => { ensureAudioReady(); navigate(`/${id}/${mode}`) }}
           onHighlight={setPreviewCountry}
         />
+        <DiceButton onRoll={() => {
+          ensureAudioReady()
+          const ids = Object.keys(countriesData.countries).filter(id => id !== countryId)
+          navigate(`/${ids[Math.floor(Math.random() * ids.length)]}/${mode}`)
+        }} />
         <ModeToggle mode={mode} onChange={(m) => { ensureAudioReady(); handleModeChange(m) }} />
       </div>
 
@@ -302,21 +335,21 @@ function MapView({ homeCountry, idleMode, onIdleModeChange }: {
 
       <ThemeToggle />
 
-      {countryId && (
-        <SidePanel
-          countryId={countryId}
-          mode={mode}
-          revealedSet={revealedSet}
-          revealedCount={revealedCount}
-          phase={phase}
-          onModeChange={handleModeChange}
-          onSelectCountry={(id) => navigate(`/${id}/loved-by`)}
-          onClose={() => navigate('/')}
-        />
-      )}
+      <SidePanel
+        countryId={countryId ?? null}
+        homeCountry={homeCountry}
+        mode={mode}
+        revealedSet={litSet}
+        revealedCount={litCount}
+        phase={phase}
+        onModeChange={handleModeChange}
+        onSelectCountry={(id) => { ensureAudioReady(); navigate(`/${id}/loved-by`) }}
+        onPick={(id) => { ensureAudioReady(); navigate(`/${id}/${mode}`) }}
+        onClose={() => navigate('/')}
+      />
 
       {!countryId && (
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 pointer-events-none select-none">
+        <div className="absolute bottom-8 left-[calc((100%-360px)/2)] -translate-x-1/2 pointer-events-none select-none">
           <span className="text-[11px] tracking-[0.28em] uppercase text-[#8b7e68] dark:text-[#7a7260] animate-prompt-breathe">
             {mode === 'loved-by'
               ? 'click a country · see who loves its food'

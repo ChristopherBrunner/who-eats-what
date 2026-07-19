@@ -33,13 +33,13 @@ The **default view is "who loves this country's cuisine"** — NOT "what does th
 **URL scheme:** `/:countryId/:mode` where mode is `loved-by` or `loves`. Root `/` is the empty/idle state. Share button appends `?ref=share`.
 
 **Component structure:**
-- `src/App.tsx` — router, geolocation fetch on mount, passes `homeCountry` down; holds `idleMode` (mode used while no country is selected), the `--accent` CSS vars, the rose "loves" vignette, and the `ThemeToggle` button
+- `src/App.tsx` — router, geolocation fetch on mount, passes `homeCountry` down; holds `idleMode` (mode used while no country is selected), the `--accent` CSS vars, the per-mode inner vignettes (amber/rose, cross-fading layers), and the `ThemeToggle` button. The map area reserves a **permanent 360px right rail** (flush to the panel) so selecting/deselecting never resizes the map or shifts click targets; top controls (search, dice random-pick, mode toggle) and the idle prompt center over the map area, not the window. In loves mode countries light up when their heart lands (`arrivedSet` from the reveal hook), not at launch
 - `src/components/EuropeMap.tsx` — react-simple-maps map, handles all SVG fill logic; zoom/pan via `ZoomableGroup` (wheel/pinch 1–8×, `vector-effect: non-scaling-stroke` keeps borders crisp, marker radii divide by the settled zoom factor)
-- `src/components/SidePanel.tsx` — cuisine relationship panel, share button, mode toggle
+- `src/components/SidePanel.tsx` — always-mounted right rail: idle state shows dataset stats + quick-start picks (home country, curated picks, random "somewhere unexpected"); selection shows the cuisine relationship list, share button, mode toggle
 - `src/components/SearchBar.tsx` + `src/components/ModeToggle.tsx` — floating glass controls at top-center; the toggle springs between amber "loved by" and rose "loves" and pulses until the loves view is first used (`src/modeDiscovery.ts`, localStorage `loves-mode-used` — also gates the panel CTA pulse)
 - `src/hooks/useColorScheme.ts` — effective scheme store ('light' | 'dark'), system preference + manual override
 
-**Mode theming:** the two views have distinct accent palettes — amber for "loved by" (default), rose for "loves". Map colors come from `MODE_ACCENTS` in EuropeMap; panel/UI accents come from the `--accent` vars set in App (`ACCENT_UI` — keep both in sync). Mode is also signalled by the toggle thumb color, an inner rose vignette, and the idle prompt text.
+**Mode theming:** the two views have distinct accent palettes — amber for "loved by" (default), rose for "loves". Map colors come from `MODE_ACCENTS` in EuropeMap; panel/UI accents come from the `--accent` vars set in App (`ACCENT_UI` — keep both in sync). Mode is also signalled by the toggle thumb color, the accent-tinted inner vignette (amber ↔ rose), and the idle prompt text.
 
 **Dark/light mode:**
 - Components use Tailwind `dark:` variants, class-based (`@custom-variant dark` in index.css). `useColorScheme.ts` mirrors the effective scheme onto `<html class="dark">`: system preference by default, manual override via the glass toggle button (bottom-left, `ThemeToggle` in App.tsx), persisted in localStorage (`color-scheme`); toggling back to the system's scheme clears the override

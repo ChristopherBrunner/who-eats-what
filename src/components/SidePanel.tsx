@@ -14,15 +14,44 @@ interface LovedByEntry {
 }
 
 interface Props {
-  countryId: string
+  countryId: string | null
+  homeCountry: string | null
   mode: ViewMode
   revealedSet: Set<string>
   revealedCount: number
   phase: RevealPhase
   onModeChange: (mode: ViewMode) => void
   onSelectCountry: (id: string) => void
+  /** Idle quick starts — navigates in the CURRENT mode (unlike
+      onSelectCountry, which always jumps to loved-by). */
+  onPick: (id: string) => void
   onClose: () => void
 }
+
+// Live reveal counter: glows in the accent and pops on every increment,
+// harder as the cascade accelerates toward the end of the list.
+function RevealCounter({ value, total, phase }: { value: number; total: number; phase: RevealPhase }) {
+  const frac = total > 0 ? value / total : 0
+  return (
+    <span
+      key={value}
+      className={`inline-block font-semibold tabular-nums text-[var(--accent)] ${
+        phase === 'done' ? 'animate-count-settle' : value > 0 ? 'animate-count-pop' : ''}`}
+      style={{
+        '--pop-scale': (1.15 + 0.6 * frac).toFixed(2),
+        textShadow: `0 0 ${Math.round(3 + 12 * frac)}px var(--accent-40)`,
+      } as React.CSSProperties}
+    >
+      {value}
+    </span>
+  )
+}
+
+// Idle-state quick starts (home country is prepended when known).
+const QUICK_STARTS = ['italy', 'japan', 'mexico']
+const TOTAL_COUNTRIES = Object.keys(countriesData.countries).length
+const TOTAL_LOVES = Object.values(countriesData.countries)
+  .reduce((n, c) => n + c.loves.length, 0)
 
 const REASON_LABEL: Record<string, string> = {
   'migration': 'migration story',
@@ -134,8 +163,8 @@ function EntryRow({ targetId, title, relationship, revealed, expanded, onToggle,
   )
 }
 
-export function SidePanel({ countryId, mode, revealedSet, revealedCount, phase, onModeChange, onSelectCountry, onClose }: Props) {
-  const country = countriesData.countries[countryId]
+export function SidePanel({ countryId, homeCountry, mode, revealedSet, revealedCount, phase, onModeChange, onSelectCountry, onPick, onClose }: Props) {
+  const country = countryId ? countriesData.countries[countryId] : null
 
   const lovedBy: LovedByEntry[] = useMemo(() => {
     if (!country) return []
@@ -164,7 +193,68 @@ export function SidePanel({ countryId, mode, revealedSet, revealedCount, phase, 
   }
   const toggle = (id: string) => setExpandedId(prev => (prev === id ? null : id))
 
-  if (!country) return null
+  // The rail is permanent — idle state fills it with quick starts instead
+  // of unmounting (the map area never resizes either way).
+  if (!country) {
+    const picks = homeCountry && !QUICK_STARTS.includes(homeCountry)
+      ? [homeCountry, ...QUICK_STARTS.slice(0, 2)]
+      : QUICK_STARTS
+    const surprise = () => {
+      const ids = Object.keys(countriesData.countries)
+      onPick(ids[Math.floor(Math.random() * ids.length)])
+    }
+    return (
+      <div className="absolute top-0 right-0 h-full w-[360px] flex flex-col justify-center px-6 bg-[#ece4d2]/96 dark:bg-[#0b0a08]/96 backdrop-blur-sm border-l border-[#d4ccbf] dark:border-[#1c1a15]">
+        <p className="text-[10px] tracking-[0.25em] uppercase text-[#9a8e7c] dark:text-[#5a5448]">
+          {TOTAL_COUNTRIES} countries · {TOTAL_LOVES.toLocaleString('en-US')} food crushes
+        </p>
+        <h2 className="mt-3 text-[1.7rem] font-bold tracking-tight leading-snug text-[#1a1610] dark:text-[#f0e8d4]">
+          Every cuisine is somebody's favorite.
+        </h2>
+        <p className="mt-3 text-[13px] leading-relaxed text-[#7a6e5c] dark:text-[#5a5448]">
+          Click any country to see who loves its food — or start with
+        </p>
+        <ul className="mt-6 space-y-4">
+          {picks.map(id => {
+            const c = countriesData.countries[id]
+            if (!c) return null
+            return (
+              <li key={id}>
+                <button
+                  onClick={() => onPick(id)}
+                  className="flex items-center gap-3 text-[17px] font-medium text-[#241e14] dark:text-[#d4c9b0] hover:text-[var(--accent)] dark:hover:text-[var(--accent)] transition-colors cursor-pointer"
+                >
+                  <img
+                    src={flagUrl(c.code)}
+                    alt=""
+                    loading="lazy"
+                    draggable={false}
+                    className="w-7 h-7 rounded-full shrink-0"
+                    onError={e => { (e.target as HTMLImageElement).style.display = 'none' }}
+                  />
+                  {c.name}
+                  {id === homeCountry && (
+                    <span className="text-[11px] italic text-[#9b6928]/80 tracking-wide">home turf</span>
+                  )}
+                </button>
+              </li>
+            )
+          })}
+          <li>
+            <button
+              onClick={surprise}
+              className="flex items-center gap-3 text-[17px] italic text-[#8a7e6c] dark:text-[#7a7260] hover:text-[var(--accent)] dark:hover:text-[var(--accent)] transition-colors cursor-pointer"
+            >
+              <span className="flex items-center justify-center w-7 h-7 rounded-full border border-dashed border-[#b0a48e] dark:border-[#4a4638] text-[13px] not-italic shrink-0">
+                ?
+              </span>
+              somewhere unexpected
+            </button>
+          </li>
+        </ul>
+      </div>
+    )
+  }
 
   const shortName = country.name.split(' ')[0]
 
@@ -178,7 +268,7 @@ export function SidePanel({ countryId, mode, revealedSet, revealedCount, phase, 
   }
 
   return (
-    <div className="absolute top-0 right-0 h-full w-[400px] flex flex-col bg-[#ece4d2]/96 dark:bg-[#0b0a08]/96 backdrop-blur-sm border-l border-[#d4ccbf] dark:border-[#1c1a15]">
+    <div className="absolute top-0 right-0 h-full w-[360px] flex flex-col bg-[#ece4d2]/96 dark:bg-[#0b0a08]/96 backdrop-blur-sm border-l border-[#d4ccbf] dark:border-[#1c1a15]">
 
       {/* Close */}
       <button
@@ -190,7 +280,7 @@ export function SidePanel({ countryId, mode, revealedSet, revealedCount, phase, 
       </button>
 
       {/* Scrollable content */}
-      <div className="flex-1 overflow-y-auto px-8 pt-10 pb-4" style={{ scrollbarWidth: 'none' }}>
+      <div className="flex-1 overflow-y-auto px-6 pt-10 pb-4" style={{ scrollbarWidth: 'none' }}>
 
         {/* Country name */}
         <h2 className="flex items-center gap-3 text-[2.4rem] font-bold tracking-tight leading-none text-[#1a1610] dark:text-[#f0e8d4]">
@@ -210,17 +300,13 @@ export function SidePanel({ countryId, mode, revealedSet, revealedCount, phase, 
             lovedBy.length === 0
               ? 'No mapped countries love this cuisine yet.'
               : <>
-                  <span className={`text-[#8b6830] dark:text-[#b8a882] tabular-nums ${phase === 'done' ? 'animate-count-settle' : ''}`}>
-                    {Math.min(revealedCount, lovedBy.length)}
-                  </span>
+                  <RevealCounter value={Math.min(revealedCount, lovedBy.length)} total={lovedBy.length} phase={phase} />
                   {' '}{lovedBy.length === 1 ? 'country loves' : 'countries love'}{' '}
                   {shortName}'s cuisine
                 </>
           ) : (
             <>
-              <span className={`text-[#8b6830] dark:text-[#b8a882] tabular-nums ${phase === 'done' ? 'animate-count-settle' : ''}`}>
-                {Math.min(revealedCount, country.loves.length)}
-              </span>
+              <RevealCounter value={Math.min(revealedCount, country.loves.length)} total={country.loves.length} phase={phase} />
               {' '}foreign cuisines on {shortName}'s table
             </>
           )}
@@ -261,7 +347,7 @@ export function SidePanel({ countryId, mode, revealedSet, revealedCount, phase, 
       </div>
 
       {/* Footer — mode toggle + share on same line */}
-      <div className="border-t border-[#d4ccbf] dark:border-[#1c1a15] px-8 py-5 flex items-center justify-between">
+      <div className="border-t border-[#d4ccbf] dark:border-[#1c1a15] px-6 py-5 flex items-center justify-between">
         {mode === 'loved-by' ? (
           <button
             onClick={() => { markLovesModeUsed(); setLovesUsed(true); onModeChange('loves') }}

@@ -356,7 +356,12 @@ const MODE_ACCENTS: Record<ViewMode, Record<'dark' | 'light', {
 // Both MUST be stable identities: ZoomableGroup's internal effects depend on
 // them, and a fresh function per render makes it reset the zoom transform
 // after every gesture (snap-back) and shift the initial view.
-const ROBINSON = geoRobinson().rotate([-12, 0]).scale(148).translate([480, 255])
+// The translate crops the viewBox (898×473, see ComposableMap) tight to the
+// actual content: leftmost land is the Aleutian tail at x≈46 (old coords),
+// rightmost is Samoa's dot at x≈935, so ~41px left / ~21px right / ~22px top
+// / ~5px bottom of empty ocean are cut. Don't grow the crop — those extremes
+// sit just inside the edges.
+const ROBINSON = geoRobinson().rotate([-12, 0]).scale(148).translate([439, 233])
 // Allow trackpad pinch (ctrl+wheel) but not double-click zoom (fights selection).
 const zoomFilter = ((e: WheelEvent | MouseEvent) =>
   e.type === 'wheel' ? true : e.type !== 'dblclick' && !e.ctrlKey && e.button === 0
@@ -391,7 +396,11 @@ interface Props {
   selectedCountry: string | null
   homeCountry: string | null
   mode: ViewMode
+  /** Countries currently LIT (in loves this is arrival-delayed by App). */
   revealedSet: Set<string>
+  /** Countries whose heart has LAUNCHED — drives the particle layer. In
+      loved-by identical to revealedSet; in loves it runs one flight ahead. */
+  heartSet: Set<string>
   phase: RevealPhase
   silentReveal: boolean
   /** Country previewed from the search bar — highlighted like a hover. */
@@ -401,7 +410,7 @@ interface Props {
   onBackgroundClick: () => void
 }
 
-export function WorldMap({ selectedCountry, homeCountry, mode, revealedSet, phase, silentReveal, previewCountry, onCountryClick, onBackgroundClick }: Props) {
+export function WorldMap({ selectedCountry, homeCountry, mode, revealedSet, heartSet, phase, silentReveal, previewCountry, onCountryClick, onBackgroundClick }: Props) {
   const colorScheme = useColorScheme()
   const C = { ...BASE_COLORS[colorScheme], ...MODE_ACCENTS[mode][colorScheme] }
 
@@ -517,9 +526,10 @@ export function WorldMap({ selectedCountry, homeCountry, mode, revealedSet, phas
         const delay = n > 1 ? Math.round((idx / (n - 1)) * 650) : 0
         return `completion-pulse 450ms ease-in-out ${delay}ms`
       }
-      // In loves mode each revealed country is a receiver: blip when its
-      // heart arrives, one flight time after it lit up.
-      const arrive = mode === 'loves' ? `, heart-arrive 400ms ease-out ${HEART_FLIGHT_MS}ms` : ''
+      // In loves mode entry into revealedSet is already delayed to the
+      // heart's touchdown (App passes the arrival set), so the light-up
+      // and the arrival blip fire together, right as the heart lands.
+      const arrive = mode === 'loves' ? ', heart-arrive 400ms ease-out' : ''
       return `reveal-pop 350ms ease-out${arrive}`
     }
     return undefined
@@ -616,8 +626,8 @@ export function WorldMap({ selectedCountry, homeCountry, mode, revealedSet, phas
         }
       `}</style>
       <ComposableMap
-        width={960}
-        height={500}
+        width={898}
+        height={473}
         // Robinson reads much less vertically squashed than Equal Earth
         // (South America / Australia kept their familiar proportions).
         // A projection function bypasses projectionConfig, so scale/rotate are
@@ -629,7 +639,7 @@ export function WorldMap({ selectedCountry, homeCountry, mode, revealedSet, phas
         <ZoomableGroup
           minZoom={1}
           maxZoom={8}
-          translateExtent={[[0, 0], [960, 500]]}
+          translateExtent={[[0, 0], [898, 473]]}
           filterZoomEvent={zoomFilter}
           onMove={handleMove}
           onMoveEnd={handleMoveEnd}
@@ -736,7 +746,7 @@ export function WorldMap({ selectedCountry, homeCountry, mode, revealedSet, phas
         {selectedCountry && phase !== 'idle' && (() => {
           const selPt = centroids[selectedCountry] && ROBINSON(centroids[selectedCountry])
           if (!selPt) return null
-          return [...revealedSet].map((id, idx) => {
+          return [...heartSet].map((id, idx) => {
             const pt = centroids[id] && ROBINSON(centroids[id])
             if (!pt || id === selectedCountry) return null
             const [from, to] = mode === 'loved-by' ? [pt, selPt] : [selPt, pt]

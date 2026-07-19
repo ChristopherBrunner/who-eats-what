@@ -74,6 +74,9 @@ export function useRevealSequence(selectedCountry: string | null, mode: ViewMode
   }, [selectedCountry, mode])
 
   const [revealedCount, setRevealedCount] = useState(0)
+  // Countries whose heart has LANDED (reveal + flight time). In loves mode
+  // the map/panel light up on arrival, not launch.
+  const [arrivedCount, setArrivedCount] = useState(0)
   const [phase, setPhase] = useState<RevealPhase>('idle')
   // True when this sequence runs without sound (direct-link load before any
   // user gesture) — the map compensates with a visual flourish instead.
@@ -81,6 +84,7 @@ export function useRevealSequence(selectedCountry: string | null, mode: ViewMode
 
   useEffect(() => {
     setRevealedCount(0)
+    setArrivedCount(0)
     if (orderedIds.length === 0) {
       setPhase('idle')
       return
@@ -104,6 +108,9 @@ export function useRevealSequence(selectedCountry: string | null, mode: ViewMode
       let n = 0
       while (n < orderedIds.length && delayAt(n) <= elapsed) n++
       setRevealedCount(prev => (n > prev ? n : prev))
+      let a = 0
+      while (a < orderedIds.length && delayAt(a) + HEART_FLIGHT_MS <= elapsed) a++
+      setArrivedCount(prev => (a > prev ? a : prev))
       if (elapsed >= DONE_MS) {
         setPhase('done')
       } else {
@@ -121,6 +128,10 @@ export function useRevealSequence(selectedCountry: string | null, mode: ViewMode
     () => new Set(orderedIds.slice(0, revealedCount)),
     [orderedIds, revealedCount],
   )
+  const arrivedSet = useMemo(
+    () => new Set(orderedIds.slice(0, arrivedCount)),
+    [orderedIds, arrivedCount],
+  )
 
-  return { revealedSet, revealedCount, phase, silent }
+  return { revealedSet, revealedCount, arrivedSet, arrivedCount, phase, silent }
 }
