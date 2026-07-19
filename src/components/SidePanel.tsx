@@ -82,9 +82,15 @@ function EntryRow({ targetId, title, relationship, revealed, expanded, onToggle,
               onClick={onToggle}
               aria-label={expanded ? 'Collapse details' : 'Expand details'}
               aria-expanded={expanded}
-              className={`text-[10px] text-[#9a8e7c] dark:text-[#6a6354] hover:text-[var(--accent)] dark:hover:text-[var(--accent)] transition-all cursor-pointer ${expanded ? 'rotate-90' : ''}`}
+              className={`flex items-center justify-center w-6 h-6 rounded-full border transition-all cursor-pointer shrink-0
+                ${expanded
+                  ? 'rotate-90 border-[var(--accent-40)] text-[var(--accent)] bg-[var(--accent-30)]/20'
+                  : 'border-[#c9c1b2] dark:border-[#2e2b22] text-[#8a7e6c] dark:text-[#7a7260] hover:border-[var(--accent-40)] hover:text-[var(--accent)]'}`}
             >
-              ▸
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"
+                strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="w-3 h-3">
+                <path d="M9 6l6 6-6 6" />
+              </svg>
             </button>
           )}
         </span>

@@ -482,14 +482,21 @@ export function WorldMap({ selectedCountry, homeCountry, mode, revealedSet, phas
   const getAnimation = (countryId: string): string | undefined => {
     if (!selectedCountry && countryId === homeCountry) return 'country-breath 3s ease-in-out infinite'
     if (countryId === selectedCountry) {
-      return silentReveal && phase === 'revealing'
-        ? 'selected-halo 1s ease-in-out 3'
-        : `selected-charge ${REVEAL_INITIAL_MS}ms ease-out`
+      if (phase === 'done') return 'selection-finale 750ms ease-out'
+      if (silentReveal && phase === 'revealing') return 'selected-halo 1s ease-in-out 3'
+      // In loved-by the selection is the receiver: once the first heart lands
+      // (first reveal + flight time) it throbs with the incoming stream.
+      const throb = mode === 'loved-by'
+        ? `, selection-throb 700ms ease-in-out ${REVEAL_INITIAL_MS + 850}ms infinite`
+        : ''
+      return `selected-charge ${REVEAL_INITIAL_MS}ms ease-out${throb}`
     }
     if (revealedSet.has(countryId)) {
-      return phase === 'done'
-        ? 'completion-pulse 500ms ease-in-out'
-        : 'reveal-pop 350ms ease-out'
+      if (phase === 'done') return 'completion-pulse 500ms ease-in-out'
+      // In loves mode each revealed country is a receiver: blip when its
+      // heart arrives, 850ms (the flight time) after it lit up.
+      const arrive = mode === 'loves' ? ', heart-arrive 400ms ease-out 850ms' : ''
+      return `reveal-pop 350ms ease-out${arrive}`
     }
     return undefined
   }
@@ -539,6 +546,27 @@ export function WorldMap({ selectedCountry, homeCountry, mode, revealedSet, phas
         @keyframes selected-halo {
           0%, 100% { filter: brightness(1) drop-shadow(0 0 0px ${hexToRgba(C.selected, 0)}); }
           50%      { filter: brightness(1.55) drop-shadow(0 0 8px ${hexToRgba(C.selected, 0.9)}); }
+        }
+        /* Receiver reactions: the selection throbs while hearts stream in
+           (loved-by); each loves-target blips as its heart lands (+850ms) */
+        @keyframes selection-throb {
+          0%, 100% { filter: brightness(1); }
+          50%      { filter: brightness(1.15); }
+        }
+        @keyframes heart-arrive {
+          0%   { filter: brightness(1); }
+          35%  { filter: brightness(1.55); }
+          100% { filter: brightness(1); }
+        }
+        /* Finale: the selection flashes with a glow while rings burst outward */
+        @keyframes selection-finale {
+          0%   { filter: brightness(1) drop-shadow(0 0 0px ${hexToRgba(C.selected, 0)}); }
+          30%  { filter: brightness(1.75) drop-shadow(0 0 16px ${hexToRgba(C.selected, 0.95)}); }
+          100% { filter: brightness(1) drop-shadow(0 0 0px ${hexToRgba(C.selected, 0)}); }
+        }
+        @keyframes burst-ring {
+          from { transform: scale(0.15); opacity: 0.95; }
+          to   { transform: scale(3.4); opacity: 0; }
         }
       `}</style>
       <ComposableMap
@@ -687,6 +715,31 @@ export function WorldMap({ selectedCountry, homeCountry, mode, revealedSet, phas
               </g>
             )
           })
+        })()}
+
+        {/* Finale burst: rings expand from the selection as the reveal
+            completes, synced with the completion ding + selection flash */}
+        {selectedCountry && phase === 'done' && (() => {
+          const selPt = centroids[selectedCountry] && ROBINSON(centroids[selectedCountry])
+          if (!selPt) return null
+          return (
+            <g transform={`translate(${selPt[0]} ${selPt[1]})`} style={{ pointerEvents: 'none' }}>
+              {[0, 260].map(delay => (
+                <circle
+                  key={delay}
+                  r={14 / zoomK}
+                  fill="none"
+                  stroke={C.selected}
+                  strokeWidth={1.8 / zoomK}
+                  opacity="0"
+                  style={{
+                    transformOrigin: '0 0',
+                    animation: `burst-ring 950ms cubic-bezier(0.2, 0.6, 0.4, 1) ${delay}ms forwards`,
+                  }}
+                />
+              ))}
+            </g>
+          )
         })()}
         </g>
         </ZoomableGroup>
