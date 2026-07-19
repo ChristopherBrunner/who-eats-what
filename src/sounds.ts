@@ -47,6 +47,28 @@ function tick(ctx: AudioContext, when: number, pitchHz: number): OscillatorNode 
   return osc
 }
 
+function heartLand(ctx: AudioContext, when: number): OscillatorNode {
+  // Soft low "plip" as a heart touches down — rounder and quieter than the
+  // reveal ticks (which sit at 380–580Hz), so landings read as echoes.
+  const osc  = ctx.createOscillator()
+  const gain = ctx.createGain()
+
+  osc.type = 'sine'
+  osc.frequency.setValueAtTime(250, when)
+  osc.frequency.exponentialRampToValueAtTime(165, when + 0.08)
+
+  gain.gain.setValueAtTime(0, when)
+  gain.gain.linearRampToValueAtTime(0.05, when + 0.008)
+  gain.gain.exponentialRampToValueAtTime(0.001, when + 0.11)
+
+  osc.connect(gain)
+  gain.connect(ctx.destination)
+  osc.start(when)
+  osc.stop(when + 0.12)
+
+  return osc
+}
+
 function completionDing(ctx: AudioContext, when: number): OscillatorNode[] {
   // Soft two-note interval: E5 + B5 (major fifth — open and resolved).
   return [659, 988].map((freq, j) => {
@@ -139,6 +161,10 @@ export function scheduleRevealSounds(
   // Extra wait before the completion ding (heart flight time — the ding
   // marks the last heart LANDING, in sync with the visual finale).
   dingExtraMs = 0,
+  // Landing plips, one flight time after each tick. 'sparse' mirrors the
+  // ripple thinning (first 6, then every 6th) so sound matches what's
+  // visible; 'all' for the small loves lists; 'none' keeps them silent.
+  landPattern: 'all' | 'sparse' | 'none' = 'none',
 ): () => void {
   const ctx = sharedCtx
   if (!ctx || count === 0) return () => {}
@@ -165,6 +191,16 @@ export function scheduleRevealSounds(
         ? 380 + 200 * frac   // 380 Hz → 580 Hz, rising with the cascade
         : 580 - 200 * frac   // 580 Hz → 380 Hz, falling
       nodes.push(tick(ctx, t, pitch))
+    }
+
+    // 3. Landing plips — each tick's heart touches down one flight later
+    if (landPattern !== 'none' && dingExtraMs > 0) {
+      for (let i = 0; i < count; i++) {
+        if (landPattern === 'sparse' && !(i < 6 || i % 6 === 0)) continue
+        const frac = count === 1 ? 0 : i / (count - 1)
+        const t = now + initSec + span * Math.sqrt(frac) + dingExtraMs / 1000
+        nodes.push(heartLand(ctx, t))
+      }
     }
 
     nodes.push(...completionDing(ctx, now + totalSec + dingExtraMs / 1000 + 0.04))

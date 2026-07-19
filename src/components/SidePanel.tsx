@@ -183,7 +183,7 @@ export function SidePanel({ countryId, mode, revealedSet, revealedCount, phase, 
       {/* Close */}
       <button
         onClick={onClose}
-        className="absolute top-5 right-6 text-[#b0a898] dark:text-[#3a3830] hover:text-[#6a6050] dark:hover:text-[#7a7468] transition-colors text-xl leading-none"
+        className="absolute top-3 right-4 p-2 text-3xl text-[#b0a898] dark:text-[#3a3830] hover:text-[#6a6050] dark:hover:text-[#7a7468] transition-colors leading-none cursor-pointer"
         aria-label="Close panel"
       >
         ×

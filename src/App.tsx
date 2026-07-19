@@ -220,12 +220,12 @@ function MapView({ homeCountry, idleMode, onIdleModeChange }: {
             }
           }}
         />
-      </div>
 
-      {/* rose inner vignette signals the flipped "what X loves" view.
-          The shadow is painted permanently and only opacity animates —
-          transitioning box-shadow itself made Chrome re-layerize at the
-          transition's end, flickering the glow off for a few frames. */}
+      {/* rose inner vignette signals the flipped "what X loves" view —
+          INSIDE the map area so it compresses with it and never runs under
+          the side panel (its corners banded through the panel edges).
+          Only opacity animates: transitioning the paint itself made Chrome
+          re-layerize at the transition's end, flickering the glow. */}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 transition-opacity duration-700"
@@ -237,12 +237,12 @@ function MapView({ homeCountry, idleMode, onIdleModeChange }: {
           // smoothly. Light needs a stronger mix against the parchment.
           background: (() => {
             const c = ACCENT_UI.loves[scheme]
-            const max = scheme === 'light' ? 55 : 24
+            const max = scheme === 'light' ? 55 : 38
             const stop = (t: number, at: number) =>
               `color-mix(in srgb, ${c} ${Math.round(max * t * 100) / 100}%, transparent) ${at}%`
-            return `radial-gradient(115% 115% at 50% 50%, transparent 38%, ${[
-              stop(0.03, 50), stop(0.1, 60), stop(0.22, 69), stop(0.4, 78),
-              stop(0.63, 87), stop(0.85, 94), stop(1, 100),
+            return `radial-gradient(115% 115% at 50% 50%, transparent 34%, ${[
+              stop(0.03, 47), stop(0.1, 58), stop(0.22, 68), stop(0.4, 77),
+              stop(0.63, 86), stop(0.85, 94), stop(1, 100),
             ].join(', ')})`
           })(),
         }}
@@ -260,6 +260,7 @@ function MapView({ homeCountry, idleMode, onIdleModeChange }: {
           WebkitMaskImage: 'radial-gradient(ellipse at center, transparent 40%, black 90%)',
         }}
       />
+      </div>
 
       {/* wordmark: quiet caps on the baseline of a big glowing serif-italic
           "eats" in the live mode accent, a tiny heart beating off the final s */}

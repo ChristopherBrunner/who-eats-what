@@ -94,6 +94,8 @@ export function useRevealSequence(selectedCountry: string | null, mode: ViewMode
       orderedIds.length, REVEAL_INITIAL_MS, REVEAL_TOTAL_MS,
       mode === 'loves' ? 'falling' : 'rising',
       HEART_FLIGHT_MS,
+      // matches the ripple visibility rule in EuropeMap
+      mode === 'loves' ? 'all' : 'sparse',
     )
 
     const start = performance.now()
