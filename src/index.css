@@ -50,6 +50,19 @@
   animation: toggle-beckon 2.4s ease-in-out infinite;
 }
 
+/* wordmark heart: a soft double-thump, like a resting heartbeat */
+@keyframes heart-beat {
+  0%, 48%, 100% { transform: scale(1); }
+  12%           { transform: scale(1.22); }
+  24%           { transform: scale(1); }
+  36%           { transform: scale(1.14); }
+}
+
+.animate-heart-beat {
+  animation: heart-beat 2.6s ease-in-out infinite;
+  transform-origin: center;
+}
+
 /* active mode-toggle icon pops in when the thumb lands on it */
 @keyframes mode-pop {
   0%   { transform: scale(0.3); }

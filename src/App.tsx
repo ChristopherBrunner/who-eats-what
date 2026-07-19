@@ -64,7 +64,7 @@ const ACCENT_UI: Record<ViewMode, Record<'light' | 'dark', string>> = {
 // itself; any click outside (the ocean, other controls) closes it.
 function HowItWorks({ open, onOpen, onClose }: { open: boolean; onOpen: () => void; onClose: () => void }) {
   return (
-    <div className="absolute top-14 left-8 z-40 w-72" onClick={e => e.stopPropagation()}>
+    <div className="absolute top-[4.2rem] left-8 z-40 w-72" onClick={e => e.stopPropagation()}>
       {!open ? (
         <button
           type="button"
@@ -210,19 +210,30 @@ function MapView({ homeCountry, idleMode, onIdleModeChange }: {
         }}
       />
 
-      {/* wordmark: quiet caps around a serif-italic "eats" wearing the live
-          mode accent — the brand re-colors amber/rose with the view */}
-      <div className="absolute top-6 left-8 pointer-events-none select-none flex items-baseline gap-1.5">
-        <span className="text-[11px] font-semibold tracking-[0.26em] uppercase text-[#7a6e5a] dark:text-[#8a8270]">
+      {/* wordmark: quiet caps on the baseline of a big glowing serif-italic
+          "eats" in the live mode accent, a tiny heart beating off the final s */}
+      <div className="absolute top-5 left-8 pointer-events-none select-none flex items-baseline gap-2">
+        <span className="text-[12px] font-semibold tracking-[0.3em] uppercase text-[#7a6e5a] dark:text-[#8a8270]">
           who
         </span>
         <span
-          className="text-[17px] italic leading-none text-[var(--accent)] transition-colors duration-500"
-          style={{ fontFamily: 'Georgia, "Times New Roman", serif' }}
+          className="relative text-[30px] leading-none italic font-bold text-[var(--accent)] transition-colors duration-500"
+          style={{
+            fontFamily: 'Georgia, "Times New Roman", serif',
+            textShadow: '0 0 18px var(--accent-30)',
+          }}
         >
           eats
+          <svg
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            aria-hidden="true"
+            className="absolute -top-1 -right-2 w-2.5 h-2.5 animate-heart-beat"
+          >
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+          </svg>
         </span>
-        <span className="text-[11px] font-semibold tracking-[0.26em] uppercase text-[#7a6e5a] dark:text-[#8a8270]">
+        <span className="text-[12px] font-semibold tracking-[0.3em] uppercase text-[#7a6e5a] dark:text-[#8a8270]">
           what
         </span>
       </div>
