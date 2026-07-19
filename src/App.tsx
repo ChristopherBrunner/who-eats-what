@@ -210,9 +210,20 @@ function MapView({ homeCountry, idleMode, onIdleModeChange }: {
         }}
       />
 
-      <div className="absolute top-7 left-8 pointer-events-none select-none">
-        <span className="text-[11px] font-medium tracking-[0.22em] uppercase text-[#9a8e78] dark:text-[#6a6354]">
-          Who Eats What
+      {/* wordmark: quiet caps around a serif-italic "eats" wearing the live
+          mode accent — the brand re-colors amber/rose with the view */}
+      <div className="absolute top-6 left-8 pointer-events-none select-none flex items-baseline gap-1.5">
+        <span className="text-[11px] font-semibold tracking-[0.26em] uppercase text-[#7a6e5a] dark:text-[#8a8270]">
+          who
+        </span>
+        <span
+          className="text-[17px] italic leading-none text-[var(--accent)] transition-colors duration-500"
+          style={{ fontFamily: 'Georgia, "Times New Roman", serif' }}
+        >
+          eats
+        </span>
+        <span className="text-[11px] font-semibold tracking-[0.26em] uppercase text-[#7a6e5a] dark:text-[#8a8270]">
+          what
         </span>
       </div>
 
