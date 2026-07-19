@@ -50,6 +50,17 @@
   animation: toggle-beckon 2.4s ease-in-out infinite;
 }
 
+/* panel close button pulses when an ocean misclick lands (panel stays open) */
+@keyframes close-nudge {
+  0%, 100% { transform: scale(1); }
+  30%      { transform: scale(1.6); color: var(--accent, #c4802e); text-shadow: 0 0 10px color-mix(in srgb, var(--accent, #c4802e) 50%, transparent); }
+  60%      { transform: scale(1.05); }
+}
+
+.animate-close-nudge {
+  animation: close-nudge 500ms ease-out;
+}
+
 /* wordmark heart: a soft double-thump, like a resting heartbeat */
 @keyframes heart-beat {
   0%, 48%, 100% { transform: scale(1); }

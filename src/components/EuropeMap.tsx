@@ -391,9 +391,11 @@ interface Props {
   /** Country previewed from the search bar — highlighted like a hover. */
   previewCountry: string | null
   onCountryClick: (countryId: string) => void
+  /** Click on ocean / non-country background (misclicks land here). */
+  onBackgroundClick: () => void
 }
 
-export function WorldMap({ selectedCountry, homeCountry, mode, revealedSet, phase, silentReveal, previewCountry, onCountryClick }: Props) {
+export function WorldMap({ selectedCountry, homeCountry, mode, revealedSet, phase, silentReveal, previewCountry, onCountryClick, onBackgroundClick }: Props) {
   const colorScheme = useColorScheme()
   const C = { ...BASE_COLORS[colorScheme], ...MODE_ACCENTS[mode][colorScheme] }
 
@@ -479,6 +481,15 @@ export function WorldMap({ selectedCountry, homeCountry, mode, revealedSet, phas
   // Values stay constant for the element's lifetime in each state, so
   // re-renders don't restart them; the reveal-pop → completion-pulse swap
   // restarts on purpose.
+  // Reveal-order index (Sets iterate in insertion order) — drives the fast
+  // ordered re-flash wave that sweeps the constellation at completion.
+  const revealOrder = useMemo(() => {
+    const m = new Map<string, number>()
+    let i = 0
+    for (const id of revealedSet) m.set(id, i++)
+    return m
+  }, [revealedSet])
+
   const getAnimation = (countryId: string): string | undefined => {
     if (!selectedCountry && countryId === homeCountry) return 'country-breath 3s ease-in-out infinite'
     if (countryId === selectedCountry) {
@@ -492,7 +503,14 @@ export function WorldMap({ selectedCountry, homeCountry, mode, revealedSet, phas
       return `selected-charge ${REVEAL_INITIAL_MS}ms ease-out${throb}`
     }
     if (revealedSet.has(countryId)) {
-      if (phase === 'done') return 'completion-pulse 500ms ease-in-out'
+      if (phase === 'done') {
+        // Quick victory lap: re-flash every country in reveal order while
+        // the explosion fires — the whole wave sweeps in ~650ms.
+        const n = revealedSet.size
+        const idx = revealOrder.get(countryId) ?? 0
+        const delay = n > 1 ? Math.round((idx / (n - 1)) * 650) : 0
+        return `completion-pulse 450ms ease-in-out ${delay}ms`
+      }
       // In loves mode each revealed country is a receiver: blip when its
       // heart arrives, 850ms (the flight time) after it lit up.
       const arrive = mode === 'loves' ? ', heart-arrive 400ms ease-out 850ms' : ''
@@ -509,7 +527,7 @@ export function WorldMap({ selectedCountry, homeCountry, mode, revealedSet, phas
       : 'fill 160ms ease'
 
   return (
-    <div className="w-full h-full" onClick={() => { if (selectedCountry) onCountryClick(selectedCountry) }}>
+    <div className="w-full h-full" onClick={onBackgroundClick}>
       <style>{`
         @keyframes country-breath {
           0%, 100% { fill: ${C.homePulseOff}; }
@@ -581,6 +599,14 @@ export function WorldMap({ selectedCountry, homeCountry, mode, revealedSet, phas
           0%   { transform: translate(0px, 0px) scale(0.4); opacity: 0; }
           15%  { opacity: 1; }
           100% { transform: translate(var(--bx), var(--by)) scale(1); opacity: 0; }
+        }
+        /* The explosion resolves into an expanding heart outline: swells,
+           holds its shape briefly, then dissolves */
+        @keyframes burst-heart-ring {
+          0%   { transform: scale(0.2); opacity: 0; }
+          22%  { opacity: 0.95; }
+          70%  { transform: scale(2.4); opacity: 0.8; }
+          100% { transform: scale(3.0); opacity: 0; }
         }
       `}</style>
       <ComposableMap
@@ -704,10 +730,15 @@ export function WorldMap({ selectedCountry, homeCountry, mode, revealedSet, phas
         {selectedCountry && phase !== 'idle' && (() => {
           const selPt = centroids[selectedCountry] && ROBINSON(centroids[selectedCountry])
           if (!selPt) return null
-          return [...revealedSet].map(id => {
+          return [...revealedSet].map((id, idx) => {
             const pt = centroids[id] && ROBINSON(centroids[id])
             if (!pt || id === selectedCountry) return null
             const [from, to] = mode === 'loved-by' ? [pt, selPt] : [selPt, pt]
+            // In loved-by every ripple lands on the selection; a dense stream
+            // blends into a blob. The cascade starts slow and accelerates, so
+            // ripple every early heart, then only every 6th (stable per idx).
+            // In loves the targets are spread out — always ripple.
+            const ripple = mode === 'loves' || idx < 6 || idx % 6 === 0
             return (
               <g key={`particle-${selectedCountry}-${mode}-${id}`} style={{ pointerEvents: 'none' }}>
                 {/* drift animates translate on the <g>; the heart keeps its
@@ -727,19 +758,21 @@ export function WorldMap({ selectedCountry, homeCountry, mode, revealedSet, phas
                   />
                 </g>
                 {/* landing ripple at the destination, delayed by flight time */}
-                <g transform={`translate(${to[0]} ${to[1]})`}>
-                  <circle
-                    r={4 / zoomK}
-                    fill="none"
-                    stroke={C.selected}
-                    strokeWidth={1 / zoomK}
-                    opacity="0"
-                    style={{
-                      transformOrigin: '0 0',
-                      animation: 'arrival-ripple 500ms ease-out 780ms forwards',
-                    }}
-                  />
-                </g>
+                {ripple && (
+                  <g transform={`translate(${to[0]} ${to[1]})`}>
+                    <circle
+                      r={4 / zoomK}
+                      fill="none"
+                      stroke={C.selected}
+                      strokeWidth={1 / zoomK}
+                      opacity="0"
+                      style={{
+                        transformOrigin: '0 0',
+                        animation: 'arrival-ripple 500ms ease-out 780ms forwards',
+                      }}
+                    />
+                  </g>
+                )}
               </g>
             )
           })
@@ -753,20 +786,35 @@ export function WorldMap({ selectedCountry, homeCountry, mode, revealedSet, phas
           const R = 26 / zoomK
           return (
             <g transform={`translate(${selPt[0]} ${selPt[1]})`} style={{ pointerEvents: 'none' }}>
-              {[0, 260].map(delay => (
-                <circle
-                  key={delay}
-                  r={14 / zoomK}
+              {/* opening circle wave... */}
+              <circle
+                r={14 / zoomK}
+                fill="none"
+                stroke={C.selected}
+                strokeWidth={1.8 / zoomK}
+                opacity="0"
+                style={{
+                  transformOrigin: '0 0',
+                  animation: 'burst-ring 950ms cubic-bezier(0.2, 0.6, 0.4, 1) forwards',
+                }}
+              />
+              {/* ...resolving into an expanding heart outline */}
+              <g
+                opacity="0"
+                style={{
+                  transformOrigin: '0 0',
+                  animation: 'burst-heart-ring 1150ms cubic-bezier(0.2, 0.6, 0.35, 1) 280ms forwards',
+                }}
+              >
+                <path
+                  d={HEART_PATH}
                   fill="none"
                   stroke={C.selected}
-                  strokeWidth={1.8 / zoomK}
-                  opacity="0"
-                  style={{
-                    transformOrigin: '0 0',
-                    animation: `burst-ring 950ms cubic-bezier(0.2, 0.6, 0.4, 1) ${delay}ms forwards`,
-                  }}
+                  strokeWidth={1.6}
+                  transform={`scale(${0.55 / zoomK}) translate(-12 -12)`}
+                  style={{ vectorEffect: 'non-scaling-stroke' }}
                 />
-              ))}
+              </g>
               {Array.from({ length: 8 }, (_, i) => {
                 // jittered octagon: alternating radius + small stagger reads
                 // organic rather than mechanical

@@ -143,6 +143,10 @@ function MapView({ homeCountry, idleMode, onIdleModeChange }: {
   // How-it-works window; closes on any click outside it (ocean included).
   const [helpOpen, setHelpOpen] = useState(false)
 
+  // Ocean misclicks while the panel is open don't close it (closing shifts
+  // the map out from under the cursor) — they nudge the × button instead.
+  const [closeNudge, setCloseNudge] = useState(0)
+
   // Escape backs out: help window first, then the selected country.
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -195,6 +199,7 @@ function MapView({ homeCountry, idleMode, onIdleModeChange }: {
           silentReveal={silent}
           previewCountry={previewCountry}
           onCountryClick={handleCountryClick}
+          onBackgroundClick={() => { if (countryId) setCloseNudge(n => n + 1) }}
         />
       </div>
 
@@ -207,18 +212,32 @@ function MapView({ homeCountry, idleMode, onIdleModeChange }: {
         className="pointer-events-none absolute inset-0 transition-opacity duration-700"
         style={{
           opacity: mode === 'loves' ? 1 : 0,
-          // three stacked shadows at different radii/alphas — a single big
-          // dark shadow shows 8-bit banding rings; layering dithers the
-          // falloff. Light needs a much stronger mix against the parchment.
+          // stacked shadows at staggered radii/alphas — a single big dark
+          // shadow shows 8-bit banding rings; layering dithers the falloff.
+          // Light needs a much stronger mix against the parchment.
           boxShadow: scheme === 'light'
             ? `inset 0 0 70px color-mix(in srgb, ${ACCENT_UI.loves.light} 30%, transparent),
                inset 0 0 140px color-mix(in srgb, ${ACCENT_UI.loves.light} 25%, transparent),
                inset 0 0 240px color-mix(in srgb, ${ACCENT_UI.loves.light} 22%, transparent)`
-            : `inset 0 0 60px color-mix(in srgb, ${ACCENT_UI.loves.dark} 11%, transparent),
-               inset 0 0 130px color-mix(in srgb, ${ACCENT_UI.loves.dark} 9%, transparent),
-               inset 0 0 230px color-mix(in srgb, ${ACCENT_UI.loves.dark} 8%, transparent)`,
+            : `inset 0 0 50px color-mix(in srgb, ${ACCENT_UI.loves.dark} 10%, transparent),
+               inset 0 0 90px color-mix(in srgb, ${ACCENT_UI.loves.dark} 8%, transparent),
+               inset 0 0 150px color-mix(in srgb, ${ACCENT_UI.loves.dark} 7%, transparent),
+               inset 0 0 230px color-mix(in srgb, ${ACCENT_UI.loves.dark} 6%, transparent)`,
         }}
-      />
+      >
+        {/* fine grain confined to the edges — perceptual dither for the
+            residual banding that stacked shadows can't fully hide on dark */}
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='128' height='128'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='128' height='128' filter='url(%23n)'/%3E%3C/svg%3E")`,
+            opacity: scheme === 'light' ? 0.05 : 0.07,
+            mixBlendMode: 'overlay',
+            maskImage: 'radial-gradient(ellipse at center, transparent 45%, black 92%)',
+            WebkitMaskImage: 'radial-gradient(ellipse at center, transparent 45%, black 92%)',
+          }}
+        />
+      </div>
 
       {/* wordmark: quiet caps on the baseline of a big glowing serif-italic
           "eats" in the live mode accent, a tiny heart beating off the final s */}
@@ -263,6 +282,7 @@ function MapView({ homeCountry, idleMode, onIdleModeChange }: {
       {countryId && (
         <SidePanel
           countryId={countryId}
+          closeNudge={closeNudge}
           mode={mode}
           revealedSet={revealedSet}
           revealedCount={revealedCount}
