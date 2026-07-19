@@ -355,6 +355,9 @@ const zoomFilter = ((e: WheelEvent | MouseEvent) =>
   e.type === 'wheel' ? true : e.type !== 'dblclick' && !e.ctrlKey && e.button === 0
 ) as unknown as (element: SVGElement) => boolean
 
+// 24×24 material heart (same glyph as the mode toggle), centered on (12,12).
+const HEART_PATH = 'M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'
+
 function hexToRgba(hex: string, alpha: number): string {
   const n = parseInt(hex.slice(1), 16)
   return `rgba(${(n >> 16) & 0xff}, ${(n >> 8) & 0xff}, ${n & 0xff}, ${alpha})`
@@ -650,12 +653,10 @@ export function WorldMap({ selectedCountry, homeCountry, mode, revealedSet, phas
             if (!pt || id === selectedCountry) return null
             const [from, to] = mode === 'loved-by' ? [pt, selPt] : [selPt, pt]
             return (
-              <circle
+              // drift animates translate on the <g>; the heart keeps its own
+              // static position/scale transform (zoom-compensated)
+              <g
                 key={`particle-${selectedCountry}-${mode}-${id}`}
-                cx={to[0]}
-                cy={to[1]}
-                r={1.8 / zoomK}
-                fill={C.selected}
                 opacity="0"
                 style={{
                   pointerEvents: 'none',
@@ -663,7 +664,13 @@ export function WorldMap({ selectedCountry, homeCountry, mode, revealedSet, phas
                   '--dy': `${from[1] - to[1]}px`,
                   animation: 'particle-drift 850ms cubic-bezier(0.4, 0, 0.6, 1) forwards',
                 } as React.CSSProperties}
-              />
+              >
+                <path
+                  d={HEART_PATH}
+                  fill={C.selected}
+                  transform={`translate(${to[0]} ${to[1]}) scale(${0.25 / zoomK}) translate(-12 -12)`}
+                />
+              </g>
             )
           })
         })()}
