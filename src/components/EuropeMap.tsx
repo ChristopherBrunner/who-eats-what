@@ -511,6 +511,15 @@ export function WorldMap({ selectedCountry, homeCountry, mode, revealedSet, phas
         }
         /* Silent reveals (direct links, audio locked): the linked country
            wears a blinking accent halo as a visual fanfare instead of sound */
+        /* Reveal motes: CSS (not SMIL — SMIL clocks run on the document
+           timeline, so animations mounted mid-session start pre-expired).
+           Each particle sits at its destination and drifts in from --dx/--dy. */
+        @keyframes particle-drift {
+          0%   { transform: translate(var(--dx), var(--dy)); opacity: 0; }
+          12%  { opacity: 0.9; }
+          75%  { opacity: 0.9; }
+          100% { transform: translate(0, 0); opacity: 0; }
+        }
         @keyframes selected-halo {
           0%, 100% { filter: brightness(1) drop-shadow(0 0 0px ${hexToRgba(C.selected, 0)}); }
           50%      { filter: brightness(1.55) drop-shadow(0 0 8px ${hexToRgba(C.selected, 0.9)}); }
@@ -643,17 +652,18 @@ export function WorldMap({ selectedCountry, homeCountry, mode, revealedSet, phas
             return (
               <circle
                 key={`particle-${selectedCountry}-${mode}-${id}`}
+                cx={to[0]}
+                cy={to[1]}
                 r={1.8 / zoomK}
                 fill={C.selected}
                 opacity="0"
-                style={{ pointerEvents: 'none' }}
-              >
-                <animateMotion dur="0.85s" fill="freeze" keyPoints="0;1" keyTimes="0;1"
-                  calcMode="spline" keySplines="0.4 0 0.6 1"
-                  path={`M ${from[0]} ${from[1]} L ${to[0]} ${to[1]}`} />
-                <animate attributeName="opacity" values="0;0.9;0.9;0" keyTimes="0;0.12;0.75;1"
-                  dur="0.85s" fill="freeze" />
-              </circle>
+                style={{
+                  pointerEvents: 'none',
+                  '--dx': `${from[0] - to[0]}px`,
+                  '--dy': `${from[1] - to[1]}px`,
+                  animation: 'particle-drift 850ms cubic-bezier(0.4, 0, 0.6, 1) forwards',
+                } as React.CSSProperties}
+              />
             )
           })
         })()}
