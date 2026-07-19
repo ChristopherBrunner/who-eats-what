@@ -568,6 +568,20 @@ export function WorldMap({ selectedCountry, homeCountry, mode, revealedSet, phas
           from { transform: scale(0.15); opacity: 0.95; }
           to   { transform: scale(3.4); opacity: 0; }
         }
+        /* Ripple where a heart lands — runs on its own element with the
+           flight time as delay, so it fires even after the reveal finishes
+           (the country's own animation slot gets replaced at completion) */
+        @keyframes arrival-ripple {
+          0%   { transform: scale(0.2); opacity: 0; }
+          20%  { opacity: 0.75; }
+          100% { transform: scale(2.2); opacity: 0; }
+        }
+        /* Finale spray: little hearts shoot outward from the selection */
+        @keyframes burst-heart {
+          0%   { transform: translate(0px, 0px) scale(0.4); opacity: 0; }
+          15%  { opacity: 1; }
+          100% { transform: translate(var(--bx), var(--by)) scale(1); opacity: 0; }
+        }
       `}</style>
       <ComposableMap
         width={960}
@@ -695,33 +709,48 @@ export function WorldMap({ selectedCountry, homeCountry, mode, revealedSet, phas
             if (!pt || id === selectedCountry) return null
             const [from, to] = mode === 'loved-by' ? [pt, selPt] : [selPt, pt]
             return (
-              // drift animates translate on the <g>; the heart keeps its own
-              // static position/scale transform (zoom-compensated)
-              <g
-                key={`particle-${selectedCountry}-${mode}-${id}`}
-                opacity="0"
-                style={{
-                  pointerEvents: 'none',
-                  '--dx': `${from[0] - to[0]}px`,
-                  '--dy': `${from[1] - to[1]}px`,
-                  animation: 'particle-drift 850ms cubic-bezier(0.4, 0, 0.6, 1) forwards',
-                } as React.CSSProperties}
-              >
-                <path
-                  d={HEART_PATH}
-                  fill={C.selected}
-                  transform={`translate(${to[0]} ${to[1]}) scale(${0.25 / zoomK}) translate(-12 -12)`}
-                />
+              <g key={`particle-${selectedCountry}-${mode}-${id}`} style={{ pointerEvents: 'none' }}>
+                {/* drift animates translate on the <g>; the heart keeps its
+                    own static position/scale transform (zoom-compensated) */}
+                <g
+                  opacity="0"
+                  style={{
+                    '--dx': `${from[0] - to[0]}px`,
+                    '--dy': `${from[1] - to[1]}px`,
+                    animation: 'particle-drift 850ms cubic-bezier(0.4, 0, 0.6, 1) forwards',
+                  } as React.CSSProperties}
+                >
+                  <path
+                    d={HEART_PATH}
+                    fill={C.selected}
+                    transform={`translate(${to[0]} ${to[1]}) scale(${0.25 / zoomK}) translate(-12 -12)`}
+                  />
+                </g>
+                {/* landing ripple at the destination, delayed by flight time */}
+                <g transform={`translate(${to[0]} ${to[1]})`}>
+                  <circle
+                    r={4 / zoomK}
+                    fill="none"
+                    stroke={C.selected}
+                    strokeWidth={1 / zoomK}
+                    opacity="0"
+                    style={{
+                      transformOrigin: '0 0',
+                      animation: 'arrival-ripple 500ms ease-out 780ms forwards',
+                    }}
+                  />
+                </g>
               </g>
             )
           })
         })()}
 
-        {/* Finale burst: rings expand from the selection as the reveal
-            completes, synced with the completion ding + selection flash */}
+        {/* Finale burst: a ring wave + a spray of little hearts shooting
+            outward from the selection, synced with the ding + flash */}
         {selectedCountry && phase === 'done' && (() => {
           const selPt = centroids[selectedCountry] && ROBINSON(centroids[selectedCountry])
           if (!selPt) return null
+          const R = 26 / zoomK
           return (
             <g transform={`translate(${selPt[0]} ${selPt[1]})`} style={{ pointerEvents: 'none' }}>
               {[0, 260].map(delay => (
@@ -738,6 +767,29 @@ export function WorldMap({ selectedCountry, homeCountry, mode, revealedSet, phas
                   }}
                 />
               ))}
+              {Array.from({ length: 8 }, (_, i) => {
+                // jittered octagon: alternating radius + small stagger reads
+                // organic rather than mechanical
+                const ang = (i / 8) * Math.PI * 2 - Math.PI / 2 + (i % 2 ? 0.22 : 0)
+                const r = R * (i % 2 ? 0.78 : 1)
+                return (
+                  <g
+                    key={i}
+                    opacity="0"
+                    style={{
+                      '--bx': `${Math.cos(ang) * r}px`,
+                      '--by': `${Math.sin(ang) * r}px`,
+                      animation: `burst-heart 850ms cubic-bezier(0.15, 0.6, 0.4, 1) ${i % 3 * 70}ms forwards`,
+                    } as React.CSSProperties}
+                  >
+                    <path
+                      d={HEART_PATH}
+                      fill={C.selected}
+                      transform={`scale(${(i % 2 ? 0.16 : 0.21) / zoomK}) translate(-12 -12)`}
+                    />
+                  </g>
+                )
+              })}
             </g>
           )
         })()}

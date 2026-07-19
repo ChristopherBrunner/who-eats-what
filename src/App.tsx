@@ -198,15 +198,25 @@ function MapView({ homeCountry, idleMode, onIdleModeChange }: {
         />
       </div>
 
-      {/* rose inner vignette signals the flipped "what X loves" view */}
+      {/* rose inner vignette signals the flipped "what X loves" view.
+          The shadow is painted permanently and only opacity animates —
+          transitioning box-shadow itself made Chrome re-layerize at the
+          transition's end, flickering the glow off for a few frames. */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 transition-shadow duration-700"
+        className="pointer-events-none absolute inset-0 transition-opacity duration-700"
         style={{
-          boxShadow: mode === 'loves'
-            // light needs a much stronger mix to read against the parchment
-            ? `inset 0 0 ${scheme === 'light' ? '180px' : '140px'} color-mix(in srgb, ${accent} ${scheme === 'light' ? '60%' : '24%'}, transparent)`
-            : 'inset 0 0 0 0 transparent',
+          opacity: mode === 'loves' ? 1 : 0,
+          // three stacked shadows at different radii/alphas — a single big
+          // dark shadow shows 8-bit banding rings; layering dithers the
+          // falloff. Light needs a much stronger mix against the parchment.
+          boxShadow: scheme === 'light'
+            ? `inset 0 0 70px color-mix(in srgb, ${ACCENT_UI.loves.light} 30%, transparent),
+               inset 0 0 140px color-mix(in srgb, ${ACCENT_UI.loves.light} 25%, transparent),
+               inset 0 0 240px color-mix(in srgb, ${ACCENT_UI.loves.light} 22%, transparent)`
+            : `inset 0 0 60px color-mix(in srgb, ${ACCENT_UI.loves.dark} 11%, transparent),
+               inset 0 0 130px color-mix(in srgb, ${ACCENT_UI.loves.dark} 9%, transparent),
+               inset 0 0 230px color-mix(in srgb, ${ACCENT_UI.loves.dark} 8%, transparent)`,
         }}
       />
 
