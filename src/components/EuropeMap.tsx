@@ -1,5 +1,6 @@
 import { useState, useMemo } from 'react'
 import { ComposableMap, Geographies, Geography, Marker, ZoomableGroup } from 'react-simple-maps'
+import { geoRobinson } from 'd3-geo-projection'
 import type { Country, ViewMode } from '../types'
 import { useColorScheme } from '../hooks/useColorScheme'
 import { REVEAL_INITIAL_MS, SHAPELESS_COUNTRIES, type RevealPhase } from '../hooks/useRevealSequence'
@@ -494,14 +495,21 @@ export function WorldMap({ selectedCountry, homeCountry, mode, revealedSet, phas
         }
       `}</style>
       <ComposableMap
-        projection="geoEqualEarth"
-        projectionConfig={{ scale: 160, center: [10, 10] }}
+        width={960}
+        height={500}
+        // Robinson reads much less vertically squashed than Equal Earth
+        // (South America / Australia kept their familiar proportions).
+        // A projection function bypasses projectionConfig, so scale/center
+        // are baked in here; rotate lon by -12° ≈ old center [10, 10].
+        // @types/react-simple-maps mistypes the function form; runtime accepts
+        // any d3 GeoProjection as-is.
+        projection={geoRobinson().rotate([-12, 0]).scale(172).translate([480, 265]) as unknown as string}
         style={{ width: '100%', height: '100%', background: 'transparent' }}
       >
         <ZoomableGroup
           minZoom={1}
           maxZoom={8}
-          translateExtent={[[0, 0], [800, 600]]}
+          translateExtent={[[0, 0], [960, 500]]}
           // Runtime receives the raw event despite the typings; allow trackpad
           // pinch (ctrl+wheel) but not double-click zoom (it fights selection).
           filterZoomEvent={((e: WheelEvent | MouseEvent) =>
@@ -509,6 +517,9 @@ export function WorldMap({ selectedCountry, homeCountry, mode, revealedSet, phas
           ) as unknown as (element: SVGElement) => boolean}
           onMoveEnd={({ zoom }) => setZoomK(zoom)}
         >
+        {/* Oversized event surface: ZoomableGroup's own rect only spans the
+            viewBox, leaving letterboxed margins dead for drag/zoom gestures */}
+        <rect x={-4000} y={-4000} width={8960} height={8500} fill="transparent" style={{ pointerEvents: 'all' }} />
         <Geographies geography={GEO_URL}>
           {({ geographies }) =>
             geographies.map(geo => {
@@ -605,11 +616,17 @@ export function WorldMap({ selectedCountry, homeCountry, mode, revealedSet, phas
           className="pointer-events-none fixed z-50"
           style={{ left: tooltipPos.x + 14, top: tooltipPos.y - 8 }}
         >
+          {/* glass chip keeps the label readable over amber/rose fills */}
           <span
-            className="text-[11px] font-medium tracking-[0.18em] uppercase"
-            style={{ color: C.tooltip }}
+            className="inline-block px-2 py-1 rounded-md backdrop-blur-sm text-[11px] font-medium tracking-[0.18em] uppercase whitespace-nowrap"
+            style={colorScheme === 'dark'
+              ? { background: 'rgba(13, 12, 9, 0.78)', color: '#e6dfd0' }
+              : { background: 'rgba(250, 246, 236, 0.85)', color: '#4a4236' }}
           >
             {countriesData.countries[hoveredCountry]?.name}
+            {revealedSet.has(hoveredCountry) && (
+              <> · {mode === 'loved-by' ? 'loves it' : 'on the menu'}</>
+            )}
             {revealedSet.has(hoveredCountry) && strengthById.get(hoveredCountry) != null && (
               <> · {strengthById.get(hoveredCountry)}%</>
             )}

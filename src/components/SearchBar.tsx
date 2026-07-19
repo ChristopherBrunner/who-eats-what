@@ -71,7 +71,7 @@ export function SearchBar({ onSelect, onHighlight }: Props) {
   return (
     <div className="relative w-72">
       <div
-        className="flex items-center gap-2.5 rounded-full px-4 py-2.5
+        className="flex items-center gap-2.5 rounded-full px-4 h-11
           bg-white/55 dark:bg-white/[0.06]
           backdrop-blur-xl backdrop-saturate-150
           border border-white/60 dark:border-white/10

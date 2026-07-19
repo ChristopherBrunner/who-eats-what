@@ -133,6 +133,9 @@ export function scheduleRevealSounds(
   count: number,
   initialMs: number,
   totalMs: number,
+  // 'rising' for loved-by (affection arriving), 'falling' for loves
+  // (appetite reaching out) — the modes sound mirrored.
+  pitchDirection: 'rising' | 'falling' = 'rising',
 ): () => void {
   const ctx = sharedCtx
   if (!ctx || count === 0) return () => {}
@@ -155,7 +158,9 @@ export function scheduleRevealSounds(
       // Anchored sqrt curve: i=0 → frac=0 → t=initSec,  i=N-1 → frac=1 → t=totalSec
       const frac  = count === 1 ? 0 : i / (count - 1)
       const t     = now + initSec + span * Math.sqrt(frac)
-      const pitch = 380 + 200 * frac   // 380 Hz → 580 Hz, rising with the cascade
+      const pitch = pitchDirection === 'rising'
+        ? 380 + 200 * frac   // 380 Hz → 580 Hz, rising with the cascade
+        : 580 - 200 * frac   // 580 Hz → 380 Hz, falling
       nodes.push(tick(ctx, t, pitch))
     }
 

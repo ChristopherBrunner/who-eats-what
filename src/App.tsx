@@ -60,6 +60,41 @@ const ACCENT_UI: Record<ViewMode, Record<'light' | 'dark', string>> = {
   'loves':    { light: '#b02747', dark: '#cf4d68' },
 }
 
+// Collapsible explainer under the wordmark.
+function HowItWorks() {
+  const [open, setOpen] = useState(false)
+  return (
+    <div className="absolute top-14 left-8 z-40 w-72">
+      <button
+        type="button"
+        onClick={() => setOpen(o => !o)}
+        aria-expanded={open}
+        className="px-3 py-1.5 rounded-full text-[10px] font-medium tracking-[0.18em] uppercase cursor-pointer
+          bg-white/55 dark:bg-white/[0.06] backdrop-blur-xl backdrop-saturate-150
+          border border-white/60 dark:border-white/10
+          shadow-md shadow-black/[0.06] dark:shadow-black/40
+          text-[#8a7e68] dark:text-[#7a7260] hover:text-[#5a5040] dark:hover:text-[#a89e8a] transition-colors"
+      >
+        {open ? '× close' : '? how it works'}
+      </button>
+      {open && (
+        <div className="mt-2 rounded-2xl p-4 space-y-2.5 text-[12px] leading-relaxed
+          bg-white/65 dark:bg-[#171510]/85 backdrop-blur-xl backdrop-saturate-150
+          border border-white/60 dark:border-white/10
+          shadow-xl shadow-black/[0.08] dark:shadow-black/50
+          text-[#4a4236] dark:text-[#c2bbaa]"
+        >
+          <p><strong className="text-[#b5691a] dark:text-[#c4802e]">♥ Loved by</strong> — click any country to watch everyone who loves its cuisine light up, near to far.</p>
+          <p><strong className="text-[#b02747] dark:text-[#cf4d68]">⑂ Loves</strong> — flip the toggle to see what that country loves eating from elsewhere instead.</p>
+          <p><strong>Deeper color = stronger love.</strong> Percentages are the share of people who like that cuisine (YouGov survey where available).</p>
+          <p><em>unexpected</em> tags each country's one surprise pick; expand a row for the story and source.</p>
+          <p>Tiny dots are micro-states — they're clickable too. Scroll to zoom, drag to pan, or find anywhere with the search bar.</p>
+        </div>
+      )}
+    </div>
+  )
+}
+
 function MapView({ homeCountry, idleMode, onIdleModeChange }: {
   homeCountry: string | null
   idleMode: ViewMode
@@ -124,7 +159,8 @@ function MapView({ homeCountry, idleMode, onIdleModeChange }: {
         className="pointer-events-none absolute inset-0 transition-shadow duration-700"
         style={{
           boxShadow: mode === 'loves'
-            ? `inset 0 0 140px color-mix(in srgb, ${accent} 24%, transparent)`
+            // light needs a much stronger mix to read against the parchment
+            ? `inset 0 0 ${scheme === 'light' ? '180px' : '140px'} color-mix(in srgb, ${accent} ${scheme === 'light' ? '45%' : '24%'}, transparent)`
             : 'inset 0 0 0 0 transparent',
         }}
       />
@@ -142,6 +178,8 @@ function MapView({ homeCountry, idleMode, onIdleModeChange }: {
         />
         <ModeToggle mode={mode} onChange={(m) => { ensureAudioReady(); handleModeChange(m) }} />
       </div>
+
+      <HowItWorks />
 
       <ThemeToggle />
 

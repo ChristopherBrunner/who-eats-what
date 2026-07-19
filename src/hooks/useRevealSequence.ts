@@ -59,12 +59,14 @@ export function useRevealSequence(selectedCountry: string | null, mode: ViewMode
             .map(l => l.cuisineCountryId)
             .filter(id => id in countriesData.countries && id !== selectedCountry)
 
-    // Sorted by distance from the selection, so the timed cascade + ticks
-    // expand outward as a single wavefront.
+    // Sorted by distance from the selection. Loved-by expands outward
+    // (near → far, affection arriving); loves is mirrored, sweeping inward
+    // from the far side of the world (far → near, appetite reaching out).
     const origin = centroids[selectedCountry]
     const dist = (id: string) =>
       origin && centroids[id] ? geoDistance(origin, centroids[id]) : Infinity
-    return ids.sort((a, b) => dist(a) - dist(b))
+    const nearFirst = ids.sort((a, b) => dist(a) - dist(b))
+    return mode === 'loves' ? nearFirst.reverse() : nearFirst
   }, [selectedCountry, mode])
 
   const [revealedCount, setRevealedCount] = useState(0)
@@ -84,7 +86,10 @@ export function useRevealSequence(selectedCountry: string | null, mode: ViewMode
 
     const delayAt = (i: number) => revealDelayMs(i, orderedIds.length)
 
-    const stopSounds = scheduleRevealSounds(orderedIds.length, REVEAL_INITIAL_MS, REVEAL_TOTAL_MS)
+    const stopSounds = scheduleRevealSounds(
+      orderedIds.length, REVEAL_INITIAL_MS, REVEAL_TOTAL_MS,
+      mode === 'loves' ? 'falling' : 'rising',
+    )
 
     const start = performance.now()
     let raf = requestAnimationFrame(function frame(now: number) {
@@ -103,7 +108,7 @@ export function useRevealSequence(selectedCountry: string | null, mode: ViewMode
       cancelAnimationFrame(raf)
       stopSounds()
     }
-  }, [orderedIds])
+  }, [orderedIds, mode])
 
   const revealedSet = useMemo(
     () => new Set(orderedIds.slice(0, revealedCount)),

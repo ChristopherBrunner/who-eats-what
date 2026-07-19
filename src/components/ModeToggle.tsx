@@ -34,7 +34,7 @@ export function ModeToggle({ mode, onChange }: Props) {
     <div
       role="group"
       aria-label="View mode"
-      className={`relative flex w-60 rounded-full p-1 select-none
+      className={`relative flex w-60 h-11 rounded-full p-1 select-none
         bg-white/55 dark:bg-white/[0.06]
         backdrop-blur-xl backdrop-saturate-150
         border border-white/60 dark:border-white/10
@@ -58,7 +58,7 @@ export function ModeToggle({ mode, onChange }: Props) {
         type="button"
         aria-pressed={!isLoves}
         onClick={() => flip('loved-by')}
-        className={`relative z-10 flex-1 flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-full cursor-pointer
+        className={`relative z-10 flex-1 flex items-center justify-center gap-1.5 px-3 rounded-full cursor-pointer
           text-[11px] font-medium uppercase tracking-[0.14em] transition-colors duration-300
           ${!isLoves ? 'text-[#fdf6e9]' : 'text-[#8a7e68] dark:text-[#7a7260] hover:text-[#5a5040] dark:hover:text-[#a89e8a]'}`}
       >
@@ -74,7 +74,7 @@ export function ModeToggle({ mode, onChange }: Props) {
         type="button"
         aria-pressed={isLoves}
         onClick={() => flip('loves')}
-        className={`relative z-10 flex-1 flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-full cursor-pointer
+        className={`relative z-10 flex-1 flex items-center justify-center gap-1.5 px-3 rounded-full cursor-pointer
           text-[11px] font-medium uppercase tracking-[0.14em] transition-colors duration-300
           ${isLoves ? 'text-[#fdf0f2]' : 'text-[#8a7e68] dark:text-[#7a7260] hover:text-[#5a5040] dark:hover:text-[#a89e8a]'}`}
       >
