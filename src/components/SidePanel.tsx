@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react'
 import type { RevealPhase } from '../hooks/useRevealSequence'
 import type { Country, CuisineRelationship, ViewMode } from '../types'
 import { lovesModeUsed, markLovesModeUsed } from '../modeDiscovery'
+import { flagUrl } from '../flags'
 import rawData from '../data/cuisines.json'
 
 const countriesData = rawData as { countries: Record<string, Country> }
@@ -51,8 +52,18 @@ function EntryRow({ targetId, title, relationship, revealed, expanded, onToggle,
       <div className="flex items-baseline justify-between gap-3">
         <button
           onClick={() => onSelectCountry(targetId)}
-          className="text-[#241e14] dark:text-[#d4c9b0] text-[13px] font-medium hover:text-[var(--accent)] dark:hover:text-[var(--accent)] transition-colors cursor-pointer text-left"
+          className="flex items-center gap-2.5 text-[#241e14] dark:text-[#d4c9b0] text-[14px] font-medium hover:text-[var(--accent)] dark:hover:text-[var(--accent)] transition-colors cursor-pointer text-left"
         >
+          {countriesData.countries[targetId] && (
+            <img
+              src={flagUrl(countriesData.countries[targetId].code)}
+              alt=""
+              loading="lazy"
+              draggable={false}
+              className="w-5 h-5 rounded-full shrink-0"
+              onError={e => { (e.target as HTMLImageElement).style.display = 'none' }}
+            />
+          )}
           {title}
         </button>
         <span className="shrink-0 flex items-baseline gap-2">
@@ -176,8 +187,15 @@ export function SidePanel({ countryId, mode, revealedSet, revealedCount, phase, 
       <div className="flex-1 overflow-y-auto px-8 pt-10 pb-4" style={{ scrollbarWidth: 'none' }}>
 
         {/* Country name */}
-        <h2 className="text-[2.4rem] font-bold tracking-tight leading-none text-[#1a1610] dark:text-[#f0e8d4]">
-          {country.name}
+        <h2 className="flex items-center gap-3 text-[2.4rem] font-bold tracking-tight leading-none text-[#1a1610] dark:text-[#f0e8d4]">
+          <img
+            src={flagUrl(country.code)}
+            alt=""
+            draggable={false}
+            className="w-9 h-9 rounded-full shrink-0 shadow-sm"
+            onError={e => { (e.target as HTMLImageElement).style.display = 'none' }}
+          />
+          <span className="min-w-0">{country.name}</span>
         </h2>
 
         {/* Sub-headline — counter climbs with the reveal cascade, settles on the ding */}

@@ -5,6 +5,7 @@ import type { Country, ViewMode } from '../types'
 import { useColorScheme } from '../hooks/useColorScheme'
 import { REVEAL_INITIAL_MS, SHAPELESS_COUNTRIES, type RevealPhase } from '../hooks/useRevealSequence'
 import { ensureAudioReady } from '../sounds'
+import { flagUrl } from '../flags'
 import rawData from '../data/cuisines.json'
 import rawCentroids from '../data/centroids.json'
 
@@ -413,14 +414,20 @@ export function WorldMap({ selectedCountry, homeCountry, mode, revealedSet, phas
       setZoomK(liveZoom.current)
     })
   }, [])
-  // After a zoom-in gesture Chrome keeps the layer's stale low-res raster
-  // until something in it repaints (that's why mouse-hover un-blurred it).
-  // Alternating fill-opacity by 1/20000 on gesture end is an invisible paint
-  // invalidation that forces a re-raster at the settled scale.
+  // After a zoom gesture Chrome can keep the layer's stale raster until a
+  // commit lands OUTSIDE its "user is still interacting" window (any real
+  // mousemove did it by accident; a commit at gesture-end is often still
+  // inside the window). So bump an invisible fill-opacity toggle at end and
+  // again after the window has passed — each bump is a paint invalidation
+  // that lets the compositor re-raster at the settled scale.
   const [rasterBump, setRasterBump] = useState(0)
+  const bumpTimers = useRef<number[]>([])
   const handleMoveEnd = useCallback(({ zoom }: { zoom: number }) => {
     setZoomK(zoom)
+    for (const t of bumpTimers.current) clearTimeout(t)
     setRasterBump(b => b + 1)
+    bumpTimers.current = [250, 600].map(ms =>
+      window.setTimeout(() => setRasterBump(b => b + 1), ms))
   }, [])
 
   // Survey strength of each highlighted country's relationship to the
@@ -692,11 +699,20 @@ export function WorldMap({ selectedCountry, homeCountry, mode, revealedSet, phas
         >
           {/* glass chip keeps the label readable over amber/rose fills */}
           <span
-            className="inline-block px-2 py-1 rounded-md backdrop-blur-sm text-[11px] font-medium tracking-[0.18em] uppercase whitespace-nowrap"
+            className="flex items-center gap-1.5 px-2 py-1 rounded-md backdrop-blur-sm text-[11px] font-medium tracking-[0.18em] uppercase whitespace-nowrap"
             style={colorScheme === 'dark'
               ? { background: 'rgba(13, 12, 9, 0.78)', color: '#e6dfd0' }
               : { background: 'rgba(250, 246, 236, 0.85)', color: '#4a4236' }}
           >
+            {countriesData.countries[hoveredCountry] && (
+              <img
+                src={flagUrl(countriesData.countries[hoveredCountry].code)}
+                alt=""
+                draggable={false}
+                className="w-3.5 h-3.5 rounded-full"
+                onError={e => { (e.target as HTMLImageElement).style.display = 'none' }}
+              />
+            )}
             {countriesData.countries[hoveredCountry]?.name}
             {revealedSet.has(hoveredCountry) && (
               <> · {mode === 'loved-by' ? 'loves it' : 'on the menu'}</>
