@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useRef, useCallback } from 'react'
 import { ComposableMap, Geographies, Geography, Marker, ZoomableGroup } from 'react-simple-maps'
 import { geoRobinson } from 'd3-geo-projection'
 import type { Country, ViewMode } from '../types'
@@ -397,9 +397,24 @@ export function WorldMap({ selectedCountry, homeCountry, mode, revealedSet, phas
 
   const [hoveredCountry, setHoveredCountry] = useState<string | null>(null)
   const [tooltipPos, setTooltipPos] = useState({ x: 0, y: 0 })
-  // Settled zoom factor — marker dot radii divide by it so they keep a
-  // constant screen size (updated on gesture end, not per frame).
+  // Zoom factor — marker dot radii divide by it so they keep a constant
+  // screen size. Updated live during gestures (rAF-throttled): the per-frame
+  // attribute writes force Chrome to re-rasterize the map subtree while
+  // zooming, instead of blurrily scaling a cached raster until gesture end.
   const [zoomK, setZoomK] = useState(1)
+  const liveZoom = useRef(1)
+  const zoomRaf = useRef(0)
+  const handleMove = useCallback(({ zoom }: { zoom: number }) => {
+    liveZoom.current = zoom
+    if (zoomRaf.current) return
+    zoomRaf.current = requestAnimationFrame(() => {
+      zoomRaf.current = 0
+      setZoomK(liveZoom.current)
+    })
+  }, [])
+  const handleMoveEnd = useCallback(({ zoom }: { zoom: number }) => {
+    setZoomK(zoom)
+  }, [])
 
   // Survey strength of each highlighted country's relationship to the
   // selection, where known — drives the heat gradient.
@@ -519,7 +534,8 @@ export function WorldMap({ selectedCountry, homeCountry, mode, revealedSet, phas
           maxZoom={8}
           translateExtent={[[0, 0], [960, 500]]}
           filterZoomEvent={zoomFilter}
-          onMoveEnd={({ zoom }) => setZoomK(zoom)}
+          onMove={handleMove}
+          onMoveEnd={handleMoveEnd}
         >
         {/* Event surface for the letterboxed margins outside the viewBox,
             which are otherwise dead for drag/zoom gestures. d3-zoom's extent
