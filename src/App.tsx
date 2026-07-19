@@ -143,6 +143,19 @@ function MapView({ homeCountry, idleMode, onIdleModeChange }: {
   // How-it-works window; closes on any click outside it (ocean included).
   const [helpOpen, setHelpOpen] = useState(false)
 
+  // Escape backs out: help window first, then the selected country.
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key !== 'Escape' || e.target instanceof HTMLInputElement) return
+      setHelpOpen(open => {
+        if (!open && countryId) navigate('/')
+        return false
+      })
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [countryId, navigate])
+
   const handleCountryClick = (id: string) => {
     if (id === countryId) {
       navigate('/')

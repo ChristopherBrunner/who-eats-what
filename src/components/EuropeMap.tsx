@@ -277,7 +277,6 @@ const BASE_COLORS = {
     homePulseOn:       '#5a4c2a',
     homePulseOff:      '#1b1914',
     border:            '#312d23',
-    tooltip:           '#a8a29e',
   },
   light: {
     nonDataset:        '#e4ddd0',
@@ -288,7 +287,6 @@ const BASE_COLORS = {
     homePulseOn:       '#c4a36a',
     homePulseOff:      '#d0c8b8',
     border:            '#a49b88',
-    tooltip:           '#6a6054',
   },
 }
 
@@ -629,6 +627,36 @@ export function WorldMap({ selectedCountry, homeCountry, mode, revealedSet, phas
             </Marker>
           )
         })}
+
+        {/* Direction particles: as each country reveals, a mote drifts along
+            the line between it and the selection — inward in loved-by
+            (affection arriving), outward in loves (appetite reaching out).
+            SMIL starts on mount, so each particle fires exactly once when its
+            country enters revealedSet; keys reset the layer per selection. */}
+        {selectedCountry && phase !== 'idle' && (() => {
+          const selPt = centroids[selectedCountry] && ROBINSON(centroids[selectedCountry])
+          if (!selPt) return null
+          return [...revealedSet].map(id => {
+            const pt = centroids[id] && ROBINSON(centroids[id])
+            if (!pt || id === selectedCountry) return null
+            const [from, to] = mode === 'loved-by' ? [pt, selPt] : [selPt, pt]
+            return (
+              <circle
+                key={`particle-${selectedCountry}-${mode}-${id}`}
+                r={1.8 / zoomK}
+                fill={C.selected}
+                opacity="0"
+                style={{ pointerEvents: 'none' }}
+              >
+                <animateMotion dur="0.85s" fill="freeze" keyPoints="0;1" keyTimes="0;1"
+                  calcMode="spline" keySplines="0.4 0 0.6 1"
+                  path={`M ${from[0]} ${from[1]} L ${to[0]} ${to[1]}`} />
+                <animate attributeName="opacity" values="0;0.9;0.9;0" keyTimes="0;0.12;0.75;1"
+                  dur="0.85s" fill="freeze" />
+              </circle>
+            )
+          })
+        })()}
         </ZoomableGroup>
       </ComposableMap>
 
