@@ -325,23 +325,17 @@ function MapView({ homeCountry, idleMode, onIdleModeChange }: {
         </span>
       </div>
 
-      {/* centered over the MAP AREA (screen minus the 360px right rail).
-          Uneven gaps encode the grouping: search + dice are two ways to do
-          the same thing (pick a country) so they sit tight together, while
-          the mode toggle is a different kind of control (view state) and
-          gets pushed away — at an equal gap the dice read as part of it. */}
-      <div className="absolute top-6 left-[calc((100%-360px)/2)] -translate-x-1/2 z-40 flex items-start gap-5">
-        <div className="flex items-start gap-2">
-          <SearchBar
-            onSelect={(id) => { ensureAudioReady(); navigate(`/${id}/${mode}`) }}
-            onHighlight={setPreviewCountry}
-          />
-          <DiceButton onRoll={() => {
-            ensureAudioReady()
-            const ids = Object.keys(countriesData.countries).filter(id => id !== countryId)
-            navigate(`/${ids[Math.floor(Math.random() * ids.length)]}/${mode}`)
-          }} />
-        </div>
+      {/* centered over the MAP AREA (screen minus the 360px right rail) */}
+      <div className="absolute top-6 left-[calc((100%-360px)/2)] -translate-x-1/2 z-40 flex items-start gap-3">
+        <SearchBar
+          onSelect={(id) => { ensureAudioReady(); navigate(`/${id}/${mode}`) }}
+          onHighlight={setPreviewCountry}
+        />
+        <DiceButton onRoll={() => {
+          ensureAudioReady()
+          const ids = Object.keys(countriesData.countries).filter(id => id !== countryId)
+          navigate(`/${ids[Math.floor(Math.random() * ids.length)]}/${mode}`)
+        }} />
         <ModeToggle mode={mode} onChange={(m) => { ensureAudioReady(); handleModeChange(m) }} />
       </div>
 
