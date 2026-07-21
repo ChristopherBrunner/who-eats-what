@@ -93,6 +93,14 @@ function DiceButton({ onRoll }: { onRoll: () => void }) {
   )
 }
 
+// Light mode paints the vignette with DEEPENED accents: the mix % is already
+// maxed out, so extra presence has to come from darker pigment (the amber
+// especially washed out against the parchment).
+function vignetteColor(m: ViewMode, scheme: 'light' | 'dark'): string {
+  if (scheme === 'dark') return ACCENT_UI[m][scheme]
+  return m === 'loved-by' ? '#94500c' : '#9c2240'
+}
+
 // Inner-vignette paint for a mode accent. Eased multi-stop radial gradient,
 // NOT box-shadow: shadow blur quantizes into visible rings on dark, and
 // two-stop gradients show Mach bands — many stops on an easing curve
@@ -187,10 +195,13 @@ function MapView({ homeCountry, idleMode, onIdleModeChange }: {
     : idleMode
 
   // Shared reveal sequence: map highlights, panel rows, and sounds all sync.
-  const { revealedSet, revealedCount, arrivedSet, arrivedCount, phase, silent } = useRevealSequence(countryId ?? null, mode)
-  // In loves the country lights up when its heart LANDS; loved-by at launch.
+  const { revealedSet, arrivedSet, arrivedCount, phase, silent } = useRevealSequence(countryId ?? null, mode)
+  // Map: in loves a country lights when its heart LANDS; in loved-by it
+  // lights at launch, because the light-up is what sends the heart.
   const litSet = mode === 'loves' ? arrivedSet : revealedSet
-  const litCount = mode === 'loves' ? arrivedCount : revealedCount
+  // Panel: always arrival-driven, in both modes. The rows and the counter
+  // then land on the same frame as the arrival tick and the selection's
+  // throb, instead of running a flight time ahead of their own sound.
 
   // Country highlighted in the search dropdown, previewed on the map.
   const [previewCountry, setPreviewCountry] = useState<string | null>(null)
@@ -270,18 +281,25 @@ function MapView({ homeCountry, idleMode, onIdleModeChange }: {
           className="pointer-events-none absolute inset-0 transition-opacity duration-700"
           style={{
             opacity: mode === m ? 1 : 0,
-            // Light mode paints with DEEPENED accents (mix % is maxed out,
-            // so extra presence has to come from darker pigment — the amber
-            // especially washed out against the parchment).
-            background: vignetteBackground(
-              scheme === 'light'
-                ? (m === 'loved-by' ? '#94500c' : '#9c2240')
-                : ACCENT_UI[m][scheme],
-              scheme,
-            ),
+            background: vignetteBackground(vignetteColor(m, scheme), scheme),
           }}
         />
       ))}
+      {/* one-shot glow riding the finale: the same vignette, swelling and
+          falling once as the burst fires. Keyed per selection so it re-fires
+          on every reveal rather than only the first. */}
+      {phase === 'done' && countryId && (
+        <div
+          key={`finale-${countryId}-${mode}`}
+          aria-hidden
+          className="pointer-events-none absolute inset-0"
+          style={{
+            opacity: 0,
+            background: vignetteBackground(vignetteColor(mode, scheme), scheme),
+            animation: 'finale-glow 950ms ease-out',
+          }}
+        />
+      )}
       {/* grain sibling (NOT nested: a fading parent isolates blending, which
           made the overlay blend shift as the fade finished — the old snap) */}
       <div
@@ -347,8 +365,8 @@ function MapView({ homeCountry, idleMode, onIdleModeChange }: {
         countryId={countryId ?? null}
         homeCountry={homeCountry}
         mode={mode}
-        revealedSet={litSet}
-        revealedCount={litCount}
+        revealedSet={arrivedSet}
+        revealedCount={arrivedCount}
         phase={phase}
         onModeChange={handleModeChange}
         onSelectCountry={(id) => { ensureAudioReady(); navigate(`/${id}/${mode}`) }}

@@ -3,6 +3,29 @@
 
 // ─── Primitives ──────────────────────────────────────────────────────────────
 
+function impact(ctx: AudioContext, when: number): OscillatorNode {
+  // Low thump the instant a selection is made. The first arrival is a full
+  // REVEAL_INITIAL_MS away, so without this the click lands in silence and
+  // reads as lag; with it, the gap becomes anticipation.
+  const osc  = ctx.createOscillator()
+  const gain = ctx.createGain()
+
+  osc.type = 'sine'
+  osc.frequency.setValueAtTime(165, when)
+  osc.frequency.exponentialRampToValueAtTime(62, when + 0.09)
+
+  gain.gain.setValueAtTime(0, when)
+  gain.gain.linearRampToValueAtTime(0.13, when + 0.005)
+  gain.gain.exponentialRampToValueAtTime(0.001, when + 0.19)
+
+  osc.connect(gain)
+  gain.connect(ctx.destination)
+  osc.start(when)
+  osc.stop(when + 0.2)
+
+  return osc
+}
+
 function tick(ctx: AudioContext, when: number, pitchHz: number): OscillatorNode {
   // Short sine burst with a slight pitch glide downward — gives a soft "thud" quality.
   const osc  = ctx.createOscillator()
@@ -46,6 +69,16 @@ function completionDing(ctx: AudioContext, when: number): OscillatorNode[] {
     return osc
   })
 }
+
+// E major pentatonic, E4 → B5. Arrival pitches SNAP to these instead of
+// gliding continuously: a pentatonic scale has no dissonant interval, so a
+// 30-tick cascade reads as a melody rather than a siren, and repeated
+// neighbours land as sustained steps. The top note is B5 and the completion
+// ding is E5+B5 — the cascade climbs into the chord that resolves it.
+const PENTATONIC_HZ = [
+  329.63, 369.99, 415.30, 493.88, 554.37,
+  659.25, 739.99, 830.61, 987.77,
+]
 
 // ─── Public API ──────────────────────────────────────────────────────────────
 
@@ -139,18 +172,20 @@ export function scheduleRevealSounds(
     const totalSec = totalMs   / 1000
     const span     = totalSec - initSec
 
+    // Thump on the click itself, before the anticipation gap.
+    nodes.push(impact(ctx, now))
+
     // Arrival ticks — one per heart landing, a flight time after its
     // country lit up. Anchored sqrt curve: i=0 → frac=0 → t=initSec,
     // i=N-1 → frac=1 → t=totalSec, then shifted by the flight.
     if (landPattern !== 'none' && dingExtraMs > 0) {
       for (let i = 0; i < count; i++) {
         if (landPattern === 'sparse' && !(i < 6 || i % 6 === 0)) continue
-        const frac  = count === 1 ? 0 : i / (count - 1)
-        const t     = now + initSec + span * Math.sqrt(frac) + dingExtraMs / 1000
-        const pitch = pitchDirection === 'rising'
-          ? 380 + 200 * frac   // 380 Hz → 580 Hz, rising with the cascade
-          : 580 - 200 * frac   // 580 Hz → 380 Hz, falling
-        nodes.push(tick(ctx, t, pitch))
+        const frac = count === 1 ? 0 : i / (count - 1)
+        const t    = now + initSec + span * Math.sqrt(frac) + dingExtraMs / 1000
+        // Walk the scale up in loved-by (affection arriving), down in loves.
+        const step = pitchDirection === 'rising' ? frac : 1 - frac
+        nodes.push(tick(ctx, t, PENTATONIC_HZ[Math.round(step * (PENTATONIC_HZ.length - 1))]))
       }
     }
 

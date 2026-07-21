@@ -370,6 +370,19 @@ const zoomFilter = ((e: WheelEvent | MouseEvent) =>
 // 24×24 material heart (same glyph as the mode toggle), centered on (12,12).
 const HEART_PATH = 'M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'
 
+// Stable pseudo-random in [0,1) from a string (FNV-1a). Used to jitter each
+// heart's size and tilt so a dense stream looks hand-scattered instead of
+// cloned — must be deterministic, since Math.random() in render would
+// re-roll every frame and make the hearts twitch.
+function hashUnit(s: string): number {
+  let h = 2166136261
+  for (let i = 0; i < s.length; i++) {
+    h ^= s.charCodeAt(i)
+    h = Math.imul(h, 16777619)
+  }
+  return ((h >>> 0) % 1000) / 1000
+}
+
 function hexToRgba(hex: string, alpha: number): string {
   const n = parseInt(hex.slice(1), 16)
   return `rgba(${(n >> 16) & 0xff}, ${(n >> 8) & 0xff}, ${n & 0xff}, ${alpha})`
@@ -772,7 +785,14 @@ export function WorldMap({ selectedCountry, homeCountry, mode, revealedSet, hear
                     fill={C.effect}
                     stroke={colorScheme === 'dark' ? 'rgba(15, 12, 8, 0.5)' : 'rgba(255, 252, 244, 0.65)'}
                     strokeWidth={2}
-                    transform={`translate(${to[0]} ${to[1]}) scale(${0.25 / zoomK}) translate(-12 -12)`}
+                    // rotate() sits after the -12,-12 recentre, so each heart
+                    // tilts about its own middle rather than swinging.
+                    transform={
+                      `translate(${to[0]} ${to[1]})` +
+                      ` scale(${(0.25 * (0.82 + hashUnit(id) * 0.36)) / zoomK})` +
+                      ` rotate(${(hashUnit(`${id}#tilt`) * 2 - 1) * 20})` +
+                      ` translate(-12 -12)`
+                    }
                   />
                 </g>
                 {/* landing ripple at the destination, delayed by flight time */}
