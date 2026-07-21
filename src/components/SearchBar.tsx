@@ -4,8 +4,52 @@ import rawData from '../data/cuisines.json'
 
 const countriesData = rawData as { countries: Record<string, Country> }
 
+/**
+ * Fold a name or a query down to a comparison key: accents stripped, "&"
+ * spelled out, "st" expanded to "saint", then every non-alphanumeric
+ * character removed.
+ *
+ * The final squash is the point — with punctuation and spacing gone
+ * entirely, "Côte d'Ivoire", "cote divoire", "cote d ivoire" and
+ * "cotedivoire" all collapse to the same key, so nobody has to guess where
+ * the apostrophes and accents go. NFD covers every accent in the dataset
+ * (checked: no ø/æ/ß/ł, which have no decomposition and would need a map).
+ */
+function searchKey(s: string): string {
+  return s
+    .normalize('NFD')
+    .replace(/\p{M}/gu, '')  // strip combining accents
+    .toLowerCase()
+    .replace(/&/g, ' and ')
+    .replace(/[^a-z0-9]+/g, ' ')
+    .replace(/\bst\b/g, 'saint')
+    .replace(/\s+/g, '')
+}
+
+// Names people actually type that no amount of folding would reach. The
+// country slugs are searched too, which already covers usa / uk / drc /
+// ivory-coast / cape-verde for free.
+const ALIASES: Record<string, string[]> = {
+  usa: ['america', 'unitedstatesofamerica'],
+  uk: ['britain', 'greatbritain', 'england'],
+  netherlands: ['holland'],
+  myanmar: ['burma'],
+  czechia: ['czechrepublic'],
+  eswatini: ['swaziland'],
+  'timor-leste': ['easttimor'],
+  turkey: ['turkiye'],
+  'cape-verde': ['caboverde'],
+  drc: ['democraticrepublicofthecongo', 'congokinshasa', 'zaire'],
+  'congo-republic': ['congobrazzaville'],
+}
+
 const ALL_COUNTRIES = Object.entries(countriesData.countries)
-  .map(([id, c]) => ({ id, name: c.name }))
+  .map(([id, c]) => ({
+    id,
+    name: c.name,
+    // name, slug and aliases are all searched, so any of them can match
+    keys: [c.name, id, ...(ALIASES[id] ?? [])].map(searchKey),
+  }))
   .sort((a, b) => a.name.localeCompare(b.name))
 
 const MAX_RESULTS = 8
@@ -40,14 +84,20 @@ export function SearchBar({ onSelect, onHighlight }: Props) {
   }, [])
 
   const results = useMemo(() => {
-    const q = query.trim().toLowerCase()
+    const q = searchKey(query)
     if (!q) return []
-    // Prefix matches rank above substring matches.
-    const starts = ALL_COUNTRIES.filter(c => c.name.toLowerCase().startsWith(q))
-    const contains = ALL_COUNTRIES.filter(
-      c => !c.name.toLowerCase().startsWith(q) && c.name.toLowerCase().includes(q),
-    )
-    return [...starts, ...contains].slice(0, MAX_RESULTS)
+    // Exact beats prefix beats substring. The exact tier matters for short
+    // slugs: "uk" is a prefix of Ukraine, so without it the United Kingdom
+    // loses to alphabetical order on its own name.
+    type Entry = typeof ALL_COUNTRIES[number]
+    const exact    = (c: Entry) => c.keys.includes(q)
+    const prefix   = (c: Entry) => !exact(c) && c.keys.some(k => k.startsWith(q))
+    const substr   = (c: Entry) => !exact(c) && !prefix(c) && c.keys.some(k => k.includes(q))
+    return [
+      ...ALL_COUNTRIES.filter(exact),
+      ...ALL_COUNTRIES.filter(prefix),
+      ...ALL_COUNTRIES.filter(substr),
+    ].slice(0, MAX_RESULTS)
   }, [query])
 
   const open = focused && results.length > 0
