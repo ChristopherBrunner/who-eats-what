@@ -6,8 +6,7 @@ import { SearchBar } from './components/SearchBar'
 import { ModeToggle } from './components/ModeToggle'
 import { useRevealSequence } from './hooks/useRevealSequence'
 import { toggleColorScheme, useColorScheme } from './hooks/useColorScheme'
-import { ensureAudioReady, getSoundLayers, installAudioUnlock, setSoundLayer } from './sounds'
-import type { SoundLayer } from './sounds'
+import { ensureAudioReady, installAudioUnlock } from './sounds'
 import type { Country, ViewMode } from './types'
 import rawData from './data/cuisines.json'
 
@@ -51,40 +50,6 @@ function ThemeToggle() {
         </svg>
       )}
     </button>
-  )
-}
-
-// TEMPORARY audition control: mute/unmute the two reveal sound layers while
-// we settle on the mix. Remove once the mix is decided (along with the
-// layer switches in sounds.ts).
-function SoundLayerToggles() {
-  const [layers, setLayers] = useState(getSoundLayers)
-  const flip = (layer: SoundLayer) => {
-    ensureAudioReady()   // first click also unlocks audio, so a test is audible
-    setLayers({ ...setSoundLayer(layer, !layers[layer]) })
-  }
-  return (
-    <div className="absolute bottom-6 left-20 z-40 flex gap-2">
-      {(['launch', 'arrival'] as SoundLayer[]).map(layer => (
-        <button
-          key={layer}
-          type="button"
-          onClick={() => flip(layer)}
-          aria-pressed={layers[layer]}
-          title={layer === 'launch'
-            ? 'Build-up riser + a tick as each country lights up'
-            : 'A tick as each heart lands'}
-          className={`px-3 h-10 rounded-full text-[10px] font-medium tracking-[0.18em] uppercase cursor-pointer
-            backdrop-blur-xl backdrop-saturate-150 shadow-lg shadow-black/[0.07] dark:shadow-black/40
-            transition-colors
-            ${layers[layer]
-              ? 'bg-[var(--accent)] border border-[var(--accent)] text-white'
-              : 'bg-white/55 dark:bg-white/[0.06] border border-white/60 dark:border-white/10 text-[#8a7e68] dark:text-[#6a6354] hover:text-[#5a5040] dark:hover:text-[#a89e8a]'}`}
-        >
-          {layer}
-        </button>
-      ))}
-    </div>
   )
 }
 
@@ -377,7 +342,6 @@ function MapView({ homeCountry, idleMode, onIdleModeChange }: {
       <HowItWorks open={helpOpen} onOpen={() => setHelpOpen(true)} onClose={() => setHelpOpen(false)} />
 
       <ThemeToggle />
-      <SoundLayerToggles />
 
       <SidePanel
         countryId={countryId ?? null}

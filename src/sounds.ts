@@ -3,29 +3,6 @@
 
 // ─── Primitives ──────────────────────────────────────────────────────────────
 
-function buildUp(ctx: AudioContext, startTime: number, duration: number): OscillatorNode {
-  // A gentle rising sine sweep that creates pre-reveal tension.
-  // Fades in, peaks, then fades to silence just before the first tick.
-  const osc  = ctx.createOscillator()
-  const gain = ctx.createGain()
-
-  osc.type = 'sine'
-  osc.frequency.setValueAtTime(180, startTime)
-  osc.frequency.exponentialRampToValueAtTime(480, startTime + duration)
-
-  gain.gain.setValueAtTime(0, startTime)
-  gain.gain.linearRampToValueAtTime(0.06, startTime + duration * 0.30)
-  gain.gain.linearRampToValueAtTime(0.09, startTime + duration * 0.75)
-  gain.gain.linearRampToValueAtTime(0.001, startTime + duration)  // fade before first tick
-
-  osc.connect(gain)
-  gain.connect(ctx.destination)
-  osc.start(startTime)
-  osc.stop(startTime + duration + 0.01)
-
-  return osc
-}
-
 function tick(ctx: AudioContext, when: number, pitchHz: number): OscillatorNode {
   // Short sine burst with a slight pitch glide downward — gives a soft "thud" quality.
   const osc  = ctx.createOscillator()
@@ -68,32 +45,6 @@ function completionDing(ctx: AudioContext, when: number): OscillatorNode[] {
 
     return osc
   })
-}
-
-// ─── Layer switches ──────────────────────────────────────────────────────────
-
-// The reveal has two independent sound layers, toggleable at runtime while
-// we settle on the mix (see the toggles bottom-left in App). Persisted so a
-// reload keeps whatever you were auditioning.
-//   launch  — the build-up riser + a tick as each country lights up
-//   arrival — a tick as each heart touches down, one flight later
-export type SoundLayer = 'launch' | 'arrival'
-
-const LAYERS_KEY = 'sound-layers'
-let layers: Record<SoundLayer, boolean> = { launch: false, arrival: true }
-try {
-  const raw = localStorage.getItem(LAYERS_KEY)
-  if (raw) layers = { ...layers, ...JSON.parse(raw) }
-} catch { /* private mode / bad JSON — keep defaults */ }
-
-export function getSoundLayers(): Record<SoundLayer, boolean> {
-  return layers
-}
-
-export function setSoundLayer(layer: SoundLayer, on: boolean): Record<SoundLayer, boolean> {
-  layers = { ...layers, [layer]: on }
-  try { localStorage.setItem(LAYERS_KEY, JSON.stringify(layers)) } catch { /* ignore */ }
-  return layers
 }
 
 // ─── Public API ──────────────────────────────────────────────────────────────
@@ -142,11 +93,16 @@ export function ensureAudioReady(): AudioContext {
 /**
  * Schedule all sounds for a country reveal sequence.
  *
+ * The reveal is scored on ARRIVALS only: a tick as each heart touches down,
+ * never at launch. Auditioned against the alternatives (a build-up riser and
+ * a tick per light-up, kept on the `sound-layer-toggles` branch) — scoring
+ * both ends made the cascade a wall of noise, and the landings are the beat
+ * worth hearing. Don't re-add launch sounds without re-auditioning.
+ *
  * Timing model:
- *   - Build-up plays immediately, rising for (initialMs - 50ms), then fades.
- *   - First tick fires at exactly initialMs — same for ALL countries.
- *   - Remaining ticks accelerate via a sqrt curve from initialMs → totalMs.
- *   - Completion ding fires just after the last tick.
+ *   - Reveal i lights up on a sqrt curve from initialMs → totalMs; its tick
+ *     fires one flight time (dingExtraMs) later, when the heart lands.
+ *   - Completion ding fires just after the last landing.
  *   - If count === 0, nothing plays (no audio without a visual counterpart).
  *
  * Tolerates a still-suspended context (the first click): scheduling is
@@ -165,9 +121,9 @@ export function scheduleRevealSounds(
   // Extra wait before the completion ding (heart flight time — the ding
   // marks the last heart LANDING, in sync with the visual finale).
   dingExtraMs = 0,
-  // Landing plips, one flight time after each tick. 'sparse' mirrors the
-  // ripple thinning (first 6, then every 6th) so sound matches what's
-  // visible; 'all' for the small loves lists; 'none' keeps them silent.
+  // Which landings get a tick. 'sparse' mirrors the ripple thinning (first
+  // 6, then every 6th) so sound matches what's visible; 'all' for the small
+  // loves lists; 'none' leaves only the ding.
   landPattern: 'all' | 'sparse' | 'none' = 'none',
 ): () => void {
   const ctx = sharedCtx
@@ -183,30 +139,17 @@ export function scheduleRevealSounds(
     const totalSec = totalMs   / 1000
     const span     = totalSec - initSec
 
-    if (layers.launch) {
-      // 1. Build-up — fills the anticipation window
-      nodes.push(buildUp(ctx, now, initSec - 0.05))
-
-      // 2. Ticks, one per revealed country
+    // Arrival ticks — one per heart landing, a flight time after its
+    // country lit up. Anchored sqrt curve: i=0 → frac=0 → t=initSec,
+    // i=N-1 → frac=1 → t=totalSec, then shifted by the flight.
+    if (landPattern !== 'none' && dingExtraMs > 0) {
       for (let i = 0; i < count; i++) {
-        // Anchored sqrt curve: i=0 → frac=0 → t=initSec,  i=N-1 → frac=1 → t=totalSec
+        if (landPattern === 'sparse' && !(i < 6 || i % 6 === 0)) continue
         const frac  = count === 1 ? 0 : i / (count - 1)
-        const t     = now + initSec + span * Math.sqrt(frac)
+        const t     = now + initSec + span * Math.sqrt(frac) + dingExtraMs / 1000
         const pitch = pitchDirection === 'rising'
           ? 380 + 200 * frac   // 380 Hz → 580 Hz, rising with the cascade
           : 580 - 200 * frac   // 580 Hz → 380 Hz, falling
-        nodes.push(tick(ctx, t, pitch))
-      }
-    }
-
-    // 3. Arrival ticks — the og reveal-tick sound, played as each heart
-    // touches down one flight after launch; pitch still walks the cascade.
-    if (layers.arrival && landPattern !== 'none' && dingExtraMs > 0) {
-      for (let i = 0; i < count; i++) {
-        if (landPattern === 'sparse' && !(i < 6 || i % 6 === 0)) continue
-        const frac = count === 1 ? 0 : i / (count - 1)
-        const t = now + initSec + span * Math.sqrt(frac) + dingExtraMs / 1000
-        const pitch = pitchDirection === 'rising' ? 380 + 200 * frac : 580 - 200 * frac
         nodes.push(tick(ctx, t, pitch))
       }
     }
