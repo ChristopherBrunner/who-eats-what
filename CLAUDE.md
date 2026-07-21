@@ -24,7 +24,9 @@ Tests live in `tests/*.test.mjs` and use Node's built-in `node:test` (no framewo
 
 ## Critical Rule
 
-The **default view is "who loves this country's cuisine"** — NOT "what does this country eat." This is the emotional hook and must be the landing state for every country click. The reverse view ("what [country] loves") is secondary and accessed via a panel link.
+The **default view is "who loves this country's cuisine"** — NOT "what does this country eat." This is the emotional hook, and it must be the landing state for a fresh visit: `idleMode` starts at `loved-by` on every load, and mode is deliberately **not** persisted to localStorage, so a returning visitor still meets the hook first.
+
+Once the visitor flips the mode toggle, that choice is theirs and **every** navigation preserves it — map clicks, search, the dice, idle quick-starts, and side-panel rows alike. (Panel rows used to force `loved-by`; with the toggle now permanently visible, a silent revert read as a bug and blocked chain-browsing in loves mode.) Don't reintroduce per-click mode forcing.
 
 ## Architecture
 

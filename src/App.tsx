@@ -351,8 +351,7 @@ function MapView({ homeCountry, idleMode, onIdleModeChange }: {
         revealedCount={litCount}
         phase={phase}
         onModeChange={handleModeChange}
-        onSelectCountry={(id) => { ensureAudioReady(); navigate(`/${id}/loved-by`) }}
-        onPick={(id) => { ensureAudioReady(); navigate(`/${id}/${mode}`) }}
+        onSelectCountry={(id) => { ensureAudioReady(); navigate(`/${id}/${mode}`) }}
         onClose={() => navigate('/')}
       />
 

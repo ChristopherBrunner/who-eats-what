@@ -21,10 +21,10 @@ interface Props {
   revealedCount: number
   phase: RevealPhase
   onModeChange: (mode: ViewMode) => void
+  /** Navigates in the CURRENT mode, like every other entry point (map,
+      search, dice). Rows used to force loved-by, which made the visible
+      toggle spring back on its own. */
   onSelectCountry: (id: string) => void
-  /** Idle quick starts — navigates in the CURRENT mode (unlike
-      onSelectCountry, which always jumps to loved-by). */
-  onPick: (id: string) => void
   onClose: () => void
 }
 
@@ -163,7 +163,7 @@ function EntryRow({ targetId, title, relationship, revealed, expanded, onToggle,
   )
 }
 
-export function SidePanel({ countryId, homeCountry, mode, revealedSet, revealedCount, phase, onModeChange, onSelectCountry, onPick, onClose }: Props) {
+export function SidePanel({ countryId, homeCountry, mode, revealedSet, revealedCount, phase, onModeChange, onSelectCountry, onClose }: Props) {
   const country = countryId ? countriesData.countries[countryId] : null
 
   const lovedBy: LovedByEntry[] = useMemo(() => {
@@ -201,7 +201,7 @@ export function SidePanel({ countryId, homeCountry, mode, revealedSet, revealedC
       : QUICK_STARTS
     const surprise = () => {
       const ids = Object.keys(countriesData.countries)
-      onPick(ids[Math.floor(Math.random() * ids.length)])
+      onSelectCountry(ids[Math.floor(Math.random() * ids.length)])
     }
     return (
       <div className="absolute top-0 right-0 h-full w-[360px] flex flex-col justify-center px-6 bg-[#ece4d2]/96 dark:bg-[#0b0a08]/96 backdrop-blur-sm border-l border-[#d4ccbf] dark:border-[#1c1a15]">
@@ -212,7 +212,9 @@ export function SidePanel({ countryId, homeCountry, mode, revealedSet, revealedC
           Every cuisine is somebody's favorite.
         </h2>
         <p className="mt-3 text-[13px] leading-relaxed text-[#7a6e5c] dark:text-[#5a5448]">
-          Click any country to see who loves its food — or start with
+          {mode === 'loved-by'
+            ? 'Click any country to see who loves its food. Or start with'
+            : "Click any country to see what's on its table. Or start with"}
         </p>
         <ul className="mt-6 space-y-4">
           {picks.map(id => {
@@ -221,7 +223,7 @@ export function SidePanel({ countryId, homeCountry, mode, revealedSet, revealedC
             return (
               <li key={id}>
                 <button
-                  onClick={() => onPick(id)}
+                  onClick={() => onSelectCountry(id)}
                   className="flex items-center gap-3 text-[17px] font-medium text-[#241e14] dark:text-[#d4c9b0] hover:text-[var(--accent)] dark:hover:text-[var(--accent)] transition-colors cursor-pointer"
                 >
                   <img
