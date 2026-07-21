@@ -761,7 +761,13 @@ export function WorldMap({ selectedCountry, homeCountry, mode, revealedSet, hear
             (affection arriving), outward in loves (appetite reaching out).
             SMIL starts on mount, so each particle fires exactly once when its
             country enters revealedSet; keys reset the layer per selection. */}
-        {selectedCountry && phase !== 'idle' && (() => {
+        {/* Only while REVEALING. Finished hearts have faded to nothing but
+            still cost a DOM node each, and a big reveal leaves ~170 of them
+            mounted — enough that unmounting the lot was the single biggest
+            cost when switching country, stalling the switch ~300ms and
+            leaving the previous selection's hearts visible on screen during
+            it. The finale takes over at 'done'. */}
+        {selectedCountry && phase === 'revealing' && (() => {
           const selPt = centroids[selectedCountry] && ROBINSON(centroids[selectedCountry])
           if (!selPt) return null
           return [...heartSet].map((id, idx) => {

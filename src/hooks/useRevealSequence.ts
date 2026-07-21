@@ -21,6 +21,17 @@ const DONE_MS = REVEAL_TOTAL_MS + HEART_FLIGHT_MS + 40
 
 export type RevealPhase = 'idle' | 'revealing' | 'done'
 
+interface Progress {
+  /** `${country}/${mode}` this progress belongs to. */
+  key: string
+  revealed: number
+  arrived: number
+  phase: RevealPhase
+  /** True when the sequence runs without sound (direct-link load before any
+      user gesture) — the map compensates with a visual flourish instead. */
+  silent: boolean
+}
+
 // Countries in the dataset that have no polygon in the 110m TopoJSON.
 // The map draws them as clickable dot markers at their centroids, so they
 // participate in the reveal cascade like any other country.
@@ -102,24 +113,30 @@ export function useRevealSequence(selectedCountry: string | null, mode: ViewMode
     return mode === 'loves' ? nearFirst.reverse() : nearFirst
   }, [selectedCountry, mode])
 
-  const [revealedCount, setRevealedCount] = useState(0)
-  // Countries whose heart has LANDED (reveal + flight time). In loves mode
-  // the map/panel light up on arrival, not launch.
-  const [arrivedCount, setArrivedCount] = useState(0)
-  const [phase, setPhase] = useState<RevealPhase>('idle')
-  // True when this sequence runs without sound (direct-link load before any
-  // user gesture) — the map compensates with a visual flourish instead.
-  const [silent, setSilent] = useState(false)
+  // Progress is stamped with the sequence it belongs to. Resetting in the
+  // effect instead would leave one render where the counts still hold the
+  // PREVIOUS selection's totals while orderedIds is already the new
+  // country's list — so the first N of the new list flashed as revealed,
+  // firing their hearts for a frame before the reset landed.
+  const seqKey = selectedCountry ? `${selectedCountry}/${mode}` : ''
+  const fresh = (): Progress => ({
+    key: seqKey,
+    revealed: 0,
+    arrived: 0,
+    // arriving mid-render with nothing revealed yet is exactly 'revealing'
+    phase: orderedIds.length === 0 ? 'idle' : 'revealing',
+    silent: !isAudioUnlocked(),
+  })
+  const [progress, setProgress] = useState<Progress>(fresh)
+  if (progress.key !== seqKey) setProgress(fresh())
+
+  // Never read progress from a stale sequence, not even for one frame.
+  const { revealed: revealedCount, arrived: arrivedCount, phase, silent } =
+    progress.key === seqKey ? progress : fresh()
 
   useEffect(() => {
-    setRevealedCount(0)
-    setArrivedCount(0)
-    if (orderedIds.length === 0) {
-      setPhase('idle')
-      return
-    }
-    setPhase('revealing')
-    setSilent(!isAudioUnlocked())
+
+    if (orderedIds.length === 0) return
 
     const delayAt = (i: number) => revealDelayMs(i, orderedIds.length)
 
@@ -136,15 +153,18 @@ export function useRevealSequence(selectedCountry: string | null, mode: ViewMode
       const elapsed = now - start
       let n = 0
       while (n < orderedIds.length && delayAt(n) <= elapsed) n++
-      setRevealedCount(prev => (n > prev ? n : prev))
       let a = 0
       while (a < orderedIds.length && delayAt(a) + HEART_FLIGHT_MS <= elapsed) a++
-      setArrivedCount(prev => (a > prev ? a : prev))
-      if (elapsed >= DONE_MS) {
-        setPhase('done')
-      } else {
-        raf = requestAnimationFrame(frame)
-      }
+      const done = elapsed >= DONE_MS
+      // Guarded by key: a frame scheduled before a fast re-click can't write
+      // its progress onto the sequence that replaced it.
+      setProgress(p => p.key !== seqKey ? p : {
+        ...p,
+        revealed: Math.max(p.revealed, n),
+        arrived: Math.max(p.arrived, a),
+        phase: done ? 'done' : p.phase,
+      })
+      if (!done) raf = requestAnimationFrame(frame)
     })
 
     return () => {
