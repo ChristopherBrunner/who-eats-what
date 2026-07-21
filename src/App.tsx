@@ -195,7 +195,7 @@ function MapView({ homeCountry, idleMode, onIdleModeChange }: {
     : idleMode
 
   // Shared reveal sequence: map highlights, panel rows, and sounds all sync.
-  const { revealedSet, arrivedSet, arrivedCount, phase, silent } = useRevealSequence(countryId ?? null, mode)
+  const { revealedSet, arrivedSet, arrivedCount, total, phase, silent } = useRevealSequence(countryId ?? null, mode)
   // Map: in loves a country lights when its heart LANDS; in loved-by it
   // lights at launch, because the light-up is what sends the heart.
   const litSet = mode === 'loves' ? arrivedSet : revealedSet
@@ -259,6 +259,7 @@ function MapView({ homeCountry, idleMode, onIdleModeChange }: {
           mode={mode}
           revealedSet={litSet}
           heartSet={revealedSet}
+          revealTotal={total}
           phase={phase}
           silentReveal={silent}
           previewCountry={previewCountry}

@@ -3,7 +3,7 @@ import { ComposableMap, Geographies, Geography, Marker, ZoomableGroup } from 're
 import { geoRobinson } from 'd3-geo-projection'
 import type { Country, ViewMode } from '../types'
 import { useColorScheme } from '../hooks/useColorScheme'
-import { REVEAL_INITIAL_MS, HEART_FLIGHT_MS, SHAPELESS_COUNTRIES, type RevealPhase } from '../hooks/useRevealSequence'
+import { REVEAL_INITIAL_MS, HEART_FLIGHT_MS, SHAPELESS_COUNTRIES, accentIndices, type RevealPhase } from '../hooks/useRevealSequence'
 import { ensureAudioReady } from '../sounds'
 import { flagUrl } from '../flags'
 import rawData from '../data/cuisines.json'
@@ -414,6 +414,9 @@ interface Props {
   /** Countries whose heart has LAUNCHED — drives the particle layer. In
       loved-by identical to revealedSet; in loves it runs one flight ahead. */
   heartSet: Set<string>
+  /** Final reveal count — accentIndices() needs the whole sequence length,
+      which the growing sets don't give. */
+  revealTotal: number
   phase: RevealPhase
   silentReveal: boolean
   /** Country previewed from the search bar — highlighted like a hover. */
@@ -423,7 +426,7 @@ interface Props {
   onBackgroundClick: () => void
 }
 
-export function WorldMap({ selectedCountry, homeCountry, mode, revealedSet, heartSet, phase, silentReveal, previewCountry, onCountryClick, onBackgroundClick }: Props) {
+export function WorldMap({ selectedCountry, homeCountry, mode, revealedSet, heartSet, revealTotal, phase, silentReveal, previewCountry, onCountryClick, onBackgroundClick }: Props) {
   const colorScheme = useColorScheme()
   const C = { ...BASE_COLORS[colorScheme], ...MODE_ACCENTS[mode][colorScheme] }
 
@@ -511,6 +514,8 @@ export function WorldMap({ selectedCountry, homeCountry, mode, revealedSet, hear
   // restarts on purpose.
   // Reveal-order index (Sets iterate in insertion order) — drives the fast
   // ordered re-flash wave that sweeps the constellation at completion.
+  const accents = useMemo(() => accentIndices(revealTotal), [revealTotal])
+
   const revealOrder = useMemo(() => {
     const m = new Map<string, number>()
     let i = 0
@@ -763,11 +768,10 @@ export function WorldMap({ selectedCountry, homeCountry, mode, revealedSet, hear
             const pt = centroids[id] && ROBINSON(centroids[id])
             if (!pt || id === selectedCountry) return null
             const [from, to] = mode === 'loved-by' ? [pt, selPt] : [selPt, pt]
-            // In loved-by every ripple lands on the selection; a dense stream
-            // blends into a blob. The cascade starts slow and accelerates, so
-            // ripple every early heart, then only every 6th (stable per idx).
-            // In loves the targets are spread out — always ripple.
-            const ripple = mode === 'loves' || idx < 6 || idx % 6 === 0
+            // Ripple only where arrivals are far enough apart to read as
+            // separate events — the same set that decides which landings
+            // get a tick, so the two never disagree.
+            const ripple = accents.has(idx)
             return (
               <g key={`particle-${selectedCountry}-${mode}-${id}`} style={{ pointerEvents: 'none' }}>
                 {/* drift animates translate on the <g>; the heart keeps its

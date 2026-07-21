@@ -3,6 +3,54 @@
 
 // ─── Primitives ──────────────────────────────────────────────────────────────
 
+function impact(ctx: AudioContext, when: number): AudioScheduledSourceNode[] {
+  // Thump on the click: a low sine dropping 165 → 62Hz. The first arrival is
+  // a full REVEAL_INITIAL_MS away, so without this the click lands in silence
+  // and reads as lag. A ~10ms filtered-noise transient rides on top — the
+  // body alone booms, and the transient is what makes it read as a strike
+  // landing on something rather than a tone fading in.
+  const osc  = ctx.createOscillator()
+  const gain = ctx.createGain()
+
+  osc.type = 'sine'
+  osc.frequency.setValueAtTime(165, when)
+  osc.frequency.exponentialRampToValueAtTime(62, when + 0.09)
+
+  gain.gain.setValueAtTime(0, when)
+  gain.gain.linearRampToValueAtTime(0.13, when + 0.005)
+  gain.gain.exponentialRampToValueAtTime(0.001, when + 0.19)
+
+  osc.connect(gain)
+  gain.connect(ctx.destination)
+  osc.start(when)
+  osc.stop(when + 0.2)
+
+  // Attack transient: a very short burst of noise, high-passed so it adds
+  // edge without hiss, and quiet enough to be felt more than heard.
+  const len = Math.floor(ctx.sampleRate * 0.012)
+  const buf = ctx.createBuffer(1, len, ctx.sampleRate)
+  const data = buf.getChannelData(0)
+  for (let i = 0; i < len; i++) {
+    data[i] = (Math.random() * 2 - 1) * (1 - i / len) ** 2   // decays over the burst
+  }
+  const noise = ctx.createBufferSource()
+  noise.buffer = buf
+
+  const hp = ctx.createBiquadFilter()
+  hp.type = 'highpass'
+  hp.frequency.value = 1400
+
+  const noiseGain = ctx.createGain()
+  noiseGain.gain.value = 0.05
+
+  noise.connect(hp)
+  hp.connect(noiseGain)
+  noiseGain.connect(ctx.destination)
+  noise.start(when)
+
+  return [osc, noise]
+}
+
 function tick(ctx: AudioContext, when: number, pitchHz: number): OscillatorNode {
   // Short sine burst with a slight pitch glide downward — gives a soft "thud" quality.
   const osc  = ctx.createOscillator()
@@ -131,16 +179,16 @@ export function scheduleRevealSounds(
   // Extra wait before the completion ding (heart flight time — the ding
   // marks the last heart LANDING, in sync with the visual finale).
   dingExtraMs = 0,
-  // Which landings get a tick. 'sparse' mirrors the ripple thinning (first
-  // 6, then every 6th) so sound matches what's visible; 'all' for the small
-  // loves lists; 'none' leaves only the ding.
-  landPattern: 'all' | 'sparse' | 'none' = 'none',
+  // Which landings get a tick, from accentIndices() — the same set that
+  // decides which landings get a visible ripple, so sound matches sight.
+  // Omit to leave only the ding.
+  accents?: Set<number>,
 ): () => void {
   const ctx = sharedCtx
   if (!ctx || count === 0) return () => {}
 
   let cancelled = false
-  const nodes: OscillatorNode[] = []
+  const nodes: AudioScheduledSourceNode[] = []
 
   const schedule = () => {
     if (cancelled) return
@@ -149,16 +197,15 @@ export function scheduleRevealSounds(
     const totalSec = totalMs   / 1000
     const span     = totalSec - initSec
 
-    // Nothing sounds on the click itself: a low thump and a plucked tonic
-    // were both tried and both rejected. The silence before the first
-    // arrival is deliberate — don't "fill" it again without asking.
+    // Impact on the click itself, before the anticipation gap.
+    nodes.push(...impact(ctx, now))
 
     // Arrival ticks — one per heart landing, a flight time after its
     // country lit up. Anchored sqrt curve: i=0 → frac=0 → t=initSec,
     // i=N-1 → frac=1 → t=totalSec, then shifted by the flight.
-    if (landPattern !== 'none' && dingExtraMs > 0) {
+    if (accents && dingExtraMs > 0) {
       for (let i = 0; i < count; i++) {
-        if (landPattern === 'sparse' && !(i < 6 || i % 6 === 0)) continue
+        if (!accents.has(i)) continue
         const frac = count === 1 ? 0 : i / (count - 1)
         const t    = now + initSec + span * Math.sqrt(frac) + dingExtraMs / 1000
         // Walk the scale up in loved-by (affection arriving), down in loves.

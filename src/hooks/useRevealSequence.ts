@@ -37,6 +37,35 @@ function revealDelayMs(index: number, count: number): number {
   return REVEAL_INITIAL_MS + (REVEAL_TOTAL_MS - REVEAL_INITIAL_MS) * Math.sqrt(frac)
 }
 
+// Arrivals closer together than this blur into noise (audibly) and into a
+// single blob (visually), so only one of them is accented.
+const MIN_ACCENT_GAP_MS = 72
+
+/**
+ * Which reveal indices get an accent — a tick in the audio, a ripple on the
+ * map. Both use the same set so what you hear matches what you see.
+ *
+ * Thinning is by TIME, not by index: the old rule (first 6, then every 6th)
+ * cut a country with 10 lovers as hard as one with 169, which is why small
+ * reveals fell silent after a few arrivals. Here every arrival is accented
+ * while they are far enough apart — so small reveals accent all of them —
+ * and only the dense tail of a big cascade gets thinned. As a bonus the
+ * accents come out evenly spaced in time, i.e. rhythmic, instead of
+ * bunching up as the sqrt curve accelerates.
+ */
+export function accentIndices(count: number): Set<number> {
+  const out = new Set<number>()
+  let last = -Infinity
+  for (let i = 0; i < count; i++) {
+    const t = revealDelayMs(i, count)
+    if (t - last >= MIN_ACCENT_GAP_MS) {
+      out.add(i)
+      last = t
+    }
+  }
+  return out
+}
+
 /**
  * Drives the staggered country-reveal sequence for a selection, shared by
  * the map and the side panel so both stay in sync with each other and with
@@ -98,8 +127,8 @@ export function useRevealSequence(selectedCountry: string | null, mode: ViewMode
       orderedIds.length, REVEAL_INITIAL_MS, REVEAL_TOTAL_MS,
       mode === 'loves' ? 'falling' : 'rising',
       HEART_FLIGHT_MS,
-      // matches the ripple visibility rule in EuropeMap
-      mode === 'loves' ? 'all' : 'sparse',
+      // same set drives the ripples in EuropeMap
+      accentIndices(orderedIds.length),
     )
 
     const start = performance.now()
@@ -133,5 +162,5 @@ export function useRevealSequence(selectedCountry: string | null, mode: ViewMode
     [orderedIds, arrivedCount],
   )
 
-  return { revealedSet, revealedCount, arrivedSet, arrivedCount, phase, silent }
+  return { revealedSet, revealedCount, arrivedSet, arrivedCount, total: orderedIds.length, phase, silent }
 }
