@@ -3,52 +3,29 @@
 
 // ─── Primitives ──────────────────────────────────────────────────────────────
 
-function impact(ctx: AudioContext, when: number): AudioScheduledSourceNode[] {
-  // Thump on the click: a low sine dropping 165 → 62Hz. The first arrival is
-  // a full REVEAL_INITIAL_MS away, so without this the click lands in silence
-  // and reads as lag. A ~10ms filtered-noise transient rides on top — the
-  // body alone booms, and the transient is what makes it read as a strike
-  // landing on something rather than a tone fading in.
+function impact(ctx: AudioContext, when: number): OscillatorNode {
+  // Soft thump on the click, so it doesn't land in silence and read as lag
+  // (the first arrival is a full REVEAL_INITIAL_MS away). Deliberately light:
+  // roughly half the gain of the first version, a shorter tail, and it only
+  // falls to 95Hz rather than 62 — the deep drop was most of what made it
+  // boom. No noise transient either; that added edge but also bulk.
   const osc  = ctx.createOscillator()
   const gain = ctx.createGain()
 
   osc.type = 'sine'
-  osc.frequency.setValueAtTime(165, when)
-  osc.frequency.exponentialRampToValueAtTime(62, when + 0.09)
+  osc.frequency.setValueAtTime(150, when)
+  osc.frequency.exponentialRampToValueAtTime(95, when + 0.07)
 
   gain.gain.setValueAtTime(0, when)
-  gain.gain.linearRampToValueAtTime(0.13, when + 0.005)
-  gain.gain.exponentialRampToValueAtTime(0.001, when + 0.19)
+  gain.gain.linearRampToValueAtTime(0.06, when + 0.004)
+  gain.gain.exponentialRampToValueAtTime(0.001, when + 0.12)
 
   osc.connect(gain)
   gain.connect(ctx.destination)
   osc.start(when)
-  osc.stop(when + 0.2)
+  osc.stop(when + 0.13)
 
-  // Attack transient: a very short burst of noise, high-passed so it adds
-  // edge without hiss, and quiet enough to be felt more than heard.
-  const len = Math.floor(ctx.sampleRate * 0.012)
-  const buf = ctx.createBuffer(1, len, ctx.sampleRate)
-  const data = buf.getChannelData(0)
-  for (let i = 0; i < len; i++) {
-    data[i] = (Math.random() * 2 - 1) * (1 - i / len) ** 2   // decays over the burst
-  }
-  const noise = ctx.createBufferSource()
-  noise.buffer = buf
-
-  const hp = ctx.createBiquadFilter()
-  hp.type = 'highpass'
-  hp.frequency.value = 1400
-
-  const noiseGain = ctx.createGain()
-  noiseGain.gain.value = 0.05
-
-  noise.connect(hp)
-  hp.connect(noiseGain)
-  noiseGain.connect(ctx.destination)
-  noise.start(when)
-
-  return [osc, noise]
+  return osc
 }
 
 function tick(ctx: AudioContext, when: number, pitchHz: number): OscillatorNode {
@@ -198,7 +175,7 @@ export function scheduleRevealSounds(
     const span     = totalSec - initSec
 
     // Impact on the click itself, before the anticipation gap.
-    nodes.push(...impact(ctx, now))
+    nodes.push(impact(ctx, now))
 
     // Arrival ticks — one per heart landing, a flight time after its
     // country lit up. Anchored sqrt curve: i=0 → frac=0 → t=initSec,
