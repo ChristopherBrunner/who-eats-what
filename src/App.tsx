@@ -6,7 +6,7 @@ import { SearchBar } from './components/SearchBar'
 import { ModeToggle } from './components/ModeToggle'
 import { useRevealSequence } from './hooks/useRevealSequence'
 import { toggleColorScheme, useColorScheme } from './hooks/useColorScheme'
-import { ensureAudioReady, installAudioUnlock } from './sounds'
+import { ensureAudioReady, installAudioUnlock, playDiceRoll } from './sounds'
 import type { Country, ViewMode } from './types'
 import rawData from './data/cuisines.json'
 
@@ -351,7 +351,7 @@ function MapView({ homeCountry, idleMode, onIdleModeChange }: {
           onHighlight={setPreviewCountry}
         />
         <DiceButton onRoll={() => {
-          ensureAudioReady()
+          playDiceRoll()
           const ids = Object.keys(countriesData.countries).filter(id => id !== countryId)
           navigate(`/${ids[Math.floor(Math.random() * ids.length)]}/${mode}`)
         }} />

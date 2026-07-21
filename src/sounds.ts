@@ -76,6 +76,63 @@ function completionDing(ctx: AudioContext, when: number): OscillatorNode[] {
   })
 }
 
+function clack(ctx: AudioContext, when: number, centerHz: number, level: number): AudioBufferSourceNode {
+  // One die hitting the table: a very short noise burst rung through a
+  // narrow band-pass, which is what gives it a hard wooden pitch instead of
+  // sounding like static.
+  const len  = Math.floor(ctx.sampleRate * 0.05)
+  const buf  = ctx.createBuffer(1, len, ctx.sampleRate)
+  const data = buf.getChannelData(0)
+  for (let i = 0; i < len; i++) {
+    data[i] = (Math.random() * 2 - 1) * (1 - i / len) ** 6   // sharp decay
+  }
+
+  const src = ctx.createBufferSource()
+  src.buffer = buf
+
+  const band = ctx.createBiquadFilter()
+  band.type = 'bandpass'
+  band.frequency.value = centerHz
+  band.Q.value = 5
+
+  const gain = ctx.createGain()
+  gain.gain.value = level
+
+  src.connect(band)
+  band.connect(gain)
+  gain.connect(ctx.destination)
+  src.start(when)
+
+  return src
+}
+
+/**
+ * Dice clatter for the random-country button: a handful of irregular clacks
+ * that crowd together and then settle, each at its own pitch, so no two
+ * rolls sound the same. Random by design — a fixed rhythm reads as a
+ * sample being replayed rather than dice actually tumbling.
+ *
+ * Also marks the moment, so the reveal that follows skips its own click
+ * sound: the clatter already served as the click.
+ */
+export function playDiceRoll(): void {
+  const ctx = ensureAudioReady()
+  const now = ctx.currentTime
+  diceRolledAt = now
+
+  const clacks = 4 + Math.floor(Math.random() * 3)
+  let t = now
+  for (let i = 0; i < clacks; i++) {
+    const settling = i / (clacks - 1)         // 0 → 1 across the roll
+    clack(ctx, t, 780 + Math.random() * 1500, 0.05 + 0.05 * settling)
+    // gaps widen as it comes to rest
+    t += 0.028 + 0.05 * settling * Math.random() + Math.random() * 0.02
+  }
+}
+
+// Set by playDiceRoll; the reveal it triggers suppresses its own click.
+let diceRolledAt = -Infinity
+
 // E major pentatonic, E4 → B5. Arrival pitches SNAP to these instead of
 // gliding continuously: a pentatonic scale has no dissonant interval, so a
 // 30-tick cascade reads as a melody rather than a siren, and repeated
@@ -178,8 +235,9 @@ export function scheduleRevealSounds(
     const totalSec = totalMs   / 1000
     const span     = totalSec - initSec
 
-    // Impact on the click itself, before the anticipation gap.
-    nodes.push(impact(ctx, now))
+    // Impact on the click itself, before the anticipation gap — unless a
+    // dice roll just fired, in which case its clatter was the click.
+    if (now - diceRolledAt > 0.5) nodes.push(impact(ctx, now))
 
     // Arrival ticks — one per heart landing, a flight time after its
     // country lit up. Anchored sqrt curve: i=0 → frac=0 → t=initSec,
