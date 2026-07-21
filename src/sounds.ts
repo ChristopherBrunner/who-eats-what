@@ -4,26 +4,30 @@
 // ─── Primitives ──────────────────────────────────────────────────────────────
 
 function impact(ctx: AudioContext, when: number): OscillatorNode {
-  // Soft thump on the click, so it doesn't land in silence and read as lag
-  // (the first arrival is a full REVEAL_INITIAL_MS away). Deliberately light:
-  // roughly half the gain of the first version, a shorter tail, and it only
-  // falls to 95Hz rather than 62 — the deep drop was most of what made it
-  // boom. No noise transient either; that added edge but also bulk.
+  // Muted tap on the click, so it doesn't land in silence and read as lag
+  // (the first arrival is a full REVEAL_INITIAL_MS away).
+  //
+  // A tap, not a thump: it sits an octave up around 240Hz where small
+  // speakers actually reproduce it, and the whole thing is over in ~55ms,
+  // which is what makes it read as a mechanical click rather than a drum.
+  // The short downward bend gives the finger-lift; without it a fixed pitch
+  // sounds like a beep. The previous low 150→95Hz thump is one commit back
+  // (384568f) if this turns out worse.
   const osc  = ctx.createOscillator()
   const gain = ctx.createGain()
 
-  osc.type = 'sine'
-  osc.frequency.setValueAtTime(150, when)
-  osc.frequency.exponentialRampToValueAtTime(95, when + 0.07)
+  osc.type = 'triangle'
+  osc.frequency.setValueAtTime(255, when)
+  osc.frequency.exponentialRampToValueAtTime(190, when + 0.03)
 
   gain.gain.setValueAtTime(0, when)
-  gain.gain.linearRampToValueAtTime(0.06, when + 0.004)
-  gain.gain.exponentialRampToValueAtTime(0.001, when + 0.12)
+  gain.gain.linearRampToValueAtTime(0.075, when + 0.002)   // near-instant attack
+  gain.gain.exponentialRampToValueAtTime(0.001, when + 0.055)
 
   osc.connect(gain)
   gain.connect(ctx.destination)
   osc.start(when)
-  osc.stop(when + 0.13)
+  osc.stop(when + 0.06)
 
   return osc
 }
