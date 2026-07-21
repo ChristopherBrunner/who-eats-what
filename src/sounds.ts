@@ -70,6 +70,32 @@ function completionDing(ctx: AudioContext, when: number): OscillatorNode[] {
   })
 }
 
+// ─── Layer switches ──────────────────────────────────────────────────────────
+
+// The reveal has two independent sound layers, toggleable at runtime while
+// we settle on the mix (see the toggles bottom-left in App). Persisted so a
+// reload keeps whatever you were auditioning.
+//   launch  — the build-up riser + a tick as each country lights up
+//   arrival — a tick as each heart touches down, one flight later
+export type SoundLayer = 'launch' | 'arrival'
+
+const LAYERS_KEY = 'sound-layers'
+let layers: Record<SoundLayer, boolean> = { launch: false, arrival: true }
+try {
+  const raw = localStorage.getItem(LAYERS_KEY)
+  if (raw) layers = { ...layers, ...JSON.parse(raw) }
+} catch { /* private mode / bad JSON — keep defaults */ }
+
+export function getSoundLayers(): Record<SoundLayer, boolean> {
+  return layers
+}
+
+export function setSoundLayer(layer: SoundLayer, on: boolean): Record<SoundLayer, boolean> {
+  layers = { ...layers, [layer]: on }
+  try { localStorage.setItem(LAYERS_KEY, JSON.stringify(layers)) } catch { /* ignore */ }
+  return layers
+}
+
 // ─── Public API ──────────────────────────────────────────────────────────────
 
 // Single shared AudioContext for the app. Created lazily inside a user
@@ -157,11 +183,7 @@ export function scheduleRevealSounds(
     const totalSec = totalMs   / 1000
     const span     = totalSec - initSec
 
-    // EXPERIMENT: build-up + reveal ticks muted to audition the arrival
-    // plips in isolation — restore by unsetting MUTE_LAUNCH_SOUNDS.
-    const MUTE_LAUNCH_SOUNDS = true
-
-    if (!MUTE_LAUNCH_SOUNDS) {
+    if (layers.launch) {
       // 1. Build-up — fills the anticipation window
       nodes.push(buildUp(ctx, now, initSec - 0.05))
 
@@ -179,7 +201,7 @@ export function scheduleRevealSounds(
 
     // 3. Arrival ticks — the og reveal-tick sound, played as each heart
     // touches down one flight after launch; pitch still walks the cascade.
-    if (landPattern !== 'none' && dingExtraMs > 0) {
+    if (layers.arrival && landPattern !== 'none' && dingExtraMs > 0) {
       for (let i = 0; i < count; i++) {
         if (landPattern === 'sparse' && !(i < 6 || i % 6 === 0)) continue
         const frac = count === 1 ? 0 : i / (count - 1)
