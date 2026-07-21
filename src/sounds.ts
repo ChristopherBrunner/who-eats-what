@@ -3,36 +3,6 @@
 
 // ─── Primitives ──────────────────────────────────────────────────────────────
 
-function selectPluck(ctx: AudioContext, when: number): OscillatorNode[] {
-  // Struck on the click itself: the first arrival is a full REVEAL_INITIAL_MS
-  // away, so without something here the click lands in silence and reads as
-  // lag. Pitched on E4 — the tonic of PENTATONIC_HZ — so it states the key
-  // the cascade then walks and the ding resolves, rather than just marking
-  // time. A quiet octave above gives it pluck rather than tone; there is no
-  // pitch glide, which is what made the earlier version a thump.
-  return [
-    { hz: 329.63, gain: 0.085, decay: 0.30, type: 'triangle' as OscillatorType },
-    { hz: 659.25, gain: 0.030, decay: 0.16, type: 'sine'     as OscillatorType },
-  ].map(({ hz, gain: peak, decay, type }) => {
-    const osc = ctx.createOscillator()
-    const gain = ctx.createGain()
-
-    osc.type = type
-    osc.frequency.setValueAtTime(hz, when)
-
-    gain.gain.setValueAtTime(0, when)
-    gain.gain.linearRampToValueAtTime(peak, when + 0.004)
-    gain.gain.exponentialRampToValueAtTime(0.001, when + decay)
-
-    osc.connect(gain)
-    gain.connect(ctx.destination)
-    osc.start(when)
-    osc.stop(when + decay + 0.01)
-
-    return osc
-  })
-}
-
 function tick(ctx: AudioContext, when: number, pitchHz: number): OscillatorNode {
   // Short sine burst with a slight pitch glide downward — gives a soft "thud" quality.
   const osc  = ctx.createOscillator()
@@ -179,8 +149,9 @@ export function scheduleRevealSounds(
     const totalSec = totalMs   / 1000
     const span     = totalSec - initSec
 
-    // Pluck on the click itself, before the anticipation gap.
-    nodes.push(...selectPluck(ctx, now))
+    // Nothing sounds on the click itself: a low thump and a plucked tonic
+    // were both tried and both rejected. The silence before the first
+    // arrival is deliberate — don't "fill" it again without asking.
 
     // Arrival ticks — one per heart landing, a flight time after its
     // country lit up. Anchored sqrt curve: i=0 → frac=0 → t=initSec,
