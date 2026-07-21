@@ -1,4 +1,4 @@
-import { useState, useMemo, useRef, useCallback } from 'react'
+import { useState, useMemo, useRef, useCallback, memo } from 'react'
 import { ComposableMap, Geographies, Geography, Marker, ZoomableGroup } from 'react-simple-maps'
 import { geoRobinson } from 'd3-geo-projection'
 import type { Country, ViewMode } from '../types'
@@ -405,6 +405,59 @@ function strengthT(strength: number): number {
   return Math.min(1, Math.max(0, (strength - 50) / 45))
 }
 
+/**
+ * One country path, memoized on its own visual state.
+ *
+ * Without this, ANY state change in the map — a reveal tick, or just the
+ * mouse moving one pixel and updating the tooltip position — re-rendered
+ * all ~250 country paths. During a reveal only one country actually
+ * changes per tick, so nearly all of that work was wasted, and it was what
+ * made the cascade stall and swallow clicks. Every prop here is a
+ * primitive or a stable callback so the memo can genuinely bail out.
+ */
+const CountryShape = memo(function CountryShape({
+  geo, countryId, fill, stroke, strokeWidth, animation, transition, interactive, onHover, onSelect,
+}: {
+  geo: object
+  countryId: string | undefined
+  fill: string
+  stroke: string
+  strokeWidth: number
+  animation: string | undefined
+  transition: string
+  interactive: boolean
+  onHover: (id: string | null, e?: React.MouseEvent) => void
+  onSelect: (id: string) => void
+}) {
+  const cursor = interactive ? 'pointer' : 'default'
+  return (
+    <Geography
+      geography={geo}
+      fill={fill}
+      stroke={stroke}
+      strokeWidth={strokeWidth}
+      style={{
+        default: {
+          outline: 'none',
+          cursor,
+          vectorEffect: 'non-scaling-stroke',
+          transition,
+          ...(animation ? { animation } : {}),
+        },
+        hover: { outline: 'none', cursor, vectorEffect: 'non-scaling-stroke', fill },
+        pressed: { outline: 'none', vectorEffect: 'non-scaling-stroke' },
+      }}
+      onMouseEnter={(e: React.MouseEvent) => { if (countryId) onHover(countryId, e) }}
+      onMouseLeave={() => onHover(null)}
+      onMouseMove={(e: React.MouseEvent) => { if (countryId) onHover(countryId, e) }}
+      onClick={(e: React.MouseEvent) => {
+        e.stopPropagation()
+        if (countryId) { ensureAudioReady(); onSelect(countryId) }
+      }}
+    />
+  )
+})
+
 interface Props {
   selectedCountry: string | null
   homeCountry: string | null
@@ -514,6 +567,13 @@ export function WorldMap({ selectedCountry, homeCountry, mode, revealedSet, hear
   // restarts on purpose.
   // Reveal-order index (Sets iterate in insertion order) — drives the fast
   // ordered re-flash wave that sweeps the constellation at completion.
+  // Stable identity, so CountryShape's memo isn't defeated by a new closure
+  // on every render.
+  const handleHover = useCallback((id: string | null, e?: React.MouseEvent) => {
+    setHoveredCountry(id)
+    if (id && e) setTooltipPos({ x: e.clientX, y: e.clientY })
+  }, [])
+
   const accents = useMemo(() => accentIndices(revealTotal), [revealTotal])
 
   const revealOrder = useMemo(() => {
@@ -680,39 +740,18 @@ export function WorldMap({ selectedCountry, homeCountry, mode, revealedSet, hear
               const transition = countryId ? getTransition(countryId) : 'fill 160ms ease'
 
               return (
-                <Geography
+                <CountryShape
                   key={geo.rsmKey}
-                  geography={geo}
+                  geo={geo}
+                  countryId={countryId}
                   fill={fill}
                   stroke={stroke}
                   strokeWidth={strokeWidth}
-                  style={{
-                    default: {
-                      outline: 'none',
-                      cursor: isInteractive ? 'pointer' : 'default',
-                      vectorEffect: 'non-scaling-stroke',
-                      transition,
-                      ...(animation ? { animation } : {}),
-                    },
-                    hover: {
-                      outline: 'none',
-                      cursor: isInteractive ? 'pointer' : 'default',
-                      vectorEffect: 'non-scaling-stroke',
-                      fill,
-                    },
-                    pressed: { outline: 'none', vectorEffect: 'non-scaling-stroke' },
-                  }}
-                  onMouseEnter={(e: React.MouseEvent) => {
-                    if (countryId) {
-                      setHoveredCountry(countryId)
-                      setTooltipPos({ x: e.clientX, y: e.clientY })
-                    }
-                  }}
-                  onMouseLeave={() => setHoveredCountry(null)}
-                  onMouseMove={(e: React.MouseEvent) => {
-                    if (countryId) setTooltipPos({ x: e.clientX, y: e.clientY })
-                  }}
-                  onClick={(e: React.MouseEvent) => { e.stopPropagation(); if (countryId) { ensureAudioReady(); onCountryClick(countryId) } }}
+                  animation={animation}
+                  transition={transition}
+                  interactive={isInteractive}
+                  onHover={handleHover}
+                  onSelect={onCountryClick}
                 />
               )
             })

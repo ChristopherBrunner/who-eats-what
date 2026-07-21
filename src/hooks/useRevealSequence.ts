@@ -158,11 +158,18 @@ export function useRevealSequence(selectedCountry: string | null, mode: ViewMode
       const done = elapsed >= DONE_MS
       // Guarded by key: a frame scheduled before a fast re-click can't write
       // its progress onto the sequence that replaced it.
-      setProgress(p => p.key !== seqKey ? p : {
-        ...p,
-        revealed: Math.max(p.revealed, n),
-        arrived: Math.max(p.arrived, a),
-        phase: done ? 'done' : p.phase,
+      setProgress(p => {
+        if (p.key !== seqKey) return p
+        const revealed = Math.max(p.revealed, n)
+        const arrived  = Math.max(p.arrived, a)
+        const phase: RevealPhase = done ? 'done' : p.phase
+        // MUST return the identical object when nothing moved. This loop
+        // runs every frame but the counts only change a few dozen times;
+        // handing back a fresh object regardless re-rendered the whole map
+        // 60×/second for the length of the reveal, which is what made it
+        // stutter and swallow clicks.
+        if (revealed === p.revealed && arrived === p.arrived && phase === p.phase) return p
+        return { ...p, revealed, arrived, phase }
       })
       if (!done) raf = requestAnimationFrame(frame)
     })
