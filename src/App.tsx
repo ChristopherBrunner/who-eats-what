@@ -195,7 +195,10 @@ function MapView({ homeCountry, idleMode, onIdleModeChange }: {
     : idleMode
 
   // Shared reveal sequence: map highlights, panel rows, and sounds all sync.
-  const { revealedSet, arrivedSet, arrivedCount, total, phase, silent } = useRevealSequence(countryId ?? null, mode)
+  // Bumped to replay a reveal that had to run silently (see the replay pill).
+  const [replayNonce, setReplayNonce] = useState(0)
+  const { revealedSet, arrivedSet, arrivedCount, total, phase, silent } =
+    useRevealSequence(countryId ?? null, mode, replayNonce)
   // Map: in loves a country lights when its heart LANDS; in loved-by it
   // lights at launch, because the light-up is what sends the heart.
   const litSet = mode === 'loves' ? arrivedSet : revealedSet
@@ -373,6 +376,39 @@ function MapView({ homeCountry, idleMode, onIdleModeChange }: {
         onSelectCountry={(id) => { ensureAudioReady(); navigate(`/${id}/${mode}`) }}
         onClose={() => navigate('/')}
       />
+
+      {/* Browsers refuse to start an AudioContext before a user gesture, so a
+          shared link or a reload always reveals in silence — the one case a
+          first-time visitor is guaranteed to hit. It can't be bypassed, only
+          recovered: this offers the reveal again, and the click itself is the
+          gesture that unlocks audio. Disappears once sound is available. */}
+      {countryId && silent && (
+        <button
+          type="button"
+          onClick={e => {
+            e.stopPropagation()
+            ensureAudioReady()
+            setReplayNonce(n => n + 1)
+          }}
+          className="absolute bottom-8 left-[calc((100%-360px)/2)] -translate-x-1/2 z-40
+            flex items-center gap-2 px-4 h-10 rounded-full cursor-pointer
+            text-[11px] tracking-[0.16em] uppercase
+            bg-white/60 dark:bg-white/[0.07] backdrop-blur-xl backdrop-saturate-150
+            border border-white/60 dark:border-white/10
+            shadow-lg shadow-black/[0.07] dark:shadow-black/40
+            text-[#6a6054] dark:text-[#a8a29e]
+            hover:text-[var(--accent)] dark:hover:text-[var(--accent)]
+            hover:bg-white/80 dark:hover:bg-white/[0.11] transition-colors animate-prompt-breathe"
+        >
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
+            strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="w-3.5 h-3.5">
+            <path d="M11 5 6 9H2v6h4l5 4V5z" />
+            <path d="M15.5 8.5a5 5 0 0 1 0 7" />
+            <path d="M19 5a9 9 0 0 1 0 14" />
+          </svg>
+          replay with sound
+        </button>
+      )}
 
       {!countryId && (
         <div className="absolute bottom-8 left-[calc((100%-360px)/2)] -translate-x-1/2 pointer-events-none select-none">

@@ -91,7 +91,7 @@ export function accentIndices(count: number): Set<number> {
  * batched into one state update, so rendering can't fall behind the
  * sample-accurate audio clock on countries with many relationships.
  */
-export function useRevealSequence(selectedCountry: string | null, mode: ViewMode) {
+export function useRevealSequence(selectedCountry: string | null, mode: ViewMode, replayNonce = 0) {
   const orderedIds = useMemo(() => {
     if (!selectedCountry) return []
     const ids =
@@ -118,7 +118,10 @@ export function useRevealSequence(selectedCountry: string | null, mode: ViewMode
   // PREVIOUS selection's totals while orderedIds is already the new
   // country's list — so the first N of the new list flashed as revealed,
   // firing their hearts for a frame before the reset landed.
-  const seqKey = selectedCountry ? `${selectedCountry}/${mode}` : ''
+  // replayNonce is part of the key so bumping it restarts the sequence from
+  // scratch — that's how the "replay with sound" affordance re-runs a reveal
+  // that had to play silently on a cold page load.
+  const seqKey = selectedCountry ? `${selectedCountry}/${mode}/${replayNonce}` : ''
   const fresh = (): Progress => ({
     key: seqKey,
     revealed: 0,
@@ -178,7 +181,7 @@ export function useRevealSequence(selectedCountry: string | null, mode: ViewMode
       cancelAnimationFrame(raf)
       stopSounds()
     }
-  }, [orderedIds, mode])
+  }, [orderedIds, mode, replayNonce])
 
   const revealedSet = useMemo(
     () => new Set(orderedIds.slice(0, revealedCount)),
