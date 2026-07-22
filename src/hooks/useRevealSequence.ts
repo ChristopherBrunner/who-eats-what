@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { geoDistance } from 'd3-geo'
 import type { Country, ViewMode } from '../types'
-import { isAudioUnlocked, scheduleRevealSounds } from '../sounds'
+import { isAudioUnlocked, onAudioUnlock, scheduleRevealSounds } from '../sounds'
 import rawData from '../data/cuisines.json'
 import rawCentroids from '../data/centroids.json'
 
@@ -27,9 +27,9 @@ interface Progress {
   revealed: number
   arrived: number
   phase: RevealPhase
-  /** True when the sequence runs without sound (direct-link load before any
-      user gesture) — the map compensates with a visual flourish instead. */
-  silent: boolean
+  /** True while the reveal is held back waiting for the first gesture to
+      unlock audio (cold load from a shared link or a reload). */
+  waitingForGesture: boolean
 }
 
 // Countries in the dataset that have no polygon in the 110m TopoJSON.
@@ -91,7 +91,7 @@ export function accentIndices(count: number): Set<number> {
  * batched into one state update, so rendering can't fall behind the
  * sample-accurate audio clock on countries with many relationships.
  */
-export function useRevealSequence(selectedCountry: string | null, mode: ViewMode, replayNonce = 0) {
+export function useRevealSequence(selectedCountry: string | null, mode: ViewMode) {
   const orderedIds = useMemo(() => {
     if (!selectedCountry) return []
     const ids =
@@ -118,28 +118,34 @@ export function useRevealSequence(selectedCountry: string | null, mode: ViewMode
   // PREVIOUS selection's totals while orderedIds is already the new
   // country's list — so the first N of the new list flashed as revealed,
   // firing their hearts for a frame before the reset landed.
-  // replayNonce is part of the key so bumping it restarts the sequence from
-  // scratch — that's how the "replay with sound" affordance re-runs a reveal
-  // that had to play silently on a cold page load.
-  const seqKey = selectedCountry ? `${selectedCountry}/${mode}/${replayNonce}` : ''
+  // No browser will start audio before the visitor interacts with the page,
+  // so on a cold load (shared link, reload) a reveal would run in silence.
+  // Rather than show a degraded version, the sequence WAITS for sound and
+  // App gates the screen until the first gesture — so the reveal a visitor
+  // sees is always the real one. audioReady is part of the sequence key, so
+  // the moment it flips the sequence starts from zero.
+  const [audioReady, setAudioReady] = useState(isAudioUnlocked)
+  useEffect(() => onAudioUnlock(() => setAudioReady(true)), [])
+
+  const seqKey = selectedCountry ? `${selectedCountry}/${mode}/${audioReady}` : ''
   const fresh = (): Progress => ({
     key: seqKey,
     revealed: 0,
     arrived: 0,
-    // arriving mid-render with nothing revealed yet is exactly 'revealing'
-    phase: orderedIds.length === 0 ? 'idle' : 'revealing',
-    silent: !isAudioUnlocked(),
+    // Held at 'idle' until sound is available, so the map stays poised
+    // rather than playing the cascade to an empty room.
+    phase: orderedIds.length === 0 || !audioReady ? 'idle' : 'revealing',
+    waitingForGesture: orderedIds.length > 0 && !audioReady,
   })
   const [progress, setProgress] = useState<Progress>(fresh)
   if (progress.key !== seqKey) setProgress(fresh())
 
   // Never read progress from a stale sequence, not even for one frame.
-  const { revealed: revealedCount, arrived: arrivedCount, phase, silent } =
+  const { revealed: revealedCount, arrived: arrivedCount, phase, waitingForGesture } =
     progress.key === seqKey ? progress : fresh()
 
   useEffect(() => {
-
-    if (orderedIds.length === 0) return
+    if (orderedIds.length === 0 || !audioReady) return
 
     const delayAt = (i: number) => revealDelayMs(i, orderedIds.length)
 
@@ -181,7 +187,7 @@ export function useRevealSequence(selectedCountry: string | null, mode: ViewMode
       cancelAnimationFrame(raf)
       stopSounds()
     }
-  }, [orderedIds, mode, replayNonce])
+  }, [orderedIds, mode, audioReady])
 
   const revealedSet = useMemo(
     () => new Set(orderedIds.slice(0, revealedCount)),
@@ -192,5 +198,5 @@ export function useRevealSequence(selectedCountry: string | null, mode: ViewMode
     [orderedIds, arrivedCount],
   )
 
-  return { revealedSet, revealedCount, arrivedSet, arrivedCount, total: orderedIds.length, phase, silent }
+  return { revealedSet, revealedCount, arrivedSet, arrivedCount, total: orderedIds.length, phase, waitingForGesture }
 }

@@ -168,6 +168,23 @@ export function isAudioUnlocked(): boolean {
   return sharedCtx !== null
 }
 
+// Woken when the first gesture unlocks audio, so a reveal that was waiting
+// for sound can start at that exact moment.
+const unlockWaiters = new Set<() => void>()
+
+/**
+ * Run `cb` as soon as audio is available — immediately if it already is.
+ * Returns an unsubscribe function.
+ */
+export function onAudioUnlock(cb: () => void): () => void {
+  if (sharedCtx) {
+    cb()
+    return () => {}
+  }
+  unlockWaiters.add(cb)
+  return () => { unlockWaiters.delete(cb) }
+}
+
 /**
  * Create (on first call) and resume the shared AudioContext.
  * Must be called from a user-gesture handler.
@@ -181,6 +198,9 @@ export function ensureAudioReady(): AudioContext {
     src.buffer = buf
     src.connect(sharedCtx.destination)
     src.start()
+    // Release anything holding out for sound (a reveal on a cold page load).
+    for (const cb of unlockWaiters) cb()
+    unlockWaiters.clear()
   }
   if (sharedCtx.state === 'suspended') void sharedCtx.resume()
   return sharedCtx

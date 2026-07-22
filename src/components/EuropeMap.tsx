@@ -471,7 +471,6 @@ interface Props {
       which the growing sets don't give. */
   revealTotal: number
   phase: RevealPhase
-  silentReveal: boolean
   /** Country previewed from the search bar — highlighted like a hover. */
   previewCountry: string | null
   onCountryClick: (countryId: string) => void
@@ -479,7 +478,7 @@ interface Props {
   onBackgroundClick: () => void
 }
 
-export function WorldMap({ selectedCountry, homeCountry, mode, revealedSet, heartSet, revealTotal, phase, silentReveal, previewCountry, onCountryClick, onBackgroundClick }: Props) {
+export function WorldMap({ selectedCountry, homeCountry, mode, revealedSet, heartSet, revealTotal, phase, previewCountry, onCountryClick, onBackgroundClick }: Props) {
   const colorScheme = useColorScheme()
   const C = { ...BASE_COLORS[colorScheme], ...MODE_ACCENTS[mode][colorScheme] }
 
@@ -587,7 +586,6 @@ export function WorldMap({ selectedCountry, homeCountry, mode, revealedSet, hear
     if (!selectedCountry && countryId === homeCountry) return 'country-breath 3s ease-in-out infinite'
     if (countryId === selectedCountry) {
       if (phase === 'done') return 'selection-finale 750ms ease-out'
-      if (silentReveal && phase === 'revealing') return 'selected-halo 1s ease-in-out 3'
       // In loved-by the selection is the receiver: once the first heart lands
       // (first reveal + flight time) it throbs with the incoming stream.
       const throb = mode === 'loved-by'
